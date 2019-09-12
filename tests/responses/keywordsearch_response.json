@@ -1,0 +1,2448 @@
+{
+   "Parts":[
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":2500,
+               "UnitPrice":0.07265,
+               "TotalPrice":181.625
+            },
+            {
+               "BreakQuantity":5000,
+               "UnitPrice":0.06861,
+               "TotalPrice":343.05
+            },
+            {
+               "BreakQuantity":12500,
+               "UnitPrice":0.06256,
+               "TotalPrice":782
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"1",
+               "Parameter":"Packaging",
+               "Value":"Tape & Reel (TR)"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"6548",
+               "Parameter":"Package / Case",
+               "Value":"8-SOIC (0.154\", 3.90mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"46",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-SOIC"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555DR/296-6501-2-ND/372491",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/Texas%20Instr%20Renders/296;4040047-3;D;8.jpg",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555DR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"2",
+                  "Parameter":"Packaging",
+                  "Value":"Cut Tape (CT)"
+               },
+               "PartId":372490,
+               "QuantityOnHand":24316,
+               "DigiKeyPartNumber":"296-6501-1-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.34,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555DR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"243",
+                  "Parameter":"Packaging",
+                  "Value":"Digi-Reel®"
+               },
+               "PartId":749204,
+               "QuantityOnHand":24316,
+               "DigiKeyPartNumber":"296-6501-6-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.34,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555D",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"6",
+                  "Parameter":"Packaging",
+                  "Value":"Tube"
+               },
+               "PartId":280641,
+               "QuantityOnHand":7864,
+               "DigiKeyPartNumber":"296-16792-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.37,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":9975,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-SOIC",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555DR/296-6501-2-ND/372491",
+         "ManufacturerPartNumber":"NE555DR",
+         "MinimumOrderQuantity":2500,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"1",
+            "Parameter":"Packaging",
+            "Value":"Tape & Reel (TR)"
+         },
+         "PartId":372491,
+         "QuantityOnHand":22500,
+         "DigiKeyPartNumber":"296-6501-2-ND",
+         "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+         "UnitPrice":0.07265,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":0,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":1,
+               "UnitPrice":0.34,
+               "TotalPrice":0.34
+            },
+            {
+               "BreakQuantity":10,
+               "UnitPrice":0.254,
+               "TotalPrice":2.54
+            },
+            {
+               "BreakQuantity":100,
+               "UnitPrice":0.1579,
+               "TotalPrice":15.79
+            },
+            {
+               "BreakQuantity":500,
+               "UnitPrice":0.1081,
+               "TotalPrice":54.05
+            },
+            {
+               "BreakQuantity":1000,
+               "UnitPrice":0.08314,
+               "TotalPrice":83.14
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"2",
+               "Parameter":"Packaging",
+               "Value":"Cut Tape (CT)"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"6548",
+               "Parameter":"Package / Case",
+               "Value":"8-SOIC (0.154\", 3.90mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"46",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-SOIC"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555DR/296-6501-1-ND/372490",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/Texas%20Instr%20Renders/296;4040047-3;D;8.jpg",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555DR",
+               "MinimumOrderQuantity":2500,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":372491,
+               "QuantityOnHand":22500,
+               "DigiKeyPartNumber":"296-6501-2-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.07265,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555DR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"243",
+                  "Parameter":"Packaging",
+                  "Value":"Digi-Reel®"
+               },
+               "PartId":749204,
+               "QuantityOnHand":24316,
+               "DigiKeyPartNumber":"296-6501-6-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.34,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555D",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"6",
+                  "Parameter":"Packaging",
+                  "Value":"Tube"
+               },
+               "PartId":280641,
+               "QuantityOnHand":7864,
+               "DigiKeyPartNumber":"296-16792-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.37,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":9975,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-SOIC",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555DR/296-6501-1-ND/372490",
+         "ManufacturerPartNumber":"NE555DR",
+         "MinimumOrderQuantity":1,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"2",
+            "Parameter":"Packaging",
+            "Value":"Cut Tape (CT)"
+         },
+         "PartId":372490,
+         "QuantityOnHand":24316,
+         "DigiKeyPartNumber":"296-6501-1-ND",
+         "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+         "UnitPrice":0.34,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":0,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":1,
+               "UnitPrice":0.34,
+               "TotalPrice":0.34
+            },
+            {
+               "BreakQuantity":10,
+               "UnitPrice":0.254,
+               "TotalPrice":2.54
+            },
+            {
+               "BreakQuantity":100,
+               "UnitPrice":0.1579,
+               "TotalPrice":15.79
+            },
+            {
+               "BreakQuantity":500,
+               "UnitPrice":0.1081,
+               "TotalPrice":54.05
+            },
+            {
+               "BreakQuantity":1000,
+               "UnitPrice":0.08314,
+               "TotalPrice":83.14
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"243",
+               "Parameter":"Packaging",
+               "Value":"Digi-Reel®"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"6548",
+               "Parameter":"Package / Case",
+               "Value":"8-SOIC (0.154\", 3.90mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"46",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-SOIC"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555DR/296-6501-6-ND/749204",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/Texas%20Instr%20Renders/296;4040047-3;D;8.jpg",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555DR",
+               "MinimumOrderQuantity":2500,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":372491,
+               "QuantityOnHand":22500,
+               "DigiKeyPartNumber":"296-6501-2-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.07265,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555DR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"2",
+                  "Parameter":"Packaging",
+                  "Value":"Cut Tape (CT)"
+               },
+               "PartId":372490,
+               "QuantityOnHand":24316,
+               "DigiKeyPartNumber":"296-6501-1-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.34,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555D",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"6",
+                  "Parameter":"Packaging",
+                  "Value":"Tube"
+               },
+               "PartId":280641,
+               "QuantityOnHand":7864,
+               "DigiKeyPartNumber":"296-16792-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+               "UnitPrice":0.37,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":9975,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-SOIC",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555DR/296-6501-6-ND/749204",
+         "ManufacturerPartNumber":"NE555DR",
+         "MinimumOrderQuantity":1,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"243",
+            "Parameter":"Packaging",
+            "Value":"Digi-Reel®"
+         },
+         "PartId":749204,
+         "QuantityOnHand":24316,
+         "DigiKeyPartNumber":"296-6501-6-ND",
+         "ProductDescription":"IC OSC SGL TIMER 100KHZ 8-SOIC",
+         "UnitPrice":0.34,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":0,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":1,
+               "UnitPrice":0.4,
+               "TotalPrice":0.4
+            },
+            {
+               "BreakQuantity":10,
+               "UnitPrice":0.329,
+               "TotalPrice":3.29
+            },
+            {
+               "BreakQuantity":25,
+               "UnitPrice":0.3008,
+               "TotalPrice":7.52
+            },
+            {
+               "BreakQuantity":100,
+               "UnitPrice":0.2239,
+               "TotalPrice":22.39
+            },
+            {
+               "BreakQuantity":500,
+               "UnitPrice":0.1679,
+               "TotalPrice":83.95
+            },
+            {
+               "BreakQuantity":1000,
+               "UnitPrice":0.12592,
+               "TotalPrice":125.92
+            },
+            {
+               "BreakQuantity":2500,
+               "UnitPrice":0.11543,
+               "TotalPrice":288.575
+            },
+            {
+               "BreakQuantity":5000,
+               "UnitPrice":0.10844,
+               "TotalPrice":542.2
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"6",
+               "Parameter":"Packaging",
+               "Value":"Tube"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"6547",
+               "Parameter":"Package / Case",
+               "Value":"8-DIP (0.300\", 7.62mm)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"862",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-PDIP"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"80",
+               "Parameter":"Mounting Type",
+               "Value":"Through Hole"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555P/296-1411-5-ND/277057",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/~~Pkg.Case%20or%20Series/8-DIP.jpg",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-PDIP",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555P/296-1411-5-ND/277057",
+         "ManufacturerPartNumber":"NE555P",
+         "MinimumOrderQuantity":1,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"6",
+            "Parameter":"Packaging",
+            "Value":"Tube"
+         },
+         "PartId":277057,
+         "QuantityOnHand":51722,
+         "DigiKeyPartNumber":"296-1411-5-ND",
+         "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8-DIP",
+         "UnitPrice":0.4,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":0,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":2000,
+               "UnitPrice":0.09915,
+               "TotalPrice":198.3
+            },
+            {
+               "BreakQuantity":6000,
+               "UnitPrice":0.09314,
+               "TotalPrice":558.84
+            },
+            {
+               "BreakQuantity":10000,
+               "UnitPrice":0.08713,
+               "TotalPrice":871.3
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"1",
+               "Parameter":"Packaging",
+               "Value":"Tape & Reel (TR)"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"7409",
+               "Parameter":"Package / Case",
+               "Value":"8-SOIC (0.209\", 5.30mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"195",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-SO"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555PSR/296-6502-2-ND/372493",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/~~Pkg.Case%20or%20Series/8-SOIC.jpg",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555PSR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"2",
+                  "Parameter":"Packaging",
+                  "Value":"Cut Tape (CT)"
+               },
+               "PartId":372492,
+               "QuantityOnHand":4547,
+               "DigiKeyPartNumber":"296-6502-1-ND",
+               "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10001,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PSR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"243",
+                  "Parameter":"Packaging",
+                  "Value":"Digi-Reel®"
+               },
+               "PartId":749205,
+               "QuantityOnHand":4547,
+               "DigiKeyPartNumber":"296-6502-6-ND",
+               "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10001,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PS",
+               "MinimumOrderQuantity":3280,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"3",
+                  "Parameter":"Packaging",
+                  "Value":"Bulk"
+               },
+               "PartId":9692573,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PS-ND",
+               "ProductDescription":"IC OSC TIMER SINGLE 100KHZ 8SO",
+               "UnitPrice":0.11543,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10000,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-SO",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555PSR/296-6502-2-ND/372493",
+         "ManufacturerPartNumber":"NE555PSR",
+         "MinimumOrderQuantity":2000,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"1",
+            "Parameter":"Packaging",
+            "Value":"Tape & Reel (TR)"
+         },
+         "PartId":372493,
+         "QuantityOnHand":2000,
+         "DigiKeyPartNumber":"296-6502-2-ND",
+         "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+         "UnitPrice":0.09915,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":10000,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":1,
+               "UnitPrice":0.36,
+               "TotalPrice":0.36
+            },
+            {
+               "BreakQuantity":10,
+               "UnitPrice":0.291,
+               "TotalPrice":2.91
+            },
+            {
+               "BreakQuantity":100,
+               "UnitPrice":0.198,
+               "TotalPrice":19.8
+            },
+            {
+               "BreakQuantity":500,
+               "UnitPrice":0.14854,
+               "TotalPrice":74.27
+            },
+            {
+               "BreakQuantity":1000,
+               "UnitPrice":0.11141,
+               "TotalPrice":111.41
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"2",
+               "Parameter":"Packaging",
+               "Value":"Cut Tape (CT)"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"7409",
+               "Parameter":"Package / Case",
+               "Value":"8-SOIC (0.209\", 5.30mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"195",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-SO"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555PSR/296-6502-1-ND/372492",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/~~Pkg.Case%20or%20Series/8-SOIC.jpg",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555PSR",
+               "MinimumOrderQuantity":2000,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":372493,
+               "QuantityOnHand":2000,
+               "DigiKeyPartNumber":"296-6502-2-ND",
+               "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10000,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PSR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"243",
+                  "Parameter":"Packaging",
+                  "Value":"Digi-Reel®"
+               },
+               "PartId":749205,
+               "QuantityOnHand":4547,
+               "DigiKeyPartNumber":"296-6502-6-ND",
+               "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10001,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PS",
+               "MinimumOrderQuantity":3280,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"3",
+                  "Parameter":"Packaging",
+                  "Value":"Bulk"
+               },
+               "PartId":9692573,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PS-ND",
+               "ProductDescription":"IC OSC TIMER SINGLE 100KHZ 8SO",
+               "UnitPrice":0.11543,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10000,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-SO",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555PSR/296-6502-1-ND/372492",
+         "ManufacturerPartNumber":"NE555PSR",
+         "MinimumOrderQuantity":1,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"2",
+            "Parameter":"Packaging",
+            "Value":"Cut Tape (CT)"
+         },
+         "PartId":372492,
+         "QuantityOnHand":4547,
+         "DigiKeyPartNumber":"296-6502-1-ND",
+         "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+         "UnitPrice":0.36,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":10001,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":1,
+               "UnitPrice":0.36,
+               "TotalPrice":0.36
+            },
+            {
+               "BreakQuantity":10,
+               "UnitPrice":0.291,
+               "TotalPrice":2.91
+            },
+            {
+               "BreakQuantity":100,
+               "UnitPrice":0.198,
+               "TotalPrice":19.8
+            },
+            {
+               "BreakQuantity":500,
+               "UnitPrice":0.14854,
+               "TotalPrice":74.27
+            },
+            {
+               "BreakQuantity":1000,
+               "UnitPrice":0.11141,
+               "TotalPrice":111.41
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"243",
+               "Parameter":"Packaging",
+               "Value":"Digi-Reel®"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"7409",
+               "Parameter":"Package / Case",
+               "Value":"8-SOIC (0.209\", 5.30mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"195",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-SO"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555PSR/296-6502-6-ND/749205",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/~~Pkg.Case%20or%20Series/8-SOIC.jpg",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555PSR",
+               "MinimumOrderQuantity":2000,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":372493,
+               "QuantityOnHand":2000,
+               "DigiKeyPartNumber":"296-6502-2-ND",
+               "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10000,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PSR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"2",
+                  "Parameter":"Packaging",
+                  "Value":"Cut Tape (CT)"
+               },
+               "PartId":372492,
+               "QuantityOnHand":4547,
+               "DigiKeyPartNumber":"296-6502-1-ND",
+               "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10001,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PS",
+               "MinimumOrderQuantity":3280,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"3",
+                  "Parameter":"Packaging",
+                  "Value":"Bulk"
+               },
+               "PartId":9692573,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PS-ND",
+               "ProductDescription":"IC OSC TIMER SINGLE 100KHZ 8SO",
+               "UnitPrice":0.11543,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":10000,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-SO",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555PSR/296-6502-6-ND/749205",
+         "ManufacturerPartNumber":"NE555PSR",
+         "MinimumOrderQuantity":1,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"243",
+            "Parameter":"Packaging",
+            "Value":"Digi-Reel®"
+         },
+         "PartId":749205,
+         "QuantityOnHand":4547,
+         "DigiKeyPartNumber":"296-6502-6-ND",
+         "ProductDescription":"IC OSC SINGLE TIMER 100KHZ 8SO",
+         "UnitPrice":0.36,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":10001,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":2000,
+               "UnitPrice":0.09915,
+               "TotalPrice":198.3
+            },
+            {
+               "BreakQuantity":6000,
+               "UnitPrice":0.09314,
+               "TotalPrice":558.84
+            },
+            {
+               "BreakQuantity":10000,
+               "UnitPrice":0.08713,
+               "TotalPrice":871.3
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"1",
+               "Parameter":"Packaging",
+               "Value":"Tape & Reel (TR)"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"2850",
+               "Parameter":"Package / Case",
+               "Value":"8-TSSOP (0.173\", 4.40mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"375",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-TSSOP"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555PWR/296-29904-2-ND/1571970",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/~~Pkg.Case%20or%20Series/8-TSSOP.JPG",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555PWR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"2",
+                  "Parameter":"Packaging",
+                  "Value":"Cut Tape (CT)"
+               },
+               "PartId":2782634,
+               "QuantityOnHand":3290,
+               "DigiKeyPartNumber":"296-29904-1-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":2000,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"243",
+                  "Parameter":"Packaging",
+                  "Value":"Digi-Reel®"
+               },
+               "PartId":2782672,
+               "QuantityOnHand":3290,
+               "DigiKeyPartNumber":"296-29904-6-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":2000,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PW",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"6",
+                  "Parameter":"Packaging",
+                  "Value":"Tube"
+               },
+               "PartId":565674,
+               "QuantityOnHand":419,
+               "DigiKeyPartNumber":"296-15086-5-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.4,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":9900,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWRE4",
+               "MinimumOrderQuantity":4000,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1571971,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PWRE4-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWRG4",
+               "MinimumOrderQuantity":4000,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1899565,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PWRG4-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-TSSOP",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555PWR/296-29904-2-ND/1571970",
+         "ManufacturerPartNumber":"NE555PWR",
+         "MinimumOrderQuantity":2000,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"1",
+            "Parameter":"Packaging",
+            "Value":"Tape & Reel (TR)"
+         },
+         "PartId":1571970,
+         "QuantityOnHand":2000,
+         "DigiKeyPartNumber":"296-29904-2-ND",
+         "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+         "UnitPrice":0.09915,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":0,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":1,
+               "UnitPrice":0.36,
+               "TotalPrice":0.36
+            },
+            {
+               "BreakQuantity":10,
+               "UnitPrice":0.291,
+               "TotalPrice":2.91
+            },
+            {
+               "BreakQuantity":100,
+               "UnitPrice":0.198,
+               "TotalPrice":19.8
+            },
+            {
+               "BreakQuantity":500,
+               "UnitPrice":0.14854,
+               "TotalPrice":74.27
+            },
+            {
+               "BreakQuantity":1000,
+               "UnitPrice":0.11141,
+               "TotalPrice":111.41
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"2",
+               "Parameter":"Packaging",
+               "Value":"Cut Tape (CT)"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"2850",
+               "Parameter":"Package / Case",
+               "Value":"8-TSSOP (0.173\", 4.40mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"375",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-TSSOP"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555PWR/296-29904-1-ND/2782634",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/~~Pkg.Case%20or%20Series/8-TSSOP.JPG",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555PWR",
+               "MinimumOrderQuantity":2000,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1571970,
+               "QuantityOnHand":2000,
+               "DigiKeyPartNumber":"296-29904-2-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"243",
+                  "Parameter":"Packaging",
+                  "Value":"Digi-Reel®"
+               },
+               "PartId":2782672,
+               "QuantityOnHand":3290,
+               "DigiKeyPartNumber":"296-29904-6-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":2000,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PW",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"6",
+                  "Parameter":"Packaging",
+                  "Value":"Tube"
+               },
+               "PartId":565674,
+               "QuantityOnHand":419,
+               "DigiKeyPartNumber":"296-15086-5-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.4,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":9900,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWRE4",
+               "MinimumOrderQuantity":4000,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1571971,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PWRE4-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWRG4",
+               "MinimumOrderQuantity":4000,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1899565,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PWRG4-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-TSSOP",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555PWR/296-29904-1-ND/2782634",
+         "ManufacturerPartNumber":"NE555PWR",
+         "MinimumOrderQuantity":1,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"2",
+            "Parameter":"Packaging",
+            "Value":"Cut Tape (CT)"
+         },
+         "PartId":2782634,
+         "QuantityOnHand":3290,
+         "DigiKeyPartNumber":"296-29904-1-ND",
+         "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+         "UnitPrice":0.36,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":2000,
+         "AvailableOnOrder":0
+      },
+      {
+         "StandardPricing":[
+            {
+               "BreakQuantity":1,
+               "UnitPrice":0.36,
+               "TotalPrice":0.36
+            },
+            {
+               "BreakQuantity":10,
+               "UnitPrice":0.291,
+               "TotalPrice":2.91
+            },
+            {
+               "BreakQuantity":100,
+               "UnitPrice":0.198,
+               "TotalPrice":19.8
+            },
+            {
+               "BreakQuantity":500,
+               "UnitPrice":0.14854,
+               "TotalPrice":74.27
+            },
+            {
+               "BreakQuantity":1000,
+               "UnitPrice":0.11141,
+               "TotalPrice":111.41
+            }
+         ],
+         "Category":{
+            "Id":"39",
+            "Text":"Integrated Circuits (ICs)"
+         },
+         "ChipOutpostPart":false,
+         "RohsInfo":"ROHS3 Compliant",
+         "LeadStatus":"Lead Free",
+         "Family":{
+            "Id":"226",
+            "Text":"Clock/Timing - Programmable Timers and Oscillators"
+         },
+         "Parameters":[
+            {
+               "ParameterId":7,
+               "ValueId":"243",
+               "Parameter":"Packaging",
+               "Value":"Digi-Reel®"
+            },
+            {
+               "ParameterId":1989,
+               "ValueId":"0",
+               "Parameter":"Part Status",
+               "Value":"Active"
+            },
+            {
+               "ParameterId":183,
+               "ValueId":"2697",
+               "Parameter":"Type",
+               "Value":"555 Type, Timer/Oscillator (Single)"
+            },
+            {
+               "ParameterId":435,
+               "ValueId":"1",
+               "Parameter":"Count",
+               "Value":"-"
+            },
+            {
+               "ParameterId":139,
+               "ValueId":"124",
+               "Parameter":"Frequency",
+               "Value":"100kHz"
+            },
+            {
+               "ParameterId":276,
+               "ValueId":"49",
+               "Parameter":"Voltage - Supply",
+               "Value":"4.5V ~ 16V"
+            },
+            {
+               "ParameterId":2095,
+               "ValueId":"u10mA",
+               "Parameter":"Current - Supply",
+               "Value":"10mA"
+            },
+            {
+               "ParameterId":252,
+               "ValueId":"3",
+               "Parameter":"Operating Temperature",
+               "Value":"0°C ~ 70°C"
+            },
+            {
+               "ParameterId":16,
+               "ValueId":"2850",
+               "Parameter":"Package / Case",
+               "Value":"8-TSSOP (0.173\", 4.40mm Width)"
+            },
+            {
+               "ParameterId":1291,
+               "ValueId":"375",
+               "Parameter":"Supplier Device Package",
+               "Value":"8-TSSOP"
+            },
+            {
+               "ParameterId":69,
+               "ValueId":"3",
+               "Parameter":"Mounting Type",
+               "Value":"Surface Mount"
+            },
+            {
+               "ParameterId":2078,
+               "ValueId":"6589",
+               "Parameter":"Base Part Number",
+               "Value":"NE555"
+            }
+         ],
+         "PartUrl":"/product-detail/en/texas-instruments/NE555PWR/296-29904-6-ND/2782672",
+         "PrimaryDatasheet":"http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fne555",
+         "PrimaryPhoto":"http://media.digikey.com/Renders/~~Pkg.Case%20or%20Series/8-TSSOP.JPG",
+         "PrimaryVideo":"",
+         "RohsSubs":[
+
+         ],
+         "Series":{
+            "ParameterId":-5,
+            "ValueId":"818",
+            "Parameter":"Series",
+            "Value":"-"
+         },
+         "SuggestedSubs":[
+
+         ],
+         "ManufacturerLeadWeeks":"6 weeks",
+         "ManufacturerPageUrl":"/en/supplier-centers/t/texas-instruments",
+         "PartStatus":"Active",
+         "AlternatePackaging":[
+            {
+               "ManufacturerPartNumber":"NE555PWR",
+               "MinimumOrderQuantity":2000,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1571970,
+               "QuantityOnHand":2000,
+               "DigiKeyPartNumber":"296-29904-2-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWR",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"2",
+                  "Parameter":"Packaging",
+                  "Value":"Cut Tape (CT)"
+               },
+               "PartId":2782634,
+               "QuantityOnHand":3290,
+               "DigiKeyPartNumber":"296-29904-1-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.36,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":2000,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PW",
+               "MinimumOrderQuantity":1,
+               "NonStock":false,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"6",
+                  "Parameter":"Packaging",
+                  "Value":"Tube"
+               },
+               "PartId":565674,
+               "QuantityOnHand":419,
+               "DigiKeyPartNumber":"296-15086-5-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.4,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":9900,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWRE4",
+               "MinimumOrderQuantity":4000,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1571971,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PWRE4-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            },
+            {
+               "ManufacturerPartNumber":"NE555PWRG4",
+               "MinimumOrderQuantity":4000,
+               "NonStock":true,
+               "Packaging":{
+                  "ParameterId":7,
+                  "ValueId":"1",
+                  "Parameter":"Packaging",
+                  "Value":"Tape & Reel (TR)"
+               },
+               "PartId":1899565,
+               "QuantityOnHand":0,
+               "DigiKeyPartNumber":"NE555PWRG4-ND",
+               "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+               "UnitPrice":0.09915,
+               "ManufacturerName":{
+                  "Id":"296",
+                  "Text":"Texas Instruments"
+               },
+               "ManfacturerPublicQuantity":0,
+               "AvailableOnOrder":0
+            }
+         ],
+         "DetailedDescription":"555 Type, Timer/Oscillator (Single) IC 100kHz 8-TSSOP",
+         "TariffDescription":"",
+         "BuyUrl":"https://www.digikey.com/product-detail/en/texas-instruments/NE555PWR/296-29904-6-ND/2782672",
+         "ManufacturerPartNumber":"NE555PWR",
+         "MinimumOrderQuantity":1,
+         "NonStock":false,
+         "Packaging":{
+            "ParameterId":7,
+            "ValueId":"243",
+            "Parameter":"Packaging",
+            "Value":"Digi-Reel®"
+         },
+         "PartId":2782672,
+         "QuantityOnHand":3290,
+         "DigiKeyPartNumber":"296-29904-6-ND",
+         "ProductDescription":"IC OSC SGL TIMER 100KHZ 8TSSOP",
+         "UnitPrice":0.36,
+         "ManufacturerName":{
+            "Id":"296",
+            "Text":"Texas Instruments"
+         },
+         "ManfacturerPublicQuantity":2000,
+         "AvailableOnOrder":0
+      }
+   ],
+   "Taxonomy":{
+      "Children":[
+         {
+            "Children":[
+               {
+                  "Children":[
+
+                  ],
+                  "PartCount":4,
+                  "NewPartCount":0,
+                  "ParameterId":-8,
+                  "ValueId":"797",
+                  "Parameter":"Categories",
+                  "Value":"Evaluation Boards - Expansion Boards, Daughter Cards"
+               }
+            ],
+            "PartCount":4,
+            "NewPartCount":0,
+            "ParameterId":-8,
+            "ValueId":"33",
+            "Parameter":"Categories",
+            "Value":"Development Boards, Kits, Programmers"
+         },
+         {
+            "Children":[
+               {
+                  "Children":[
+
+                  ],
+                  "PartCount":10,
+                  "NewPartCount":0,
+                  "ParameterId":-8,
+                  "ValueId":"285",
+                  "Parameter":"Categories",
+                  "Value":"Transistors - FETs, MOSFETs - RF"
+               }
+            ],
+            "PartCount":10,
+            "NewPartCount":0,
+            "ParameterId":-8,
+            "ValueId":"19",
+            "Parameter":"Categories",
+            "Value":"Discrete Semiconductor Products"
+         },
+         {
+            "Children":[
+               {
+                  "Children":[
+
+                  ],
+                  "PartCount":35,
+                  "NewPartCount":0,
+                  "ParameterId":-8,
+                  "ValueId":"689",
+                  "Parameter":"Categories",
+                  "Value":"Clock/Timing - Programmable Timers and Oscillators"
+               }
+            ],
+            "PartCount":35,
+            "NewPartCount":0,
+            "ParameterId":-8,
+            "ValueId":"32",
+            "Parameter":"Categories",
+            "Value":"Integrated Circuits (ICs)"
+         },
+         {
+            "Children":[
+               {
+                  "Children":[
+
+                  ],
+                  "PartCount":6,
+                  "NewPartCount":0,
+                  "ParameterId":-8,
+                  "ValueId":"859",
+                  "Parameter":"Categories",
+                  "Value":"RF Evaluation and Development Kits, Boards"
+               }
+            ],
+            "PartCount":6,
+            "NewPartCount":0,
+            "ParameterId":-8,
+            "ValueId":"37",
+            "Parameter":"Categories",
+            "Value":"RF/IF and RFID"
+         }
+      ],
+      "PartCount":55,
+      "NewPartCount":0,
+      "ParameterId":-8,
+      "ValueId":"0",
+      "Parameter":"Categories",
+      "Value":"Out of Bounds"
+   },
+   "LimitedCategories":[
+      {
+         "Id":"40",
+         "Category":"Development Boards, Kits, Programmers",
+         "Families":[
+            {
+               "Id":"1358",
+               "Name":"Evaluation Boards - Expansion Boards, Daughter Cards",
+               "PartCount":4
+            }
+         ]
+      },
+      {
+         "Id":"21",
+         "Category":"Discrete Semiconductor Products",
+         "Families":[
+            {
+               "Id":"747",
+               "Name":"Transistors - FETs, MOSFETs - RF",
+               "PartCount":10
+            }
+         ]
+      },
+      {
+         "Id":"39",
+         "Category":"Integrated Circuits (ICs)",
+         "Families":[
+            {
+               "Id":"226",
+               "Name":"Clock/Timing - Programmable Timers and Oscillators",
+               "PartCount":35
+            }
+         ]
+      },
+      {
+         "Id":"54",
+         "Category":"RF/IF and RFID",
+         "Families":[
+            {
+               "Id":"700",
+               "Name":"RF Evaluation and Development Kits, Boards",
+               "PartCount":6
+            }
+         ]
+      }
+   ],
+   "FilterValues":[
+
+   ],
+   "LimitedFilterValues":[
+
+   ],
+   "Results":55,
+   "ExactMatches":0,
+   "ExactParts":[
+
+   ],
+   "ExactDigiKeyPart":null
+}
