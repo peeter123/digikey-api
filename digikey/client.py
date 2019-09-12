@@ -106,3 +106,33 @@ class DigikeyClient(object):
         params = models.KeywordSearchRequest.camelize(models.KeywordSearchRequest(data).to_primitive())
 
         return self._request('/keywordsearch', data=params)
+
+    def part(self,
+             partnr: str,
+             include_associated: bool = False,
+             include_for_use_with: bool = False,
+             ) -> dict:
+        """
+        Query part by unique ID
+        Args:
+            partnr (str): Part number. Works best with Digi-Key part numbers.
+            include_associated (bool): The option to include all Associated products
+            include_for_use_with (bool): The option to include all For Use With product
+        Kwargs:
+        Returns:
+            dict. See `models.Part` for exact fields.
+        """
+        data = {
+            'part': partnr,
+            'include_all_associated_products': include_associated,
+            'include_all_for_use_with_products': include_for_use_with
+        }
+
+        if not models.PartDetailPostRequest.is_valid(data):
+            errors = models.PartDetailPostRequest.errors(data)
+            raise DigikeyError('Query is malformed: %s' % errors)
+
+        # Convert `query` to format that Octopart accepts.
+        params = models.PartDetailPostRequest.camelize(models.PartDetailPostRequest(data).to_primitive())
+
+        return self._request('/partdetails', data=params)

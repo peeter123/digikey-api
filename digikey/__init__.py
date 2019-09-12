@@ -15,4 +15,4 @@ def setupLogger(logger):
 setupLogger(logger)
 
 
-from .api import (search)
+from .api import (search, part)

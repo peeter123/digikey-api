@@ -91,6 +91,18 @@ class KeywordSearchRequest(BaseModel):
     requested_quantity = IntType(default=1)
 
 
+class PartDetailPostRequest(BaseModel):
+    """Query format sent to the partdetails endpoint
+    https://api-portal.digikey.com/node/8517
+    """
+    # Part number. Works best with Digi-Key part numbers.
+    part = StringType(default="")
+    # The option to include all Associated products
+    include_all_associated_products = BooleanType()
+    # The option to include all For Use With products
+    include_all_for_use_with_products = BooleanType()
+
+
 class KeywordSearchResult:
     def __init__(self, result):
         self._result = result
