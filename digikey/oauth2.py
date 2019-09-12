@@ -188,8 +188,11 @@ class TokenHandler:
         if token_json is not None:
             token = Oauth2Token(token_json)
 
-        if token is not None and not token.expired():
-            return token
+        if token is not None:
+            if not token.expired():
+                return token
+            else:
+                return Oauth2Token(self.__refresh_token(token.refresh_token))
         else:
             open_new(self.__build_authorization_url())
             httpd = HTTPServer(
