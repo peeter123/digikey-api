@@ -1,9 +1,19 @@
 Python Client for Digikey PartSearch API v2
 =================================
+Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then make a PartDetails call to retrieve all 
+real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some 
+manufacturers overlap other manufacturer part numbers.
+
+# What does it do
+`digkey-api` is an [Digkey Part Search API](https://api-portal.digikey.com/node/8517) client for Python 3.6+. API response data is returned as Python objects that attempt to make it easy to get the data you want. Not all endpoints have been implemented.
+
 # Quickstart
 
-## Install
+## Register
+Register an app on the Digikey API portal: [Digi-Key API](https://api-portal.digikey.com/start). You will need the client
+ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
 
+## Install
 ```sh
 pip install digikey-api
 
@@ -13,6 +23,8 @@ export DIGIKEY_STORAGE_PATH'="cache_dir"
 ```
 
 ## Use
+Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
+the library will cache the access token and use the refresh token to automatically refresh your credentials.
 
 ```python
 import digikey
@@ -31,15 +43,10 @@ print(part.manufacturer)
 ```
 
 ## Test
-
 ```sh
 python -m pytest --cov=octopart --doctest-modules --ignore=setup.py
 python -m mypy digikey --ignore-missing-imports
 ```
-
-# What does it do
-
-`digkey-api` is an [Digkey Part Search API](https://api-portal.digikey.com/node/8517) client for Python 3.6+. API response data is returned as Python objects that attempt to make it easy to get the data you want. Not all endpoints have been implemented.
 
 ## Top-level API
 * `digikey.search()`
