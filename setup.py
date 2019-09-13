@@ -1,23 +1,25 @@
 import setuptools
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 setuptools.setup(
     name="digikey-api",
-    version="0.0.1",
+    version="0.1.0",
     author="Peter Oostewechel",
     author_email="peter_oostewechel@hotmail.com",
     license="GPL v3",
     url="https://github.com/peeter123/digikey-api",
     description="Python client for Digikey API",
-    long_description="Python client for Digikey API",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     packages=setuptools.find_packages(exclude=['contrib', 'docs', 'tests']),
     include_package_data=True,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: GPL v3 License",
-        "Programming Language :: Python",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Programming Language :: Python :: 3.6",
         "Topic :: Software Development",
     ],

@@ -16,3 +16,5 @@ setupLogger(logger)
 
 
 from .api import (search, part)
+
+name = 'digikey'
