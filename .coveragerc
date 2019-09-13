@@ -1,0 +1,14 @@
+[run]
+source =
+    digikey/*
+omit =
+    */site-packages/*
+    venv/*
+    tests/*
+
+[report]
+show_missing = True
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if self.debug:

@@ -14,6 +14,7 @@ from webbrowser import open_new
 from digikey.exceptions import DigykeyOauthException
 
 CA_CERT = 'digikey-api.pem'
+TOKEN_STORAGE = 'token_storage.json'
 AUTH_URL = 'https://sso.digikey.com/as/authorization.oauth2'
 TOKEN_URL = 'https://sso.digikey.com/as/token.oauth2'
 REDIRECT_URI = 'https://localhost:8080/digikey_callback'
@@ -114,10 +115,11 @@ class TokenHandler:
         self._id = a_id
         self._secret = a_secret
         self._storage_path = Path(a_token_storage_path)
-        self._token_storage_path = self._storage_path.joinpath('token_storage.json')
+        self._token_storage_path = self._storage_path.joinpath(TOKEN_STORAGE)
+        self._ca_cert = self._storage_path.joinpath(CA_CERT)
 
     def __generate_certificate(self):
-        ca = CertificateAuthority('Python digikey-api CA', CA_CERT, cert_cache=str(self._storage_path))
+        ca = CertificateAuthority('Python digikey-api CA', str(self._ca_cert), cert_cache=str(self._storage_path))
         return ca.cert_for_host('localhost')
 
     def __build_authorization_url(self) -> str:
@@ -199,7 +201,7 @@ class TokenHandler:
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(
                         request, address, server, self._id, self._secret))
-            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=Path(filename), server_side=True)
+            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=str(Path(filename)), server_side=True)
             httpd.stop = 0
 
             # This function will block until it receives a request
@@ -209,8 +211,8 @@ class TokenHandler:
 
             # Remove generated certificate
             try:
-                os.remove(filename)
-                os.remove(self._storage_path.joinpath(CA_CERT))
+                os.remove(Path(filename))
+                os.remove(self._ca_cert)
             except OSError as e:
                 logger.error('Cannot remove temporary certificates: {}'.format(e))
 

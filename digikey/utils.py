@@ -91,12 +91,12 @@ def sortby_param_str_from_list(sortby: List[Tuple[str, str]]=None) -> str:
     'avg_price asc,score desc'
     """
     if sortby and not isinstance(sortby, list):
-        raise OctopartTypeError(
+        raise DigikeyTypeError(
             '"sortyby" must be a list of tuples of fieldname and one of "asc" '
             'or "desc"')
 
     def exc_from_entry(entry):
-        return OctopartTypeError(
+        return DigikeyTypeError(
             'All "sortby" entries must be a tuple of a fieldname and one of '
             '"asc" or "desc", not %s' % entry)
 

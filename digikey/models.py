@@ -76,11 +76,11 @@ class KeywordSearchRequest(BaseModel):
     https://api-portal.digikey.com/node/8517
     """
     # Keywords to search on
-    keywords = StringType(default="")
+    keywords = StringType(required=True)
     # Filters the search results by the included SearchOptions
     search_options = ListType(StringType)
     # Maximum number of items to return
-    record_count = IntType(default=10, min_value=1, max_value=50)
+    record_count = IntType(default=10, min_value=1, max_value=50, required=True)
     # Ordinal position of first returned item
     record_start_pos = IntType(default=0)
     # Set Filters to narrow down search response
@@ -96,7 +96,7 @@ class PartDetailPostRequest(BaseModel):
     https://api-portal.digikey.com/node/8517
     """
     # Part number. Works best with Digi-Key part numbers.
-    part = StringType(default="")
+    part = StringType(required=True)
     # The option to include all Associated products
     include_all_associated_products = BooleanType()
     # The option to include all For Use With products
@@ -128,101 +128,122 @@ Helper classes for responses
 '''
 
 
-class PriceBreak():
-    def __init__(self, pricebreak):
+class PriceBreak:
+    def __init__(self, pricebreak: dict):
         self._pricebreak = pricebreak
 
     @property
     def breakquantity(self) -> int:
-        return self._pricebreak['BreakQuantity']
+        return self._pricebreak.get('BreakQuantity', 0)
 
     @property
     def unitprice(self) -> float:
-        return self._pricebreak['UnitPrice']
+        return self._pricebreak.get('UnitPrice', 0.0)
 
     @property
     def totalprice(self) -> float:
-        return self._pricebreak['TotalPrice']
+        return self._pricebreak.get('TotalPrice', 0.0)
 
 
 class IdTextPair:
-    def __init__(self, idtextpair):
+    def __init__(self, idtextpair: dict):
         self._idtextpair = idtextpair
 
     @property
     def id(self) -> str:
-        return self._idtextpair['Id']
+        return self._idtextpair.get('Id', '')
 
     @property
     def text(self) -> str:
-        return self._idtextpair['Text']
+        return self._idtextpair.get('Text', '')
 
 
 class PidVid:
-    def __init__(self, pidvid):
+    def __init__(self, pidvid: dict):
         self._pidvid = pidvid
 
     @property
-    def paramter_id(self) -> int:
-        return self._pidvid['ParameterId']
+    def parameter_id(self) -> int:
+        return self._pidvid.get('ParameterId', 0)
 
     @property
     def value_id(self) -> int:
-        return self._pidvid['ValueId']
+        return self._pidvid.get('ValueId', 0)
 
     @property
     def parameter(self) -> str:
-        return self._pidvid['Parameter']
+        return self._pidvid.get('Parameter', '')
 
     @property
     def value(self) -> str:
-        return self._pidvid['Value']
+        return self._pidvid.get('Value', '')
 
     def __repr__(self):
         return '<PidVid param={} val={}>'.format(self.parameter, self.value)
 
 
+class Family:
+    def __init__(self, family: dict):
+        self._family = family
+
+    @property
+    def id(self) -> str:
+        return self._family.get('Id', '')
+
+    @property
+    def name(self) -> str:
+        return self._family.get('Name', '')
+
+    @property
+    def part_count(self) -> int:
+        return self._family.get('PartCount', 0)
+
+
 class Part:
-    def __init__(self, part):
+    def __init__(self, part: dict):
         self._part = part
 
     @property
-    def standardpricing(self):
+    def standard_pricing(self) -> list:
         return [
             PriceBreak(part)
             for part in self._part.get('StandardPricing', [])
         ]
 
     @property
-    def category(self):
-        return IdTextPair(self._part['Category'])
+    def category(self) -> IdTextPair:
+        return IdTextPair(self._part.get('Category', {}))
 
     @property
-    def manufacturer(self):
-        return IdTextPair(self._part['ManufacturerName']).text
+    def family(self) -> IdTextPair:
+        return IdTextPair(self._part.get('Family', {}))
 
     @property
-    def mpn(self):
+    def manufacturer(self) -> str:
+        return IdTextPair(self._part.get('ManufacturerName', {})).text
+
+    @property
+    def mpn(self) -> str:
         return self._part.get('ManufacturerPartNumber', None)
 
     @property
-    def part_status(self):
+    def part_status(self) -> str:
         return self._part.get('PartStatus', None)
 
     @property
-    def digikey_pn(self):
+    def digikey_pn(self) -> str:
         return self._part.get('DigiKeyPartNumber', None)
 
     @property
-    def digikey_url(self):
-        return 'https://www.digikey.com' + self._part['PartUrl']
+    def digikey_url(self) -> str:
+        return 'https://www.digikey.com' + self._part.get('PartUrl', '')
 
     @property
-    def in_stock(self):
+    def in_stock(self) -> int:
         return self._part.get('QuantityOnHand', None)
 
     @property
-    def moq(self):
+    def moq(self) -> int:
         return self._part.get('MinimumOrderQuantity', None)
 
     @property

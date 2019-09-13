@@ -1,6 +1,6 @@
 {
-  "access_token": "WUplrNFNIzE9XAIH4WOLalnbYmDe",
-  "refresh_token": "QQ7TOlkkNOLc8gX70qRlX28qBvrVtCps82Mct8RlKq",
+  "access_token": "MOCK_ACCESS",
+  "refresh_token": "MOCK_REFRESH",
   "token_type": "Bearer",
   "expires_in": 86399
 }

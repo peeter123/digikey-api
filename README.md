@@ -44,7 +44,7 @@ print(part.manufacturer)
 
 ## Test
 ```sh
-python -m pytest --cov=octopart --doctest-modules --ignore=setup.py
+python -m pytest --cov=digikey --doctest-modules --ignore=setup.py
 python -m mypy digikey --ignore-missing-imports
 ```
 
