@@ -2,9 +2,10 @@ import os
 import ssl
 import json
 import requests
+import logging
 import typing as t
 from datetime import datetime
-from Crypto.PublicKey import RSA
+from certauth.certauth import CertificateAuthority
 from pathlib import Path
 from json.decoder import JSONDecodeError
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -12,10 +13,13 @@ from urllib.parse import urlencode
 from webbrowser import open_new
 from digikey.exceptions import DigykeyOauthException
 
+CA_CERT = 'digikey-api.pem'
 AUTH_URL = 'https://sso.digikey.com/as/authorization.oauth2'
 TOKEN_URL = 'https://sso.digikey.com/as/token.oauth2'
 REDIRECT_URI = 'https://localhost:8080/digikey_callback'
 PORT = 8080
+
+logger = logging.getLogger(__name__)
 
 
 class Oauth2Token:
@@ -109,18 +113,12 @@ class TokenHandler:
 
         self._id = a_id
         self._secret = a_secret
-        self._token_storage_path = Path(a_token_storage_path).joinpath('token_storage.json')
+        self._storage_path = Path(a_token_storage_path)
+        self._token_storage_path = self._storage_path.joinpath('token_storage.json')
 
     def __generate_certificate(self):
-        key = RSA.generate(2048)
-        pv_key_string = key.exportKey()
-        path = self._token_storage_path.joinpath('server.pem')
-        with open(path, "w") as prv_file:
-            print("{}".format(pv_key_string.decode()), file=prv_file)
-
-        pb_key_string = key.publickey().exportKey()
-        with open("public.pem", "w") as pub_file:
-            print("{}".format(pb_key_string.decode()), file=pub_file)
+        ca = CertificateAuthority('Python digikey-api CA', CA_CERT, cert_cache=str(self._storage_path))
+        return ca.cert_for_host('localhost')
 
     def __build_authorization_url(self) -> str:
         params = {"client_id": self._id,
@@ -166,6 +164,7 @@ class TokenHandler:
     def save(self, json_data):
         with open(self._token_storage_path, 'w') as f:
             json.dump(json_data, f)
+        logger.debug('Saved token to: {}'.format(self._token_storage_path))
 
     def get_access_token(self) -> Oauth2Token:
         """
@@ -182,7 +181,7 @@ class TokenHandler:
             with open(self._token_storage_path, 'r') as f:
                 token_json = json.load(f)
         except (EnvironmentError, JSONDecodeError):
-            print('Token storage does not exist or malformed')
+            logger.warning('Token storage does not exist or malformed, creating new')
 
         token = None
         if token_json is not None:
@@ -195,17 +194,25 @@ class TokenHandler:
                 return Oauth2Token(self.__refresh_token(token.refresh_token))
         else:
             open_new(self.__build_authorization_url())
+            filename = self.__generate_certificate()
             httpd = HTTPServer(
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(
                         request, address, server, self._id, self._secret))
-            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=Path(__file__).parent.joinpath('server.pem'), server_side=True)
+            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=Path(filename), server_side=True)
             httpd.stop = 0
 
             # This function will block until it receives a request
             while httpd.stop == 0:
                 httpd.handle_request()
             httpd.server_close()
+
+            # Remove generated certificate
+            try:
+                os.remove(filename)
+                os.remove(self._storage_path.joinpath(CA_CERT))
+            except OSError as e:
+                logger.error('Cannot remove temporary certificates: {}'.format(e))
 
             # Get the acccess token from the auth code
             token_json = self.__exchange_for_token(httpd.auth_code)

@@ -26,7 +26,7 @@ setuptools.setup(
         'retrying>=1.3.3',
         'schematics>=2.1.0',
         'inflection>=0.3.1',
-        'pycryptodome>=3.9.0',
+        'certauth>=1.3.0',
         'urllib3>=1.25.3'
     ],
     tests_requires=['pytest>=5.1.2'],
