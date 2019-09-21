@@ -18,8 +18,8 @@ ID and the client secret to use the API. You will also need a Digi-Key account t
 pip install digikey-api
 
 export DIGIKEY_CLIENT_ID="client_id"
-export DIGIKEY_CLIENT_SECRET'="client_secret"
-export DIGIKEY_STORAGE_PATH'="cache_dir"
+export DIGIKEY_CLIENT_SECRET="client_secret"
+export DIGIKEY_STORAGE_PATH="cache_dir"
 ```
 
 ## Use
