@@ -154,11 +154,13 @@ class TokenHandler:
                      "client_id": self._id,
                      "client_secret": self._secret
                      }
+        error_message = None
         try:
             r = requests.post(TOKEN_URL, headers=headers, data=post_data)
+            error_message = r.json().get('error_description', None)
             r.raise_for_status()
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
-            raise DigykeyOauthException('Cannot request new token with refresh token: {}'.format(e))
+            raise DigykeyOauthException('Cannot request new token with refresh token: {}'.format(error_message))
         token_json = r.json()
         token_json['expires'] = int(token_json['expires_in']) + datetime.now().timestamp()
         return token_json
