@@ -2,5 +2,5 @@
   "access_token": "MOCK_ACCESS",
   "refresh_token": "MOCK_REFRESH",
   "token_type": "Bearer",
-  "expires_in": 86399
+  "expires_in": 86400
 }

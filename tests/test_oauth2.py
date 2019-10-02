@@ -1,12 +1,14 @@
 import os
 import re
 import ssl
+import json
 import urllib.request
 import urllib.parse as urlparse
-from webbrowser import open_new
+from json.decoder import JSONDecodeError
 from unittest import TestCase
 import unittest.mock as mock
 from pathlib import Path
+from datetime import datetime, timezone
 import threading
 
 import requests
@@ -63,8 +65,10 @@ class Oauth2Tests(TestCase):
         token = oauth2.TokenHandler().get_access_token()
         assert token.access_token == 'MOCK_ACCESS'
         assert token.refresh_token == 'MOCK_REFRESH'
+        expires_in = (token.expires - datetime.now(timezone.utc)).seconds
+        assert 86200 <= expires_in <= 86340
 
-        tokenfile = Path(os.getenv('DIGIKEY_STORAGE_PATH', "")).joinpath(oauth2.TOKEN_STORAGE)
+        token_file = Path(os.getenv('DIGIKEY_STORAGE_PATH', "")).joinpath(oauth2.TOKEN_STORAGE)
         cacert = Path(os.getenv('DIGIKEY_STORAGE_PATH', "")).joinpath(oauth2.CA_CERT)
         pemfile = Path(os.getenv('DIGIKEY_STORAGE_PATH', "")).joinpath('localhost.pem')
 
@@ -73,5 +77,15 @@ class Oauth2Tests(TestCase):
         assert not pemfile.is_file()
 
         # Test if token has been saved
-        assert tokenfile.is_file()
-        os.remove(tokenfile)
+        assert token_file.is_file()
+
+        # Test for correct storage
+        token_json = None
+        try:
+            with open(token_file, 'r') as f:
+                token_json = json.load(f)
+        except (EnvironmentError, JSONDecodeError):
+            print('Token storage does not exist or malformed')
+            assert False
+
+        os.remove(token_file)

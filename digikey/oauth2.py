@@ -4,7 +4,7 @@ import json
 import requests
 import logging
 import typing as t
-from datetime import datetime
+from datetime import datetime, timezone
 from certauth.certauth import CertificateAuthority
 from pathlib import Path
 from json.decoder import JSONDecodeError
@@ -37,23 +37,20 @@ class Oauth2Token:
 
     @property
     def expires(self):
-        return datetime.fromtimestamp(self._token.get('expires'))
+        return datetime.fromtimestamp(self._token.get('expires'), timezone.utc)
 
     @property
     def type(self):
         return self._token.get('token_type')
 
     def expired(self) -> bool:
-        if datetime.now().timestamp() >= self.expires.timestamp():
-            return True
-        else:
-            return False
+        return datetime.utcnow().timestamp() >= self.expires.timestamp()
 
     def get_authorization(self) -> str:
         return self.type + ' ' + self.access_token
 
     def __repr__(self):
-        return '<Token: expires={}>'.format(self.expires.strftime('%c'))
+        return '<Token: expires={}>'.format(self.expires.astimezone().isoformat())
 
 
 class HTTPServerHandler(BaseHTTPRequestHandler):
@@ -144,7 +141,8 @@ class TokenHandler:
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
             raise DigykeyOauthException('Cannot request new token with auth code: {}'.format(e))
         token_json = r.json()
-        token_json['expires'] = int(token_json['expires_in']) + datetime.now().timestamp()
+        # Create epoch timestamp from expires in, with 1 minute margin
+        token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
         return token_json
 
     def __refresh_token(self, refresh_token):
@@ -160,9 +158,10 @@ class TokenHandler:
             error_message = r.json().get('error_description', None)
             r.raise_for_status()
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
-            raise DigykeyOauthException('Cannot request new token with refresh token: {}'.format(error_message))
+            raise DigykeyOauthException('Cannot request new token with refresh token: {}.'.format(error_message))
         token_json = r.json()
-        token_json['expires'] = int(token_json['expires_in']) + datetime.now().timestamp()
+        # Create epoch timestamp from expires in, with 1 minute margin
+        token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
         return token_json
 
     def save(self, json_data):
@@ -185,18 +184,23 @@ class TokenHandler:
             with open(self._token_storage_path, 'r') as f:
                 token_json = json.load(f)
         except (EnvironmentError, JSONDecodeError):
-            logger.warning('Token storage does not exist or malformed, creating new')
+            logger.warning('Token storage does not exist or malformed, creating new.')
 
         token = None
         if token_json is not None:
             token = Oauth2Token(token_json)
 
-        if token is not None:
-            if not token.expired():
-                return token
-            else:
-                return Oauth2Token(self.__refresh_token(token.refresh_token))
-        else:
+        # Try to refresh the credentials with the stores refresh token
+        if token is not None and token.expired():
+            try:
+                token_json = self.__refresh_token(token.refresh_token)
+                self.save(token_json)
+            except DigykeyOauthException:
+                logger.error('Failed to use refresh token, starting new authorization flow.')
+                token_json = None
+
+        # Obtain new credentials using the Oauth flow if no token stored or refresh fails
+        if token_json is None:
             open_new(self.__build_authorization_url())
             filename = self.__generate_certificate()
             httpd = HTTPServer(
@@ -221,7 +225,7 @@ class TokenHandler:
             # Get the acccess token from the auth code
             token_json = self.__exchange_for_token(httpd.auth_code)
 
-            # Save the credentials to the filesystem
+            # Save the newly obtained credentials to the filesystem
             self.save(token_json)
 
-            return Oauth2Token(token_json)
+        return Oauth2Token(token_json)
