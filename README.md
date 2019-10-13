@@ -33,9 +33,9 @@ the library will cache the access token and use the refresh token to automatical
 import os
 import digikey
 
-os.environ['DIGIKEY_CLIENT_ID'] = client_id
-os.environ['DIGIKEY_CLIENT_SECRET'] = client_secret
-os.environ['DIGIKEY_STORAGE_PATH'] = cache_dir
+os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
+os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
+os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
 
 dkpn = '296-6501-1-ND'
 part = digikey.part(dkpn)
