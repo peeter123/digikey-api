@@ -10,6 +10,7 @@ from pathlib import Path
 from json.decoder import JSONDecodeError
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlencode
+from fake_useragent import UserAgent
 from webbrowser import open_new
 from digikey.exceptions import DigykeyOauthException
 
@@ -17,8 +18,8 @@ CA_CERT = 'digikey-api.pem'
 TOKEN_STORAGE = 'token_storage.json'
 AUTH_URL = 'https://sso.digikey.com/as/authorization.oauth2'
 TOKEN_URL = 'https://sso.digikey.com/as/token.oauth2'
-REDIRECT_URI = 'https://localhost:8080/digikey_callback'
-PORT = 8080
+REDIRECT_URI = 'https://localhost:8139/digikey_callback'
+PORT = 8139
 
 logger = logging.getLogger(__name__)
 
@@ -96,17 +97,17 @@ class TokenHandler:
         a_secret = a_secret or os.getenv('DIGIKEY_CLIENT_SECRET')
         if not a_id or not a_secret:
             raise ValueError(
-                "CLIENT ID and SECRET must be set. "
-                "Set 'DIGIKEY_CLIENT_ID' and 'DIGIKEY_CLIENT_SECRET' "
-                "as an environment variable, or pass your keys directly to the client."
+                'CLIENT ID and SECRET must be set. '
+                'Set "DIGIKEY_CLIENT_ID" and "DIGIKEY_CLIENT_SECRET" '
+                'as an environment variable, or pass your keys directly to the client.'
             )
 
         a_token_storage_path = a_token_storage_path or os.getenv('DIGIKEY_STORAGE_PATH')
         if not a_token_storage_path or not Path(a_token_storage_path).exists():
             raise ValueError(
-                "STORAGE PATH must be set and must exist."
-                "Set 'DIGIKEY_STORAGE_PATH' as an environment variable, "
-                "or pass your keys directly to the client."
+                'STORAGE PATH must be set and must exist.'
+                'Set "DIGIKEY_STORAGE_PATH" as an environment variable, '
+                'or pass your keys directly to the client.'
             )
 
         self._id = a_id
@@ -120,20 +121,22 @@ class TokenHandler:
         return ca.cert_for_host('localhost')
 
     def __build_authorization_url(self) -> str:
-        params = {"client_id": self._id,
-                  "response_type": "code",
-                  "redirect_uri": REDIRECT_URI
+        params = {'client_id': self._id,
+                  'response_type': 'code',
+                  'redirect_uri': REDIRECT_URI
                   }
         url = AUTH_URL + '?' + urlencode(params)
         return url
 
     def __exchange_for_token(self, code):
-        headers = {'Content-type': 'application/x-www-form-urlencoded'}
-        post_data = {"grant_type": "authorization_code",
-                     "code": code,
-                     "client_id": self._id,
-                     "client_secret": self._secret,
-                     "redirect_uri": REDIRECT_URI
+        headers = {'user-agent': f'{UserAgent().firefox}',
+                   'Content-type': 'application/x-www-form-urlencoded'
+                   }
+        post_data = {'grant_type': 'authorization_code',
+                     'code': code,
+                     'client_id': self._id,
+                     'client_secret': self._secret,
+                     'redirect_uri': REDIRECT_URI
                      }
         try:
             r = requests.post(TOKEN_URL, headers=headers, data=post_data)
@@ -146,11 +149,13 @@ class TokenHandler:
         return token_json
 
     def __refresh_token(self, refresh_token):
-        headers = {'Content-type': 'application/x-www-form-urlencoded'}
-        post_data = {"grant_type": "refresh_token",
-                     "refresh_token": refresh_token,
-                     "client_id": self._id,
-                     "client_secret": self._secret
+        headers = {'user-agent': f'{UserAgent().firefox}',
+                   'Content-type': 'application/x-www-form-urlencoded'
+                   }
+        post_data = {'grant_type': 'refresh_token',
+                     'refresh_token': refresh_token,
+                     'client_id': self._id,
+                     'client_secret': self._secret
                      }
         error_message = None
         try:
