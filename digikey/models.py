@@ -8,7 +8,7 @@ import inflection
 from schematics.exceptions import ConversionError, DataError, ValidationError
 from schematics.models import Model
 from schematics.types import BooleanType, IntType, StringType
-from schematics.types.compound import DictType, ListType, ModelType
+from schematics.types.compound import ListType, ModelType
 
 
 class BaseModel(Model):

@@ -7,7 +7,6 @@ from urllib.parse import urlencode
 
 from .exceptions import DigikeyTypeError
 
-
 logger = logging.getLogger(__name__)
 
 

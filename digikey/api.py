@@ -4,8 +4,8 @@ without directly instantiating a client object.
 Also wraps the response JSON in types that provide easier access
 to various fields.
 """
-from digikey.client import DigikeyClient
 from digikey import models
+from digikey.client import DigikeyClient
 
 
 def search(query: str,

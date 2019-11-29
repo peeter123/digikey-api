@@ -2,13 +2,15 @@ import logging
 import os
 import re
 import typing as t
+from pathlib import Path
+
 import requests
 from fake_useragent import UserAgent
+
 from digikey import models
-from digikey.exceptions import DigikeyError
 from digikey.decorators import retry
+from digikey.exceptions import DigikeyError
 from digikey.oauth2 import TokenHandler
-from pathlib import Path
 
 logger = logging.getLogger(__name__)
 

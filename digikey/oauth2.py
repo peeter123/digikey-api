@@ -1,17 +1,19 @@
+import json
+import logging
 import os
 import ssl
-import json
-import requests
-import logging
 import typing as t
 from datetime import datetime, timezone
-from certauth.certauth import CertificateAuthority
-from pathlib import Path
-from json.decoder import JSONDecodeError
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from json.decoder import JSONDecodeError
+from pathlib import Path
 from urllib.parse import urlencode
-from fake_useragent import UserAgent
 from webbrowser import open_new
+
+import requests
+from certauth.certauth import CertificateAuthority
+from fake_useragent import UserAgent
+
 from digikey.exceptions import DigykeyOauthException
 
 CA_CERT = 'digikey-api.pem'
