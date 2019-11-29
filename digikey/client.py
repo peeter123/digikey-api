@@ -3,6 +3,7 @@ import os
 import re
 import typing as t
 import requests
+from fake_useragent import UserAgent
 from digikey import models
 from digikey.exceptions import DigikeyError
 from digikey.decorators import retry
@@ -60,7 +61,8 @@ class DigikeyClient(object):
                  path: str,
                  data: t.Dict[str, t.Any]=None
                  ) -> t.Any:
-        headers = {'x-ibm-client-id': self._id,
+        headers = {'user-agent': f'{UserAgent().firefox}',
+                   'x-ibm-client-id': self._id,
                    'authorization': self.oauth2.get_authorization()}
 
         response = requests.post('%s%s' % (self.base_url, path), json=data, headers=headers)
