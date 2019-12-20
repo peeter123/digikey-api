@@ -47,7 +47,7 @@ class Oauth2Token:
         return self._token.get('token_type')
 
     def expired(self) -> bool:
-        return datetime.utcnow().timestamp() >= self.expires.timestamp()
+        return datetime.now(timezone.utc) >= self.expires
 
     def get_authorization(self) -> str:
         return self.type + ' ' + self.access_token
