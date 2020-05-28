@@ -68,9 +68,12 @@ class DigikeyClient(object):
                    'authorization': self.oauth2.get_authorization()}
 
         response = requests.post('%s%s' % (self.base_url, path), json=data, headers=headers)
-        rate_limit = re.split('[,;]+', response.headers['x-ratelimit-limit'])[1]
-        rate_limit_rem = re.split('[,;]+', response.headers['x-ratelimit-remaining'])[1]
-        logger.debug('Requested Digikey URI: {} [{}/{}]'.format(response.url, rate_limit_rem, rate_limit))
+        try:
+            rate_limit = re.split('[,;]+', response.headers['x-ratelimit-limit'])[1]
+            rate_limit_rem = re.split('[,;]+', response.headers['x-ratelimit-remaining'])[1]
+            logger.debug('Requested Digikey URI: {} [{}/{}]'.format(response.url, rate_limit_rem, rate_limit))
+        except KeyError as e:
+            logger.debug('Requested Digikey URI: {}'.format(response.url))
 
         response.raise_for_status()
         return response.json()
