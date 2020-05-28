@@ -21,7 +21,7 @@ from . import fixtures
 def mock_open_new(url):
     parsed = urlparse.parse_qs(urlparse.urlparse(url).query)
     assert parsed['client_id'][0] == 'MOCK_CLIENT_ID'
-    assert parsed['redirect_uri'][0] == 'https://localhost:8080/digikey_callback'
+    assert parsed['redirect_uri'][0] == 'https://localhost:8139/digikey_callback'
 
     # Call the redirect URI
     values = {'code': 'MOCK_AUTH_CODE'}
@@ -89,3 +89,6 @@ class Oauth2Tests(TestCase):
             assert False
 
         os.remove(token_file)
+
+        assert token_json['access_token'] == 'MOCK_ACCESS'
+        assert token_json['refresh_token'] == 'MOCK_REFRESH'
