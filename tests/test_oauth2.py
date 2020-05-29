@@ -91,3 +91,50 @@ class Oauth2Tests(TestCase):
 
         assert token_json['access_token'] == 'MOCK_ACCESS'
         assert token_json['refresh_token'] == 'MOCK_REFRESH'
+
+    @responses.activate
+    @mock.patch('digikey.oauth.oauth2.open_new', side_effect=mock_open_new)
+    def test_authentication_v3(self, mock_on):
+        """Tests that token is retrieved correctly from authorization"""
+        print('Tests that token is retrieved correctly from authorization [API V3]')
+
+        # Mock out all calls to token endpoint.
+        url_auth = re.compile(r'https://api.digikey.com/v1/oauth2/token.*')
+        responses.add(
+            responses.POST,
+            url_auth,
+            status=200,
+            content_type='application/json',
+            json=fixtures.oauth2_response
+        )
+
+        token = oauth2.TokenHandler(version=3).get_access_token()
+        assert token.access_token == 'MOCK_ACCESS'
+        assert token.refresh_token == 'MOCK_REFRESH'
+        expires_in = (token.expires - datetime.now(timezone.utc)).seconds
+        assert 86200 <= expires_in <= 86340
+
+        token_file = Path(os.getenv('DIGIKEY_STORAGE_PATH', "")).joinpath(oauth2.TOKEN_STORAGE)
+        cacert = Path(os.getenv('DIGIKEY_STORAGE_PATH', "")).joinpath(oauth2.CA_CERT)
+        pemfile = Path(os.getenv('DIGIKEY_STORAGE_PATH', "")).joinpath('localhost.pem')
+
+        # Test if temporary files have been cleaned up
+        assert not cacert.is_file()
+        assert not pemfile.is_file()
+
+        # Test if token has been saved
+        assert token_file.is_file()
+
+        # Test for correct storage
+        token_json = None
+        try:
+            with open(token_file, 'r') as f:
+                token_json = json.load(f)
+        except (EnvironmentError, JSONDecodeError):
+            print('Token storage does not exist or malformed')
+            assert False
+
+        os.remove(token_file)
+
+        assert token_json['access_token'] == 'MOCK_ACCESS'
+        assert token_json['refresh_token'] == 'MOCK_REFRESH'
