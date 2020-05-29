@@ -11,10 +11,9 @@ from pathlib import Path
 from datetime import datetime, timezone
 import threading
 
-import requests
 import responses
 
-from digikey import oauth2
+from digikey.oauth import oauth2
 from . import fixtures
 
 
@@ -47,10 +46,10 @@ class Oauth2Tests(TestCase):
         os.environ['DIGIKEY_CLIENT_SECRET'] = self.old_client_secret
 
     @responses.activate
-    @mock.patch('digikey.oauth2.open_new', side_effect=mock_open_new)
-    def test_authentication(self, mock_on):
+    @mock.patch('digikey.oauth.oauth2.open_new', side_effect=mock_open_new)
+    def test_authentication_v2(self, mock_on):
         """Tests that token is retrieved correctly from authorization"""
-        print('Tests that token is retrieved correctly from authorization')
+        print('Tests that token is retrieved correctly from authorization [API V2]')
 
         # Mock out all calls to token endpoint.
         url_auth = re.compile(r'https://sso.digikey.com/as/token.oauth2.*')
@@ -62,7 +61,7 @@ class Oauth2Tests(TestCase):
             json=fixtures.oauth2_response
         )
 
-        token = oauth2.TokenHandler().get_access_token()
+        token = oauth2.TokenHandler(version=2).get_access_token()
         assert token.access_token == 'MOCK_ACCESS'
         assert token.refresh_token == 'MOCK_REFRESH'
         expires_in = (token.expires - datetime.now(timezone.utc)).seconds

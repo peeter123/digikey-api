@@ -6,5 +6,5 @@ class DigikeyTypeError(Exception):
     pass
 
 
-class DigykeyOauthException(Exception):
+class DigikeyOauthException(Exception):
     pass

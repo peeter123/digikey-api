@@ -7,19 +7,24 @@ from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from json.decoder import JSONDecodeError
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse, parse_qs
 from webbrowser import open_new
 
 import requests
 from certauth.certauth import CertificateAuthority
 from fake_useragent import UserAgent
 
-from digikey.exceptions import DigykeyOauthException
+from digikey.exceptions import DigikeyOauthException
 
 CA_CERT = 'digikey-api.pem'
 TOKEN_STORAGE = 'token_storage.json'
-AUTH_URL = 'https://sso.digikey.com/as/authorization.oauth2'
-TOKEN_URL = 'https://sso.digikey.com/as/token.oauth2'
+
+AUTH_URL_V2 = 'https://sso.digikey.com/as/authorization.oauth2'
+TOKEN_URL_V2 = 'https://sso.digikey.com/as/token.oauth2'
+
+AUTH_URL_V3 = 'https://api.digikey.com/v1/oauth2/authorize'
+TOKEN_URL_V3 = 'https://api.digikey.com/v1/oauth2/token'
+
 REDIRECT_URI = 'https://localhost:8139/digikey_callback'
 PORT = 8139
 
@@ -70,8 +75,9 @@ class HTTPServerHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-        if 'code' in self.path:
-            self.auth_code = self.path.split('=')[1]
+        get_params = parse_qs(urlparse(self.path).query)
+        if 'code' in get_params:
+            self.auth_code = get_params['code'][0]
             self.wfile.write(bytes('<html>' +
                                    '<body>'
                                    '<h1>You may now close this window.</h1>' +
@@ -80,6 +86,8 @@ class HTTPServerHandler(BaseHTTPRequestHandler):
                                    '</html>', 'utf-8'))
             self.server.auth_code = self.auth_code
             self.server.stop = 1
+        else:
+            raise DigikeyOauthException('Digikey did not return authorization token in request: {}'.format(self.path))
 
     # Disable logging from the HTTP Server
     def log_message(self, format, *args):
@@ -93,7 +101,17 @@ class TokenHandler:
     def __init__(self,
                  a_id: t.Optional[str] = None,
                  a_secret: t.Optional[str] = None,
-                 a_token_storage_path: t.Optional[str] = None):
+                 a_token_storage_path: t.Optional[str] = None,
+                 version = 2):
+
+        if version == 2:
+            self.auth_url = AUTH_URL_V2
+            self.token_url = TOKEN_URL_V2
+        elif version == 3:
+            self.auth_url = AUTH_URL_V3
+            self.token_url = TOKEN_URL_V3
+        else:
+            raise ValueError('Please specify the correct Digikey API version')
 
         a_id = a_id or os.getenv('DIGIKEY_CLIENT_ID')
         a_secret = a_secret or os.getenv('DIGIKEY_CLIENT_SECRET')
@@ -127,7 +145,7 @@ class TokenHandler:
                   'response_type': 'code',
                   'redirect_uri': REDIRECT_URI
                   }
-        url = AUTH_URL + '?' + urlencode(params)
+        url = self.auth_url + '?' + urlencode(params)
         return url
 
     def __exchange_for_token(self, code):
@@ -141,10 +159,10 @@ class TokenHandler:
                      'redirect_uri': REDIRECT_URI
                      }
         try:
-            r = requests.post(TOKEN_URL, headers=headers, data=post_data)
+            r = requests.post(self.token_url, headers=headers, data=post_data)
             r.raise_for_status()
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
-            raise DigykeyOauthException('Cannot request new token with auth code: {}'.format(e))
+            raise DigikeyOauthException('Cannot request new token with auth code: {}'.format(e))
         token_json = r.json()
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
@@ -161,11 +179,11 @@ class TokenHandler:
                      }
         error_message = None
         try:
-            r = requests.post(TOKEN_URL, headers=headers, data=post_data)
+            r = requests.post(self.token_url, headers=headers, data=post_data)
             error_message = r.json().get('error_description', None)
             r.raise_for_status()
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
-            raise DigykeyOauthException('Cannot request new token with refresh token: {}.'.format(error_message))
+            raise DigikeyOauthException('Cannot request new token with refresh token: {}.'.format(error_message))
         token_json = r.json()
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
@@ -202,7 +220,7 @@ class TokenHandler:
             try:
                 token_json = self.__refresh_token(token.refresh_token)
                 self.save(token_json)
-            except DigykeyOauthException:
+            except DigikeyOauthException:
                 logger.error('Failed to use refresh token, starting new authorization flow.')
                 token_json = None
 

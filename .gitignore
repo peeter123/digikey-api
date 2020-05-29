@@ -1,8 +1,10 @@
+env/
 venv/
 .idea/
 __pycache__/
 build/
 dist/
+tests/local/
 *.egg-info/
 .mypy_cache/
 *.sqlite

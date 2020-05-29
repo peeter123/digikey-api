@@ -1,20 +1,18 @@
 import logging
+from digikey.v2.api import (search, part)
 
 logger = logging.getLogger(__name__)
 
 
-def setupLogger(logger):
-    logger.setLevel(logging.DEBUG)
+def setup_logger(logger_ref):
+    logger_ref.setLevel(logging.DEBUG)
     formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s: %(message)s')
     handler = logging.StreamHandler()
     handler.setFormatter(formatter)
-    logger.addHandler(handler)
+    logger_ref.addHandler(handler)
 
 
-setupLogger(logger)
-
-
-from .api import (search, part)
+setup_logger(logger)
 
 name = 'digikey'

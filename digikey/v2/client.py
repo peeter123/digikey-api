@@ -7,10 +7,10 @@ from pathlib import Path
 import requests
 from fake_useragent import UserAgent
 
-from digikey import models
+from digikey.v2 import models
 from digikey.decorators import retry
 from digikey.exceptions import DigikeyError
-from digikey.oauth2 import TokenHandler
+from digikey.oauth.oauth2 import TokenHandler
 
 logger = logging.getLogger(__name__)
 
