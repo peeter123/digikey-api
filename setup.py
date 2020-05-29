@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="digikey-api",
-    version="0.2.1",
+    version="0.2.2",
     author="Peter Oostewechel",
     author_email="peter_oostewechel@hotmail.com",
     license="GPL v3",
