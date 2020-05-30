@@ -1,9 +1,8 @@
 import digikey.v3.product_information_client as pic
+from digikey.v3.productinformation import KeywordSearchRequest, KeywordSearchResponse, ProductDetails
 
-def searchv3(query: str,
-           start: int = 0,
-           limit: int = 10,
-           ):
+
+def searchv3(search_request: KeywordSearchRequest) -> KeywordSearchResponse:
     """
     Search Digikey for a general keyword (and optional filters).
     Args:
@@ -14,17 +13,11 @@ def searchv3(query: str,
         list of `models.KeywordSearchResult` objects.
     """
     client = pic.ProductInformation()
-    response = client.keyword_search(
-        query,
-        start,
-        limit,
-    )
+    response = client.keyword_search(search_request)
     return response
 
-def partv3(partnr: str,
-         include_associated: bool = False,
-         include_for_use_with: bool = False,
-         ):
+
+def partv3(partnr: str) -> ProductDetails:
     """
     Query part by unique ID
     Args:
@@ -36,7 +29,5 @@ def partv3(partnr: str,
         dict. See `models.Part` for exact fields.
     """
     client = pic.ProductInformation()
-    response = client.product_details(
-        partnr
-    )
+    response = client.product_details(partnr)
     return response
