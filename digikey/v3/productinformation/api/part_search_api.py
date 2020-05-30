@@ -123,7 +123,7 @@ class PartSearchApi(object):
 
         path_params = {}
         if 'digi_key_part_number' in params:
-            path_params['digiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
+            path_params['DigiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
 
         query_params = []
         if 'requested_quantity' in params:
@@ -260,7 +260,7 @@ class PartSearchApi(object):
 
         path_params = {}
         if 'digi_key_part_number' in params:
-            path_params['digiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
+            path_params['DigiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
 
         query_params = []
         if 'includes' in params:
@@ -661,7 +661,7 @@ class PartSearchApi(object):
 
         path_params = {}
         if 'part_number' in params:
-            path_params['partNumber'] = params['part_number']  # noqa: E501
+            path_params['PartNumber'] = params['part_number']  # noqa: E501
 
         query_params = []
 
