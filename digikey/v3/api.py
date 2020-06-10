@@ -2,7 +2,6 @@ import os
 import types
 import wrapt
 import logging
-import digikey.v3.product_information_client as pic
 import digikey.oauth.oauth2
 import digikey.v3.productinformation as dpi
 from digikey.v3.productinformation import KeywordSearchRequest, KeywordSearchResponse, ProductDetails, PartSearchApi

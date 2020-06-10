@@ -33,6 +33,19 @@ class ProductDetails(object):
     swagger_types = {
         'my_pricing': 'list[PriceBreak]',
         'obsolete': 'bool',
+        'media_links': 'list[MediaLinks]',
+        'standard_package': 'int',
+        'limited_taxonomy': 'LimitedTaxonomy',
+        'kits': 'list[AssociatedProduct]',
+        'kit_contents': 'list[KitPart]',
+        'mating_products': 'list[AssociatedProduct]',
+        'result_code': 'ResultCode',
+        'search_locale_used': 'IsoSearchLocale',
+        'associated_products': 'list[AssociatedProduct]',
+        'for_use_with_products': 'list[AssociatedProduct]',
+        'rohs_subs': 'list[AssociatedProduct]',
+        'suggested_subs': 'list[AssociatedProduct]',
+        'additional_value_fee': 'float',
         'standard_pricing': 'list[PriceBreak]',
         'ro_hs_status': 'str',
         'lead_status': 'str',
@@ -67,6 +80,19 @@ class ProductDetails(object):
     attribute_map = {
         'my_pricing': 'MyPricing',
         'obsolete': 'Obsolete',
+        'media_links': 'MediaLinks',
+        'standard_package': 'StandardPackage',
+        'limited_taxonomy': 'LimitedTaxonomy',
+        'kits': 'Kits',
+        'kit_contents': 'KitContents',
+        'mating_products': 'MatingProducts',
+        'result_code': 'ResultCode',
+        'search_locale_used': 'SearchLocaleUsed',
+        'associated_products': 'AssociatedProducts',
+        'for_use_with_products': 'ForUseWithProducts',
+        'rohs_subs': 'RohsSubs',
+        'suggested_subs': 'SuggestedSubs',
+        'additional_value_fee': 'AdditionalValueFee',
         'standard_pricing': 'StandardPricing',
         'ro_hs_status': 'RoHSStatus',
         'lead_status': 'LeadStatus',
@@ -98,11 +124,24 @@ class ProductDetails(object):
         'supplier_direct_ship': 'SupplierDirectShip'
     }
 
-    def __init__(self, my_pricing=None, obsolete=None, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, tariff_description=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, supplier_direct_ship=None):  # noqa: E501
+    def __init__(self, my_pricing=None, obsolete=None, media_links=None, standard_package=None, limited_taxonomy=None, kits=None, kit_contents=None, mating_products=None, result_code=None, search_locale_used=None, associated_products=None, for_use_with_products=None, rohs_subs=None, suggested_subs=None, additional_value_fee=None, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, tariff_description=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, supplier_direct_ship=None):  # noqa: E501
         """ProductDetails - a model defined in Swagger"""  # noqa: E501
 
         self._my_pricing = None
         self._obsolete = None
+        self._media_links = None
+        self._standard_package = None
+        self._limited_taxonomy = None
+        self._kits = None
+        self._kit_contents = None
+        self._mating_products = None
+        self._result_code = None
+        self._search_locale_used = None
+        self._associated_products = None
+        self._for_use_with_products = None
+        self._rohs_subs = None
+        self._suggested_subs = None
+        self._additional_value_fee = None
         self._standard_pricing = None
         self._ro_hs_status = None
         self._lead_status = None
@@ -138,6 +177,32 @@ class ProductDetails(object):
             self.my_pricing = my_pricing
         if obsolete is not None:
             self.obsolete = obsolete
+        if media_links is not None:
+            self.media_links = media_links
+        if standard_package is not None:
+            self.standard_package = standard_package
+        if limited_taxonomy is not None:
+            self.limited_taxonomy = limited_taxonomy
+        if kits is not None:
+            self.kits = kits
+        if kit_contents is not None:
+            self.kit_contents = kit_contents
+        if mating_products is not None:
+            self.mating_products = mating_products
+        if result_code is not None:
+            self.result_code = result_code
+        if search_locale_used is not None:
+            self.search_locale_used = search_locale_used
+        if associated_products is not None:
+            self.associated_products = associated_products
+        if for_use_with_products is not None:
+            self.for_use_with_products = for_use_with_products
+        if rohs_subs is not None:
+            self.rohs_subs = rohs_subs
+        if suggested_subs is not None:
+            self.suggested_subs = suggested_subs
+        if additional_value_fee is not None:
+            self.additional_value_fee = additional_value_fee
         if standard_pricing is not None:
             self.standard_pricing = standard_pricing
         if ro_hs_status is not None:
@@ -242,6 +307,299 @@ class ProductDetails(object):
         """
 
         self._obsolete = obsolete
+
+    @property
+    def media_links(self):
+        """Gets the media_links of this ProductDetails.  # noqa: E501
+
+        Collection of MediaLinks objects. These can contain links to datasheets, photos or manuals.  # noqa: E501
+
+        :return: The media_links of this ProductDetails.  # noqa: E501
+        :rtype: list[MediaLinks]
+        """
+        return self._media_links
+
+    @media_links.setter
+    def media_links(self, media_links):
+        """Sets the media_links of this ProductDetails.
+
+        Collection of MediaLinks objects. These can contain links to datasheets, photos or manuals.  # noqa: E501
+
+        :param media_links: The media_links of this ProductDetails.  # noqa: E501
+        :type: list[MediaLinks]
+        """
+
+        self._media_links = media_links
+
+    @property
+    def standard_package(self):
+        """Gets the standard_package of this ProductDetails.  # noqa: E501
+
+        The number of products in the manufacturer's standard package.  # noqa: E501
+
+        :return: The standard_package of this ProductDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._standard_package
+
+    @standard_package.setter
+    def standard_package(self, standard_package):
+        """Sets the standard_package of this ProductDetails.
+
+        The number of products in the manufacturer's standard package.  # noqa: E501
+
+        :param standard_package: The standard_package of this ProductDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._standard_package = standard_package
+
+    @property
+    def limited_taxonomy(self):
+        """Gets the limited_taxonomy of this ProductDetails.  # noqa: E501
+
+
+        :return: The limited_taxonomy of this ProductDetails.  # noqa: E501
+        :rtype: LimitedTaxonomy
+        """
+        return self._limited_taxonomy
+
+    @limited_taxonomy.setter
+    def limited_taxonomy(self, limited_taxonomy):
+        """Sets the limited_taxonomy of this ProductDetails.
+
+
+        :param limited_taxonomy: The limited_taxonomy of this ProductDetails.  # noqa: E501
+        :type: LimitedTaxonomy
+        """
+
+        self._limited_taxonomy = limited_taxonomy
+
+    @property
+    def kits(self):
+        """Gets the kits of this ProductDetails.  # noqa: E501
+
+        Kits that this product is contained in.  # noqa: E501
+
+        :return: The kits of this ProductDetails.  # noqa: E501
+        :rtype: list[AssociatedProduct]
+        """
+        return self._kits
+
+    @kits.setter
+    def kits(self, kits):
+        """Sets the kits of this ProductDetails.
+
+        Kits that this product is contained in.  # noqa: E501
+
+        :param kits: The kits of this ProductDetails.  # noqa: E501
+        :type: list[AssociatedProduct]
+        """
+
+        self._kits = kits
+
+    @property
+    def kit_contents(self):
+        """Gets the kit_contents of this ProductDetails.  # noqa: E501
+
+        Products contained within this product. Only applicable if this product is a kit.  # noqa: E501
+
+        :return: The kit_contents of this ProductDetails.  # noqa: E501
+        :rtype: list[KitPart]
+        """
+        return self._kit_contents
+
+    @kit_contents.setter
+    def kit_contents(self, kit_contents):
+        """Sets the kit_contents of this ProductDetails.
+
+        Products contained within this product. Only applicable if this product is a kit.  # noqa: E501
+
+        :param kit_contents: The kit_contents of this ProductDetails.  # noqa: E501
+        :type: list[KitPart]
+        """
+
+        self._kit_contents = kit_contents
+
+    @property
+    def mating_products(self):
+        """Gets the mating_products of this ProductDetails.  # noqa: E501
+
+        An association of same manufacturer products that mate with each other.  # noqa: E501
+
+        :return: The mating_products of this ProductDetails.  # noqa: E501
+        :rtype: list[AssociatedProduct]
+        """
+        return self._mating_products
+
+    @mating_products.setter
+    def mating_products(self, mating_products):
+        """Sets the mating_products of this ProductDetails.
+
+        An association of same manufacturer products that mate with each other.  # noqa: E501
+
+        :param mating_products: The mating_products of this ProductDetails.  # noqa: E501
+        :type: list[AssociatedProduct]
+        """
+
+        self._mating_products = mating_products
+
+    @property
+    def result_code(self):
+        """Gets the result_code of this ProductDetails.  # noqa: E501
+
+
+        :return: The result_code of this ProductDetails.  # noqa: E501
+        :rtype: ResultCode
+        """
+        return self._result_code
+
+    @result_code.setter
+    def result_code(self, result_code):
+        """Sets the result_code of this ProductDetails.
+
+
+        :param result_code: The result_code of this ProductDetails.  # noqa: E501
+        :type: ResultCode
+        """
+
+        self._result_code = result_code
+
+    @property
+    def search_locale_used(self):
+        """Gets the search_locale_used of this ProductDetails.  # noqa: E501
+
+
+        :return: The search_locale_used of this ProductDetails.  # noqa: E501
+        :rtype: IsoSearchLocale
+        """
+        return self._search_locale_used
+
+    @search_locale_used.setter
+    def search_locale_used(self, search_locale_used):
+        """Sets the search_locale_used of this ProductDetails.
+
+
+        :param search_locale_used: The search_locale_used of this ProductDetails.  # noqa: E501
+        :type: IsoSearchLocale
+        """
+
+        self._search_locale_used = search_locale_used
+
+    @property
+    def associated_products(self):
+        """Gets the associated_products of this ProductDetails.  # noqa: E501
+
+        Products that are directly correlated to complete the intended function of the product. These products may be either same manufacturer or differ.  # noqa: E501
+
+        :return: The associated_products of this ProductDetails.  # noqa: E501
+        :rtype: list[AssociatedProduct]
+        """
+        return self._associated_products
+
+    @associated_products.setter
+    def associated_products(self, associated_products):
+        """Sets the associated_products of this ProductDetails.
+
+        Products that are directly correlated to complete the intended function of the product. These products may be either same manufacturer or differ.  # noqa: E501
+
+        :param associated_products: The associated_products of this ProductDetails.  # noqa: E501
+        :type: list[AssociatedProduct]
+        """
+
+        self._associated_products = associated_products
+
+    @property
+    def for_use_with_products(self):
+        """Gets the for_use_with_products of this ProductDetails.  # noqa: E501
+
+        Products that are directly correlated to complete the intended function of the product. These products may be either same manufacturer or differ.  # noqa: E501
+
+        :return: The for_use_with_products of this ProductDetails.  # noqa: E501
+        :rtype: list[AssociatedProduct]
+        """
+        return self._for_use_with_products
+
+    @for_use_with_products.setter
+    def for_use_with_products(self, for_use_with_products):
+        """Sets the for_use_with_products of this ProductDetails.
+
+        Products that are directly correlated to complete the intended function of the product. These products may be either same manufacturer or differ.  # noqa: E501
+
+        :param for_use_with_products: The for_use_with_products of this ProductDetails.  # noqa: E501
+        :type: list[AssociatedProduct]
+        """
+
+        self._for_use_with_products = for_use_with_products
+
+    @property
+    def rohs_subs(self):
+        """Gets the rohs_subs of this ProductDetails.  # noqa: E501
+
+        Rohs substitutions  # noqa: E501
+
+        :return: The rohs_subs of this ProductDetails.  # noqa: E501
+        :rtype: list[AssociatedProduct]
+        """
+        return self._rohs_subs
+
+    @rohs_subs.setter
+    def rohs_subs(self, rohs_subs):
+        """Sets the rohs_subs of this ProductDetails.
+
+        Rohs substitutions  # noqa: E501
+
+        :param rohs_subs: The rohs_subs of this ProductDetails.  # noqa: E501
+        :type: list[AssociatedProduct]
+        """
+
+        self._rohs_subs = rohs_subs
+
+    @property
+    def suggested_subs(self):
+        """Gets the suggested_subs of this ProductDetails.  # noqa: E501
+
+        Suggested substitutions for when the product is obsolete.  # noqa: E501
+
+        :return: The suggested_subs of this ProductDetails.  # noqa: E501
+        :rtype: list[AssociatedProduct]
+        """
+        return self._suggested_subs
+
+    @suggested_subs.setter
+    def suggested_subs(self, suggested_subs):
+        """Sets the suggested_subs of this ProductDetails.
+
+        Suggested substitutions for when the product is obsolete.  # noqa: E501
+
+        :param suggested_subs: The suggested_subs of this ProductDetails.  # noqa: E501
+        :type: list[AssociatedProduct]
+        """
+
+        self._suggested_subs = suggested_subs
+
+    @property
+    def additional_value_fee(self):
+        """Gets the additional_value_fee of this ProductDetails.  # noqa: E501
+
+        Any additional value fee. Most commonly the Digi-Reel fee. May be used for programmable parts as well.  # noqa: E501
+
+        :return: The additional_value_fee of this ProductDetails.  # noqa: E501
+        :rtype: float
+        """
+        return self._additional_value_fee
+
+    @additional_value_fee.setter
+    def additional_value_fee(self, additional_value_fee):
+        """Sets the additional_value_fee of this ProductDetails.
+
+        Any additional value fee. Most commonly the Digi-Reel fee. May be used for programmable parts as well.  # noqa: E501
+
+        :param additional_value_fee: The additional_value_fee of this ProductDetails.  # noqa: E501
+        :type: float
+        """
+
+        self._additional_value_fee = additional_value_fee
 
     @property
     def standard_pricing(self):

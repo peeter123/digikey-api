@@ -67,5 +67,8 @@ target/
 # IDE
 .idea/
 
+# Swagger generated
+generate-v3-api/
+
 # Other repository dependent
 tests/local/
