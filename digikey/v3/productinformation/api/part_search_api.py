@@ -33,12 +33,12 @@ class PartSearchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def products_digi_key_part_number_digi_reel_pricing_get(self, digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def digi_reel_pricing(self, digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Calculate the DigiReel pricing for the given DigiKeyPartNumber and RequestedQuantity  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_digi_key_part_number_digi_reel_pricing_get(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.digi_reel_pricing(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -58,17 +58,17 @@ class PartSearchApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.products_digi_key_part_number_digi_reel_pricing_get_with_http_info(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            return self.digi_reel_pricing_with_http_info(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.products_digi_key_part_number_digi_reel_pricing_get_with_http_info(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            (data) = self.digi_reel_pricing_with_http_info(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
             return data
 
-    def products_digi_key_part_number_digi_reel_pricing_get_with_http_info(self, digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def digi_reel_pricing_with_http_info(self, digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Calculate the DigiReel pricing for the given DigiKeyPartNumber and RequestedQuantity  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_digi_key_part_number_digi_reel_pricing_get_with_http_info(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.digi_reel_pricing_with_http_info(digi_key_part_number, requested_quantity, authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -98,32 +98,32 @@ class PartSearchApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method products_digi_key_part_number_digi_reel_pricing_get" % key
+                    " to method digi_reel_pricing" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'digi_key_part_number' is set
         if ('digi_key_part_number' not in params or
                 params['digi_key_part_number'] is None):
-            raise ValueError("Missing the required parameter `digi_key_part_number` when calling `products_digi_key_part_number_digi_reel_pricing_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `digi_key_part_number` when calling `digi_reel_pricing`")  # noqa: E501
         # verify the required parameter 'requested_quantity' is set
         if ('requested_quantity' not in params or
                 params['requested_quantity'] is None):
-            raise ValueError("Missing the required parameter `requested_quantity` when calling `products_digi_key_part_number_digi_reel_pricing_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `requested_quantity` when calling `digi_reel_pricing`")  # noqa: E501
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params or
                 params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `products_digi_key_part_number_digi_reel_pricing_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `authorization` when calling `digi_reel_pricing`")  # noqa: E501
         # verify the required parameter 'x_digikey_client_id' is set
         if ('x_digikey_client_id' not in params or
                 params['x_digikey_client_id'] is None):
-            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `products_digi_key_part_number_digi_reel_pricing_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `digi_reel_pricing`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'digi_key_part_number' in params:
-            path_params['DigiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
+            path_params['digiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
 
         query_params = []
         if 'requested_quantity' in params:
@@ -159,7 +159,7 @@ class PartSearchApi(object):
         auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
 
         return self.api_client.call_api(
-            '/Products/{DigiKeyPartNumber}/DigiReelPricing', 'GET',
+            '/Products/{digiKeyPartNumber}/DigiReelPricing', 'GET',
             path_params,
             query_params,
             header_params,
@@ -174,148 +174,13 @@ class PartSearchApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def products_digi_key_part_number_get(self, digi_key_part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
-        """Retrieve detailed product information including real time pricing and availability.  # noqa: E501
-
-        Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_digi_key_part_number_get(digi_key_part_number, authorization, x_digikey_client_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str digi_key_part_number: The product to retrieve details for. (required)
-        :param str authorization: OAuth Bearer Token. Please see<a href= \"https://developer.digikey.com/documentation/oauth\" target= \"_blank\" > OAuth 2.0 Documentation </a > page for more info. (required)
-        :param str x_digikey_client_id: The Client Id for your App. (required)
-        :param str includes: Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \"DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\"
-        :param str x_digikey_locale_site: Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.
-        :param str x_digikey_locale_language: Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.
-        :param str x_digikey_locale_currency: Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.
-        :param str x_digikey_locale_ship_to_country: ISO code for country to ship to.
-        :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
-        :return: ProductDetails
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.products_digi_key_part_number_get_with_http_info(digi_key_part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.products_digi_key_part_number_get_with_http_info(digi_key_part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
-            return data
-
-    def products_digi_key_part_number_get_with_http_info(self, digi_key_part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
-        """Retrieve detailed product information including real time pricing and availability.  # noqa: E501
-
-        Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_digi_key_part_number_get_with_http_info(digi_key_part_number, authorization, x_digikey_client_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str digi_key_part_number: The product to retrieve details for. (required)
-        :param str authorization: OAuth Bearer Token. Please see<a href= \"https://developer.digikey.com/documentation/oauth\" target= \"_blank\" > OAuth 2.0 Documentation </a > page for more info. (required)
-        :param str x_digikey_client_id: The Client Id for your App. (required)
-        :param str includes: Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \"DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\"
-        :param str x_digikey_locale_site: Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.
-        :param str x_digikey_locale_language: Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.
-        :param str x_digikey_locale_currency: Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.
-        :param str x_digikey_locale_ship_to_country: ISO code for country to ship to.
-        :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
-        :return: ProductDetails
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['digi_key_part_number', 'authorization', 'x_digikey_client_id', 'includes', 'x_digikey_locale_site', 'x_digikey_locale_language', 'x_digikey_locale_currency', 'x_digikey_locale_ship_to_country', 'x_digikey_customer_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method products_digi_key_part_number_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'digi_key_part_number' is set
-        if ('digi_key_part_number' not in params or
-                params['digi_key_part_number'] is None):
-            raise ValueError("Missing the required parameter `digi_key_part_number` when calling `products_digi_key_part_number_get`")  # noqa: E501
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params or
-                params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `products_digi_key_part_number_get`")  # noqa: E501
-        # verify the required parameter 'x_digikey_client_id' is set
-        if ('x_digikey_client_id' not in params or
-                params['x_digikey_client_id'] is None):
-            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `products_digi_key_part_number_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'digi_key_part_number' in params:
-            path_params['DigiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
-
-        query_params = []
-        if 'includes' in params:
-            query_params.append(('includes', params['includes']))  # noqa: E501
-
-        header_params = {}
-        if 'authorization' in params:
-            header_params['Authorization'] = params['authorization']  # noqa: E501
-        if 'x_digikey_client_id' in params:
-            header_params['X-DIGIKEY-Client-Id'] = params['x_digikey_client_id']  # noqa: E501
-        if 'x_digikey_locale_site' in params:
-            header_params['X-DIGIKEY-Locale-Site'] = params['x_digikey_locale_site']  # noqa: E501
-        if 'x_digikey_locale_language' in params:
-            header_params['X-DIGIKEY-Locale-Language'] = params['x_digikey_locale_language']  # noqa: E501
-        if 'x_digikey_locale_currency' in params:
-            header_params['X-DIGIKEY-Locale-Currency'] = params['x_digikey_locale_currency']  # noqa: E501
-        if 'x_digikey_locale_ship_to_country' in params:
-            header_params['X-DIGIKEY-Locale-ShipToCountry'] = params['x_digikey_locale_ship_to_country']  # noqa: E501
-        if 'x_digikey_customer_id' in params:
-            header_params['X-DIGIKEY-Customer-Id'] = params['x_digikey_customer_id']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/Products/{DigiKeyPartNumber}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ProductDetails',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def products_keyword_post(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def keyword_search(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """KeywordSearch can search for any product in the Digi-Key catalog.  # noqa: E501
 
         Search by keyword, then narrow down the search using available filters and search options.<br />  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States. <br />  Note that KeywordSearch results have cached pricing and availability. If real time pricing and availability is  needed, make a ProductDetails call.<br />  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_keyword_post(authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.keyword_search(authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -334,18 +199,18 @@ class PartSearchApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.products_keyword_post_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            return self.keyword_search_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.products_keyword_post_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            (data) = self.keyword_search_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
             return data
 
-    def products_keyword_post_with_http_info(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def keyword_search_with_http_info(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """KeywordSearch can search for any product in the Digi-Key catalog.  # noqa: E501
 
         Search by keyword, then narrow down the search using available filters and search options.<br />  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States. <br />  Note that KeywordSearch results have cached pricing and availability. If real time pricing and availability is  needed, make a ProductDetails call.<br />  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_keyword_post_with_http_info(authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.keyword_search_with_http_info(authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -374,18 +239,18 @@ class PartSearchApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method products_keyword_post" % key
+                    " to method keyword_search" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params or
                 params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `products_keyword_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `authorization` when calling `keyword_search`")  # noqa: E501
         # verify the required parameter 'x_digikey_client_id' is set
         if ('x_digikey_client_id' not in params or
                 params['x_digikey_client_id'] is None):
-            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `products_keyword_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `keyword_search`")  # noqa: E501
 
         collection_formats = {}
 
@@ -444,12 +309,12 @@ class PartSearchApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def products_manufacturer_product_details_post(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def manufacturer_product_details(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Create list of ProductDetails from the matches of the requested manufacturer product name.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_manufacturer_product_details_post(authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.manufacturer_product_details(authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -462,23 +327,23 @@ class PartSearchApi(object):
         :param str x_digikey_locale_ship_to_country: ISO code for country to ship to.
         :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
         :param ManufacturerProductDetailsRequest body: ManufacturerProductDetailsRequest
-        :return: KeywordSearchResponse
+        :return: ProductDetailsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.products_manufacturer_product_details_post_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            return self.manufacturer_product_details_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.products_manufacturer_product_details_post_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            (data) = self.manufacturer_product_details_with_http_info(authorization, x_digikey_client_id, **kwargs)  # noqa: E501
             return data
 
-    def products_manufacturer_product_details_post_with_http_info(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def manufacturer_product_details_with_http_info(self, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Create list of ProductDetails from the matches of the requested manufacturer product name.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_manufacturer_product_details_post_with_http_info(authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.manufacturer_product_details_with_http_info(authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -491,7 +356,7 @@ class PartSearchApi(object):
         :param str x_digikey_locale_ship_to_country: ISO code for country to ship to.
         :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
         :param ManufacturerProductDetailsRequest body: ManufacturerProductDetailsRequest
-        :return: KeywordSearchResponse
+        :return: ProductDetailsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -507,18 +372,18 @@ class PartSearchApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method products_manufacturer_product_details_post" % key
+                    " to method manufacturer_product_details" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params or
                 params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `products_manufacturer_product_details_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `authorization` when calling `manufacturer_product_details`")  # noqa: E501
         # verify the required parameter 'x_digikey_client_id' is set
         if ('x_digikey_client_id' not in params or
                 params['x_digikey_client_id'] is None):
-            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `products_manufacturer_product_details_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `manufacturer_product_details`")  # noqa: E501
 
         collection_formats = {}
 
@@ -569,7 +434,7 @@ class PartSearchApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='KeywordSearchResponse',  # noqa: E501
+            response_type='ProductDetailsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -577,13 +442,148 @@ class PartSearchApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def products_part_number_with_suggested_products_get(self, part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def product_details(self, digi_key_part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+        """Retrieve detailed product information including real time pricing and availability.  # noqa: E501
+
+        Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_details(digi_key_part_number, authorization, x_digikey_client_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str digi_key_part_number: The product to retrieve details for. (required)
+        :param str authorization: OAuth Bearer Token. Please see<a href= \"https://developer.digikey.com/documentation/oauth\" target= \"_blank\" > OAuth 2.0 Documentation </a > page for more info. (required)
+        :param str x_digikey_client_id: The Client Id for your App. (required)
+        :param str includes: Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \"DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\"
+        :param str x_digikey_locale_site: Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.
+        :param str x_digikey_locale_language: Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.
+        :param str x_digikey_locale_currency: Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.
+        :param str x_digikey_locale_ship_to_country: ISO code for country to ship to.
+        :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
+        :return: ProductDetails
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.product_details_with_http_info(digi_key_part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.product_details_with_http_info(digi_key_part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            return data
+
+    def product_details_with_http_info(self, digi_key_part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+        """Retrieve detailed product information including real time pricing and availability.  # noqa: E501
+
+        Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_details_with_http_info(digi_key_part_number, authorization, x_digikey_client_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str digi_key_part_number: The product to retrieve details for. (required)
+        :param str authorization: OAuth Bearer Token. Please see<a href= \"https://developer.digikey.com/documentation/oauth\" target= \"_blank\" > OAuth 2.0 Documentation </a > page for more info. (required)
+        :param str x_digikey_client_id: The Client Id for your App. (required)
+        :param str includes: Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \"DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\"
+        :param str x_digikey_locale_site: Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.
+        :param str x_digikey_locale_language: Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.
+        :param str x_digikey_locale_currency: Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.
+        :param str x_digikey_locale_ship_to_country: ISO code for country to ship to.
+        :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
+        :return: ProductDetails
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['digi_key_part_number', 'authorization', 'x_digikey_client_id', 'includes', 'x_digikey_locale_site', 'x_digikey_locale_language', 'x_digikey_locale_currency', 'x_digikey_locale_ship_to_country', 'x_digikey_customer_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method product_details" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'digi_key_part_number' is set
+        if ('digi_key_part_number' not in params or
+                params['digi_key_part_number'] is None):
+            raise ValueError("Missing the required parameter `digi_key_part_number` when calling `product_details`")  # noqa: E501
+        # verify the required parameter 'authorization' is set
+        if ('authorization' not in params or
+                params['authorization'] is None):
+            raise ValueError("Missing the required parameter `authorization` when calling `product_details`")  # noqa: E501
+        # verify the required parameter 'x_digikey_client_id' is set
+        if ('x_digikey_client_id' not in params or
+                params['x_digikey_client_id'] is None):
+            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `product_details`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'digi_key_part_number' in params:
+            path_params['digiKeyPartNumber'] = params['digi_key_part_number']  # noqa: E501
+
+        query_params = []
+        if 'includes' in params:
+            query_params.append(('includes', params['includes']))  # noqa: E501
+
+        header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']  # noqa: E501
+        if 'x_digikey_client_id' in params:
+            header_params['X-DIGIKEY-Client-Id'] = params['x_digikey_client_id']  # noqa: E501
+        if 'x_digikey_locale_site' in params:
+            header_params['X-DIGIKEY-Locale-Site'] = params['x_digikey_locale_site']  # noqa: E501
+        if 'x_digikey_locale_language' in params:
+            header_params['X-DIGIKEY-Locale-Language'] = params['x_digikey_locale_language']  # noqa: E501
+        if 'x_digikey_locale_currency' in params:
+            header_params['X-DIGIKEY-Locale-Currency'] = params['x_digikey_locale_currency']  # noqa: E501
+        if 'x_digikey_locale_ship_to_country' in params:
+            header_params['X-DIGIKEY-Locale-ShipToCountry'] = params['x_digikey_locale_ship_to_country']  # noqa: E501
+        if 'x_digikey_customer_id' in params:
+            header_params['X-DIGIKEY-Customer-Id'] = params['x_digikey_customer_id']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/Products/{digiKeyPartNumber}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ProductDetails',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def suggested_parts(self, part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Retrieve detailed product information and two suggested products  # noqa: E501
 
         Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_part_number_with_suggested_products_get(part_number, authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.suggested_parts(part_number, authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -601,18 +601,18 @@ class PartSearchApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.products_part_number_with_suggested_products_get_with_http_info(part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            return self.suggested_parts_with_http_info(part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.products_part_number_with_suggested_products_get_with_http_info(part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
+            (data) = self.suggested_parts_with_http_info(part_number, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
             return data
 
-    def products_part_number_with_suggested_products_get_with_http_info(self, part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
+    def suggested_parts_with_http_info(self, part_number, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Retrieve detailed product information and two suggested products  # noqa: E501
 
         Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.products_part_number_with_suggested_products_get_with_http_info(part_number, authorization, x_digikey_client_id, async_req=True)
+        >>> thread = api.suggested_parts_with_http_info(part_number, authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -640,28 +640,28 @@ class PartSearchApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method products_part_number_with_suggested_products_get" % key
+                    " to method suggested_parts" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'part_number' is set
         if ('part_number' not in params or
                 params['part_number'] is None):
-            raise ValueError("Missing the required parameter `part_number` when calling `products_part_number_with_suggested_products_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `part_number` when calling `suggested_parts`")  # noqa: E501
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params or
                 params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `products_part_number_with_suggested_products_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `authorization` when calling `suggested_parts`")  # noqa: E501
         # verify the required parameter 'x_digikey_client_id' is set
         if ('x_digikey_client_id' not in params or
                 params['x_digikey_client_id'] is None):
-            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `products_part_number_with_suggested_products_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `suggested_parts`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'part_number' in params:
-            path_params['PartNumber'] = params['part_number']  # noqa: E501
+            path_params['partNumber'] = params['part_number']  # noqa: E501
 
         query_params = []
 
@@ -693,7 +693,7 @@ class PartSearchApi(object):
         auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
 
         return self.api_client.call_api(
-            '/Products/{PartNumber}/WithSuggestedProducts', 'GET',
+            '/Products/{partNumber}/WithSuggestedProducts', 'GET',
             path_params,
             query_params,
             header_params,

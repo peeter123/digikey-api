@@ -96,7 +96,7 @@ def getDigikeyAPIswaggerSpecJSON(destPath, **kwargs):
     r = requests.get(url, headers={
         'referer': refererURL
         ,
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36'
     })
     if r.ok:
         swaggerSpecFile = "digikeyAPI-{apiGroup}-swagger-spec.json".format(**kwargs)
@@ -112,7 +112,7 @@ def getDigikeyAPIswaggerSpecJSON(destPath, **kwargs):
 
 def wget(fileName, url):
     r = requests.get(url, headers={
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36'
     })
 
     with open(fileName, 'wb') as f:

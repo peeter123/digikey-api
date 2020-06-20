@@ -39,7 +39,6 @@ class ProductDetails(object):
         'kits': 'list[AssociatedProduct]',
         'kit_contents': 'list[KitPart]',
         'mating_products': 'list[AssociatedProduct]',
-        'result_code': 'ResultCode',
         'search_locale_used': 'IsoSearchLocale',
         'associated_products': 'list[AssociatedProduct]',
         'for_use_with_products': 'list[AssociatedProduct]',
@@ -86,7 +85,6 @@ class ProductDetails(object):
         'kits': 'Kits',
         'kit_contents': 'KitContents',
         'mating_products': 'MatingProducts',
-        'result_code': 'ResultCode',
         'search_locale_used': 'SearchLocaleUsed',
         'associated_products': 'AssociatedProducts',
         'for_use_with_products': 'ForUseWithProducts',
@@ -124,7 +122,7 @@ class ProductDetails(object):
         'supplier_direct_ship': 'SupplierDirectShip'
     }
 
-    def __init__(self, my_pricing=None, obsolete=None, media_links=None, standard_package=None, limited_taxonomy=None, kits=None, kit_contents=None, mating_products=None, result_code=None, search_locale_used=None, associated_products=None, for_use_with_products=None, rohs_subs=None, suggested_subs=None, additional_value_fee=None, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, tariff_description=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, supplier_direct_ship=None):  # noqa: E501
+    def __init__(self, my_pricing=None, obsolete=None, media_links=None, standard_package=None, limited_taxonomy=None, kits=None, kit_contents=None, mating_products=None, search_locale_used=None, associated_products=None, for_use_with_products=None, rohs_subs=None, suggested_subs=None, additional_value_fee=None, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, tariff_description=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, supplier_direct_ship=None):  # noqa: E501
         """ProductDetails - a model defined in Swagger"""  # noqa: E501
 
         self._my_pricing = None
@@ -135,7 +133,6 @@ class ProductDetails(object):
         self._kits = None
         self._kit_contents = None
         self._mating_products = None
-        self._result_code = None
         self._search_locale_used = None
         self._associated_products = None
         self._for_use_with_products = None
@@ -189,8 +186,6 @@ class ProductDetails(object):
             self.kit_contents = kit_contents
         if mating_products is not None:
             self.mating_products = mating_products
-        if result_code is not None:
-            self.result_code = result_code
         if search_locale_used is not None:
             self.search_locale_used = search_locale_used
         if associated_products is not None:
@@ -443,27 +438,6 @@ class ProductDetails(object):
         """
 
         self._mating_products = mating_products
-
-    @property
-    def result_code(self):
-        """Gets the result_code of this ProductDetails.  # noqa: E501
-
-
-        :return: The result_code of this ProductDetails.  # noqa: E501
-        :rtype: ResultCode
-        """
-        return self._result_code
-
-    @result_code.setter
-    def result_code(self, result_code):
-        """Sets the result_code of this ProductDetails.
-
-
-        :param result_code: The result_code of this ProductDetails.  # noqa: E501
-        :type: ResultCode
-        """
-
-        self._result_code = result_code
 
     @property
     def search_locale_used(self):

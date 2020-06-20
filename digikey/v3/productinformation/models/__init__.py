@@ -34,7 +34,7 @@ from digikey.v3.productinformation.models.pid_vid import PidVid
 from digikey.v3.productinformation.models.price_break import PriceBreak
 from digikey.v3.productinformation.models.product import Product
 from digikey.v3.productinformation.models.product_details import ProductDetails
-from digikey.v3.productinformation.models.result_code import ResultCode
+from digikey.v3.productinformation.models.product_details_response import ProductDetailsResponse
 from digikey.v3.productinformation.models.search_option import SearchOption
 from digikey.v3.productinformation.models.sort_direction import SortDirection
 from digikey.v3.productinformation.models.sort_option import SortOption
