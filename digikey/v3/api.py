@@ -18,7 +18,7 @@ class ProductApiWrapper(object):
 
         # Return quitly if no clientid has been set to prevent errors when importing the module
         if os.getenv('DIGIKEY_CLIENT_ID') is None or os.getenv('DIGIKEY_CLIENT_SECRET') is None:
-            return
+            raise DigikeyError('Please provide a valid DIGIKEY_CLIENT_ID and DIGIKEY_CLIENT_SECRET in your env setup')
 
         # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
         # configuration.api_key_prefix['X-DIGIKEY-Client-Id'] = 'Bearer'
