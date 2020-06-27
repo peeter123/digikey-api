@@ -1,6 +1,4 @@
 import os
-import types
-import wrapt
 import logging
 import digikey.oauth.oauth2
 import digikey.v3.productinformation as dpi
@@ -48,13 +46,10 @@ class ProductApiWrapper(object):
         except KeyError:
             pass
 
-    @wrapt.decorator
-    def __call__(self, wrapped, instance, args, kwargs):
+    def call_api_function(self, *args, **kwargs):
         try:
             func = getattr(self._api_instance, self.wrapped_function)
-            logger.debug(f'CALL -> {wrapped.__name__}')
-            logger.debug(f'CALL wrapped -> {func.__name__}')
-            wrapped(*args, **kwargs)
+            logger.debug(f'CALL wrapped -> {func.__qualname__}')
             api_response = func(*args, self.authorization, self.x_digikey_client_id, **kwargs)
             self._print_remaining_requests(api_response[2])
             return api_response[0]
@@ -62,36 +57,46 @@ class ProductApiWrapper(object):
             logger.error(f'Exception when calling {self.wrapped_function}: {e}')
 
 
-@ProductApiWrapper('keyword_search_with_http_info')
-def keyword_search(**kwargs) -> KeywordSearchResponse:
+def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
+    client = ProductApiWrapper('keyword_search_with_http_info')
+
     if 'body' in kwargs and type(kwargs['body']) == KeywordSearchRequest:
-        logger.debug('CALL -> keyword_search')
         logger.info(f'Search for: {kwargs["body"].keywords}')
+        logger.debug('CALL -> keyword_search')
+        return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid KeywordSearchRequest argument')
 
 
-@ProductApiWrapper('product_details_with_http_info')
 def product_details(*args, **kwargs) -> ProductDetails:
+    client = ProductApiWrapper('product_details_with_http_info')
+
     if len(args):
         logger.info(f'Get product details for: {args[0]}')
+        return client.call_api_function(*args, **kwargs)
 
 
-@ProductApiWrapper('digi_reel_pricing_with_http_info')
 def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
+    client = ProductApiWrapper('digi_reel_pricing_with_http_info')
+
     if len(args):
         logger.info(f'Calculate the DigiReel pricing for {args[0]} with quantity {args[1]}')
+        return client.call_api_function(*args, **kwargs)
 
 
-@ProductApiWrapper('suggested_parts_with_http_info')
 def suggested_parts(*args, **kwargs) -> ProductDetails:
+    client = ProductApiWrapper('suggested_parts_with_http_info')
+
     if len(args):
         logger.info(f'Retrieve detailed product information and two suggested products for: {args[0]}')
+        return client.call_api_function(*args, **kwargs)
 
 
-@ProductApiWrapper('manufacturer_product_details_with_http_info')
-def manufacturer_product_details(**kwargs) -> KeywordSearchResponse:
+def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
+    client = ProductApiWrapper('manufacturer_product_details_with_http_info')
+
     if 'body' in kwargs and type(kwargs['body']) == ManufacturerProductDetailsRequest:
         logger.info(f'Search for: {kwargs["body"].keywords}')
+        return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid ManufacturerProductDetailsRequest argument')

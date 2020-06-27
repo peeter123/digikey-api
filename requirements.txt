@@ -6,7 +6,6 @@ retrying
 schematics
 urllib3
 responses
-wrapt
 six
 certifi
 setuptools
