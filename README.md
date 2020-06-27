@@ -12,10 +12,6 @@ manufacturers overlap other manufacturer part numbers.
 
 # Quickstart
 
-## Register
-Register an app on the Digikey API portal: [Digi-Key API](https://api-portal.digikey.com/start). You will need the client
-ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
-
 ## Install
 ```sh
 pip install digikey-api
@@ -24,6 +20,15 @@ export DIGIKEY_CLIENT_ID="client_id"
 export DIGIKEY_CLIENT_SECRET="client_secret"
 export DIGIKEY_STORAGE_PATH="cache_dir"
 ```
+
+# API V2
+**NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**
+
+See API V3 below to use the new API.
+
+## Register
+Register an app on the Digikey API portal: [Digi-Key API V2](https://api-portal.digikey.com/start). You will need the client
+ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
 
 ## Use
 Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
@@ -59,3 +64,40 @@ python -m mypy digikey --ignore-missing-imports
 ## Data models
 * `digikey.models.KeywordSearchResult`
 * `digikey.models.Part`
+
+# API V3
+## Register
+Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need the client
+ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
+
+## Use [API V3]
+Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
+the library will cache the access token and use the refresh token to automatically refresh your credentials.
+
+```python
+import os
+import digikey
+from digikey.v3.productinformation import KeywordSearchRequest
+
+os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
+os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
+os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
+
+# Query product number
+dkpn = '296-6501-1-ND'
+part = digikey.product_details(dkpn)
+
+# Search for parts 
+search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
+result = digikey.keyword_search(body=search_request)
+```
+
+## Top-level API
+
+#### PartSearch
+Currently all functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
+* `digikey.keyword_search()`
+* `digikey.product_details()`
+* `digikey.digi_reel_pricing()`
+* `digikey.suggested_parts()`
+* `digikey.manufacturer_product_details()`
