@@ -22,8 +22,11 @@ TOKEN_STORAGE = 'token_storage.json'
 AUTH_URL_V2 = 'https://sso.digikey.com/as/authorization.oauth2'
 TOKEN_URL_V2 = 'https://sso.digikey.com/as/token.oauth2'
 
-AUTH_URL_V3 = 'https://api.digikey.com/v1/oauth2/authorize'
-TOKEN_URL_V3 = 'https://api.digikey.com/v1/oauth2/token'
+AUTH_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/authorize'
+TOKEN_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/token'
+
+AUTH_URL_V3_SB = 'https://sandbox-api.digikey.com/v1/oauth2/authorize'
+TOKEN_URL_V3_SB = 'https://sandbox-api.digikey.com/v1/oauth2/token'
 
 REDIRECT_URI = 'https://localhost:8139/digikey_callback'
 PORT = 8139
@@ -102,14 +105,19 @@ class TokenHandler:
                  a_id: t.Optional[str] = None,
                  a_secret: t.Optional[str] = None,
                  a_token_storage_path: t.Optional[str] = None,
-                 version = 2):
+                 version: int = 2,
+                 sandbox: bool = False):
 
         if version == 2:
             self.auth_url = AUTH_URL_V2
             self.token_url = TOKEN_URL_V2
         elif version == 3:
-            self.auth_url = AUTH_URL_V3
-            self.token_url = TOKEN_URL_V3
+            if sandbox:
+                self.auth_url = AUTH_URL_V3_SB
+                self.token_url = TOKEN_URL_V3_SB
+            else:
+                self.auth_url = AUTH_URL_V3_PROD
+                self.token_url = TOKEN_URL_V3_PROD
         else:
             raise ValueError('Please specify the correct Digikey API version')
 

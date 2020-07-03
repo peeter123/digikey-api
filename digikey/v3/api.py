@@ -1,5 +1,6 @@
 import os
 import logging
+from distutils.util import strtobool
 import digikey.oauth.oauth2
 import digikey.v3.productinformation as dpi
 from digikey.exceptions import DigikeyError
@@ -12,6 +13,8 @@ logger = logging.getLogger(__name__)
 
 class ProductApiWrapper(object):
     def __init__(self, wrapped_function):
+        self.sandbox = False
+
         # Configure API key authorization: apiKeySecurity
         configuration = dpi.Configuration()
         configuration.api_key['X-DIGIKEY-Client-Id'] = os.getenv('DIGIKEY_CLIENT_ID')
@@ -20,19 +23,27 @@ class ProductApiWrapper(object):
         if os.getenv('DIGIKEY_CLIENT_ID') is None or os.getenv('DIGIKEY_CLIENT_SECRET') is None:
             raise DigikeyError('Please provide a valid DIGIKEY_CLIENT_ID and DIGIKEY_CLIENT_SECRET in your env setup')
 
+        # Use normal API by default, if DIGIKEY_CLIENT_SANDBOX is True use sandbox API
+        configuration.host = 'https://api.digikey.com/Search/v3'
+        try:
+            if bool(strtobool(os.getenv('DIGIKEY_CLIENT_SANDBOX'))):
+                configuration.host = 'https://sandbox-api.digikey.com/Search/v3/'
+                self.sandbox = True
+        except (ValueError, AttributeError):
+            pass
+
         # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
         # configuration.api_key_prefix['X-DIGIKEY-Client-Id'] = 'Bearer'
 
         # Configure OAuth2 access token for authorization: oauth2AccessCodeSecurity
-        configuration = dpi.Configuration()
-        self._digikeyApiTokenObject = digikey.oauth.oauth2.TokenHandler(version=3).get_access_token()
-        configuration.access_token = self._digikeyApiTokenObject.access_token
+        self._digikeyApiToken = digikey.oauth.oauth2.TokenHandler(version=3, sandbox=self.sandbox).get_access_token()
+        configuration.access_token = self._digikeyApiToken.access_token
 
         # create an instance of the API class
         self._api_instance = dpi.PartSearchApi(dpi.ApiClient(configuration))
 
         # Populate reused ids
-        self.authorization = self._digikeyApiTokenObject.get_authorization()
+        self.authorization = self._digikeyApiToken.get_authorization()
         self.x_digikey_client_id = os.getenv('DIGIKEY_CLIENT_ID')
 
         self.wrapped_function = wrapped_function

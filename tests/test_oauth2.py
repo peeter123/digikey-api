@@ -51,7 +51,7 @@ class Oauth2Tests(TestCase):
         """Tests that token is retrieved correctly from authorization"""
 
         urls = {2: oauth2.TOKEN_URL_V2 + r'.*',
-                3: oauth2.TOKEN_URL_V3 + r'.*'}
+                3: oauth2.TOKEN_URL_V3_PROD + r'.*'}
 
         for version in [2, 3]:
             print(f'Tests that token is retrieved correctly from authorization [API V{version}]')
