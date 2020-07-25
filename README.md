@@ -57,13 +57,19 @@ result = digikey.keyword_search(body=search_request)
 
 ## Top-level API
 
-#### PartSearch
+#### Product Information
 Currently all functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
 * `digikey.keyword_search()`
 * `digikey.product_details()`
 * `digikey.digi_reel_pricing()`
 * `digikey.suggested_parts()`
 * `digikey.manufacturer_product_details()`
+
+#### Order Support
+TODO
+
+#### Barcode
+TODO
 
 # API V2 [Deprecated]
 **NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**
