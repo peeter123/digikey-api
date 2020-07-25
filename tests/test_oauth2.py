@@ -1,7 +1,9 @@
+import logging
 import os
 import re
 import ssl
 import json
+import sys
 import urllib.request
 import urllib.parse as urlparse
 from json.decoder import JSONDecodeError
@@ -15,6 +17,9 @@ import responses
 
 from digikey.oauth import oauth2
 from . import fixtures
+
+logger = logging.getLogger(__name__)
+logger.level = logging.DEBUG
 
 
 def mock_open_new(url):
@@ -40,10 +45,15 @@ class Oauth2Tests(TestCase):
         os.environ['DIGIKEY_CLIENT_ID'] = 'MOCK_CLIENT_ID'
         os.environ['DIGIKEY_CLIENT_SECRET'] = 'MOCK_CLIENT_SECRET'
 
+        self.stream_handler = logging.StreamHandler(sys.stdout)
+        logger.addHandler(self.stream_handler)
+
     def tearDown(self):
         os.environ['DIGIKEY_STORAGE_PATH'] = self.old_token_storage_path
         os.environ['DIGIKEY_CLIENT_ID'] = self.old_client_id
         os.environ['DIGIKEY_CLIENT_SECRET'] = self.old_client_secret
+
+        logger.removeHandler(self.stream_handler)
 
     @responses.activate
     @mock.patch('digikey.oauth.oauth2.open_new', side_effect=mock_open_new)
@@ -54,7 +64,7 @@ class Oauth2Tests(TestCase):
                 3: oauth2.TOKEN_URL_V3_PROD + r'.*'}
 
         for version in [2, 3]:
-            print(f'Tests that token is retrieved correctly from authorization [API V{version}]')
+            logger.info(f'Tests that token is retrieved correctly from authorization [API V{version}]')
 
             # Mock out all calls to token endpoint.
             url_auth = re.compile(urls[version])

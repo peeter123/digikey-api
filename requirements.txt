@@ -1,6 +1,6 @@
 inflection
 certauth
-fake-useragent==0.1.11
+fake-useragent
 requests
 retrying
 schematics

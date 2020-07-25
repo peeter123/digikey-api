@@ -1,4 +1,4 @@
-Python Client for Digikey PartSearch API v2
+Python Client for Digikey API
 =================================
 Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then make a PartDetails call to retrieve all 
 real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some 
@@ -20,50 +20,6 @@ export DIGIKEY_CLIENT_ID="client_id"
 export DIGIKEY_CLIENT_SECRET="client_secret"
 export DIGIKEY_STORAGE_PATH="cache_dir"
 ```
-
-# API V2
-**NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**
-
-See API V3 below to use the new API.
-
-## Register
-Register an app on the Digikey API portal: [Digi-Key API V2](https://api-portal.digikey.com/start). You will need the client
-ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
-
-## Use
-Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
-the library will cache the access token and use the refresh token to automatically refresh your credentials.
-
-```python
-import os
-import digikey
-
-os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
-os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
-
-dkpn = '296-6501-1-ND'
-part = digikey.part(dkpn)
-print(part)
-# <Part mpn=NE555DR>
-
-print(part.manufacturer)
-# 'Texas Instruments'
-```
-
-## Test
-```sh
-python -m pytest --cov=digikey --doctest-modules --ignore=setup.py
-python -m mypy digikey --ignore-missing-imports
-```
-
-## Top-level API
-* `digikey.search()`
-* `digikey.part()`
-
-## Data models
-* `digikey.models.KeywordSearchResult`
-* `digikey.models.Part`
 
 # API V3
 ## Register
@@ -108,3 +64,47 @@ Currently all functions from the [PartSearch](https://developer.digikey.com/prod
 * `digikey.digi_reel_pricing()`
 * `digikey.suggested_parts()`
 * `digikey.manufacturer_product_details()`
+
+# API V2 [Deprecated]
+**NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**
+
+See API V3 above to use the new API.
+
+## Register
+Register an app on the Digikey API portal: [Digi-Key API V2](https://api-portal.digikey.com/start). You will need the client
+ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
+
+## Use
+Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
+the library will cache the access token and use the refresh token to automatically refresh your credentials.
+
+```python
+import os
+import digikey
+
+os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
+os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
+os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
+
+dkpn = '296-6501-1-ND'
+part = digikey.part(dkpn)
+print(part)
+# <Part mpn=NE555DR>
+
+print(part.manufacturer)
+# 'Texas Instruments'
+```
+
+## Test
+```sh
+python -m pytest --cov=digikey --doctest-modules --ignore=setup.py
+python -m mypy digikey --ignore-missing-imports
+```
+
+## Top-level API
+* `digikey.search()`
+* `digikey.part()`
+
+## Data models
+* `digikey.models.KeywordSearchResult`
+* `digikey.models.Part`

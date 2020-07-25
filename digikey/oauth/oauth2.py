@@ -121,6 +121,8 @@ class TokenHandler:
         else:
             raise ValueError('Please specify the correct Digikey API version')
 
+        logger.debug(f'Using API V{version}')
+
         a_id = a_id or os.getenv('DIGIKEY_CLIENT_ID')
         a_secret = a_secret or os.getenv('DIGIKEY_CLIENT_SECRET')
         if not a_id or not a_secret:
@@ -154,6 +156,8 @@ class TokenHandler:
                   'redirect_uri': REDIRECT_URI
                   }
         url = self.auth_url + '?' + urlencode(params)
+        logger.debug(f'AUTH - Authenticating with endpoint {self.auth_url} using ID: {self._id[:-5]}...')
+        logger.debug(f'AUTH - Redirect URL: {REDIRECT_URI}')
         return url
 
     def __exchange_for_token(self, code):
@@ -166,17 +170,25 @@ class TokenHandler:
                      'client_secret': self._secret,
                      'redirect_uri': REDIRECT_URI
                      }
+
         try:
+            logger.debug(f'TOKEN - Exchanging {code} auth code for token at endpoint: {self.token_url}')
+            logger.debug(f'TOKEN - Using client id: {self._id[:-5]}...')
+            logger.debug(f'TOKEN - Using client secret: {self._secret[:-5]}...')
             r = requests.post(self.token_url, headers=headers, data=post_data)
             r.raise_for_status()
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
-            raise DigikeyOauthException('Cannot request new token with auth code: {}'.format(e))
-        token_json = r.json()
+            raise DigikeyOauthException('TOKEN - Cannot request new token with auth code: {}'.format(e))
+        else:
+            token_json = r.json()
+            logger.debug(f'TOKEN - Got access token with value: {token_json["access_token"][:-5]}...')
+            logger.info('TOKEN - Successfully retrieved access token.')
+
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
         return token_json
 
-    def __refresh_token(self, refresh_token):
+    def __refresh_token(self, refresh_token: str):
         headers = {'user-agent': f'{UserAgent().firefox}',
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
@@ -186,13 +198,18 @@ class TokenHandler:
                      'client_secret': self._secret
                      }
         error_message = None
+
         try:
             r = requests.post(self.token_url, headers=headers, data=post_data)
             error_message = r.json().get('error_description', None)
             r.raise_for_status()
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
-            raise DigikeyOauthException('Cannot request new token with refresh token: {}.'.format(error_message))
-        token_json = r.json()
+            raise DigikeyOauthException('REFRESH - Cannot request new token with refresh token: {}.'.format(error_message))
+        else:
+            token_json = r.json()
+            logger.debug(f'REFRESH - Got access token with value: {token_json["access_token"]}')
+            logger.info('REFRESH - Successfully retrieved access token.')
+
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
         return token_json
@@ -200,7 +217,7 @@ class TokenHandler:
     def save(self, json_data):
         with open(self._token_storage_path, 'w') as f:
             json.dump(json_data, f)
-        logger.debug('Saved token to: {}'.format(self._token_storage_path))
+            logger.debug('Saved token to: {}'.format(self._token_storage_path))
 
     def get_access_token(self) -> Oauth2Token:
         """
@@ -217,7 +234,7 @@ class TokenHandler:
             with open(self._token_storage_path, 'r') as f:
                 token_json = json.load(f)
         except (EnvironmentError, JSONDecodeError):
-            logger.warning('Token storage does not exist or malformed, creating new.')
+            logger.warning('Oauth2 token storage does not exist or malformed, creating new.')
 
         token = None
         if token_json is not None:
@@ -226,10 +243,11 @@ class TokenHandler:
         # Try to refresh the credentials with the stores refresh token
         if token is not None and token.expired():
             try:
+                logger.debug(f'REFRESH - Current token is stale, refresh using: {token.refresh_token}')
                 token_json = self.__refresh_token(token.refresh_token)
                 self.save(token_json)
             except DigikeyOauthException:
-                logger.error('Failed to use refresh token, starting new authorization flow.')
+                logger.error('REFRESH - Failed to use refresh token, starting new authorization flow.')
                 token_json = None
 
         # Obtain new credentials using the Oauth flow if no token stored or refresh fails
