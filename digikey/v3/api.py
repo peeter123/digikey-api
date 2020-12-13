@@ -2,32 +2,48 @@ import os
 import logging
 from distutils.util import strtobool
 import digikey.oauth.oauth2
-import digikey.v3.productinformation as dpi
 from digikey.exceptions import DigikeyError
 from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
                                            ManufacturerProductDetailsRequest)
 from digikey.v3.productinformation.rest import ApiException
+from digikey.v3.ordersupport import (OrderStatusResponse, SalesorderHistoryItem)
+from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
 
 logger = logging.getLogger(__name__)
 
 
-class ProductApiWrapper(object):
-    def __init__(self, wrapped_function):
+class DigikeyApiWrapper(object):
+    def __init__(self, wrapped_function, module):
         self.sandbox = False
 
+        apinames = {
+            digikey.v3.productinformation: 'Search',
+            digikey.v3.ordersupport: 'OrderDetails',
+            digikey.v3.batchproductdetails: 'BatchSearch'
+        }
+
+        apiclasses = {
+            digikey.v3.productinformation: digikey.v3.productinformation.PartSearchApi,
+            digikey.v3.ordersupport: digikey.v3.ordersupport.OrderDetailsApi,
+            digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi
+        }
+
+        apiname = apinames[module]
+        apiclass = apiclasses[module]
+
         # Configure API key authorization: apiKeySecurity
-        configuration = dpi.Configuration()
+        configuration = module.Configuration()
         configuration.api_key['X-DIGIKEY-Client-Id'] = os.getenv('DIGIKEY_CLIENT_ID')
 
-        # Return quitly if no clientid has been set to prevent errors when importing the module
+        # Return quietly if no clientid has been set to prevent errors when importing the module
         if os.getenv('DIGIKEY_CLIENT_ID') is None or os.getenv('DIGIKEY_CLIENT_SECRET') is None:
             raise DigikeyError('Please provide a valid DIGIKEY_CLIENT_ID and DIGIKEY_CLIENT_SECRET in your env setup')
 
         # Use normal API by default, if DIGIKEY_CLIENT_SANDBOX is True use sandbox API
-        configuration.host = 'https://api.digikey.com/Search/v3'
+        configuration.host = 'https://api.digikey.com/' + apiname + '/v3'
         try:
             if bool(strtobool(os.getenv('DIGIKEY_CLIENT_SANDBOX'))):
-                configuration.host = 'https://sandbox-api.digikey.com/Search/v3/'
+                configuration.host = 'https://sandbox-api.digikey.com/' + apiname + '/v3'
                 self.sandbox = True
         except (ValueError, AttributeError):
             pass
@@ -40,7 +56,7 @@ class ProductApiWrapper(object):
         configuration.access_token = self._digikeyApiToken.access_token
 
         # create an instance of the API class
-        self._api_instance = dpi.PartSearchApi(dpi.ApiClient(configuration))
+        self._api_instance = apiclass(module.ApiClient(configuration))
 
         # Populate reused ids
         self.authorization = self._digikeyApiToken.get_authorization()
@@ -69,7 +85,7 @@ class ProductApiWrapper(object):
 
 
 def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
-    client = ProductApiWrapper('keyword_search_with_http_info')
+    client = DigikeyApiWrapper('keyword_search_with_http_info', digikey.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == KeywordSearchRequest:
         logger.info(f'Search for: {kwargs["body"].keywords}')
@@ -80,7 +96,7 @@ def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
 
 
 def product_details(*args, **kwargs) -> ProductDetails:
-    client = ProductApiWrapper('product_details_with_http_info')
+    client = DigikeyApiWrapper('product_details_with_http_info', digikey.v3.productinformation)
 
     if len(args):
         logger.info(f'Get product details for: {args[0]}')
@@ -88,7 +104,7 @@ def product_details(*args, **kwargs) -> ProductDetails:
 
 
 def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
-    client = ProductApiWrapper('digi_reel_pricing_with_http_info')
+    client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', digikey.v3.productinformation)
 
     if len(args):
         logger.info(f'Calculate the DigiReel pricing for {args[0]} with quantity {args[1]}')
@@ -96,7 +112,7 @@ def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
 
 
 def suggested_parts(*args, **kwargs) -> ProductDetails:
-    client = ProductApiWrapper('suggested_parts_with_http_info')
+    client = DigikeyApiWrapper('suggested_parts_with_http_info', digikey.v3.productinformation)
 
     if len(args):
         logger.info(f'Retrieve detailed product information and two suggested products for: {args[0]}')
@@ -104,10 +120,40 @@ def suggested_parts(*args, **kwargs) -> ProductDetails:
 
 
 def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
-    client = ProductApiWrapper('manufacturer_product_details_with_http_info')
+    client = DigikeyApiWrapper('manufacturer_product_details_with_http_info', digikey.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == ManufacturerProductDetailsRequest:
         logger.info(f'Search for: {kwargs["body"].manufacturer_product}')
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid ManufacturerProductDetailsRequest argument')
+
+
+def status_salesorder_id(*args, **kwargs) -> OrderStatusResponse:
+    client = DigikeyApiWrapper('status_salesorder_id_get_with_http_info', digikey.v3.ordersupport)
+
+    if len(args):
+        logger.info(f'Get order details for: {args[0]}')
+        return client.call_api_function(*args, **kwargs)
+
+
+def salesorder_history(*args, **kwargs) -> [SalesorderHistoryItem]:
+    client = DigikeyApiWrapper('history_get_with_http_info', digikey.v3.ordersupport)
+
+    if 'start_date' in kwargs and type(kwargs['start_date']) == str \
+            and 'end_date' in kwargs and type(kwargs['end_date']) == str:
+        logger.info(f'Searching for orders in date range ' + kwargs['start_date'] + ' to ' + kwargs['end_date'])
+        return client.call_api_function(*args, **kwargs)
+    else:
+        raise DigikeyError('Please provide valid start_date and end_date strings')
+
+
+def batch_product_details(*args, **kwargs) -> BatchProductDetailsResponse:
+    client = DigikeyApiWrapper('batch_product_details_with_http_info', digikey.v3.batchproductdetails)
+
+    if 'body' in kwargs and type(kwargs['body']) == BatchProductDetailsRequest:
+        logger.info(f'Batch product search: {kwargs["body"].products}')
+        logger.debug('CALL -> batch_product_details')
+        return client.call_api_function(*args, **kwargs)
+    else:
+        raise DigikeyError('Please provide a valid BatchProductDetailsRequest argument')
