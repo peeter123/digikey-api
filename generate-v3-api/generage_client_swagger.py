@@ -3,6 +3,7 @@ A community initiative to automatically create the python client for the Digikey
 this application customizes and automates the Swagger CodeGen for the following API's
     COMPLETED: productinformation
     COMPLETED: ordersupport
+    COMPLETED: batchproductdetails
     TODO:barcode
     TODO:Ordering
 
@@ -70,6 +71,11 @@ swaggerCodeGen_config_all = {
         "projectName": "community-digikey-api-ordersupport",
         "packageVersion": "0.1.0",
     }
+    , 'batch-product-details': {
+        "packageName": "digikey.v3.batchproductdetails",
+        "projectName": "community-digikey-api-batchproductdetails",
+        "packageVersion": "0.1.0",
+    }
 }
 
 digikeyAPIdef_all = {
@@ -83,9 +89,14 @@ digikeyAPIdef_all = {
         dict(apiGroup='order-support'
              , apiSubGroup='orderdetails'
              , apiQuery='orderhistory'
-             , urlNode='480'
+             , urlNode='883'
              )
-
+    , 'batch-product-details':
+        dict(apiGroup='batch-productdetails'
+             , apiSubGroup='batchproductdetailsapi'
+             , apiQuery='batchproductdetails'
+             , urlNode='682'
+             )
 }
 
 
@@ -257,17 +268,22 @@ def copy_generated_files():
     shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-ordersupport/digikey.v3.ordersupport'),
                  Path(API_PATH).joinpath('ordersupport'), dirs_exist_ok=True)
 
+    logging.info('Copy generated batchproductdetails files to api destination')
+    shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-batchproductdetails/digikey/v3/batchproductdetails'),
+                    Path(API_PATH).joinpath('batchproductdetails'), dirs_exist_ok=True)
+    shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-batchproductdetails/digikey.v3.batchproductdetails'),
+                Path(API_PATH).joinpath('batchproductdetails'), dirs_exist_ok=True)
+
 
 # Currently supported API's
-apiGenerateList = ['product-information', 'order-support']
-# apiGenerateList = ['order-support']
+apiGenerateList = ['product-information', 'order-support', 'batch-product-details']
 
-#Generate Digikey API python clients
+# Generate Digikey API python clients
 generated = [
 codeGen_api(digikeyAPIdef_all[api],
             swaggerCodeGen_config_all[api])
     for api in apiGenerateList
     ]
 
-#Copy to destination directory
+# Copy to destination directory
 copy_generated_files()

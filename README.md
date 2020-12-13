@@ -58,15 +58,21 @@ result = digikey.keyword_search(body=search_request)
 ## Top-level API
 
 #### Product Information
-Currently all functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
+All functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
 * `digikey.keyword_search()`
 * `digikey.product_details()`
 * `digikey.digi_reel_pricing()`
 * `digikey.suggested_parts()`
 * `digikey.manufacturer_product_details()`
 
+#### Batch Product Details
+The one function from the [BatchProductDetailsAPI](https://developer.digikey.com/products/batch-productdetails/batchproductdetailsapi) API has been implemented.
+* `digikey.batch_product_details()`
+
 #### Order Support
-TODO
+All functions from the [OrderDetails](https://developer.digikey.com/products/order-support/orderdetails/) API have been implemented.
+* `digikey.salesorder_history()`
+* `digikey.status_salesorder_id()`
 
 #### Barcode
 TODO
