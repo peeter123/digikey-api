@@ -107,7 +107,7 @@ def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
     client = ProductApiWrapper('manufacturer_product_details_with_http_info')
 
     if 'body' in kwargs and type(kwargs['body']) == ManufacturerProductDetailsRequest:
-        logger.info(f'Search for: {kwargs["body"].keywords}')
+        logger.info(f'Search for: {kwargs["body"].manufacturer_product}')
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid ManufacturerProductDetailsRequest argument')
