@@ -37,7 +37,8 @@ class KeywordSearchRequest(object):
         'filters': 'Filters',
         'sort': 'SortParameters',
         'requested_quantity': 'int',
-        'search_options': 'list[SearchOption]'
+        'search_options': 'list[SearchOption]',
+        'exclude_market_place_products': 'bool'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class KeywordSearchRequest(object):
         'filters': 'Filters',
         'sort': 'Sort',
         'requested_quantity': 'RequestedQuantity',
-        'search_options': 'SearchOptions'
+        'search_options': 'SearchOptions',
+        'exclude_market_place_products': 'ExcludeMarketPlaceProducts'
     }
 
-    def __init__(self, keywords=None, record_count=None, record_start_position=None, filters=None, sort=None, requested_quantity=None, search_options=None):  # noqa: E501
+    def __init__(self, keywords=None, record_count=None, record_start_position=None, filters=None, sort=None, requested_quantity=None, search_options=None, exclude_market_place_products=None):  # noqa: E501
         """KeywordSearchRequest - a model defined in Swagger"""  # noqa: E501
 
         self._keywords = None
@@ -60,6 +62,7 @@ class KeywordSearchRequest(object):
         self._sort = None
         self._requested_quantity = None
         self._search_options = None
+        self._exclude_market_place_products = None
         self.discriminator = None
 
         self.keywords = keywords
@@ -75,6 +78,8 @@ class KeywordSearchRequest(object):
             self.requested_quantity = requested_quantity
         if search_options is not None:
             self.search_options = search_options
+        if exclude_market_place_products is not None:
+            self.exclude_market_place_products = exclude_market_place_products
 
     @property
     def keywords(self):
@@ -242,6 +247,29 @@ class KeywordSearchRequest(object):
         """
 
         self._search_options = search_options
+
+    @property
+    def exclude_market_place_products(self):
+        """Gets the exclude_market_place_products of this KeywordSearchRequest.  # noqa: E501
+
+        Used to exclude MarkPlace products from search results. Default is false  # noqa: E501
+
+        :return: The exclude_market_place_products of this KeywordSearchRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._exclude_market_place_products
+
+    @exclude_market_place_products.setter
+    def exclude_market_place_products(self, exclude_market_place_products):
+        """Sets the exclude_market_place_products of this KeywordSearchRequest.
+
+        Used to exclude MarkPlace products from search results. Default is false  # noqa: E501
+
+        :param exclude_market_place_products: The exclude_market_place_products of this KeywordSearchRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._exclude_market_place_products = exclude_market_place_products
 
     def to_dict(self):
         """Returns the model properties as a dict"""

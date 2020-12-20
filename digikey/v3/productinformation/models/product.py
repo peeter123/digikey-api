@@ -50,6 +50,7 @@ class Product(object):
         'export_control_class_number': 'str',
         'htsus_code': 'str',
         'tariff_description': 'str',
+        'moisture_sensitivity_level': 'str',
         'manufacturer_part_number': 'str',
         'minimum_order_quantity': 'int',
         'non_stock': 'bool',
@@ -85,6 +86,7 @@ class Product(object):
         'export_control_class_number': 'ExportControlClassNumber',
         'htsus_code': 'HTSUSCode',
         'tariff_description': 'TariffDescription',
+        'moisture_sensitivity_level': 'MoistureSensitivityLevel',
         'manufacturer_part_number': 'ManufacturerPartNumber',
         'minimum_order_quantity': 'MinimumOrderQuantity',
         'non_stock': 'NonStock',
@@ -100,7 +102,7 @@ class Product(object):
         'supplier_direct_ship': 'SupplierDirectShip'
     }
 
-    def __init__(self, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, reach_status=None, export_control_class_number=None, htsus_code=None, tariff_description=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, supplier_direct_ship=None):  # noqa: E501
+    def __init__(self, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, reach_status=None, export_control_class_number=None, htsus_code=None, tariff_description=None, moisture_sensitivity_level=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, supplier_direct_ship=None):  # noqa: E501
         """Product - a model defined in Swagger"""  # noqa: E501
 
         self._standard_pricing = None
@@ -122,6 +124,7 @@ class Product(object):
         self._export_control_class_number = None
         self._htsus_code = None
         self._tariff_description = None
+        self._moisture_sensitivity_level = None
         self._manufacturer_part_number = None
         self._minimum_order_quantity = None
         self._non_stock = None
@@ -175,6 +178,8 @@ class Product(object):
             self.htsus_code = htsus_code
         if tariff_description is not None:
             self.tariff_description = tariff_description
+        if moisture_sensitivity_level is not None:
+            self.moisture_sensitivity_level = moisture_sensitivity_level
         if manufacturer_part_number is not None:
             self.manufacturer_part_number = manufacturer_part_number
         if minimum_order_quantity is not None:
@@ -636,6 +641,29 @@ class Product(object):
         """
 
         self._tariff_description = tariff_description
+
+    @property
+    def moisture_sensitivity_level(self):
+        """Gets the moisture_sensitivity_level of this Product.  # noqa: E501
+
+        Code for Moisture Sensitivity Level of the product  # noqa: E501
+
+        :return: The moisture_sensitivity_level of this Product.  # noqa: E501
+        :rtype: str
+        """
+        return self._moisture_sensitivity_level
+
+    @moisture_sensitivity_level.setter
+    def moisture_sensitivity_level(self, moisture_sensitivity_level):
+        """Sets the moisture_sensitivity_level of this Product.
+
+        Code for Moisture Sensitivity Level of the product  # noqa: E501
+
+        :param moisture_sensitivity_level: The moisture_sensitivity_level of this Product.  # noqa: E501
+        :type: str
+        """
+
+        self._moisture_sensitivity_level = moisture_sensitivity_level
 
     @property
     def manufacturer_part_number(self):
