@@ -6,7 +6,7 @@ from digikey.exceptions import DigikeyError
 from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
                                            ManufacturerProductDetailsRequest)
 from digikey.v3.productinformation.rest import ApiException
-from digikey.v3.ordersupport import (OrderStatusResponse, SalesorderHistoryItem)
+from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
 
 logger = logging.getLogger(__name__)
@@ -137,7 +137,7 @@ def status_salesorder_id(*args, **kwargs) -> OrderStatusResponse:
         return client.call_api_function(*args, **kwargs)
 
 
-def salesorder_history(*args, **kwargs) -> [SalesorderHistoryItem]:
+def salesorder_history(*args, **kwargs) -> [SalesOrderHistoryItem]:
     client = DigikeyApiWrapper('history_get_with_http_info', digikey.v3.ordersupport)
 
     if 'start_date' in kwargs and type(kwargs['start_date']) == str \
