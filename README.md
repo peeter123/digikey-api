@@ -27,6 +27,8 @@ Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.d
 the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the 
 Oauth2 process.
 
+When registering an app the OAuth Callback needs to be set to `https://localhost:8139/digikey_callback`.
+
 ## Use [API V3]
 Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
 the library will cache the access token and use the refresh token to automatically refresh your credentials.
@@ -55,7 +57,7 @@ search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=
 result = digikey.keyword_search(body=search_request)
 ```
 
-## Top-level API
+## Top-level APIs
 
 #### Product Information
 All functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
@@ -76,6 +78,25 @@ All functions from the [OrderDetails](https://developer.digikey.com/products/ord
 
 #### Barcode
 TODO
+
+## API Limits
+The API has a limited amount of requests you can make per time interval [Digikey Rate Limits](https://developer.digikey.com/documentation/shared-concepts#rate-limits). 
+
+It is possible to retrieve the number of max requests and current requests by passing an optional api_limits kwarg to an API function:
+```python
+api_limit = {}
+search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
+result = digikey.keyword_search(body=search_request, api_limits=api_limit)
+```
+ 
+The dict will be filled with the information returned from the API:
+```python
+{ 
+    'api_requests_limit': 1000, 
+    'api_requests_remaining': 139
+}
+```
+Sometimes the API does not return any rate limit data, the values will then be set to None.
 
 # API V2 [Deprecated]
 **NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**

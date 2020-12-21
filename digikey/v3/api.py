@@ -65,20 +65,32 @@ class DigikeyApiWrapper(object):
         self.wrapped_function = wrapped_function
 
     @staticmethod
-    def _print_remaining_requests(header):
+    def _remaining_requests(header, api_limits):
         try:
             rate_limit = header['X-RateLimit-Limit']
             rate_limit_rem = header['X-RateLimit-Remaining']
+
+            if api_limits is not None and type(api_limits) == dict:
+                api_limits['api_requests_limit'] = int(rate_limit)
+                api_limits['api_requests_remaining'] = int(rate_limit_rem)
+
             logger.debug('Requests remaining: [{}/{}]'.format(rate_limit_rem, rate_limit))
-        except KeyError:
-            pass
+        except (KeyError, ValueError) as e:
+            logger.debug(f'No api limits returned -> {e.__class__.__name__}: {e}')
+            if api_limits is not None and type(api_limits) == dict:
+                api_limits['api_requests_limit'] = None
+                api_limits['api_requests_remaining'] = None
 
     def call_api_function(self, *args, **kwargs):
         try:
+            # If optional api_limits mutable object is passed use it to store API limits
+            api_limits = kwargs.pop('api_limits', None)
+
             func = getattr(self._api_instance, self.wrapped_function)
             logger.debug(f'CALL wrapped -> {func.__qualname__}')
             api_response = func(*args, self.authorization, self.x_digikey_client_id, **kwargs)
-            self._print_remaining_requests(api_response[2])
+            self._remaining_requests(api_response[2], api_limits)
+
             return api_response[0]
         except ApiException as e:
             logger.error(f'Exception when calling {self.wrapped_function}: {e}')
