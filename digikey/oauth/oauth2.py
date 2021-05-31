@@ -19,7 +19,7 @@ from digikey import configfile
 
 CA_CERT = 'digikey-api.pem'
 TOKEN_STORAGE = 'token_storage.json'
-CONFIGURATION_TEMPORARY_PATH = '/tmp/dk_config'
+CERTIFICATION_TEMPORARY_PATH = '/tmp/dk_cert'
 
 AUTH_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/authorize'
 TOKEN_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/token'
@@ -34,26 +34,31 @@ logger = logging.getLogger(__name__)
 
 
 class Oauth2Token:
-    def __init__(self, token):
-        self._token = token
+    def __init__(self, config: configfile.DigikeyApiConfig):
+        self._config = config
 
     @property
     def access_token(self):
-        return self._token.get('access_token')
+        return self._config.get('access_token')
 
     @property
     def refresh_token(self):
-        return self._token.get('refresh_token')
+        return self._config.get('refresh_token')
 
     @property
     def expires(self):
-        return datetime.fromtimestamp(self._token.get('expires'), timezone.utc)
+        if self._config.get('expires') is not None:
+            return datetime.fromtimestamp(self._config.get('expires'), timezone.utc)
+        return None
 
     @property
     def type(self):
-        return self._token.get('token_type')
+        return self._config.get('token_type')
 
     def expired(self) -> bool:
+        expires = self.expires
+        if expires is None:
+            return True
         return datetime.now(timezone.utc) >= self.expires
 
     def get_authorization(self) -> str:
@@ -101,7 +106,7 @@ class TokenHandler:
     Functions used to handle Digikey oAuth
     """
     def __init__(self,
-                 dg_config: configfile.DigikeyApiConfig,
+                 dk_config: configfile.DigikeyApiConfig,
                  a_id: t.Optional[str] = None,
                  a_secret: t.Optional[str] = None,
                  # a_token_storage_path: t.Optional[str] = None,
@@ -120,8 +125,10 @@ class TokenHandler:
 
         logger.debug(f'Using API V{version}')
 
-        a_id = a_id or dg_config.get('client-id')
-        a_secret = a_secret or dg_config.get('client-secret')
+        self.dk_config = dk_config
+
+        a_id = a_id or self.dk_config.get('client-id')
+        a_secret = a_secret or self.dk_config.get('client-secret')
         if not a_id or not a_secret:
             raise ValueError(
                 'CLIENT ID and SECRET must be set. '
@@ -131,8 +138,9 @@ class TokenHandler:
 
         self._id = a_id
         self._secret = a_secret
-        self._storage_path = Path(CONFIGURATION_TEMPORARY_PATH)
-        self._token_storage_path = self._storage_path.joinpath(TOKEN_STORAGE)
+
+        self._storage_path = Path(CERTIFICATION_TEMPORARY_PATH)
+        # self._token_storage_path = self._storage_path.joinpath(TOKEN_STORAGE)
         self._ca_cert = self._storage_path.joinpath(CA_CERT)
 
     def __generate_certificate(self):
@@ -175,7 +183,9 @@ class TokenHandler:
 
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
-        return token_json
+        # TODO: Perhaps expand out for loop to only write what's nessesary
+        for key in token_json:
+            self.dk_config.set(key, token_json[key])
 
     def __refresh_token(self, refresh_token: str):
         headers = {'user-agent': USER_AGENT,
@@ -201,12 +211,15 @@ class TokenHandler:
 
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
-        return token_json
+        # TODO: Perhaps expand out for loop to only write what's nessesary
+        for key in token_json:
+            self.dk_config.set(key, token_json[key])
 
-    def save(self, json_data):
-        with open(self._token_storage_path, 'w') as f:
-            json.dump(json_data, f)
-            logger.debug('Saved token to: {}'.format(self._token_storage_path))
+    def save(self):
+        # with open(self._token_storage_path, 'w') as f:
+        #     json.dump(json_data, f)
+        #     logger.debug('Saved token to: {}'.format(self._token_storage_path))
+        self.dk_config.save()
 
     def get_access_token(self) -> Oauth2Token:
         """
@@ -218,29 +231,28 @@ class TokenHandler:
         """
 
         # Check if a token already exists on the storage
-        token_json = None
-        try:
-            with open(self._token_storage_path, 'r') as f:
-                token_json = json.load(f)
-        except (EnvironmentError, JSONDecodeError):
-            logger.warning('Oauth2 token storage does not exist or malformed, creating new.')
+        # token_json = None
+        # try:
+        #     with open(self._token_storage_path, 'r') as f:
+        #         token_json = json.load(f)
+        # except (EnvironmentError, JSONDecodeError):
+        #     logger.warning('Oauth2 token storage does not exist or malformed, creating new.')
 
-        token = None
-        if token_json is not None:
-            token = Oauth2Token(token_json)
+        token_config = Oauth2Token(self.dk_config)
+        needs_authorization_token = False
 
         # Try to refresh the credentials with the stores refresh token
-        if token is not None and token.expired():
+        if token_config.expired():
             try:
-                logger.debug(f'REFRESH - Current token is stale, refresh using: {token.refresh_token}')
-                token_json = self.__refresh_token(token.refresh_token)
-                self.save(token_json)
+                logger.debug(f'REFRESH - Current token is stale, refresh using: {token_config.refresh_token}')
+                self.__refresh_token(token_config.refresh_token)
+                self.save()
             except DigikeyOauthException:
                 logger.error('REFRESH - Failed to use refresh token, starting new authorization flow.')
-                token_json = None
+                needs_authorization_token = True
 
         # Obtain new credentials using the Oauth flow if no token stored or refresh fails
-        if token_json is None:
+        if needs_authorization_token is True:
             open_new(self.__build_authorization_url())
             filename = self.__generate_certificate()
             httpd = HTTPServer(
@@ -263,9 +275,9 @@ class TokenHandler:
                 logger.error('Cannot remove temporary certificates: {}'.format(e))
 
             # Get the acccess token from the auth code
-            token_json = self.__exchange_for_token(httpd.auth_code)
+            self.__exchange_for_token(httpd.auth_code)
 
             # Save the newly obtained credentials to the filesystem
-            self.save(token_json)
+            self.save()
 
-        return Oauth2Token(token_json)
+        return Oauth2Token(self.dk_config)
