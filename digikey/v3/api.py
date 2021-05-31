@@ -27,17 +27,13 @@ class DigikeyAPI:
             digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi
         }
 
-        def __init__(self, config_file: digikey.configfile.DigikeyApiConfig, is_sandbox: bool = False):
+        def __init__(self, config_file: digikey.configfile.DigikeyBaseConfig, is_sandbox: bool = False):
             self.sandbox = is_sandbox
             self.apiname = None
             self._api_instance = None
             self.wrapped_function = None
             self.x_digikey_client_id = None
             self.config = config_file
-
-            # Return quietly if no clientid has been set to prevent errors when importing the module
-            # if os.getenv('DIGIKEY_CLIENT_ID') is None or os.getenv('DIGIKEY_CLIENT_SECRET') is None:
-                # raise DigikeyError('Please provide a valid DIGIKEY_CLIENT_ID and DIGIKEY_CLIENT_SECRET in your env setup')
 
             # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             # configuration.api_key_prefix['X-DIGIKEY-Client-Id'] = 'Bearer'
@@ -120,8 +116,8 @@ class DigikeyAPI:
             except ApiException as e:
                 logger.error(f'Exception when calling {self.wrapped_function}: {e}')
 
-    def __init__(self, config_file, is_sandbox: bool = False):
-        self.config = digikey.configfile.DigikeyApiConfig(config_file)
+    def __init__(self, config_constructor: digikey.configfile.DigikeyBaseConfig, is_sandbox: bool = False):
+        self.config = config_constructor
         self.client = self.DigikeyApiWrapper(self.config, is_sandbox)
 
     def needs_client_id(self) -> bool:

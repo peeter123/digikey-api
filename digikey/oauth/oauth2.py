@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 
 
 class Oauth2Token:
-    def __init__(self, config: configfile.DigikeyApiConfig):
+    def __init__(self, config: configfile.DigikeyBaseConfig):
         self._config = config
 
     @property
@@ -106,7 +106,7 @@ class TokenHandler:
     Functions used to handle Digikey oAuth
     """
     def __init__(self,
-                 dk_config: configfile.DigikeyApiConfig,
+                 dk_config: configfile.DigikeyBaseConfig,
                  a_id: t.Optional[str] = None,
                  a_secret: t.Optional[str] = None,
                  # a_token_storage_path: t.Optional[str] = None,

@@ -2,8 +2,29 @@ import os
 import json
 
 
-class DigikeyApiConfig:
+class DigikeyBaseConfig:
+    """
+        Base class for a configuration handler which saves info related to Digikey's API like the client-ID
+        This class must not be directly used, instead another class that inherits this class. The class that inherits
+        this class must override save(), get(), and set() with the same parameters and returns.
+        Check out DigikeyJsonConfig for more details as to how to do this.
+    """
+    def __init__(self):
+        pass
+
+    def save(self):
+        pass
+
+    def get(self, what: str):
+        pass
+
+    def set(self, what: str, to):
+        pass
+
+
+class DigikeyJsonConfig(DigikeyBaseConfig):
     def __init__(self, file_name):
+        super().__init__()
         self.file_name = file_name
         # Get config from file if it exists
         if os.path.exists(self.file_name):
