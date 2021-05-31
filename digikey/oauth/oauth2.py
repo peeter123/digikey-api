@@ -15,9 +15,11 @@ from certauth.certauth import CertificateAuthority
 
 from digikey.constants import USER_AGENT
 from digikey.exceptions import DigikeyOauthException
+from digikey import configfile
 
 CA_CERT = 'digikey-api.pem'
 TOKEN_STORAGE = 'token_storage.json'
+CONFIGURATION_TEMPORARY_PATH = '/tmp/dk_config'
 
 AUTH_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/authorize'
 TOKEN_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/token'
@@ -99,9 +101,10 @@ class TokenHandler:
     Functions used to handle Digikey oAuth
     """
     def __init__(self,
+                 dg_config: configfile.DigikeyApiConfig,
                  a_id: t.Optional[str] = None,
                  a_secret: t.Optional[str] = None,
-                 a_token_storage_path: t.Optional[str] = None,
+                 # a_token_storage_path: t.Optional[str] = None,
                  version: int = 2,
                  sandbox: bool = False):
 
@@ -117,8 +120,8 @@ class TokenHandler:
 
         logger.debug(f'Using API V{version}')
 
-        a_id = a_id or os.getenv('DIGIKEY_CLIENT_ID')
-        a_secret = a_secret or os.getenv('DIGIKEY_CLIENT_SECRET')
+        a_id = a_id or dg_config.get('client-id')
+        a_secret = a_secret or dg_config.get('client-secret')
         if not a_id or not a_secret:
             raise ValueError(
                 'CLIENT ID and SECRET must be set. '
@@ -126,17 +129,9 @@ class TokenHandler:
                 'as an environment variable, or pass your keys directly to the client.'
             )
 
-        a_token_storage_path = a_token_storage_path or os.getenv('DIGIKEY_STORAGE_PATH')
-        if not a_token_storage_path or not Path(a_token_storage_path).exists():
-            raise ValueError(
-                'STORAGE PATH must be set and must exist.'
-                'Set "DIGIKEY_STORAGE_PATH" as an environment variable, '
-                'or pass your keys directly to the client.'
-            )
-
         self._id = a_id
         self._secret = a_secret
-        self._storage_path = Path(a_token_storage_path)
+        self._storage_path = Path(CONFIGURATION_TEMPORARY_PATH)
         self._token_storage_path = self._storage_path.joinpath(TOKEN_STORAGE)
         self._ca_cert = self._storage_path.joinpath(CA_CERT)
 
