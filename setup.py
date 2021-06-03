@@ -4,13 +4,13 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="digikey-api",
+    name="kicost-digikey-api-v3",
     version="0.4.0",
     author="Peter Oostewechel",
     author_email="peter_oostewechel@hotmail.com",
     license="GPL v3",
-    url="https://github.com/peeter123/digikey-api",
-    description="Python client for Digikey API",
+    url="https://github.com/set-soft/kicost-digikey-api-v3",
+    description="KiCost plugin for the Digikey PartSearch API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(exclude=['contrib', 'docs', 'tests']),
@@ -25,9 +25,6 @@ setuptools.setup(
     ],
     install_requires=[
         'requests>=2.22.0',
-        'retrying>=1.3.3',
-        'fake-useragent>=0.1.11',
-        'schematics>=2.1.0',
         'inflection>=0.3.1',
         'certauth>=1.3.0',
         'urllib3>=1.25.3'
