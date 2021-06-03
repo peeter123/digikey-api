@@ -4,9 +4,6 @@ Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then ma
 real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some 
 manufacturers overlap other manufacturer part numbers.
 
-[![Pypi](https://img.shields.io/pypi/v/digikey-api.svg?color=brightgreen)](https://pypi.org/project/digikey-api/) 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-gold.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=53HWHHVCJ3D4J&currency_code=EUR&source=url)
-
 # What does it do
 `digikey-api` is an [Digkey Part Search API](https://api-portal.digikey.com/node/8517) client for Python 3.6+. API response data is returned as Python objects that attempt to make it easy to get the data you want. Not all endpoints have been implemented.
 
