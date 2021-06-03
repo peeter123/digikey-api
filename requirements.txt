@@ -1,6 +1,5 @@
 inflection
 certauth
-fake-useragent
 requests
 urllib3
 six

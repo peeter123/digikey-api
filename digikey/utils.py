@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 URL_MAX_LENGTH = 8000
-
+USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/22.0"
 
 def chunked(list_: List, chunksize: int=20) -> List[List]:
     """
