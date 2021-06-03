@@ -1,6 +1,8 @@
-inflection
-requests
-urllib3
+inflection>=0.3.1
+requests>=2.22.0
+urllib3>=1.25.3
 six
 certifi
 setuptools
+pyopenssl
+tldextract
