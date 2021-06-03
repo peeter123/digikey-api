@@ -2,8 +2,6 @@ inflection
 certauth
 fake-useragent
 requests
-retrying
-schematics
 urllib3
 responses
 six
