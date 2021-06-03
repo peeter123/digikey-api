@@ -26,7 +26,6 @@ setuptools.setup(
     install_requires=[
         'requests>=2.22.0',
         'inflection>=0.3.1',
-        'certauth>=1.3.0',
         'urllib3>=1.25.3'
     ],
     tests_requires=['pytest>=5.1.2'],

@@ -11,8 +11,8 @@ from urllib.parse import urlencode, urlparse, parse_qs
 from webbrowser import open_new
 
 import requests
-from certauth.certauth import CertificateAuthority
 
+from digikey.certauth.certauth import CertificateAuthority
 from digikey.exceptions import DigikeyOauthException
 from digikey.utils import USER_AGENT
 

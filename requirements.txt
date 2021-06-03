@@ -1,5 +1,4 @@
 inflection
-certauth
 requests
 urllib3
 six
