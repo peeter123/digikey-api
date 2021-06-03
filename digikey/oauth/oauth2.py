@@ -183,7 +183,7 @@ class TokenHandler:
         return token_json
 
     def __refresh_token(self, refresh_token: str):
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
         post_data = {'grant_type': 'refresh_token',
