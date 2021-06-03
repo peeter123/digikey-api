@@ -6,7 +6,6 @@ from digikey.exceptions import DigikeyError
 from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
                                            ManufacturerProductDetailsRequest)
 from digikey.v3.productinformation.rest import ApiException
-from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
 
 logger = logging.getLogger(__name__)
@@ -18,13 +17,11 @@ class DigikeyApiWrapper(object):
 
         apinames = {
             digikey.v3.productinformation: 'Search',
-            digikey.v3.ordersupport: 'OrderDetails',
             digikey.v3.batchproductdetails: 'BatchSearch'
         }
 
         apiclasses = {
             digikey.v3.productinformation: digikey.v3.productinformation.PartSearchApi,
-            digikey.v3.ordersupport: digikey.v3.ordersupport.OrderDetailsApi,
             digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi
         }
 
@@ -139,25 +136,6 @@ def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid ManufacturerProductDetailsRequest argument')
-
-
-def status_salesorder_id(*args, **kwargs) -> OrderStatusResponse:
-    client = DigikeyApiWrapper('status_salesorder_id_get_with_http_info', digikey.v3.ordersupport)
-
-    if len(args):
-        logger.info(f'Get order details for: {args[0]}')
-        return client.call_api_function(*args, **kwargs)
-
-
-def salesorder_history(*args, **kwargs) -> [SalesOrderHistoryItem]:
-    client = DigikeyApiWrapper('history_get_with_http_info', digikey.v3.ordersupport)
-
-    if 'start_date' in kwargs and type(kwargs['start_date']) == str \
-            and 'end_date' in kwargs and type(kwargs['end_date']) == str:
-        logger.info(f'Searching for orders in date range ' + kwargs['start_date'] + ' to ' + kwargs['end_date'])
-        return client.call_api_function(*args, **kwargs)
-    else:
-        raise DigikeyError('Please provide valid start_date and end_date strings')
 
 
 def batch_product_details(*args, **kwargs) -> BatchProductDetailsResponse:
