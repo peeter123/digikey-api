@@ -3,7 +3,6 @@ certauth
 fake-useragent
 requests
 urllib3
-responses
 six
 certifi
 setuptools
