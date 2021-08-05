@@ -1,4 +1,4 @@
-'''
+"""
 A community initiative to automatically create the python client for the Digikey set of API's
 this application customizes and automates the Swagger CodeGen for the following API's
     COMPLETED: productinformation
@@ -14,7 +14,7 @@ The generation is done by using the Swagger Codegen, a java application.
 The platform prerequisites are java and python the package are gitpython
 
 
-'''
+"""
 
 import logging
 import os
@@ -258,21 +258,23 @@ def copy_generated_files():
     logging.info('----- COPY generated files')
     logging.info('Copy generated productinformation files to api destination')
     shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-productinformation/digikey/v3/productinformation'),
-                 Path(API_PATH).joinpath('productinformation'), dirs_exist_ok=True)
+                    Path(API_PATH).joinpath('productinformation'), dirs_exist_ok=True)
     shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-productinformation/digikey.v3.productinformation'),
-                 Path(API_PATH).joinpath('productinformation'), dirs_exist_ok=True)
+                    Path(API_PATH).joinpath('productinformation'), dirs_exist_ok=True)
 
     logging.info('Copy generated ordersupport files to api destination')
     shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-ordersupport/digikey/v3/ordersupport'),
-                 Path(API_PATH).joinpath('ordersupport'), dirs_exist_ok=True)
+                    Path(API_PATH).joinpath('ordersupport'), dirs_exist_ok=True)
     shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-ordersupport/digikey.v3.ordersupport'),
-                 Path(API_PATH).joinpath('ordersupport'), dirs_exist_ok=True)
+                    Path(API_PATH).joinpath('ordersupport'), dirs_exist_ok=True)
 
     logging.info('Copy generated batchproductdetails files to api destination')
-    shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-batchproductdetails/digikey/v3/batchproductdetails'),
-                    Path(API_PATH).joinpath('batchproductdetails'), dirs_exist_ok=True)
-    shutil.copytree(Path(DEST_PATH).joinpath('community-digikey-api-batchproductdetails/digikey.v3.batchproductdetails'),
-                Path(API_PATH).joinpath('batchproductdetails'), dirs_exist_ok=True)
+    shutil.copytree(
+        Path(DEST_PATH).joinpath('community-digikey-api-batchproductdetails/digikey/v3/batchproductdetails'),
+        Path(API_PATH).joinpath('batchproductdetails'), dirs_exist_ok=True)
+    shutil.copytree(
+        Path(DEST_PATH).joinpath('community-digikey-api-batchproductdetails/digikey.v3.batchproductdetails'),
+        Path(API_PATH).joinpath('batchproductdetails'), dirs_exist_ok=True)
 
 
 # Currently supported API's
@@ -280,10 +282,9 @@ apiGenerateList = ['product-information', 'order-support', 'batch-product-detail
 
 # Generate Digikey API python clients
 generated = [
-codeGen_api(digikeyAPIdef_all[api],
-            swaggerCodeGen_config_all[api])
+    codeGen_api(digikeyAPIdef_all[api], swaggerCodeGen_config_all[api])
     for api in apiGenerateList
-    ]
+]
 
 # Copy to destination directory
 copy_generated_files()
