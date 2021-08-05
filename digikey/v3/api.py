@@ -142,7 +142,7 @@ def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
 
 
 def status_salesorder_id(*args, **kwargs) -> OrderStatusResponse:
-    client = DigikeyApiWrapper('status_salesorder_id_get_with_http_info', digikey.v3.ordersupport)
+    client = DigikeyApiWrapper('order_status_with_http_info', digikey.v3.ordersupport)
 
     if len(args):
         logger.info(f'Get order details for: {args[0]}')
@@ -150,7 +150,7 @@ def status_salesorder_id(*args, **kwargs) -> OrderStatusResponse:
 
 
 def salesorder_history(*args, **kwargs) -> [SalesOrderHistoryItem]:
-    client = DigikeyApiWrapper('history_get_with_http_info', digikey.v3.ordersupport)
+    client = DigikeyApiWrapper('order_history_with_http_info', digikey.v3.ordersupport)
 
     if 'start_date' in kwargs and type(kwargs['start_date']) == str \
             and 'end_date' in kwargs and type(kwargs['end_date']) == str:
