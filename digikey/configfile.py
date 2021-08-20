@@ -15,10 +15,10 @@ class DigikeyBaseConfig:
     def save(self):
         pass
 
-    def get(self, what: str):
+    def get(self, key: str):
         pass
 
-    def set(self, what: str, to):
+    def set(self, key: str, val: str):
         pass
 
 
@@ -37,10 +37,10 @@ class DigikeyJsonConfig(DigikeyBaseConfig):
         with open(self.file_name, 'w') as f:
             json.dump(self.config, f)
 
-    def get(self, what: str):
-        if what in self.config:
-            return self.config[what]
+    def get(self, key: str):
+        if key in self.config:
+            return self.config[key]
         return None
 
-    def set(self, what: str, to):
-        self.config[what] = to
+    def set(self, key: str, val: str):
+        self.config[key] = val
