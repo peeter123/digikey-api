@@ -132,8 +132,8 @@ class TokenHandler:
         if not a_id or not a_secret:
             raise ValueError(
                 'CLIENT ID and SECRET must be set. '
-                'Set "DIGIKEY_CLIENT_ID" and "DIGIKEY_CLIENT_SECRET" '
-                'as an environment variable, or pass your keys directly to the client.'
+                'Set "client-id" and "client-secret" '
+                'in the configuration constructor.'
             )
 
         self._id = a_id
