@@ -39,10 +39,8 @@ import digikey
 from digikey.v3.productinformation import KeywordSearchRequest
 
 dk_config = digikey.DigikeyJsonConfig(file_name='dk_conf.json')
-dk_config.set('client-id', 'ENTER_CLIENT_ID')
-dk_config.set('client-secret', 'ENTER_CLIENT_SECRET')
-
 dk_api = digikey.DigikeyAPI(dk_config, is_sandbox=False)
+dk_api.set_client_info(client_id='ENTER_CLIENT_ID', client_secret='ENTER_CLIENT_SECRET')
 
 # Query product number
 dkpn = '296-6501-1-ND'
@@ -59,6 +57,14 @@ only `DigikeyJsonConfig` is implemented for storing settings in a JSON file, but
 See [docs/DigikeyBaseConfig.md](docs/DigikeyBaseConfig.md) for more details on that.
 
 ## Top-level APIs
+
+#### Configuration Related Functions
+* `set_client_info()`
+    * Arguments are `client_id` and `client_secret`
+* `DigikeyAPI.needs_client_id()`
+    * Returns `True` if a client ID is needed/missing
+* `DigikeyAPI.needs_client_secret()`
+    * Returns `True` if a client secret is needed/missing
 
 #### Product Information
 All functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
