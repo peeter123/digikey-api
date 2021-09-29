@@ -237,7 +237,7 @@ class TokenHandler:
         # Try to refresh the credentials with the stores refresh token
         if token is not None and token.expired():
             try:
-                logger.debug(f'REFRESH - Current token is stale, refresh using: {token.refresh_token}')
+                logger.debug('REFRESH - Current token is stale, refresh using: {}'.format(token.refresh_token))
                 token_json = self.__refresh_token(token.refresh_token)
                 self.save(token_json)
             except DigikeyOauthException:
