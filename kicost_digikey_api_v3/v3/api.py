@@ -71,7 +71,7 @@ class DigikeyApiWrapper(object):
 
             logger.debug('Requests remaining: [{}/{}]'.format(rate_limit_rem, rate_limit))
         except (KeyError, ValueError) as e:
-            logger.debug(f'No api limits returned -> {e.__class__.__name__}: {e}')
+            logger.debug('No api limits returned -> {}: {}'.format(e.__class__.__name__, e))
             if api_limits is not None and type(api_limits) == dict:
                 api_limits['api_requests_limit'] = None
                 api_limits['api_requests_remaining'] = None
@@ -82,20 +82,20 @@ class DigikeyApiWrapper(object):
             api_limits = kwargs.pop('api_limits', None)
 
             func = getattr(self._api_instance, self.wrapped_function)
-            logger.debug(f'CALL wrapped -> {func.__qualname__}')
+            logger.debug('CALL wrapped -> {}'.format(func.__qualname__))
             api_response = func(*args, self.authorization, self.x_digikey_client_id, **kwargs)
             self._remaining_requests(api_response[2], api_limits)
 
             return api_response[0]
         except ApiException as e:
-            logger.error(f'Exception when calling {self.wrapped_function}: {e}')
+            logger.error('Exception when calling {}: {}'.format(self.wrapped_function, e))
 
 
 def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
     client = DigikeyApiWrapper('keyword_search_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == KeywordSearchRequest:
-        logger.info(f'Search for: {kwargs["body"].keywords}')
+        logger.info('Search for: {}'.format(kwargs["body"].keywords))
         logger.debug('CALL -> keyword_search')
         return client.call_api_function(*args, **kwargs)
     else:
@@ -106,7 +106,7 @@ def product_details(*args, **kwargs) -> ProductDetails:
     client = DigikeyApiWrapper('product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
-        logger.info(f'Get product details for: {args[0]}')
+        logger.info('Get product details for: {}'.format(args[0]))
         return client.call_api_function(*args, **kwargs)
 
 
@@ -114,7 +114,7 @@ def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
     client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
-        logger.info(f'Calculate the DigiReel pricing for {args[0]} with quantity {args[1]}')
+        logger.info('Calculate the DigiReel pricing for {} with quantity {}'.format(args[0], args[1]))
         return client.call_api_function(*args, **kwargs)
 
 
@@ -122,7 +122,7 @@ def suggested_parts(*args, **kwargs) -> ProductDetails:
     client = DigikeyApiWrapper('suggested_parts_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
-        logger.info(f'Retrieve detailed product information and two suggested products for: {args[0]}')
+        logger.info('Retrieve detailed product information and two suggested products for: {}'.format(args[0]))
         return client.call_api_function(*args, **kwargs)
 
 
@@ -130,7 +130,7 @@ def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
     client = DigikeyApiWrapper('manufacturer_product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == ManufacturerProductDetailsRequest:
-        logger.info(f'Search for: {kwargs["body"].manufacturer_product}')
+        logger.info('Search for: {}'.format(kwargs["body"].manufacturer_product))
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid ManufacturerProductDetailsRequest argument')

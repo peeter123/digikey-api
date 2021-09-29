@@ -64,7 +64,7 @@ class Oauth2Tests(TestCase):
                 3: oauth2.TOKEN_URL_V3_PROD + r'.*'}
 
         for version in [2, 3]:
-            logger.info(f'Tests that token is retrieved correctly from authorization [API V{version}]')
+            logger.info('Tests that token is retrieved correctly from authorization [API V{}]'.format(version))
 
             # Mock out all calls to token endpoint.
             url_auth = re.compile(urls[version])
