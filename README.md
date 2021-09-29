@@ -1,140 +1,47 @@
-Python Client for Digikey API
+KiCost plug-in for Digi-Key API
 =================================
-Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then make a PartDetails call to retrieve all 
-real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some 
-manufacturers overlap other manufacturer part numbers.
+This is an experimental plug-in to allow KiCost to do native Digi-Key API requests.
 
-# What does it do
-`digikey-api` is an [Digkey Part Search API](https://api-portal.digikey.com/node/8517) client for Python 3.6+. API response data is returned as Python objects that attempt to make it easy to get the data you want. Not all endpoints have been implemented.
+The plug-in is based on the [Python Client for Digikey API](https://github.com/peeter123/digikey-api)
+by [Peter Oostewechel](https://github.com/peeter123).
+
+I'm not using the original project as a module because it pulls some rare dependencies.
+
+The license is GPL v3 as the original work.
 
 # Quickstart
 
-## Install
-```sh
-pip install digikey-api
+- Register at Digi-Key. You need a valid user in order to register an application and in order to authenticate.
+- Go to the API portal: [Digi-Key API Solutions](https://developer.digikey.com/get_started)
+- Login to Digi-Key from the API portal
+- Create an [organization](https://developer.digikey.com/teams)
+- Choose the `Production Apps` operation
+- Create a production app
+  - Choose a `Production App name`
+  - Use `https://localhost:8139/digikey_callback` for the OAuth Callback. So you can authorize the use of the app.
+  - Give a description
+  - Enable the `Product Information` API
+  - Click `Add production app`
+- Now select your newly created `Production App`
+- In the `Credential` section enable the options to show the `Client ID` and `Client Secret`
+- Copy these values to a file named `config.txt` containing:
 
-export DIGIKEY_CLIENT_ID="client_id"
-export DIGIKEY_CLIENT_SECRET="client_secret"
-export DIGIKEY_STORAGE_PATH="cache_dir"
+```
+DIGIKEY_CLIENT_ID = Client_ID_Value_for_your_app
+DIGIKEY_CLIENT_SECRET = Client_Secret_Value_for_your_app
 ```
 
-# API V3
-## Register
-Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need 
-the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the 
-Oauth2 process.
+- Create a folder `~/.config/kicost_digikey_api_v3`
+- Store the config.txt file
+- Now install the plug-in:
+  - Clone the git repo somewhere using `git clone https://github.com/set-soft/kicost-digikey-api-v3.git`
+  - Enter to `kicost-digikey-api-v3`
+  - Install it using `pip3 install -e .`
+- Now test the plug-in:
+  - run `python3 test_production.py`
+  - A browser window will pop-up asking to login to Digi-Key. Login.
+  - Choose the allow option to enable the token.
+  - Now you'll load a local page, allow it.
+  - Now the token is stored on disk and you won't need to confirm it for months.
+  - You should get the information for Digi-Key part 296-6501-6-ND
 
-When registering an app the OAuth Callback needs to be set to `https://localhost:8139/digikey_callback`.
-
-## Use [API V3]
-Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
-the library will cache the access token and use the refresh token to automatically refresh your credentials.
-
-You can test your application using the sandbox API, the data returned from a Sandbox API may not be complete, but the 
-structure of the Sandbox API response will be a representation of what to expect in Production.
-
-For valid responses make sure you use the client ID and secret for a [Production App](https://developer.digikey.com/documentation/organization)
-
-```python
-import os
-import digikey
-from digikey.v3.productinformation import KeywordSearchRequest
-
-os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
-os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
-os.environ['DIGIKEY_CLIENT_SANDBOX'] = 'False'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
-
-# Query product number
-dkpn = '296-6501-1-ND'
-part = digikey.product_details(dkpn)
-
-# Search for parts 
-search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
-result = digikey.keyword_search(body=search_request)
-```
-
-## Top-level APIs
-
-#### Product Information
-All functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
-* `digikey.keyword_search()`
-* `digikey.product_details()`
-* `digikey.digi_reel_pricing()`
-* `digikey.suggested_parts()`
-* `digikey.manufacturer_product_details()`
-
-#### Batch Product Details
-The one function from the [BatchProductDetailsAPI](https://developer.digikey.com/products/batch-productdetails/batchproductdetailsapi) API has been implemented.
-* `digikey.batch_product_details()`
-
-#### Order Support
-All functions from the [OrderDetails](https://developer.digikey.com/products/order-support/orderdetails/) API have been implemented.
-* `digikey.salesorder_history()`
-* `digikey.status_salesorder_id()`
-
-#### Barcode
-TODO
-
-## API Limits
-The API has a limited amount of requests you can make per time interval [Digikey Rate Limits](https://developer.digikey.com/documentation/shared-concepts#rate-limits). 
-
-It is possible to retrieve the number of max requests and current requests by passing an optional api_limits kwarg to an API function:
-```python
-api_limit = {}
-search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
-result = digikey.keyword_search(body=search_request, api_limits=api_limit)
-```
- 
-The dict will be filled with the information returned from the API:
-```python
-{ 
-    'api_requests_limit': 1000, 
-    'api_requests_remaining': 139
-}
-```
-Sometimes the API does not return any rate limit data, the values will then be set to None.
-
-# API V2 [Deprecated]
-**NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**
-
-See API V3 above to use the new API.
-
-## Register
-Register an app on the Digikey API portal: [Digi-Key API V2](https://api-portal.digikey.com/start). You will need the client
-ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
-
-## Use
-Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
-the library will cache the access token and use the refresh token to automatically refresh your credentials.
-
-```python
-import os
-import digikey
-
-os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
-os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
-
-dkpn = '296-6501-1-ND'
-part = digikey.part(dkpn)
-print(part)
-# <Part mpn=NE555DR>
-
-print(part.manufacturer)
-# 'Texas Instruments'
-```
-
-## Test
-```sh
-python -m pytest --cov=digikey --doctest-modules --ignore=setup.py
-python -m mypy digikey --ignore-missing-imports
-```
-
-## Top-level API
-* `digikey.search()`
-* `digikey.part()`
-
-## Data models
-* `digikey.models.KeywordSearchResult`
-* `digikey.models.Part`

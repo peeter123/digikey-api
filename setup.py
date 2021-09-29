@@ -14,10 +14,10 @@ if '' in requirements:
     requirements.remove('')
 
 setuptools.setup(
-    name="kicost-digikey-api-v3",
-    version="0.4.0",
-    author="Peter Oostewechel",
-    author_email="peter_oostewechel@hotmail.com",
+    name="kicost_digikey_api_v3",
+    version="0.1.0",
+    author="Salvador E. Tropea",
+    author_email="stropea@inti.gob.ar",
     license="GPL v3",
     url="https://github.com/set-soft/kicost-digikey-api-v3",
     description="KiCost plugin for the Digikey PartSearch API",

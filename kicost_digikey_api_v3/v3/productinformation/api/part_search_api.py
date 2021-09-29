@@ -18,7 +18,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from digikey.v3.productinformation.api_client import ApiClient
+from kicost_digikey_api_v3.v3.productinformation.api_client import ApiClient
 
 
 class PartSearchApi(object):

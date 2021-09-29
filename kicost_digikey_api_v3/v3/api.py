@@ -1,12 +1,11 @@
 import os
 import logging
 from distutils.util import strtobool
-import digikey.oauth.oauth2
-from digikey.exceptions import DigikeyError
-from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
-                                           ManufacturerProductDetailsRequest)
-from digikey.v3.productinformation.rest import ApiException
-from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
+import kicost_digikey_api_v3.oauth.oauth2
+from kicost_digikey_api_v3.exceptions import DigikeyError
+from kicost_digikey_api_v3.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
+                                                         ManufacturerProductDetailsRequest)
+from kicost_digikey_api_v3.v3.productinformation.rest import ApiException
 
 logger = logging.getLogger(__name__)
 
@@ -16,13 +15,11 @@ class DigikeyApiWrapper(object):
         self.sandbox = False
 
         apinames = {
-            digikey.v3.productinformation: 'Search',
-            digikey.v3.batchproductdetails: 'BatchSearch'
+            kicost_digikey_api_v3.v3.productinformation: 'Search'
         }
 
         apiclasses = {
-            digikey.v3.productinformation: digikey.v3.productinformation.PartSearchApi,
-            digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi
+            kicost_digikey_api_v3.v3.productinformation: kicost_digikey_api_v3.v3.productinformation.PartSearchApi
         }
 
         apiname = apinames[module]
@@ -31,6 +28,7 @@ class DigikeyApiWrapper(object):
         # Configure API key authorization: apiKeySecurity
         configuration = module.Configuration()
         configuration.api_key['X-DIGIKEY-Client-Id'] = os.getenv('DIGIKEY_CLIENT_ID')
+        configuration.logger["package_logger"] = logger
 
         # Return quietly if no clientid has been set to prevent errors when importing the module
         if os.getenv('DIGIKEY_CLIENT_ID') is None or os.getenv('DIGIKEY_CLIENT_SECRET') is None:
@@ -49,7 +47,7 @@ class DigikeyApiWrapper(object):
         # configuration.api_key_prefix['X-DIGIKEY-Client-Id'] = 'Bearer'
 
         # Configure OAuth2 access token for authorization: oauth2AccessCodeSecurity
-        self._digikeyApiToken = digikey.oauth.oauth2.TokenHandler(version=3, sandbox=self.sandbox).get_access_token()
+        self._digikeyApiToken = kicost_digikey_api_v3.oauth.oauth2.TokenHandler(version=3, sandbox=self.sandbox).get_access_token()
         configuration.access_token = self._digikeyApiToken.access_token
 
         # create an instance of the API class
@@ -94,7 +92,7 @@ class DigikeyApiWrapper(object):
 
 
 def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
-    client = DigikeyApiWrapper('keyword_search_with_http_info', digikey.v3.productinformation)
+    client = DigikeyApiWrapper('keyword_search_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == KeywordSearchRequest:
         logger.info(f'Search for: {kwargs["body"].keywords}')
@@ -105,7 +103,7 @@ def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
 
 
 def product_details(*args, **kwargs) -> ProductDetails:
-    client = DigikeyApiWrapper('product_details_with_http_info', digikey.v3.productinformation)
+    client = DigikeyApiWrapper('product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
         logger.info(f'Get product details for: {args[0]}')
@@ -113,7 +111,7 @@ def product_details(*args, **kwargs) -> ProductDetails:
 
 
 def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
-    client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', digikey.v3.productinformation)
+    client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
         logger.info(f'Calculate the DigiReel pricing for {args[0]} with quantity {args[1]}')
@@ -121,7 +119,7 @@ def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
 
 
 def suggested_parts(*args, **kwargs) -> ProductDetails:
-    client = DigikeyApiWrapper('suggested_parts_with_http_info', digikey.v3.productinformation)
+    client = DigikeyApiWrapper('suggested_parts_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
         logger.info(f'Retrieve detailed product information and two suggested products for: {args[0]}')
@@ -129,7 +127,7 @@ def suggested_parts(*args, **kwargs) -> ProductDetails:
 
 
 def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
-    client = DigikeyApiWrapper('manufacturer_product_details_with_http_info', digikey.v3.productinformation)
+    client = DigikeyApiWrapper('manufacturer_product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == ManufacturerProductDetailsRequest:
         logger.info(f'Search for: {kwargs["body"].manufacturer_product}')
@@ -138,12 +136,6 @@ def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
         raise DigikeyError('Please provide a valid ManufacturerProductDetailsRequest argument')
 
 
-def batch_product_details(*args, **kwargs) -> BatchProductDetailsResponse:
-    client = DigikeyApiWrapper('batch_product_details_with_http_info', digikey.v3.batchproductdetails)
-
-    if 'body' in kwargs and type(kwargs['body']) == BatchProductDetailsRequest:
-        logger.info(f'Batch product search: {kwargs["body"].products}')
-        logger.debug('CALL -> batch_product_details')
-        return client.call_api_function(*args, **kwargs)
-    else:
-        raise DigikeyError('Please provide a valid BatchProductDetailsRequest argument')
+def set_logger(lg):
+    global logger
+    logger = lg

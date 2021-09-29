@@ -1,8 +1,8 @@
 # coding: utf-8
 """
-    Batch Product Details Api
+    PartSearch Api
 
-    Retrieve list of product details from list of part numbers  # noqa: E501
+    Search for products and retrieve details and pricing.  # noqa: E501
 
     OpenAPI spec version: v3
     
@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from digikey.v3.batchproductdetails.configuration import Configuration
-import digikey.v3.batchproductdetails.models
-from digikey.v3.batchproductdetails import rest
+from kicost_digikey_api_v3.v3.productinformation.configuration import Configuration
+import kicost_digikey_api_v3.v3.productinformation.models
+from kicost_digikey_api_v3.v3.productinformation import rest
 
 
 class ApiClient(object):
@@ -266,7 +266,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(digikey.v3.batchproductdetails.models, klass)
+                klass = getattr(kicost_digikey_api_v3.v3.productinformation.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

@@ -12,9 +12,9 @@ from webbrowser import open_new
 
 import requests
 
-from digikey.certauth.certauth import CertificateAuthority
-from digikey.exceptions import DigikeyOauthException
-from digikey.utils import USER_AGENT
+from kicost_digikey_api_v3.certauth.certauth import CertificateAuthority
+from kicost_digikey_api_v3.exceptions import DigikeyOauthException
+from kicost_digikey_api_v3.utils import USER_AGENT
 
 CA_CERT = 'digikey-api.pem'
 TOKEN_STORAGE = 'token_storage.json'
