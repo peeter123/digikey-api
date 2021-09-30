@@ -99,11 +99,11 @@ class TokenHandler:
     Functions used to handle Digikey oAuth
     """
     def __init__(self,
-                 a_id: t.Optional[str] = None,
-                 a_secret: t.Optional[str] = None,
-                 a_token_storage_path: t.Optional[str] = None,
-                 version: int = 3,
-                 sandbox: bool = False):
+                 a_id = None,
+                 a_secret = None,
+                 a_token_storage_path = None,
+                 version = 3,
+                 sandbox = False):
 
         if version == 3:
             if sandbox:
@@ -182,7 +182,7 @@ class TokenHandler:
         token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
         return token_json
 
-    def __refresh_token(self, refresh_token: str):
+    def __refresh_token(self, refresh_token):
         headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
