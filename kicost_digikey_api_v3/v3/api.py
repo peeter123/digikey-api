@@ -91,7 +91,7 @@ class DigikeyApiWrapper(object):
             logger.error('Exception when calling {}: {}'.format(self.wrapped_function, e))
 
 
-def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
+def keyword_search(*args, **kwargs):
     client = DigikeyApiWrapper('keyword_search_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == KeywordSearchRequest:
@@ -102,7 +102,7 @@ def keyword_search(*args, **kwargs) -> KeywordSearchResponse:
         raise DigikeyError('Please provide a valid KeywordSearchRequest argument')
 
 
-def product_details(*args, **kwargs) -> ProductDetails:
+def product_details(*args, **kwargs):
     client = DigikeyApiWrapper('product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
@@ -110,7 +110,7 @@ def product_details(*args, **kwargs) -> ProductDetails:
         return client.call_api_function(*args, **kwargs)
 
 
-def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
+def digi_reel_pricing(*args, **kwargs):
     client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
@@ -118,7 +118,7 @@ def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
         return client.call_api_function(*args, **kwargs)
 
 
-def suggested_parts(*args, **kwargs) -> ProductDetails:
+def suggested_parts(*args, **kwargs):
     client = DigikeyApiWrapper('suggested_parts_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
@@ -126,7 +126,7 @@ def suggested_parts(*args, **kwargs) -> ProductDetails:
         return client.call_api_function(*args, **kwargs)
 
 
-def manufacturer_product_details(*args, **kwargs) -> KeywordSearchResponse:
+def manufacturer_product_details(*args, **kwargs):
     client = DigikeyApiWrapper('manufacturer_product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == ManufacturerProductDetailsRequest:

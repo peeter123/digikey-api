@@ -51,10 +51,10 @@ class Oauth2Token:
     def type(self):
         return self._token.get('token_type')
 
-    def expired(self) -> bool:
+    def expired(self):
         return datetime.now(timezone.utc) >= self.expires
 
-    def get_authorization(self) -> str:
+    def get_authorization(self):
         return self.type + ' ' + self.access_token
 
     def __repr__(self):
@@ -144,7 +144,7 @@ class TokenHandler:
         ca = CertificateAuthority('Python digikey-api CA', str(self._ca_cert), cert_cache=str(self._storage_path))
         return ca.cert_for_host('localhost')
 
-    def __build_authorization_url(self) -> str:
+    def __build_authorization_url(self):
         params = {'client_id': self._id,
                   'response_type': 'code',
                   'redirect_uri': REDIRECT_URI
@@ -213,7 +213,7 @@ class TokenHandler:
             json.dump(json_data, f)
             logger.debug('Saved token to: {}'.format(self._token_storage_path))
 
-    def get_access_token(self) -> Oauth2Token:
+    def get_access_token(self):
         """
          Fetches the access key using an HTTP server to handle oAuth
          requests
