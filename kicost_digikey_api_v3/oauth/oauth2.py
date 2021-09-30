@@ -3,7 +3,12 @@ import logging
 import os
 import ssl
 import typing as t
-from datetime import datetime, timezone
+import sys
+py_2 = sys.version_info < (3, 0)
+if py_2:
+    from datetime import datetime
+else:
+    from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from json.decoder import JSONDecodeError
 from pathlib import Path
@@ -31,6 +36,12 @@ PORT = 8139
 logger = logging.getLogger(__name__)
 
 
+def utcnow():
+    if py_2:
+        return datetime.utcnow()
+    return datetime.now(timezone.utc)
+
+
 class Oauth2Token:
     def __init__(self, token):
         self._token = token
@@ -45,6 +56,8 @@ class Oauth2Token:
 
     @property
     def expires(self):
+        if py_2:
+            return datetime.utcfromtimestamp(self._token.get('expires'))
         return datetime.fromtimestamp(self._token.get('expires'), timezone.utc)
 
     @property
@@ -52,7 +65,7 @@ class Oauth2Token:
         return self._token.get('token_type')
 
     def expired(self):
-        return datetime.now(timezone.utc) >= self.expires
+        return utcnow() >= self.expires
 
     def get_authorization(self):
         return self.type + ' ' + self.access_token
@@ -179,7 +192,7 @@ class TokenHandler:
             logger.info('TOKEN - Successfully retrieved access token.')
 
         # Create epoch timestamp from expires in, with 1 minute margin
-        token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
+        token_json['expires'] = int(token_json['expires_in']) + utcnow().timestamp() - 60
         return token_json
 
     def __refresh_token(self, refresh_token):
@@ -205,7 +218,7 @@ class TokenHandler:
             logger.info('REFRESH - Successfully retrieved access token.')
 
         # Create epoch timestamp from expires in, with 1 minute margin
-        token_json['expires'] = int(token_json['expires_in']) + datetime.now(timezone.utc).timestamp() - 60
+        token_json['expires'] = int(token_json['expires_in']) + utcnow().timestamp() - 60
         return token_json
 
     def save(self, json_data):
