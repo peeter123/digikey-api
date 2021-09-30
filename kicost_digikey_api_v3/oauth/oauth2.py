@@ -13,7 +13,6 @@ else:
     from datetime import datetime, timezone
     from http.server import BaseHTTPRequestHandler, HTTPServer
     from json.decoder import JSONDecodeError
-from pathlib import Path
 from urllib.parse import urlencode, urlparse, parse_qs
 from webbrowser import open_new
 
@@ -142,7 +141,7 @@ class TokenHandler:
             )
 
         a_token_storage_path = a_token_storage_path or os.getenv('DIGIKEY_STORAGE_PATH')
-        if not a_token_storage_path or not Path(a_token_storage_path).exists():
+        if not a_token_storage_path or not os.path.isfile(a_token_storage_path):
             raise ValueError(
                 'STORAGE PATH must be set and must exist.'
                 'Set "DIGIKEY_STORAGE_PATH" as an environment variable, '
@@ -151,12 +150,12 @@ class TokenHandler:
 
         self._id = a_id
         self._secret = a_secret
-        self._storage_path = Path(a_token_storage_path)
-        self._token_storage_path = self._storage_path.joinpath(TOKEN_STORAGE)
-        self._ca_cert = self._storage_path.joinpath(CA_CERT)
+        self._storage_path = a_token_storage_path
+        self._token_storage_path = os.path.join(self._storage_path, TOKEN_STORAGE)
+        self._ca_cert = os.path.join(self._storage_path, CA_CERT)
 
     def __generate_certificate(self):
-        ca = CertificateAuthority('Python digikey-api CA', str(self._ca_cert), cert_cache=str(self._storage_path))
+        ca = CertificateAuthority('Python digikey-api CA', self._ca_cert, cert_cache=self._storage_path)
         return ca.cert_for_host('localhost')
 
     def __build_authorization_url(self):
@@ -267,7 +266,7 @@ class TokenHandler:
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(
                         request, address, server, self._id, self._secret))
-            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=str(Path(filename)), server_side=True)
+            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=filename, server_side=True)
             httpd.stop = 0
 
             # This function will block until it receives a request
@@ -277,7 +276,7 @@ class TokenHandler:
 
             # Remove generated certificate
             try:
-                os.remove(Path(filename))
+                os.remove(filename)
                 os.remove(self._ca_cert)
             except OSError as e:
                 logger.error('Cannot remove temporary certificates: {}'.format(e))
