@@ -83,7 +83,7 @@ class DigikeyApiWrapper(object):
 
             func = getattr(self._api_instance, self.wrapped_function)
             logger.debug('CALL wrapped -> {}'.format(func.__qualname__))
-            api_response = func(*args, self.authorization, self.x_digikey_client_id, **kwargs)
+            api_response = func(*(args + [self.authorization, self.x_digikey_client_id]), **kwargs)
             self._remaining_requests(api_response[2], api_limits)
 
             return api_response[0]
