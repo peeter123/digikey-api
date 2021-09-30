@@ -35,7 +35,7 @@ def save_results(prefix, name, results):
             # Don't refresh the data we loaded
             return
         with open(file, "wb") as fh:
-            pickle.dump(results, fh)
+            pickle.dump(results, fh, protocol=2)
 
 
 def fake_results(prefix, name):
