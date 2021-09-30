@@ -7,9 +7,10 @@ import sys
 py_2 = sys.version_info < (3, 0)
 if py_2:
     from datetime import datetime
+    from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 else:
     from datetime import datetime, timezone
-from http.server import BaseHTTPRequestHandler, HTTPServer
+    from http.server import BaseHTTPRequestHandler, HTTPServer
 from json.decoder import JSONDecodeError
 from pathlib import Path
 from urllib.parse import urlencode, urlparse, parse_qs
