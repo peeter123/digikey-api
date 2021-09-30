@@ -9,11 +9,13 @@ if py_2:
     from datetime import datetime
     from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
     JSONDecodeError = ValueError  # noqa: F821
+    from urllib import urlencode
+    from urlparse import urlparse, parse_qs
 else:
     from datetime import datetime, timezone
     from http.server import BaseHTTPRequestHandler, HTTPServer
     from json.decoder import JSONDecodeError
-from urllib.parse import urlencode, urlparse, parse_qs
+    from urllib.parse import urlencode, urlparse, parse_qs
 from webbrowser import open_new
 
 import requests
