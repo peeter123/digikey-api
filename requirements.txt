@@ -6,4 +6,4 @@ certifi
 setuptools
 pyopenssl
 tldextract
-dateutil
+python-dateutil
