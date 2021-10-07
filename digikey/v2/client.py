@@ -5,7 +5,6 @@ import typing as t
 from pathlib import Path
 
 import requests
-from fake_useragent import UserAgent
 
 from digikey.v2 import models
 from digikey.decorators import retry
@@ -15,7 +14,7 @@ from digikey.oauth.oauth2 import TokenHandler
 logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = 'https://api.digikey.com/services/partsearch/v2'
-
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0"
 
 class DigikeyClient(object):
     """Client object for Digikey API
@@ -63,7 +62,7 @@ class DigikeyClient(object):
                  path: str,
                  data: t.Dict[str, t.Any]=None
                  ) -> t.Any:
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'x-ibm-client-id': self._id,
                    'authorization': self.oauth2.get_authorization()}
 

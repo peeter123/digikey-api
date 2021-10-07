@@ -26,7 +26,6 @@ setuptools.setup(
     install_requires=[
         'requests>=2.22.0',
         'retrying>=1.3.3',
-        'fake-useragent>=0.1.11',
         'schematics>=2.1.0',
         'inflection>=0.3.1',
         'certauth>=1.3.0',

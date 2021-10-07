@@ -31,6 +31,8 @@ TOKEN_URL_V3_SB = 'https://sandbox-api.digikey.com/v1/oauth2/token'
 REDIRECT_URI = 'https://localhost:8139/digikey_callback'
 PORT = 8139
 
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0"
+
 logger = logging.getLogger(__name__)
 
 
@@ -161,7 +163,7 @@ class TokenHandler:
         return url
 
     def __exchange_for_token(self, code):
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
         post_data = {'grant_type': 'authorization_code',
@@ -189,7 +191,7 @@ class TokenHandler:
         return token_json
 
     def __refresh_token(self, refresh_token: str):
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
         post_data = {'grant_type': 'refresh_token',
