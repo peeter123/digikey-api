@@ -90,7 +90,11 @@ class by_manf_pn(object):
         if results is None:
             results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit)
         save_results('mpn', self.manf_pn, results)
+        # print('************************')
         # print(results)
+        # print('************************')
+        if not isinstance(results, list):
+            results = results.product_details
         if isinstance(results, list):
             if len(results) == 1:
                 result = results[0]
@@ -105,8 +109,6 @@ class by_manf_pn(object):
                 #    r = rs.data
                 #    print('- {} {} {} {} {}'.format(r.digi_key_part_number, r.minimum_order_quantity, r.manufacturer.value, rs.min_price, r.additional_value_fee))
             # print(result)
-        else:
-            result = results.product_details
         return result
 
 
