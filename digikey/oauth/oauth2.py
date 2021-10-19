@@ -12,7 +12,6 @@ from webbrowser import open_new
 
 import requests
 from certauth.certauth import CertificateAuthority
-from fake_useragent import UserAgent
 
 from digikey.exceptions import DigikeyOauthException
 
