@@ -143,11 +143,11 @@ class TokenHandler:
             )
 
         a_token_storage_path = a_token_storage_path or os.getenv('DIGIKEY_STORAGE_PATH')
-        if not a_token_storage_path or not os.path.isfile(a_token_storage_path):
+        if not a_token_storage_path or not os.path.isdir(a_token_storage_path):
             raise ValueError(
                 'STORAGE PATH must be set and must exist.'
                 'Set "DIGIKEY_STORAGE_PATH" as an environment variable, '
-                'or pass your keys directly to the client.'
+                'or pass your keys directly to the client. ({})'.format(a_token_storage_path)
             )
 
         self._id = a_id
