@@ -7,6 +7,7 @@ import os
 import re
 import logging
 import pickle
+import time
 
 import kicost_digikey_api_v3
 from kicost_digikey_api_v3.v3.productinformation import ManufacturerProductDetailsRequest, KeywordSearchRequest
@@ -18,10 +19,8 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/22.0"
 includes = ["DigiKeyPartNumber","ProductUrl","QuantityAvailable","MinimumOrderQuantity","PrimaryDatasheet","ProductStatus",
             "SearchLocaleUsed","StandardPricing","Parameters","RoHsStatus","AdditionalValueFee"]
 includes = ','.join(includes)
-# Store the results to reproduce them during debug
-do_save_results = False
-# Read the results from disk for debugging
-do_fake_results = False
+# Cache TTL in minutes
+cache_ttl = 24*60
 
 
 def get_name(prefix, name):
@@ -29,21 +28,22 @@ def get_name(prefix, name):
 
 
 def save_results(prefix, name, results):
-    if do_save_results:
-        file = get_name(prefix, name)
-        if do_fake_results and os.path.isfile(file):
-            # Don't refresh the data we loaded
-            return
-        with open(file, "wb") as fh:
-            pickle.dump(results, fh, protocol=2)
+    with open(get_name(prefix, name), "wb") as fh:
+        pickle.dump(results, fh, protocol=2)
 
 
-def fake_results(prefix, name):
-    if do_fake_results:
-        file = get_name(prefix, name)
-        if os.path.isfile(file):
-            with open(file, "rb") as fh:
-                return pickle.loads(fh.read())
+def load_results(prefix, name):
+    file = get_name(prefix, name)
+    if not os.path.isfile(file):
+        return None
+    mtime = os.path.getmtime(file)
+    ctime = time.time()
+    dif_minutes = int((ctime-mtime)/60)
+    if cache_ttl < 0 or dif_minutes <= cache_ttl:
+        with open(file, "rb") as fh:
+            return pickle.loads(fh.read())
+    # Cache expired
+    return None
 
 
 class PartSortWrapper(object):
@@ -86,10 +86,10 @@ class by_manf_pn(object):
     def search(self):
         search_request = ManufacturerProductDetailsRequest(manufacturer_product=self.manf_pn, record_count=10)
         self.api_limit = {}
-        results = fake_results('mpn', self.manf_pn)
+        results = load_results('mpn', self.manf_pn)
         if results is None:
             results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit)
-        save_results('mpn', self.manf_pn, results)
+            save_results('mpn', self.manf_pn, results)
         # print('************************')
         # print(results)
         # print('************************')
@@ -118,10 +118,10 @@ class by_digikey_pn(object):
 
     def search(self):
         self.api_limit = {}
-        result = fake_results('dpn', self.dk_pn)
+        result = load_results('dpn', self.dk_pn)
         if result is None:
             result = kicost_digikey_api_v3.product_details(self.dk_pn, api_limits=self.api_limit, includes=includes)
-        save_results('dpn', self.dk_pn, result)
+            save_results('dpn', self.dk_pn, result)
         return result
 
 
@@ -132,10 +132,10 @@ class by_keyword(object):
     def search(self):
         search_request = KeywordSearchRequest(keywords=self.keyword, record_count=10)
         self.api_limit = {}
-        result = fake_results('key', self.keyword)
+        result = load_results('key', self.keyword)
         if result is None:
             result = kicost_digikey_api_v3.keyword_search(body=search_request, api_limits=self.api_limit) #, includes=includes)
-        save_results('key', self.keyword, result)
+            save_results('key', self.keyword, result)
         results = result.products
         # print(results)
         if isinstance(results, list):
@@ -202,12 +202,16 @@ def configure(file=None, a_logger=None):
         raise DigikeyError("No Digi-Key credentials defined, store them in `{}`".format(file))
     # Default to no sandbox
     environ_add('DIGIKEY_CLIENT_SANDBOX', 'False')
-    # Debug configuration
-    if os.getenv('DIGIKEY_SAVE_RESULTS'):
-        global do_save_results
-        do_save_results = True
-    if os.getenv('DIGIKEY_FAKE_RESULTS'):
-        global do_fake_results
-        do_fake_results = True
+    # Cache TTL (Time To Live)
+    new_ttl = os.getenv('DIGIKEY_CACHE_TTL')
+    if new_ttl is not None:
+        global cache_ttl
+        cache_ttl = None
+        try:
+            cache_ttl = int(new_ttl)
+        except ValueError:
+            pass
+        if cache_ttl is None:
+            raise DigikeyError("DIGIKEY_CACHE_TTL must be an integer `{}`".format(new_ttl))
     logger.debug('Digi-Key API plug-in options:')
     logger.debug(str([k + '=' + v for k, v in os.environ.items() if k.startswith('DIGIKEY_')]))
