@@ -88,7 +88,8 @@ class DigikeyApiWrapper(object):
 
             return api_response[0]
         except ApiException as e:
-            logger.error('Exception when calling {}: {}'.format(self.wrapped_function, e))
+            if e.reason != 'Not Found' or logger.getEffectiveLevel() <= logging.DEBUG:
+                logger.error('Exception when calling {}: {}'.format(self.wrapped_function, e))
 
 
 def keyword_search(*args, **kwargs):
