@@ -35,15 +35,17 @@ def save_results(prefix, name, results):
 def load_results(prefix, name):
     file = get_name(prefix, name)
     if not os.path.isfile(file):
-        return None
+        return None, False
     mtime = os.path.getmtime(file)
     ctime = time.time()
     dif_minutes = int((ctime-mtime)/60)
     if cache_ttl < 0 or dif_minutes <= cache_ttl:
         with open(file, "rb") as fh:
-            return pickle.loads(fh.read())
+            result = pickle.loads(fh.read())
+        # Valid load if we got a valid result or we have a persistent cache
+        return result, result is not None or cache_ttl < 0
     # Cache expired
-    return None
+    return None, False
 
 
 class PartSortWrapper(object):
@@ -86,8 +88,8 @@ class by_manf_pn(object):
     def search(self):
         search_request = ManufacturerProductDetailsRequest(manufacturer_product=self.manf_pn, record_count=10)
         self.api_limit = {}
-        results = load_results('mpn', self.manf_pn)
-        if results is None:
+        results, loaded = load_results('mpn', self.manf_pn)
+        if not loaded:
             results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit)
             save_results('mpn', self.manf_pn, results)
         # print('************************')
@@ -118,8 +120,8 @@ class by_digikey_pn(object):
 
     def search(self):
         self.api_limit = {}
-        result = load_results('dpn', self.dk_pn)
-        if result is None:
+        result, loaded = load_results('dpn', self.dk_pn)
+        if not loaded:
             result = kicost_digikey_api_v3.product_details(self.dk_pn, api_limits=self.api_limit, includes=includes)
             save_results('dpn', self.dk_pn, result)
         return result
@@ -132,8 +134,8 @@ class by_keyword(object):
     def search(self):
         search_request = KeywordSearchRequest(keywords=self.keyword, record_count=10)
         self.api_limit = {}
-        result = load_results('key', self.keyword)
-        if result is None:
+        result, loaded = load_results('key', self.keyword)
+        if not loaded:
             result = kicost_digikey_api_v3.keyword_search(body=search_request, api_limits=self.api_limit) #, includes=includes)
             save_results('key', self.keyword, result)
         results = result.products
