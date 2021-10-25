@@ -171,6 +171,7 @@ def configure(file=None, a_logger=None):
         global logger
         logger = a_logger
         kicost_digikey_api_v3.v3.api.set_logger(a_logger)
+        kicost_digikey_api_v3.oauth.oauth2.set_logger(a_logger)
     if not file:
         data_path = os.getenv('DIGIKEY_STORAGE_PATH')
         if data_path:

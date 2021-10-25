@@ -95,7 +95,7 @@ def keyword_search(*args, **kwargs):
     client = DigikeyApiWrapper('keyword_search_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == KeywordSearchRequest:
-        logger.info('Search for: {}'.format(kwargs["body"].keywords))
+        logger.debug('Search for: {}'.format(kwargs["body"].keywords))
         logger.debug('CALL -> keyword_search')
         return client.call_api_function(*args, **kwargs)
     else:
@@ -106,7 +106,7 @@ def product_details(*args, **kwargs):
     client = DigikeyApiWrapper('product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
-        logger.info('Get product details for: {}'.format(args[0]))
+        logger.debug('Get product details for: {}'.format(args[0]))
         return client.call_api_function(*args, **kwargs)
 
 
@@ -114,7 +114,7 @@ def digi_reel_pricing(*args, **kwargs):
     client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
-        logger.info('Calculate the DigiReel pricing for {} with quantity {}'.format(args[0], args[1]))
+        logger.debug('Calculate the DigiReel pricing for {} with quantity {}'.format(args[0], args[1]))
         return client.call_api_function(*args, **kwargs)
 
 
@@ -122,7 +122,7 @@ def suggested_parts(*args, **kwargs):
     client = DigikeyApiWrapper('suggested_parts_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if len(args):
-        logger.info('Retrieve detailed product information and two suggested products for: {}'.format(args[0]))
+        logger.debug('Retrieve detailed product information and two suggested products for: {}'.format(args[0]))
         return client.call_api_function(*args, **kwargs)
 
 
@@ -130,7 +130,7 @@ def manufacturer_product_details(*args, **kwargs):
     client = DigikeyApiWrapper('manufacturer_product_details_with_http_info', kicost_digikey_api_v3.v3.productinformation)
 
     if 'body' in kwargs and type(kwargs['body']) == ManufacturerProductDetailsRequest:
-        logger.info('Search for: {}'.format(kwargs["body"].manufacturer_product))
+        logger.debug('Search for: {}'.format(kwargs["body"].manufacturer_product))
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid ManufacturerProductDetailsRequest argument')

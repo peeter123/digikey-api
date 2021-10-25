@@ -39,6 +39,11 @@ PORT = 8139
 logger = logging.getLogger(__name__)
 
 
+def set_logger(lg):
+    global logger
+    logger = lg
+
+
 def utcnow():
     if py_2:
         return datetime.utcnow()
@@ -192,7 +197,7 @@ class TokenHandler:
         else:
             token_json = r.json()
             logger.debug('TOKEN - Got access token with value: {}...'.format(token_json["access_token"][:-5]))
-            logger.info('TOKEN - Successfully retrieved access token.')
+            # logger.info('TOKEN - Successfully retrieved access token.')
 
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + utcnow().timestamp() - 60
@@ -218,7 +223,7 @@ class TokenHandler:
         else:
             token_json = r.json()
             logger.debug('REFRESH - Got access token with value: {}'.format(token_json["access_token"]))
-            logger.info('REFRESH - Successfully retrieved access token.')
+            # logger.info('REFRESH - Successfully retrieved access token.')
 
         # Create epoch timestamp from expires in, with 1 minute margin
         token_json['expires'] = int(token_json['expires_in']) + utcnow().timestamp() - 60
