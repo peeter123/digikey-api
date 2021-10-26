@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/22.0"
 includes = ["DigiKeyPartNumber","ProductUrl","QuantityAvailable","MinimumOrderQuantity","PrimaryDatasheet","ProductStatus",
-            "SearchLocaleUsed","StandardPricing","Parameters","RoHsStatus","AdditionalValueFee"]
+            "SearchLocaleUsed","StandardPricing","Parameters","RoHsStatus","AdditionalValueFee","ProductDescription"]
 includes = ','.join(includes)
 # Cache TTL in minutes
 cache_ttl = 24*60
