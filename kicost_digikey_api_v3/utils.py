@@ -167,54 +167,26 @@ def environ_add(var, value):
         os.environ[var] = value
 
 
-def configure(file=None, a_logger=None):
+def configure(id, secret, sandbox, a_cache_ttl, cache_path, a_logger=None):
     """ Load the configuration file and check we have the needed stuff """
     if a_logger:
         global logger
         logger = a_logger
         kicost_digikey_api_v3.v3.api.set_logger(a_logger)
         kicost_digikey_api_v3.oauth.oauth2.set_logger(a_logger)
-    if not file:
-        data_path = os.getenv('DIGIKEY_STORAGE_PATH')
-        if data_path:
-            fn = os.path.join(data_path, 'config.txt')
-            if os.path.isfile(fn):
-                file = fn
-        # Default config file
-        if not file:
-            file = os.path.join(os.environ['HOME'], '.config', 'kicost_digikey_api_v3', 'config.txt')
-    if os.path.isfile(file):
-        # Load options from the configuration file
-        reg = re.compile(r'(\w+)\s*=\s*(.*)')
-        with open(file, 'rt') as fh:
-            for line in fh:
-                if line[0] != '#':
-                    res = reg.match(line)
-                    if res:
-                        (var, val) = res.groups()
-                        environ_add(var, val)
     # Ensure we have a place to store the token
-    environ_add('DIGIKEY_STORAGE_PATH', os.path.dirname(file))
-    dir = os.environ['DIGIKEY_STORAGE_PATH']
-    if not os.path.isdir(dir):
-        raise DigikeyError("No directory to store tokens, please create `{}`".format(dir))
+    if not os.path.isdir(cache_path):
+        raise DigikeyError("No directory to store tokens, please create `{}`".format(cache_path))
+    os.environ['DIGIKEY_STORAGE_PATH'] = cache_path
     # Ensure we have the credentials
-    id = os.getenv('DIGIKEY_CLIENT_ID')
-    secret = os.getenv('DIGIKEY_CLIENT_SECRET')
     if not id or not secret:
-        raise DigikeyError("No Digi-Key credentials defined, store them in `{}`".format(file))
+        raise DigikeyError("No Digi-Key credentials defined")
+    os.environ['DIGIKEY_CLIENT_ID'] = id
+    os.environ['DIGIKEY_CLIENT_SECRET'] = secret
     # Default to no sandbox
-    environ_add('DIGIKEY_CLIENT_SANDBOX', 'False')
+    os.environ['DIGIKEY_CLIENT_SANDBOX'] = str(sandbox)
     # Cache TTL (Time To Live)
-    new_ttl = os.getenv('DIGIKEY_CACHE_TTL')
-    if new_ttl is not None:
-        global cache_ttl
-        cache_ttl = None
-        try:
-            cache_ttl = int(new_ttl)
-        except ValueError:
-            pass
-        if cache_ttl is None:
-            raise DigikeyError("DIGIKEY_CACHE_TTL must be an integer `{}`".format(new_ttl))
+    global cache_ttl
+    cache_ttl = int(a_cache_ttl*24*60)
     logger.debug('Digi-Key API plug-in options:')
     logger.debug(str([k + '=' + v for k, v in os.environ.items() if k.startswith('DIGIKEY_')]))
