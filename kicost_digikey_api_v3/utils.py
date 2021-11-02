@@ -21,10 +21,22 @@ includes = ["DigiKeyPartNumber","ProductUrl","QuantityAvailable","MinimumOrderQu
 includes = ','.join(includes)
 # Cache TTL in minutes
 cache_ttl = 24*60
+# Extra options for the API
+extra_ops = {}
+# Cache name suffix
+cache_name_suffix = 'US_en_USD_US'
+
+
+def create_cache_name_suffix():
+    global cache_name_suffix
+    cache_name_suffix = extra_ops.get('x_digikey_locale_site', 'US')
+    cache_name_suffix += '_' + extra_ops.get('x_digikey_locale_language', 'en')
+    cache_name_suffix += '_' + extra_ops.get('x_digikey_locale_currency', 'USD')
+    cache_name_suffix += '_' + extra_ops.get('x_digikey_locale_ship_to_country', 'US')
 
 
 def get_name(prefix, name):
-    return os.path.join(os.environ['DIGIKEY_STORAGE_PATH'], prefix + '_' + name.replace('/', '_') + ".dat")
+    return os.path.join(os.environ['DIGIKEY_STORAGE_PATH'], prefix + '_' + name.replace('/', '_') + '_' + cache_name_suffix + ".dat")
 
 
 def save_results(prefix, name, results):
@@ -90,7 +102,7 @@ class by_manf_pn(object):
         self.api_limit = {}
         results, loaded = load_results('mpn', self.manf_pn)
         if not loaded:
-            results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit)
+            results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit, **extra_ops)
             save_results('mpn', self.manf_pn, results)
         # print('************************')
         # print(results)
@@ -122,7 +134,7 @@ class by_digikey_pn(object):
         self.api_limit = {}
         result, loaded = load_results('dpn', self.dk_pn)
         if not loaded:
-            result = kicost_digikey_api_v3.product_details(self.dk_pn, api_limits=self.api_limit, includes=includes)
+            result = kicost_digikey_api_v3.product_details(self.dk_pn, api_limits=self.api_limit, includes=includes, **extra_ops)
             save_results('dpn', self.dk_pn, result)
         return result
 
@@ -136,7 +148,7 @@ class by_keyword(object):
         self.api_limit = {}
         result, loaded = load_results('key', self.keyword)
         if not loaded:
-            result = kicost_digikey_api_v3.keyword_search(body=search_request, api_limits=self.api_limit) #, includes=includes)
+            result = kicost_digikey_api_v3.keyword_search(body=search_request, api_limits=self.api_limit, **extra_ops) #, includes=includes)
             save_results('key', self.keyword, result)
         results = result.products
         # print(results)
@@ -167,7 +179,7 @@ def environ_add(var, value):
         os.environ[var] = value
 
 
-def configure(id, secret, sandbox, a_cache_ttl, cache_path, a_logger=None):
+def configure(id, secret, sandbox, a_cache_ttl, cache_path, api_ops, a_logger=None):
     """ Load the configuration file and check we have the needed stuff """
     if a_logger:
         global logger
@@ -188,5 +200,12 @@ def configure(id, secret, sandbox, a_cache_ttl, cache_path, a_logger=None):
     # Cache TTL (Time To Live)
     global cache_ttl
     cache_ttl = int(a_cache_ttl*24*60)
+    # API options
+    global extra_ops
+    extra_ops = {'x_digikey_'+op: val for op, val in api_ops.items()}
+    create_cache_name_suffix()
+    # Debug information about what we got
     logger.debug('Digi-Key API plug-in options:')
     logger.debug(str([k + '=' + v for k, v in os.environ.items() if k.startswith('DIGIKEY_')]))
+    logger.debug(str(extra_ops))
+    logger.debug('cache suffix: ' + cache_name_suffix)
