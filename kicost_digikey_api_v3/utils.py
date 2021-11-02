@@ -6,58 +6,15 @@
 import os
 import re
 import logging
-import pickle
-import time
 
 import kicost_digikey_api_v3
 from kicost_digikey_api_v3.v3.productinformation import ManufacturerProductDetailsRequest, KeywordSearchRequest
 from .exceptions import DigikeyError
 
-logger = logging.getLogger(__name__)
-
 USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/22.0"
 includes = ["DigiKeyPartNumber","ProductUrl","QuantityAvailable","MinimumOrderQuantity","PrimaryDatasheet","ProductStatus",
             "SearchLocaleUsed","StandardPricing","Parameters","RoHsStatus","AdditionalValueFee","ProductDescription"]
 includes = ','.join(includes)
-# Cache TTL in minutes
-cache_ttl = 24*60
-# Extra options for the API
-extra_ops = {}
-# Cache name suffix
-cache_name_suffix = 'US_en_USD_US'
-
-
-def create_cache_name_suffix():
-    global cache_name_suffix
-    cache_name_suffix = extra_ops.get('x_digikey_locale_site', 'US')
-    cache_name_suffix += '_' + extra_ops.get('x_digikey_locale_language', 'en')
-    cache_name_suffix += '_' + extra_ops.get('x_digikey_locale_currency', 'USD')
-    cache_name_suffix += '_' + extra_ops.get('x_digikey_locale_ship_to_country', 'US')
-
-
-def get_name(prefix, name):
-    return os.path.join(os.environ['DIGIKEY_STORAGE_PATH'], prefix + '_' + name.replace('/', '_') + '_' + cache_name_suffix + ".dat")
-
-
-def save_results(prefix, name, results):
-    with open(get_name(prefix, name), "wb") as fh:
-        pickle.dump(results, fh, protocol=2)
-
-
-def load_results(prefix, name):
-    file = get_name(prefix, name)
-    if not os.path.isfile(file):
-        return None, False
-    mtime = os.path.getmtime(file)
-    ctime = time.time()
-    dif_minutes = int((ctime-mtime)/60)
-    if cache_ttl < 0 or dif_minutes <= cache_ttl:
-        with open(file, "rb") as fh:
-            result = pickle.loads(fh.read())
-        # Valid load if we got a valid result or we have a persistent cache
-        return result, result is not None or cache_ttl < 0
-    # Cache expired
-    return None, False
 
 
 class PartSortWrapper(object):
@@ -93,17 +50,79 @@ class PartSortWrapper(object):
         return False
 
 
+class DK_API(object):
+    ''' Configuration class, KiCost must extend it and provide an object with the desired options '''
+    # Provided by KiCost
+    id = secret = None
+    sandbox = False
+    cache_ttl = 7
+    cache_path = None
+    api_ops = {}
+    # Configured here
+    cache_name_suffix = 'US_en_USD_US'
+    logger = logging.getLogger(__name__)
+    cache_ttl_min = 7*24*60
+    extra_ops = {}  # Extra options for the API
+
+    @staticmethod
+    def save_results(prefix, name, results):
+        ''' Saves the results to the cache, must be implemented by KiCost '''
+        pass
+
+    @staticmethod
+    def load_results(prefix, name):
+        ''' Loads the results from the cache, must be implemented by KiCost '''
+        return None, False
+
+    @staticmethod
+    def _create_cache_name_suffix():
+        DK_API.cache_name_suffix = DK_API.extra_ops.get('x_digikey_locale_site', 'US')
+        DK_API.cache_name_suffix += '_' + DK_API.extra_ops.get('x_digikey_locale_language', 'en')
+        DK_API.cache_name_suffix += '_' + DK_API.extra_ops.get('x_digikey_locale_currency', 'USD')
+        DK_API.cache_name_suffix += '_' + DK_API.extra_ops.get('x_digikey_locale_ship_to_country', 'US')
+
+    @staticmethod
+    def configure(a_logger=None):
+        ''' Configures the plug-in '''
+        if a_logger:
+            DK_API.logger = a_logger
+            kicost_digikey_api_v3.v3.api.set_logger(a_logger)
+            kicost_digikey_api_v3.oauth.oauth2.set_logger(a_logger)
+        # Ensure we have a place to store the token
+        if not os.path.isdir(DK_API.cache_path):
+            raise DigikeyError("No directory to store tokens, please create `{}`".format(DK_API.cache_path))
+        os.environ['DIGIKEY_STORAGE_PATH'] = DK_API.cache_path
+        # Ensure we have the credentials
+        if not DK_API.id or not DK_API.secret:
+            raise DigikeyError("No Digi-Key credentials defined")
+        os.environ['DIGIKEY_CLIENT_ID'] = DK_API.id
+        os.environ['DIGIKEY_CLIENT_SECRET'] = DK_API.secret
+        # Default to no sandbox
+        os.environ['DIGIKEY_CLIENT_SANDBOX'] = str(DK_API.sandbox)
+        # Cache TTL (Time To Live)
+        DK_API.cache_ttl_min = int(DK_API.cache_ttl*24*60)
+        # API options
+        DK_API.extra_ops = {'x_digikey_'+op: val for op, val in DK_API.api_ops.items()}
+        DK_API._create_cache_name_suffix()
+        # Debug information about what we got
+        DK_API.logger.debug('Digi-Key API plug-in options:')
+        DK_API.logger.debug(str([k + '=' + v for k, v in os.environ.items() if k.startswith('DIGIKEY_')]))
+        DK_API.logger.debug(str(DK_API.extra_ops))
+        DK_API.logger.debug('cache suffix: ' + DK_API.cache_name_suffix)
+
+
 class by_manf_pn(object):
-    def __init__(self, manf_pn):
+    def __init__(self, manf_pn, api):
         self.manf_pn = manf_pn
+        self.api = api
 
     def search(self):
         search_request = ManufacturerProductDetailsRequest(manufacturer_product=self.manf_pn, record_count=10)
         self.api_limit = {}
-        results, loaded = load_results('mpn', self.manf_pn)
+        results, loaded = self.api.load_results('mpn', self.manf_pn)
         if not loaded:
-            results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit, **extra_ops)
-            save_results('mpn', self.manf_pn, results)
+            results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit, **self.api.extra_ops)
+            api.save_results('mpn', self.manf_pn, results)
         # print('************************')
         # print(results)
         # print('************************')
@@ -127,29 +146,31 @@ class by_manf_pn(object):
 
 
 class by_digikey_pn(object):
-    def __init__(self, dk_pn):
+    def __init__(self, dk_pn, api):
         self.dk_pn = dk_pn
+        self.api = api
 
     def search(self):
         self.api_limit = {}
-        result, loaded = load_results('dpn', self.dk_pn)
+        result, loaded = self.api.load_results('dpn', self.dk_pn)
         if not loaded:
-            result = kicost_digikey_api_v3.product_details(self.dk_pn, api_limits=self.api_limit, includes=includes, **extra_ops)
-            save_results('dpn', self.dk_pn, result)
+            result = kicost_digikey_api_v3.product_details(self.dk_pn, api_limits=self.api_limit, includes=includes, **self.api.extra_ops)
+            api.save_results('dpn', self.dk_pn, result)
         return result
 
 
 class by_keyword(object):
-    def __init__(self, keyword):
+    def __init__(self, keyword, api):
         self.keyword = keyword
+        self.api = api
 
     def search(self):
         search_request = KeywordSearchRequest(keywords=self.keyword, record_count=10)
         self.api_limit = {}
-        result, loaded = load_results('key', self.keyword)
+        result, loaded = self.api.load_results('key', self.keyword)
         if not loaded:
-            result = kicost_digikey_api_v3.keyword_search(body=search_request, api_limits=self.api_limit, **extra_ops) #, includes=includes)
-            save_results('key', self.keyword, result)
+            result = kicost_digikey_api_v3.keyword_search(body=search_request, api_limits=self.api_limit, **self.api.extra_ops) #, includes=includes)
+            api.save_results('key', self.keyword, result)
         results = result.products
         # print(results)
         if isinstance(results, list):
@@ -167,45 +188,7 @@ class by_keyword(object):
                 #    print('- {} {} {} {} {}'.format(r.digi_key_part_number, r.minimum_order_quantity, r.manufacturer.value, rs.min_price, r.additional_value_fee))
             if result is not None:
                 # The keyword search returns incomplete data, do a query using the Digi-Key code
-                o = by_digikey_pn(result.digi_key_part_number)
+                o = by_digikey_pn(result.digi_key_part_number, self.api)
                 result = o.search()
             # print(result)
         return result
-
-
-def environ_add(var, value):
-    """ Adds variable var to the environment, but only if not already defined """
-    if os.getenv(var) is None:
-        os.environ[var] = value
-
-
-def configure(id, secret, sandbox, a_cache_ttl, cache_path, api_ops, a_logger=None):
-    """ Load the configuration file and check we have the needed stuff """
-    if a_logger:
-        global logger
-        logger = a_logger
-        kicost_digikey_api_v3.v3.api.set_logger(a_logger)
-        kicost_digikey_api_v3.oauth.oauth2.set_logger(a_logger)
-    # Ensure we have a place to store the token
-    if not os.path.isdir(cache_path):
-        raise DigikeyError("No directory to store tokens, please create `{}`".format(cache_path))
-    os.environ['DIGIKEY_STORAGE_PATH'] = cache_path
-    # Ensure we have the credentials
-    if not id or not secret:
-        raise DigikeyError("No Digi-Key credentials defined")
-    os.environ['DIGIKEY_CLIENT_ID'] = id
-    os.environ['DIGIKEY_CLIENT_SECRET'] = secret
-    # Default to no sandbox
-    os.environ['DIGIKEY_CLIENT_SANDBOX'] = str(sandbox)
-    # Cache TTL (Time To Live)
-    global cache_ttl
-    cache_ttl = int(a_cache_ttl*24*60)
-    # API options
-    global extra_ops
-    extra_ops = {'x_digikey_'+op: val for op, val in api_ops.items()}
-    create_cache_name_suffix()
-    # Debug information about what we got
-    logger.debug('Digi-Key API plug-in options:')
-    logger.debug(str([k + '=' + v for k, v in os.environ.items() if k.startswith('DIGIKEY_')]))
-    logger.debug(str(extra_ops))
-    logger.debug('cache suffix: ' + cache_name_suffix)
