@@ -63,7 +63,7 @@ class DK_API(object):
 
     @staticmethod
     def _create_cache_name_suffix():
-        suf = DK_API.extra_ops.get('x_digikey_locale_site', 'US')
+        suf = '_' + DK_API.extra_ops.get('x_digikey_locale_site', 'US')
         suf += '_' + DK_API.extra_ops.get('x_digikey_locale_language', 'en')
         suf += '_' + DK_API.extra_ops.get('x_digikey_locale_currency', 'USD')
         suf += '_' + DK_API.extra_ops.get('x_digikey_locale_ship_to_country', 'US')
