@@ -31,6 +31,7 @@ class LineItem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'po_line_item_number': 'str',
         'digi_key_part_number': 'str',
         'manufacturer_part_number': 'str',
         'product_description': 'str',
@@ -41,12 +42,15 @@ class LineItem(object):
         'unit_price': 'float',
         'total_price': 'float',
         'quantity_backorder': 'int',
+        'back_order_details': 'BackOrderDetails',
         'quantity_shipped': 'int',
         'invoice_id': 'int',
+        'default_shipping': 'DefaultShipping',
         'schedule': 'list[Schedule]'
     }
 
     attribute_map = {
+        'po_line_item_number': 'PoLineItemNumber',
         'digi_key_part_number': 'DigiKeyPartNumber',
         'manufacturer_part_number': 'ManufacturerPartNumber',
         'product_description': 'ProductDescription',
@@ -57,14 +61,17 @@ class LineItem(object):
         'unit_price': 'UnitPrice',
         'total_price': 'TotalPrice',
         'quantity_backorder': 'QuantityBackorder',
+        'back_order_details': 'BackOrderDetails',
         'quantity_shipped': 'QuantityShipped',
         'invoice_id': 'InvoiceId',
+        'default_shipping': 'DefaultShipping',
         'schedule': 'Schedule'
     }
 
-    def __init__(self, digi_key_part_number=None, manufacturer_part_number=None, product_description=None, manufacturer=None, country_of_origin=None, quantity=None, customer_reference=None, unit_price=None, total_price=None, quantity_backorder=None, quantity_shipped=None, invoice_id=None, schedule=None):  # noqa: E501
+    def __init__(self, po_line_item_number=None, digi_key_part_number=None, manufacturer_part_number=None, product_description=None, manufacturer=None, country_of_origin=None, quantity=None, customer_reference=None, unit_price=None, total_price=None, quantity_backorder=None, back_order_details=None, quantity_shipped=None, invoice_id=None, default_shipping=None, schedule=None):  # noqa: E501
         """LineItem - a model defined in Swagger"""  # noqa: E501
 
+        self._po_line_item_number = None
         self._digi_key_part_number = None
         self._manufacturer_part_number = None
         self._product_description = None
@@ -75,11 +82,15 @@ class LineItem(object):
         self._unit_price = None
         self._total_price = None
         self._quantity_backorder = None
+        self._back_order_details = None
         self._quantity_shipped = None
         self._invoice_id = None
+        self._default_shipping = None
         self._schedule = None
         self.discriminator = None
 
+        if po_line_item_number is not None:
+            self.po_line_item_number = po_line_item_number
         if digi_key_part_number is not None:
             self.digi_key_part_number = digi_key_part_number
         if manufacturer_part_number is not None:
@@ -100,12 +111,39 @@ class LineItem(object):
             self.total_price = total_price
         if quantity_backorder is not None:
             self.quantity_backorder = quantity_backorder
+        if back_order_details is not None:
+            self.back_order_details = back_order_details
         if quantity_shipped is not None:
             self.quantity_shipped = quantity_shipped
         if invoice_id is not None:
             self.invoice_id = invoice_id
+        if default_shipping is not None:
+            self.default_shipping = default_shipping
         if schedule is not None:
             self.schedule = schedule
+
+    @property
+    def po_line_item_number(self):
+        """Gets the po_line_item_number of this LineItem.  # noqa: E501
+
+        Line item number provided on purchase order  # noqa: E501
+
+        :return: The po_line_item_number of this LineItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._po_line_item_number
+
+    @po_line_item_number.setter
+    def po_line_item_number(self, po_line_item_number):
+        """Sets the po_line_item_number of this LineItem.
+
+        Line item number provided on purchase order  # noqa: E501
+
+        :param po_line_item_number: The po_line_item_number of this LineItem.  # noqa: E501
+        :type: str
+        """
+
+        self._po_line_item_number = po_line_item_number
 
     @property
     def digi_key_part_number(self):
@@ -338,6 +376,27 @@ class LineItem(object):
         self._quantity_backorder = quantity_backorder
 
     @property
+    def back_order_details(self):
+        """Gets the back_order_details of this LineItem.  # noqa: E501
+
+
+        :return: The back_order_details of this LineItem.  # noqa: E501
+        :rtype: BackOrderDetails
+        """
+        return self._back_order_details
+
+    @back_order_details.setter
+    def back_order_details(self, back_order_details):
+        """Sets the back_order_details of this LineItem.
+
+
+        :param back_order_details: The back_order_details of this LineItem.  # noqa: E501
+        :type: BackOrderDetails
+        """
+
+        self._back_order_details = back_order_details
+
+    @property
     def quantity_shipped(self):
         """Gets the quantity_shipped of this LineItem.  # noqa: E501
 
@@ -382,6 +441,27 @@ class LineItem(object):
         """
 
         self._invoice_id = invoice_id
+
+    @property
+    def default_shipping(self):
+        """Gets the default_shipping of this LineItem.  # noqa: E501
+
+
+        :return: The default_shipping of this LineItem.  # noqa: E501
+        :rtype: DefaultShipping
+        """
+        return self._default_shipping
+
+    @default_shipping.setter
+    def default_shipping(self, default_shipping):
+        """Sets the default_shipping of this LineItem.
+
+
+        :param default_shipping: The default_shipping of this LineItem.  # noqa: E501
+        :type: DefaultShipping
+        """
+
+        self._default_shipping = default_shipping
 
     @property
     def schedule(self):

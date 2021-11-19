@@ -51,6 +51,8 @@ class Product(object):
         'htsus_code': 'str',
         'tariff_description': 'str',
         'moisture_sensitivity_level': 'str',
+        'family': 'PidVid',
+        'category': 'PidVid',
         'manufacturer_part_number': 'str',
         'minimum_order_quantity': 'int',
         'non_stock': 'bool',
@@ -63,6 +65,7 @@ class Product(object):
         'manufacturer_public_quantity': 'int',
         'quantity_on_order': 'int',
         'dk_plus_restriction': 'bool',
+        'marketplace': 'bool',
         'supplier_direct_ship': 'bool'
     }
 
@@ -87,6 +90,8 @@ class Product(object):
         'htsus_code': 'HTSUSCode',
         'tariff_description': 'TariffDescription',
         'moisture_sensitivity_level': 'MoistureSensitivityLevel',
+        'family': 'Family',
+        'category': 'Category',
         'manufacturer_part_number': 'ManufacturerPartNumber',
         'minimum_order_quantity': 'MinimumOrderQuantity',
         'non_stock': 'NonStock',
@@ -99,10 +104,11 @@ class Product(object):
         'manufacturer_public_quantity': 'ManufacturerPublicQuantity',
         'quantity_on_order': 'QuantityOnOrder',
         'dk_plus_restriction': 'DKPlusRestriction',
+        'marketplace': 'Marketplace',
         'supplier_direct_ship': 'SupplierDirectShip'
     }
 
-    def __init__(self, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, reach_status=None, export_control_class_number=None, htsus_code=None, tariff_description=None, moisture_sensitivity_level=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, supplier_direct_ship=None):  # noqa: E501
+    def __init__(self, standard_pricing=None, ro_hs_status=None, lead_status=None, parameters=None, product_url=None, primary_datasheet=None, primary_photo=None, primary_video=None, series=None, manufacturer_lead_weeks=None, manufacturer_page_url=None, product_status=None, date_last_buy_chance=None, alternate_packaging=None, detailed_description=None, reach_status=None, export_control_class_number=None, htsus_code=None, tariff_description=None, moisture_sensitivity_level=None, family=None, category=None, manufacturer_part_number=None, minimum_order_quantity=None, non_stock=None, packaging=None, quantity_available=None, digi_key_part_number=None, product_description=None, unit_price=None, manufacturer=None, manufacturer_public_quantity=None, quantity_on_order=None, dk_plus_restriction=None, marketplace=None, supplier_direct_ship=None):  # noqa: E501
         """Product - a model defined in Swagger"""  # noqa: E501
 
         self._standard_pricing = None
@@ -125,6 +131,8 @@ class Product(object):
         self._htsus_code = None
         self._tariff_description = None
         self._moisture_sensitivity_level = None
+        self._family = None
+        self._category = None
         self._manufacturer_part_number = None
         self._minimum_order_quantity = None
         self._non_stock = None
@@ -137,6 +145,7 @@ class Product(object):
         self._manufacturer_public_quantity = None
         self._quantity_on_order = None
         self._dk_plus_restriction = None
+        self._marketplace = None
         self._supplier_direct_ship = None
         self.discriminator = None
 
@@ -180,6 +189,10 @@ class Product(object):
             self.tariff_description = tariff_description
         if moisture_sensitivity_level is not None:
             self.moisture_sensitivity_level = moisture_sensitivity_level
+        if family is not None:
+            self.family = family
+        if category is not None:
+            self.category = category
         if manufacturer_part_number is not None:
             self.manufacturer_part_number = manufacturer_part_number
         if minimum_order_quantity is not None:
@@ -204,6 +217,8 @@ class Product(object):
             self.quantity_on_order = quantity_on_order
         if dk_plus_restriction is not None:
             self.dk_plus_restriction = dk_plus_restriction
+        if marketplace is not None:
+            self.marketplace = marketplace
         if supplier_direct_ship is not None:
             self.supplier_direct_ship = supplier_direct_ship
 
@@ -666,6 +681,48 @@ class Product(object):
         self._moisture_sensitivity_level = moisture_sensitivity_level
 
     @property
+    def family(self):
+        """Gets the family of this Product.  # noqa: E501
+
+
+        :return: The family of this Product.  # noqa: E501
+        :rtype: PidVid
+        """
+        return self._family
+
+    @family.setter
+    def family(self, family):
+        """Sets the family of this Product.
+
+
+        :param family: The family of this Product.  # noqa: E501
+        :type: PidVid
+        """
+
+        self._family = family
+
+    @property
+    def category(self):
+        """Gets the category of this Product.  # noqa: E501
+
+
+        :return: The category of this Product.  # noqa: E501
+        :rtype: PidVid
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """Sets the category of this Product.
+
+
+        :param category: The category of this Product.  # noqa: E501
+        :type: PidVid
+        """
+
+        self._category = category
+
+    @property
     def manufacturer_part_number(self):
         """Gets the manufacturer_part_number of this Product.  # noqa: E501
 
@@ -918,7 +975,7 @@ class Product(object):
     def dk_plus_restriction(self):
         """Gets the dk_plus_restriction of this Product.  # noqa: E501
 
-        If true- this product is not available for purchase through the Ordering API - it must be purchased through the  Digi-Key web site  # noqa: E501
+        Deprecated property - see Marketplace  # noqa: E501
 
         :return: The dk_plus_restriction of this Product.  # noqa: E501
         :rtype: bool
@@ -929,13 +986,36 @@ class Product(object):
     def dk_plus_restriction(self, dk_plus_restriction):
         """Sets the dk_plus_restriction of this Product.
 
-        If true- this product is not available for purchase through the Ordering API - it must be purchased through the  Digi-Key web site  # noqa: E501
+        Deprecated property - see Marketplace  # noqa: E501
 
         :param dk_plus_restriction: The dk_plus_restriction of this Product.  # noqa: E501
         :type: bool
         """
 
         self._dk_plus_restriction = dk_plus_restriction
+
+    @property
+    def marketplace(self):
+        """Gets the marketplace of this Product.  # noqa: E501
+
+        Product is a Marketplace product that ships direct from the supplier.  A separate shipping fee may apply  # noqa: E501
+
+        :return: The marketplace of this Product.  # noqa: E501
+        :rtype: bool
+        """
+        return self._marketplace
+
+    @marketplace.setter
+    def marketplace(self, marketplace):
+        """Sets the marketplace of this Product.
+
+        Product is a Marketplace product that ships direct from the supplier.  A separate shipping fee may apply  # noqa: E501
+
+        :param marketplace: The marketplace of this Product.  # noqa: E501
+        :type: bool
+        """
+
+        self._marketplace = marketplace
 
     @property
     def supplier_direct_ship(self):
