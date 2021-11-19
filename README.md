@@ -57,6 +57,23 @@ search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=
 result = digikey.keyword_search(body=search_request)
 ```
 
+## Logging [API V3]
+Logging is not forced upon the user but can be enabled according to convention:
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+digikey_logger = logging.getLogger('digikey')
+digikey_logger.setLevel(logging.DEBUG)
+
+handler = logging.StreamHandler()
+handler.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+digikey_logger.addHandler(handler)
+```
+
 ## Top-level APIs
 
 #### Product Information
