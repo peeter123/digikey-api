@@ -2,7 +2,6 @@ inflection
 certauth
 requests
 retrying
-schematics
 urllib3
 responses
 six
