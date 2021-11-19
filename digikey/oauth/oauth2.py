@@ -19,9 +19,6 @@ from digikey.exceptions import DigikeyOauthException
 CA_CERT = 'digikey-api.pem'
 TOKEN_STORAGE = 'token_storage.json'
 
-AUTH_URL_V2 = 'https://sso.digikey.com/as/authorization.oauth2'
-TOKEN_URL_V2 = 'https://sso.digikey.com/as/token.oauth2'
-
 AUTH_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/authorize'
 TOKEN_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/token'
 
@@ -108,10 +105,7 @@ class TokenHandler:
                  version: int = 2,
                  sandbox: bool = False):
 
-        if version == 2:
-            self.auth_url = AUTH_URL_V2
-            self.token_url = TOKEN_URL_V2
-        elif version == 3:
+        if version == 3:
             if sandbox:
                 self.auth_url = AUTH_URL_V3_SB
                 self.token_url = TOKEN_URL_V3_SB
