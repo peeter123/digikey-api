@@ -5,9 +5,9 @@ import typing as t
 from pathlib import Path
 
 import requests
-from fake_useragent import UserAgent
 
 from digikey.v2 import models
+from digikey.constants import USER_AGENT
 from digikey.decorators import retry
 from digikey.exceptions import DigikeyError
 from digikey.oauth.oauth2 import TokenHandler
@@ -63,7 +63,7 @@ class DigikeyClient(object):
                  path: str,
                  data: t.Dict[str, t.Any]=None
                  ) -> t.Any:
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'x-ibm-client-id': self._id,
                    'authorization': self.oauth2.get_authorization()}
 

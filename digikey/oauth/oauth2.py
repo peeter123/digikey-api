@@ -12,8 +12,8 @@ from webbrowser import open_new
 
 import requests
 from certauth.certauth import CertificateAuthority
-from fake_useragent import UserAgent
 
+from digikey.constants import USER_AGENT
 from digikey.exceptions import DigikeyOauthException
 
 CA_CERT = 'digikey-api.pem'
@@ -161,7 +161,7 @@ class TokenHandler:
         return url
 
     def __exchange_for_token(self, code):
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
         post_data = {'grant_type': 'authorization_code',
@@ -189,7 +189,7 @@ class TokenHandler:
         return token_json
 
     def __refresh_token(self, refresh_token: str):
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
         post_data = {'grant_type': 'refresh_token',
