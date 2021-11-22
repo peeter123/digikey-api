@@ -15,10 +15,6 @@ manufacturers overlap other manufacturer part numbers.
 ## Install
 ```sh
 pip install digikey-api
-
-export DIGIKEY_CLIENT_ID="client_id"
-export DIGIKEY_CLIENT_SECRET="client_secret"
-export DIGIKEY_STORAGE_PATH="cache_dir"
 ```
 
 # API V3
@@ -39,59 +35,53 @@ structure of the Sandbox API response will be a representation of what to expect
 For valid responses make sure you use the client ID and secret for a [Production App](https://developer.digikey.com/documentation/organization)
 
 ```python
-import os
 import digikey
 from digikey.v3.productinformation import KeywordSearchRequest
 
-os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
-os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
-os.environ['DIGIKEY_CLIENT_SANDBOX'] = 'False'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
+dk_config = digikey.DigikeyJsonConfig(file_name='dk_conf.json')
+dk_api = digikey.DigikeyAPI(dk_config, is_sandbox=False)
+dk_api.set_client_info(client_id='ENTER_CLIENT_ID', client_secret='ENTER_CLIENT_SECRET')
 
 # Query product number
 dkpn = '296-6501-1-ND'
-part = digikey.product_details(dkpn)
+part = dk_api.product_details(dkpn)
 
 # Search for parts 
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
-result = digikey.keyword_search(body=search_request)
+result = dk_api.keyword_search(body=search_request)
 ```
 
-## Logging [API V3]
-Logging is not forced upon the user but can be enabled according to convention:
-```python
-import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-
-digikey_logger = logging.getLogger('digikey')
-digikey_logger.setLevel(logging.DEBUG)
-
-handler = logging.StreamHandler()
-handler.setLevel(logging.DEBUG)
-logger.addHandler(handler)
-digikey_logger.addHandler(handler)
-```
+## API Configuration Storage
+`DigikeyAPI` requires a configuration class that will handle getting, storing, and saving key-value pairs. Currently
+only `DigikeyJsonConfig` is implemented for storing settings in a JSON file, but a custom configuration can be created.
+See [docs/DigikeyBaseConfig.md](docs/DigikeyBaseConfig.md) for more details on that.
 
 ## Top-level APIs
 
+#### Configuration Related Functions
+* `set_client_info()`
+    * Arguments are `client_id` and `client_secret`
+* `DigikeyAPI.needs_client_id()`
+    * Returns `True` if a client ID is needed/missing
+* `DigikeyAPI.needs_client_secret()`
+    * Returns `True` if a client secret is needed/missing
+
 #### Product Information
 All functions from the [PartSearch](https://developer.digikey.com/products/product-information/partsearch/) API have been implemented.
-* `digikey.keyword_search()`
-* `digikey.product_details()`
-* `digikey.digi_reel_pricing()`
-* `digikey.suggested_parts()`
-* `digikey.manufacturer_product_details()`
+* `DigikeyAPI.keyword_search()`
+* `DigikeyAPI.product_details()`
+* `DigikeyAPI.digi_reel_pricing()`
+* `DigikeyAPI.suggested_parts()`
+* `DigikeyAPI.manufacturer_product_details()`
 
 #### Batch Product Details
 The one function from the [BatchProductDetailsAPI](https://developer.digikey.com/products/batch-productdetails/batchproductdetailsapi) API has been implemented.
-* `digikey.batch_product_details()`
+* `DigikeyAPI.batch_product_details()`
 
 #### Order Support
 All functions from the [OrderDetails](https://developer.digikey.com/products/order-support/orderdetails/) API have been implemented.
-* `digikey.salesorder_history()`
-* `digikey.status_salesorder_id()`
+* `DigikeyAPI.salesorder_history()`
+* `DigikeyAPI.status_salesorder_id()`
 
 #### Barcode
 TODO
@@ -103,7 +93,7 @@ It is possible to retrieve the number of max requests and current requests by pa
 ```python
 api_limit = {}
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
-result = digikey.keyword_search(body=search_request, api_limits=api_limit)
+result = dk_api.keyword_search(body=search_request, api_limits=api_limit)
 ```
  
 The dict will be filled with the information returned from the API:
@@ -115,46 +105,3 @@ The dict will be filled with the information returned from the API:
 ```
 Sometimes the API does not return any rate limit data, the values will then be set to None.
 
-# API V2 [Deprecated]
-**NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**
-
-See API V3 above to use the new API.
-
-## Register
-Register an app on the Digikey API portal: [Digi-Key API V2](https://api-portal.digikey.com/start). You will need the client
-ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
-
-## Use
-Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
-the library will cache the access token and use the refresh token to automatically refresh your credentials.
-
-```python
-import os
-import digikey
-
-os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
-os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
-
-dkpn = '296-6501-1-ND'
-part = digikey.part(dkpn)
-print(part)
-# <Part mpn=NE555DR>
-
-print(part.manufacturer)
-# 'Texas Instruments'
-```
-
-## Test
-```sh
-python -m pytest --cov=digikey --doctest-modules --ignore=setup.py
-python -m mypy digikey --ignore-missing-imports
-```
-
-## Top-level API
-* `digikey.search()`
-* `digikey.part()`
-
-## Data models
-* `digikey.models.KeywordSearchResult`
-* `digikey.models.Part`
