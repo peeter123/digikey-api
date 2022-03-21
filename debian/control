@@ -1,0 +1,15 @@
+Source: kicost-digikey-api-v3
+Section: electronics
+Priority: optional
+Maintainer: Salvador E. Tropea <stropea@inti.gob.ar>
+Build-Depends: debhelper-compat (= 12), dh-python, python3-all
+Standards-Version: 4.5.0
+Homepage: https://github.com/set-soft/kicost-digikey-api-v3/
+X-Python3-Version: >= 3.2
+
+Package: kicost-digikey-api-v3
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Digi-Key API plug-in for KiCost
+ This package adds native support for Digi-Key to KiCost.
