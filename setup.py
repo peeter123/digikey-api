@@ -5,15 +5,6 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-# Python packages requirements to run-time.
-with open('requirements.txt') as f:
-    requirements = f.read().splitlines()
-# Remove the comments
-for idx, r in enumerate(requirements):
-    requirements[idx] = re.findall('^(.*)(!?#.*)*', r)[0][0].strip()
-if '' in requirements:
-    requirements.remove('')
-
 setuptools.setup(
     name="kicost_digikey_api_v3",
     version="0.1.0",
@@ -35,6 +26,15 @@ setuptools.setup(
         "Programming Language :: Python :: 3.6",
         "Topic :: Software Development",
     ],
-    install_requires=requirements,
+    install_requires=[
+        'inflection>=0.3.1',
+        'requests>=2.21',
+        'urllib3>=1.24',
+        'six',
+        'certifi',
+        'setuptools',
+        'pyopenssl',
+        'tldextract',
+        'python-dateutil'],
     tests_requires=['pytest>=5.1.2'],
 )
