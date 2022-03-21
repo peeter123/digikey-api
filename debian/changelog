@@ -1,3 +1,9 @@
+kicost-digikey-api-v3 (0.1.1-1) stable; urgency=medium
+
+  * New upstream release
+
+ -- Salvador E. Tropea <stropea@inti.gob.ar>  Mon, 21 Mar 2022 16:55:01 -0300
+
 kicost-digikey-api-v3 (0.1.0-1) stable; urgency=low
 
   * Initial release.

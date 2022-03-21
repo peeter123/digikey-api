@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="kicost_digikey_api_v3",
-    version="0.1.0",
+    version="0.1.1",
     author="Salvador E. Tropea",
     author_email="stropea@inti.gob.ar",
     license="GPL v3",
