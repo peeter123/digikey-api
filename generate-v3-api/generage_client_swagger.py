@@ -37,6 +37,9 @@ config['custom'] = {
     , 'TMP_PATH': os.path.realpath(os.path.expanduser(
         os.path.join(os.path.dirname(__file__), '..', '.tmp'))
     )
+    , 'API_PATH': os.path.realpath(os.path.expanduser(
+        os.path.join(os.path.dirname(__file__), '..', 'digikey', 'v3'))
+    )
 }
 if not os.path.exists(".env/config.ini"):
     if not os.path.exists(".env"):
