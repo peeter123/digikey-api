@@ -128,10 +128,10 @@ def getDigikeyAPIswaggerSpecJSON(destPath, **kwargs):
     refererURL = 'https://developer.digikey.com/products/{apiGroup}/{apiSubGroup}/{apiQuery}?prod=true'.format(**kwargs)
     url = 'https://developer.digikey.com/node/{urlNode}/oas-download'.format(**kwargs)
     # if the local file exists, then use it
-    if os.path.exists(os.path.join(SWG_PATH,'{filename}')):
+    if os.path.exists(os.path.join(SWG_PATH,'{filename}'.format(**kwargs))):
         import shutil
         swaggerSpecFile = "digikeyAPI-{apiGroup}-swagger-spec.json".format(**kwargs)
-        shutil.copyfile(os.path.join(SWG_PATH,'{filename}'),os.path.join(destPath, swaggerSpecFile))
+        shutil.copyfile(os.path.join(SWG_PATH,'{filename}'.format(**kwargs)),os.path.join(destPath, swaggerSpecFile))
         return (os.path.join(destPath, swaggerSpecFile))
     # otherwise download the swagger file
     r = requests.get(url, headers={

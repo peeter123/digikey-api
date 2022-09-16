@@ -33,6 +33,563 @@ class OrdersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def accept_order_lines_by_order_id(self, order_id, **kwargs):  # noqa: E501
+        """Accepts or rejects order details  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.accept_order_lines_by_order_id(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param AcceptOrderDetailsCommandBody body: Request model containing the order acceptance details
+        :return: AcceptOrderDetailErrorsPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.accept_order_lines_by_order_id_with_http_info(order_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.accept_order_lines_by_order_id_with_http_info(order_id, **kwargs)  # noqa: E501
+            return data
+
+    def accept_order_lines_by_order_id_with_http_info(self, order_id, **kwargs):  # noqa: E501
+        """Accepts or rejects order details  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.accept_order_lines_by_order_id_with_http_info(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param AcceptOrderDetailsCommandBody body: Request model containing the order acceptance details
+        :return: AcceptOrderDetailErrorsPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method accept_order_lines_by_order_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'order_id' is set
+        if ('order_id' not in params or
+                params['order_id'] is None):
+            raise ValueError("Missing the required parameter `order_id` when calling `accept_order_lines_by_order_id`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'order_id' in params:
+            path_params['orderId'] = params['order_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/orders/{orderId}/accept', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AcceptOrderDetailErrorsPage',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def cancel_order_lines_by_order_id(self, order_id, **kwargs):  # noqa: E501
+        """Cancels order details  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_order_lines_by_order_id(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param CancelOrderDetailsCommandBody body: Request model containing the calcelation details
+        :return: CancelOrderDetailErrorsPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.cancel_order_lines_by_order_id_with_http_info(order_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.cancel_order_lines_by_order_id_with_http_info(order_id, **kwargs)  # noqa: E501
+            return data
+
+    def cancel_order_lines_by_order_id_with_http_info(self, order_id, **kwargs):  # noqa: E501
+        """Cancels order details  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_order_lines_by_order_id_with_http_info(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param CancelOrderDetailsCommandBody body: Request model containing the calcelation details
+        :return: CancelOrderDetailErrorsPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_order_lines_by_order_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'order_id' is set
+        if ('order_id' not in params or
+                params['order_id'] is None):
+            raise ValueError("Missing the required parameter `order_id` when calling `cancel_order_lines_by_order_id`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'order_id' in params:
+            path_params['orderId'] = params['order_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/orders/{orderId}/cancel', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CancelOrderDetailErrorsPage',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_orders(self, **kwargs):  # noqa: E501
+        """Gets orders. Sortable fields are id, businessId, createDateUtc, shippingDeadlineUtc. Sorting format is \"field|direction\". Direction values: asc or desc.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_orders(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str business_ids:
+        :param str customer_ids:
+        :param str product_part_numbers:
+        :param str supplier_ids:
+        :param datetime created_from:
+        :param datetime created_to:
+        :param datetime updated_from:
+        :param datetime updated_to:
+        :param datetime shipping_deadline_from:
+        :param datetime shipping_deadline_to:
+        :param str order_detail_id:
+        :param str order_state:
+        :param bool has_open_incidents:
+        :param str supplier_invoice_number:
+        :param int offset:
+        :param int max:
+        :param str sort:
+        :return: GetOrdersPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_orders_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_orders_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_orders_with_http_info(self, **kwargs):  # noqa: E501
+        """Gets orders. Sortable fields are id, businessId, createDateUtc, shippingDeadlineUtc. Sorting format is \"field|direction\". Direction values: asc or desc.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_orders_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str business_ids:
+        :param str customer_ids:
+        :param str product_part_numbers:
+        :param str supplier_ids:
+        :param datetime created_from:
+        :param datetime created_to:
+        :param datetime updated_from:
+        :param datetime updated_to:
+        :param datetime shipping_deadline_from:
+        :param datetime shipping_deadline_to:
+        :param str order_detail_id:
+        :param str order_state:
+        :param bool has_open_incidents:
+        :param str supplier_invoice_number:
+        :param int offset:
+        :param int max:
+        :param str sort:
+        :return: GetOrdersPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_ids', 'customer_ids', 'product_part_numbers', 'supplier_ids', 'created_from', 'created_to', 'updated_from', 'updated_to', 'shipping_deadline_from', 'shipping_deadline_to', 'order_detail_id', 'order_state', 'has_open_incidents', 'supplier_invoice_number', 'offset', 'max', 'sort']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orders" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'business_ids' in params:
+            query_params.append(('BusinessIds', params['business_ids']))  # noqa: E501
+        if 'customer_ids' in params:
+            query_params.append(('CustomerIds', params['customer_ids']))  # noqa: E501
+        if 'product_part_numbers' in params:
+            query_params.append(('ProductPartNumbers', params['product_part_numbers']))  # noqa: E501
+        if 'supplier_ids' in params:
+            query_params.append(('SupplierIds', params['supplier_ids']))  # noqa: E501
+        if 'created_from' in params:
+            query_params.append(('CreatedFrom', params['created_from']))  # noqa: E501
+        if 'created_to' in params:
+            query_params.append(('CreatedTo', params['created_to']))  # noqa: E501
+        if 'updated_from' in params:
+            query_params.append(('UpdatedFrom', params['updated_from']))  # noqa: E501
+        if 'updated_to' in params:
+            query_params.append(('UpdatedTo', params['updated_to']))  # noqa: E501
+        if 'shipping_deadline_from' in params:
+            query_params.append(('ShippingDeadlineFrom', params['shipping_deadline_from']))  # noqa: E501
+        if 'shipping_deadline_to' in params:
+            query_params.append(('ShippingDeadlineTo', params['shipping_deadline_to']))  # noqa: E501
+        if 'order_detail_id' in params:
+            query_params.append(('OrderDetailId', params['order_detail_id']))  # noqa: E501
+        if 'order_state' in params:
+            query_params.append(('OrderState', params['order_state']))  # noqa: E501
+        if 'has_open_incidents' in params:
+            query_params.append(('HasOpenIncidents', params['has_open_incidents']))  # noqa: E501
+        if 'supplier_invoice_number' in params:
+            query_params.append(('SupplierInvoiceNumber', params['supplier_invoice_number']))  # noqa: E501
+        if 'offset' in params:
+            query_params.append(('Offset', params['offset']))  # noqa: E501
+        if 'max' in params:
+            query_params.append(('Max', params['max']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('Sort', params['sort']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/orders', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetOrdersPage',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def ship_order(self, order_id, **kwargs):  # noqa: E501
+        """Ships order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ship_order(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param ShipOrderModel body: Request model containing the order shipment details
+        :return: Order
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.ship_order_with_http_info(order_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.ship_order_with_http_info(order_id, **kwargs)  # noqa: E501
+            return data
+
+    def ship_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
+        """Ships order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ship_order_with_http_info(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param ShipOrderModel body: Request model containing the order shipment details
+        :return: Order
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method ship_order" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'order_id' is set
+        if ('order_id' not in params or
+                params['order_id'] is None):
+            raise ValueError("Missing the required parameter `order_id` when calling `ship_order`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'order_id' in params:
+            path_params['orderId'] = params['order_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/orders/{orderId}/ship', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Order',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_additional_fields(self, order_id, **kwargs):  # noqa: E501
+        """Updates additional fields on an order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_additional_fields(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param UpdateOrderAdditionalFieldsCommandBody body: Request model containing the additional fields
+        :return: UpdateOrderAdditionalFieldsErrorsPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_additional_fields_with_http_info(order_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_additional_fields_with_http_info(order_id, **kwargs)  # noqa: E501
+            return data
+
+    def update_additional_fields_with_http_info(self, order_id, **kwargs):  # noqa: E501
+        """Updates additional fields on an order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_additional_fields_with_http_info(order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str order_id: Id of the order (required)
+        :param UpdateOrderAdditionalFieldsCommandBody body: Request model containing the additional fields
+        :return: UpdateOrderAdditionalFieldsErrorsPage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_additional_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'order_id' is set
+        if ('order_id' not in params or
+                params['order_id'] is None):
+            raise ValueError("Missing the required parameter `order_id` when calling `update_additional_fields`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'order_id' in params:
+            path_params['orderId'] = params['order_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKeySecurity', 'oauth2AccessCodeSecurity']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/orders/{orderId}/additionalFields', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UpdateOrderAdditionalFieldsErrorsPage',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_supplier_invoice_number(self, order_id, **kwargs):  # noqa: E501
         """Update Supplier Invoice Number  # noqa: E501
 
