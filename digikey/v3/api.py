@@ -3,7 +3,7 @@ import logging
 from distutils.util import strtobool
 import digikey.oauth.oauth2
 from digikey.exceptions import DigikeyError
-from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
+from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricingDto,
                                            ManufacturerProductDetailsRequest)
 from digikey.v3.productinformation.rest import ApiException
 from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
@@ -125,7 +125,7 @@ def product_details(*args, **kwargs) -> ProductDetails:
         return client.call_api_function(*args, **kwargs)
 
 
-def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
+def digi_reel_pricing(*args, **kwargs) -> DigiReelPricingDto:
     client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', digikey.v3.productinformation)
 
     if len(args):

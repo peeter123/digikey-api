@@ -79,6 +79,11 @@ swaggerCodeGen_config_all = {
         "projectName": "community-digikey-api-batchproductdetails",
         "packageVersion": "0.1.0",
     }
+    , 'marketplace': {
+        "packageName": "digikey.v3.marketplace",
+        "projectName": "community-digikey-api-marketplace",
+        "packageVersion": "0.1.0",
+    }
 }
 
 digikeyAPIdef_all = {
@@ -99,6 +104,12 @@ digikeyAPIdef_all = {
              , apiSubGroup='batchproductdetailsapi'
              , apiQuery='batchproductdetails'
              , urlNode='682'
+             )
+    , 'marketplace':
+        dict(apiGroup='marketplace'
+             , apiSubGroup='orders'
+             , apiQuery='getorders'
+             , urlNode='2393'
              )
 }
 
@@ -279,9 +290,17 @@ def copy_generated_files():
         Path(DEST_PATH).joinpath('community-digikey-api-batchproductdetails/digikey.v3.batchproductdetails'),
         Path(API_PATH).joinpath('batchproductdetails'), dirs_exist_ok=True)
 
+    logging.info('Copy generated marketplace files to api destination')
+    shutil.copytree(
+        Path(DEST_PATH).joinpath('community-digikey-api-marketplace/digikey/v3/marketplace'),
+        Path(API_PATH).joinpath('marketplace'), dirs_exist_ok=True)
+    shutil.copytree(
+        Path(DEST_PATH).joinpath('community-digikey-api-marketplace/digikey.v3.marketplace'),
+        Path(API_PATH).joinpath('marketplace'), dirs_exist_ok=True)
+
 
 # Currently supported API's
-apiGenerateList = ['product-information', 'order-support', 'batch-product-details']
+apiGenerateList = ['product-information', 'order-support', 'batch-product-details', 'marketplace']
 
 # Generate Digikey API python clients
 generated = [
