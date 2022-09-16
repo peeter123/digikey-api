@@ -40,6 +40,9 @@ config['custom'] = {
     , 'API_PATH': os.path.realpath(os.path.expanduser(
         os.path.join(os.path.dirname(__file__), '..', 'digikey', 'v3'))
     )
+    , 'SWG_PATH': os.path.realpath(os.path.expanduser(
+        os.path.join(os.path.dirname(__file__), '..', 'swagger'))
+    )
 }
 if not os.path.exists(".env/config.ini"):
     if not os.path.exists(".env"):
@@ -51,9 +54,11 @@ config.read(os.path.join('.env', 'config.ini'))
 DEST_PATH = config['custom']['DEST_PATH']
 TMP_PATH = config['custom']['TMP_PATH']
 API_PATH = config['custom']['API_PATH']
+SWG_PATH = config['custom']['SWG_PATH']
 logging.debug("config.ini - DEST_PATH:{}".format(DEST_PATH))
 logging.debug("config.ini - TMP_PATH:{}".format(TMP_PATH))
 logging.debug("config.ini - API_PATH:{}".format(API_PATH))
+logging.debug("config.ini - SWG_PATH:{}".format(SWG_PATH))
 
 logging.debug("CodeGen Digikey API Clients: module: tools.py is loading ......")
 logging.debug("CodeGen Directory for Digikey API's: {tmpDir}".format(tmpDir=TMP_PATH))
@@ -92,24 +97,28 @@ digikeyAPIdef_all = {
              , apiSubGroup='partsearch'
              , apiQuery='productdetails'
              , urlNode='432'
+             , filename='PartSearch.json'
              )
     , 'order-support':
         dict(apiGroup='order-support'
              , apiSubGroup='orderdetails'
              , apiQuery='orderhistory'
              , urlNode='883'
+             , filename='OrderDetails.json'
              )
     , 'batch-product-details':
         dict(apiGroup='batch-productdetails'
              , apiSubGroup='batchproductdetailsapi'
              , apiQuery='batchproductdetails'
              , urlNode='682'
+             , filename='BatchProductDetailsAPI.json'
              )
     , 'marketplace':
         dict(apiGroup='marketplace'
              , apiSubGroup='orders'
              , apiQuery='getorders'
              , urlNode='2393'
+             , filename='Orders.json'
              )
 }
 
@@ -118,6 +127,13 @@ def getDigikeyAPIswaggerSpecJSON(destPath, **kwargs):
     # refererURL='https://developer.digikey.com/products/product-information/partsearch/productdetails?prod=true'
     refererURL = 'https://developer.digikey.com/products/{apiGroup}/{apiSubGroup}/{apiQuery}?prod=true'.format(**kwargs)
     url = 'https://developer.digikey.com/node/{urlNode}/oas-download'.format(**kwargs)
+    # if the local file exists, then use it
+    if os.path.exists(os.path.join(SWG_PATH,'{filename}')):
+        import shutil
+        swaggerSpecFile = "digikeyAPI-{apiGroup}-swagger-spec.json".format(**kwargs)
+        shutil.copyfile(os.path.join(SWG_PATH,'{filename}'),os.path.join(destPath, swaggerSpecFile))
+        return (os.path.join(destPath, swaggerSpecFile))
+    # otherwise download the swagger file
     r = requests.get(url, headers={
         'referer': refererURL
         ,

@@ -8,6 +8,7 @@ from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchRe
 from digikey.v3.productinformation.rest import ApiException
 from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
+from digikey.v3.marketplace import (Order)
 
 logger = logging.getLogger(__name__)
 
@@ -19,13 +20,15 @@ class DigikeyApiWrapper(object):
         apinames = {
             digikey.v3.productinformation: 'Search',
             digikey.v3.ordersupport: 'OrderDetails',
-            digikey.v3.batchproductdetails: 'BatchSearch'
+            digikey.v3.batchproductdetails: 'BatchSearch',
+            digikey.v3.marketplace: 'Marketplace'
         }
 
         apiclasses = {
             digikey.v3.productinformation: digikey.v3.productinformation.PartSearchApi,
             digikey.v3.ordersupport: digikey.v3.ordersupport.OrderDetailsApi,
-            digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi
+            digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi,
+            digikey.v3.marketplace: digikey.v3.marketplace.OrdersApi
         }
 
         apiname = apinames[module]
@@ -179,3 +182,11 @@ def batch_product_details(*args, **kwargs) -> BatchProductDetailsResponse:
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid BatchProductDetailsRequest argument')
+
+
+def update_supplier_invoice_number(*args, **kwargs) -> Order:
+    client = DigikeyApiWrapper('update_supplier_invoice_number_with_http_info', digikey.v3.marketplace)
+
+    if len(args):
+        logger.info(f'Get order for ID: {args[0]}')
+        return client.call_api_function(*args, **kwargs)
