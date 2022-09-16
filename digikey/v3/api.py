@@ -8,7 +8,7 @@ from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchRe
 from digikey.v3.productinformation.rest import ApiException
 from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
-from digikey.v3.marketplace import (Order)
+from digikey.v3.marketplace import (GetOrdersPage,Order)
 
 logger = logging.getLogger(__name__)
 
@@ -18,10 +18,10 @@ class DigikeyApiWrapper(object):
         self.sandbox = False
 
         apinames = {
-            digikey.v3.productinformation: 'Search',
-            digikey.v3.ordersupport: 'OrderDetails',
-            digikey.v3.batchproductdetails: 'BatchSearch',
-            digikey.v3.marketplace: 'Marketplace'
+            digikey.v3.productinformation: 'Search/v3',
+            digikey.v3.ordersupport: 'OrderDetails/v3',
+            digikey.v3.batchproductdetails: 'BatchSearch/v3',
+            digikey.v3.marketplace: 'Sales/Marketplace2/Orders/v1'
         }
 
         apiclasses = {
@@ -43,10 +43,10 @@ class DigikeyApiWrapper(object):
             raise DigikeyError('Please provide a valid DIGIKEY_CLIENT_ID and DIGIKEY_CLIENT_SECRET in your env setup')
 
         # Use normal API by default, if DIGIKEY_CLIENT_SANDBOX is True use sandbox API
-        configuration.host = 'https://api.digikey.com/' + apiname + '/v3'
+        configuration.host = 'https://api.digikey.com/' + apiname
         try:
             if bool(strtobool(os.getenv('DIGIKEY_CLIENT_SANDBOX'))):
-                configuration.host = 'https://sandbox-api.digikey.com/' + apiname + '/v3'
+                configuration.host = 'https://sandbox-api.digikey.com/' + apiname
                 self.sandbox = True
         except (ValueError, AttributeError):
             pass
@@ -184,9 +184,18 @@ def batch_product_details(*args, **kwargs) -> BatchProductDetailsResponse:
         raise DigikeyError('Please provide a valid BatchProductDetailsRequest argument')
 
 
+def get_orders(*args, **kwargs) -> GetOrdersPage:
+    client = DigikeyApiWrapper('get_orders_with_http_info', digikey.v3.marketplace)
+
+    if len(args) == 0:
+        #logger.info(f'Get order for ID: {args[0]}')
+        return client.call_api_function(*args, **kwargs)
+
+
 def update_supplier_invoice_number(*args, **kwargs) -> Order:
     client = DigikeyApiWrapper('update_supplier_invoice_number_with_http_info', digikey.v3.marketplace)
 
     if len(args):
         logger.info(f'Get order for ID: {args[0]}')
         return client.call_api_function(*args, **kwargs)
+
