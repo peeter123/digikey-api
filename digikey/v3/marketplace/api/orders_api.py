@@ -590,45 +590,57 @@ class OrdersApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_supplier_invoice_number(self, order_id, **kwargs):  # noqa: E501
+    def update_supplier_invoice_number(self, order_id, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Update Supplier Invoice Number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_supplier_invoice_number(order_id, async_req=True)
+        >>> thread = api.update_supplier_invoice_number(order_id, authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str order_id:  (required)
+        :param str authorization: OAuth Bearer Token. Please see<a href= \"https://developer.digikey.com/documentation/oauth\" target= \"_blank\" > OAuth 2.0 Documentation </a > page for more info. (required)
+        :param str x_digikey_client_id: The Client Id for your App. (required)
         :param str supplier_invoice_number: 
+        :param str x_digikey_locale_site: Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.
+        :param str x_digikey_locale_language: Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht
+        :param str x_digikey_locale_currency: Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.
+        :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
         :return: Order
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_supplier_invoice_number_with_http_info(order_id, **kwargs)  # noqa: E501
+            return self.update_supplier_invoice_number_with_http_info(order_id, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_supplier_invoice_number_with_http_info(order_id, **kwargs)  # noqa: E501
+            (data) = self.update_supplier_invoice_number_with_http_info(order_id, authorization, x_digikey_client_id, **kwargs)  # noqa: E501
             return data
 
-    def update_supplier_invoice_number_with_http_info(self, order_id, **kwargs):  # noqa: E501
+    def update_supplier_invoice_number_with_http_info(self, order_id, authorization, x_digikey_client_id, **kwargs):  # noqa: E501
         """Update Supplier Invoice Number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_supplier_invoice_number_with_http_info(order_id, async_req=True)
+        >>> thread = api.update_supplier_invoice_number_with_http_info(order_id, authorization, x_digikey_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str order_id:  (required)
+        :param str authorization: OAuth Bearer Token. Please see<a href= \"https://developer.digikey.com/documentation/oauth\" target= \"_blank\" > OAuth 2.0 Documentation </a > page for more info. (required)
+        :param str x_digikey_client_id: The Client Id for your App. (required)
         :param str supplier_invoice_number: 
+        :param str x_digikey_locale_site: Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.
+        :param str x_digikey_locale_language: Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht
+        :param str x_digikey_locale_currency: Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.
+        :param str x_digikey_customer_id: Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.
         :return: Order
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['order_id', 'supplier_invoice_number']  # noqa: E501
+        all_params = ['order_id', 'authorization', 'x_digikey_client_id', 'supplier_invoice_number', 'x_digikey_locale_site', 'x_digikey_locale_language', 'x_digikey_locale_currency', 'x_digikey_customer_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -647,6 +659,14 @@ class OrdersApi(object):
         if ('order_id' not in params or
                 params['order_id'] is None):
             raise ValueError("Missing the required parameter `order_id` when calling `update_supplier_invoice_number`")  # noqa: E501
+        # verify the required parameter 'authorization' is set
+        if ('authorization' not in params or
+                params['authorization'] is None):
+            raise ValueError("Missing the required parameter `authorization` when calling `update_supplier_invoice_number`")  # noqa: E501
+        # verify the required parameter 'x_digikey_client_id' is set
+        if ('x_digikey_client_id' not in params or
+                params['x_digikey_client_id'] is None):
+            raise ValueError("Missing the required parameter `x_digikey_client_id` when calling `update_supplier_invoice_number`")  # noqa: E501
 
         collection_formats = {}
 
@@ -659,6 +679,18 @@ class OrdersApi(object):
             query_params.append(('supplierInvoiceNumber', params['supplier_invoice_number']))  # noqa: E501
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']  # noqa: E501
+        if 'x_digikey_client_id' in params:
+            header_params['X-DIGIKEY-Client-Id'] = params['x_digikey_client_id']  # noqa: E501
+        if 'x_digikey_locale_site' in params:
+            header_params['X-DIGIKEY-Locale-Site'] = params['x_digikey_locale_site']  # noqa: E501
+        if 'x_digikey_locale_language' in params:
+            header_params['X-DIGIKEY-Locale-Language'] = params['x_digikey_locale_language']  # noqa: E501
+        if 'x_digikey_locale_currency' in params:
+            header_params['X-DIGIKEY-Locale-Currency'] = params['x_digikey_locale_currency']  # noqa: E501
+        if 'x_digikey_customer_id' in params:
+            header_params['X-DIGIKEY-Customer-Id'] = params['x_digikey_customer_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
