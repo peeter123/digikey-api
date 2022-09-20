@@ -8,7 +8,7 @@ from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchRe
 from digikey.v3.productinformation.rest import ApiException
 from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
-from digikey.v3.marketplace import (GetOrdersPage,Order)
+from digikey.v3.marketplace import (GetOrdersPage,Order,AcceptOrderDetailErrorsPage)
 
 logger = logging.getLogger(__name__)
 
@@ -190,6 +190,26 @@ def get_orders(*args, **kwargs) -> GetOrdersPage:
     if len(args) == 0:
         #logger.info(f'Get order for ID: {args[0]}')
         return client.call_api_function(*args, **kwargs)
+
+
+def accept_order_lines_by_order_id(*args, **kwargs) -> AcceptOrderDetailErrorsPage:
+    client = DigikeyApiWrapper('accept_order_lines_by_order_id_with_http_info', digikey.v3.marketplace)
+
+    if 'body' in kwargs and type(kwargs['body']) == AcceptOrderDetailsCommandBody:
+        logger.debug('CALL -> accept_order_lines_by_order_id')
+        return client.call_api_function(*args, **kwargs)
+    else:
+        raise DigikeyError('Please provide a valid AcceptOrderDetailsCommandBody argument')
+
+
+def ship_order(*args, **kwargs) -> Order:
+    client = DigikeyApiWrapper('ship_order_with_http_info', digikey.v3.marketplace)
+
+    if 'body' in kwargs and type(kwargs['body']) == ShipOrderModel:
+        logger.debug('CALL -> ship_order')
+        return client.call_api_function(*args, **kwargs)
+    else:
+        raise DigikeyError('Please provide a valid ShipOrderModel argument')
 
 
 def update_supplier_invoice_number(*args, **kwargs) -> Order:
