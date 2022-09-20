@@ -8,7 +8,7 @@ from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchRe
 from digikey.v3.productinformation.rest import ApiException
 from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
-from digikey.v3.marketplace import (GetOrdersPage,Order,AcceptOrderDetailErrorsPage)
+from digikey.v3.marketplace import (GetOrdersPage,Order,AcceptOrderDetailErrorsPage,AcceptOrderDetailsCommandBody)
 
 logger = logging.getLogger(__name__)
 
@@ -188,7 +188,7 @@ def get_orders(*args, **kwargs) -> GetOrdersPage:
     client = DigikeyApiWrapper('get_orders_with_http_info', digikey.v3.marketplace)
 
     if len(args) == 0:
-        #logger.info(f'Get order for ID: {args[0]}')
+        logger.debug('CALL -> get_orders')
         return client.call_api_function(*args, **kwargs)
 
 
