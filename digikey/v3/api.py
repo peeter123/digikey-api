@@ -8,7 +8,7 @@ from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchRe
 from digikey.v3.productinformation.rest import ApiException
 from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
-from digikey.v3.marketplace import (GetOrdersPage,Order,AcceptOrderDetailErrorsPage,AcceptOrderDetailsCommandBody)
+from digikey.v3.marketplace import (GetOrdersPage,Order,AcceptOrderDetailErrorsPage,AcceptOrderDetailsCommandBody,ShipOrderModel)
 
 logger = logging.getLogger(__name__)
 
