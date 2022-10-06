@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2022-10-06
+### Added
+- Option to exclude marketpace products
+
+### Fixed
+- Problems when a Digi-Key query gives time-out
+
 ## [0.1.1] - 2022-03-21
 ### Fixed
 - Requirements
