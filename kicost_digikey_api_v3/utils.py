@@ -56,6 +56,7 @@ class DK_API(object):
     id = secret = None
     sandbox = False
     api_ops = {}
+    exclude_market_place_products = False
     # Configured here
     cache = None
     logger = logging.getLogger(__name__)
@@ -150,7 +151,8 @@ class by_keyword(object):
         self.keyword = keyword
 
     def search(self):
-        search_request = KeywordSearchRequest(keywords=self.keyword, record_count=10)
+        search_request = KeywordSearchRequest(keywords=self.keyword, record_count=10,
+                                              exclude_market_place_products=DK_API.exclude_market_place_products)
         self.api_limit = {}
         result, loaded = DK_API.cache.load_results('key', self.keyword)
         if not loaded:
