@@ -110,10 +110,13 @@ class by_manf_pn(object):
         results, loaded = DK_API.cache.load_results('mpn', self.manf_pn)
         if not loaded:
             results = kicost_digikey_api_v3.manufacturer_product_details(body=search_request, api_limits=self.api_limit, **DK_API.extra_ops)
-            DK_API.cache.save_results('mpn', self.manf_pn, results)
+            if results is not None:
+                DK_API.cache.save_results('mpn', self.manf_pn, results)
         # print('************************')
         # print(results)
         # print('************************')
+        if results is None:
+            return None
         if not isinstance(results, list):
             results = results.product_details
         if isinstance(results, list):
