@@ -1,10 +1,10 @@
 Python Client for Digikey API
 =================================
-Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then make a PartDetails call to retrieve all 
-real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some 
+Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then make a PartDetails call to retrieve all
+real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some
 manufacturers overlap other manufacturer part numbers.
 
-[![Pypi](https://img.shields.io/pypi/v/digikey-api.svg?color=brightgreen)](https://pypi.org/project/digikey-api/) 
+[![Pypi](https://img.shields.io/pypi/v/digikey-api.svg?color=brightgreen)](https://pypi.org/project/digikey-api/)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-gold.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=53HWHHVCJ3D4J&currency_code=EUR&source=url)
 
 # What does it do
@@ -16,15 +16,18 @@ manufacturers overlap other manufacturer part numbers.
 ```sh
 pip install digikey-api
 
+cache_dir=cdir
+mkdir $cache_dir 2>/dev/null
+
 export DIGIKEY_CLIENT_ID="client_id"
 export DIGIKEY_CLIENT_SECRET="client_secret"
-export DIGIKEY_STORAGE_PATH="cache_dir"
+export DIGIKEY_STORAGE_PATH=$cache_dir
 ```
 
 # API V3
 ## Register
-Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need 
-the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the 
+Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need
+the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the
 Oauth2 process.
 
 When registering an app the OAuth Callback needs to be set to `https://localhost:8139/digikey_callback`.
@@ -33,7 +36,7 @@ When registering an app the OAuth Callback needs to be set to `https://localhost
 Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
 the library will cache the access token and use the refresh token to automatically refresh your credentials.
 
-You can test your application using the sandbox API, the data returned from a Sandbox API may not be complete, but the 
+You can test your application using the sandbox API, the data returned from a Sandbox API may not be complete, but the
 structure of the Sandbox API response will be a representation of what to expect in Production.
 
 For valid responses make sure you use the client ID and secret for a [Production App](https://developer.digikey.com/documentation/organization)
@@ -52,7 +55,7 @@ os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
 dkpn = '296-6501-1-ND'
 part = digikey.product_details(dkpn)
 
-# Search for parts 
+# Search for parts
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
 result = digikey.keyword_search(body=search_request)
 ```
@@ -97,7 +100,7 @@ All functions from the [OrderDetails](https://developer.digikey.com/products/ord
 TODO
 
 ## API Limits
-The API has a limited amount of requests you can make per time interval [Digikey Rate Limits](https://developer.digikey.com/documentation/shared-concepts#rate-limits). 
+The API has a limited amount of requests you can make per time interval [Digikey Rate Limits](https://developer.digikey.com/documentation/shared-concepts#rate-limits).
 
 It is possible to retrieve the number of max requests and current requests by passing an optional api_limits kwarg to an API function:
 ```python
@@ -105,11 +108,11 @@ api_limit = {}
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
 result = digikey.keyword_search(body=search_request, api_limits=api_limit)
 ```
- 
+
 The dict will be filled with the information returned from the API:
 ```python
-{ 
-    'api_requests_limit': 1000, 
+{
+    'api_requests_limit': 1000,
     'api_requests_remaining': 139
 }
 ```
