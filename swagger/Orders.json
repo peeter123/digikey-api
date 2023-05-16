@@ -1,0 +1,1685 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Orders",
+        "description": "API operations for managing orders as well as refunds and incidents as they relate to the order",
+        "contact": {
+            "name": "Marketplace Support",
+            "url": "https:\/\/www.digikey.com",
+            "email": "MarketplaceAPISupport@digikey.com"
+        },
+        "version": "suppliers-v1",
+        "x-technical-domain": "Sales"
+    },
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "\/orders": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Gets orders. Sortable fields are id, businessId, createDateUtc, shippingDeadlineUtc. Sorting format is \"field|direction\". Direction values: asc or desc.",
+                "operationId": "GetOrders",
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "BusinessIds",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "CustomerIds",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "ProductPartNumbers",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "SupplierIds",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "CreatedFrom",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "in": "query",
+                        "name": "CreatedTo",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "in": "query",
+                        "name": "UpdatedFrom",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "in": "query",
+                        "name": "UpdatedTo",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "in": "query",
+                        "name": "ShippingDeadlineFrom",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "in": "query",
+                        "name": "ShippingDeadlineTo",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "in": "query",
+                        "name": "OrderDetailId",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "OrderState",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "HasOpenIncidents",
+                        "type": "boolean"
+                    },
+                    {
+                        "in": "query",
+                        "name": "SupplierInvoiceNumber",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "Offset",
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 0
+                    },
+                    {
+                        "in": "query",
+                        "name": "Max",
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 20
+                    },
+                    {
+                        "in": "query",
+                        "name": "Sort",
+                        "type": "string",
+                        "format": "field1|ASC,field2|DESC"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Client-Id",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Site",
+                        "description": "Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Language",
+                        "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Currency",
+                        "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Customer-Id",
+                        "description": "Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/GetOrdersPage"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    }
+                }
+            }
+        },
+        "\/orders\/{orderId}\/accept": {
+            "put": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Accepts or rejects order details",
+                "operationId": "AcceptOrderLinesByOrderId",
+                "consumes": [
+                    "application\/json-patch+json",
+                    "application\/json",
+                    "text\/json",
+                    "application\/*+json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "orderId",
+                        "description": "Id of the order",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Client-Id",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Site",
+                        "description": "Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Language",
+                        "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Currency",
+                        "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Customer-Id",
+                        "description": "Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request model containing the order acceptance details",
+                        "schema": {
+                            "$ref": "#\/definitions\/AcceptOrderDetailsCommandBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/AcceptOrderDetailErrorsPage"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    }
+                }
+            }
+        },
+        "\/orders\/{orderId}\/ship": {
+            "put": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Ships order",
+                "operationId": "ShipOrder",
+                "consumes": [
+                    "application\/json-patch+json",
+                    "application\/json",
+                    "text\/json",
+                    "application\/*+json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "orderId",
+                        "description": "Id of the order",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Client-Id",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Site",
+                        "description": "Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Language",
+                        "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Currency",
+                        "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Customer-Id",
+                        "description": "Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request model containing the order shipment details",
+                        "schema": {
+                            "$ref": "#\/definitions\/ShipOrderModel"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/Order"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    }
+                }
+            }
+        },
+        "\/orders\/{orderId}\/cancel": {
+            "put": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Cancels order details",
+                "operationId": "CancelOrderLinesByOrderId",
+                "consumes": [
+                    "application\/json-patch+json",
+                    "application\/json",
+                    "text\/json",
+                    "application\/*+json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "orderId",
+                        "description": "Id of the order",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Client-Id",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Site",
+                        "description": "Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Language",
+                        "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Currency",
+                        "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Customer-Id",
+                        "description": "Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request model containing the calcelation details",
+                        "schema": {
+                            "$ref": "#\/definitions\/CancelOrderDetailsCommandBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/CancelOrderDetailErrorsPage"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    }
+                }
+            }
+        },
+        "\/orders\/{orderId}\/additionalFields": {
+            "put": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Updates additional fields on an order",
+                "operationId": "UpdateAdditionalFields",
+                "consumes": [
+                    "application\/json-patch+json",
+                    "application\/json",
+                    "text\/json",
+                    "application\/*+json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "orderId",
+                        "description": "Id of the order",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Client-Id",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Site",
+                        "description": "Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Language",
+                        "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Currency",
+                        "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Customer-Id",
+                        "description": "Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request model containing the additional fields",
+                        "schema": {
+                            "$ref": "#\/definitions\/UpdateOrderAdditionalFieldsCommandBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/UpdateOrderAdditionalFieldsErrorsPage"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    }
+                }
+            }
+        },
+        "\/healthcheck": {
+            "get": {
+                "tags": [
+                    "HealthCheck"
+                ],
+                "summary": "Get health status of the API",
+                "operationId": "GetHealthCheck",
+                "produces": [
+                    "application\/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/HealthCheckResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "\/orders\/{orderId}\/supplierInvoiceNumber": {
+            "put": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Update Supplier Invoice Number",
+                "operationId": "UpdateSupplierInvoiceNumber",
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "orderId",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "supplierInvoiceNumber",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Client-Id",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Site",
+                        "description": "Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Language",
+                        "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: br, cs, da, de, en, es, fi, fr, he, hu, it, ja, ko, nl, no, pl, pt, ro, sv, th, zhs, zht",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Locale-Currency",
+                        "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-DIGIKEY-Customer-Id",
+                        "description": "Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/Order"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/ProblemDetails"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "HealthCheckResponse": {
+            "type": "object",
+            "properties": {
+                "healthy": {
+                    "type": "boolean"
+                },
+                "timestampUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            }
+        },
+        "ContactInfo": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "maxLength": 20,
+                    "type": "string"
+                },
+                "alternatePhoneNumber": {
+                    "maxLength": 20,
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "format": "email",
+                    "maxLength": 150,
+                    "type": "string"
+                },
+                "faxNumber": {
+                    "maxLength": 20,
+                    "type": "string"
+                },
+                "street1": {
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "street2": {
+                    "maxLength": 80,
+                    "type": "string"
+                },
+                "street3": {
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "city": {
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "maxLength": 3,
+                    "type": "string"
+                },
+                "postalCode": {
+                    "maxLength": 12,
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "companyName": {
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "Customer": {
+            "type": "object",
+            "properties": {
+                "customerId": {
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "customerEmail": {
+                    "type": "string"
+                },
+                "billingAddress": {
+                    "$ref": "#\/definitions\/ContactInfo"
+                },
+                "shippingAddress": {
+                    "$ref": "#\/definitions\/ContactInfo"
+                }
+            }
+        },
+        "OrderCancellation": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "currencyISOCode": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "reasonCode": {
+                    "type": "string"
+                },
+                "reasonLabel": {
+                    "type": "string"
+                },
+                "createDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            }
+        },
+        "OrderIncident": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "reasonOpenCode": {
+                    "type": "string"
+                },
+                "reasonCloseCode": {
+                    "type": "string"
+                },
+                "reasonOpenLabel": {
+                    "type": "string"
+                },
+                "reasonCloseLabel": {
+                    "type": "string"
+                },
+                "incidentState": {
+                    "enum": [
+                        "IncidentOpen",
+                        "IncidentClosed",
+                        "IncidentDisputed"
+                    ],
+                    "type": "string"
+                },
+                "incidentOpenedDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "incidentClosedDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "incidentDisputedDate": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            }
+        },
+        "ProblemDetails": {
+            "required": [
+                "correlationId",
+                "detail",
+                "errors",
+                "instance",
+                "status",
+                "title",
+                "type"
+            ],
+            "type": "object",
+            "properties": {
+                "detail": {
+                    "type": "string"
+                },
+                "instance": {
+                    "type": "string"
+                },
+                "status": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "errors": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "correlationId": {
+                    "format": "uuid",
+                    "type": "string"
+                }
+            }
+        },
+        "GetOrdersPage": {
+            "type": "object",
+            "properties": {
+                "orders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderExpanded"
+                    }
+                },
+                "totalCount": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "totalSales": {
+                    "format": "double",
+                    "type": "number"
+                }
+            }
+        },
+        "OrderExpanded": {
+            "type": "object",
+            "properties": {
+                "supplierName": {
+                    "type": "string"
+                },
+                "shippingMethodLabel": {
+                    "type": "string"
+                },
+                "shippingRegionLabel": {
+                    "type": "string"
+                },
+                "id": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "businessId": {
+                    "type": "string"
+                },
+                "accountingDocumentId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "accountingDocumentNumber": {
+                    "type": "string"
+                },
+                "paymentStatus": {
+                    "enum": [
+                        "Pending",
+                        "Payable",
+                        "Paid",
+                        "Invoiced"
+                    ],
+                    "type": "string"
+                },
+                "createDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "lastUpdateDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "customerDebitedDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "acceptanceRejectionDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "receivedDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "shippedDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "cancellationDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "shippingDeadlineUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "leadTimeToShip": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "orderState": {
+                    "enum": [
+                        "WaitingAcceptance",
+                        "Accepted",
+                        "ShippingInProgress",
+                        "Shipped",
+                        "Received",
+                        "IncidentOpen",
+                        "Refunded",
+                        "Closed",
+                        "Cancelled",
+                        "Rejected"
+                    ],
+                    "type": "string"
+                },
+                "customer": {
+                    "$ref": "#\/definitions\/Customer"
+                },
+                "supplierId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "supplierLegacyId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "supplierBusinessId": {
+                    "type": "string"
+                },
+                "orderDetails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderDetail"
+                    }
+                },
+                "additionalFields": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/AdditionalField"
+                    }
+                },
+                "subtotalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "totalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "totalDiscountFee": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedSubtotalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedTotalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedTotalDiscountFee": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "shippingPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedShippingPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "shippingTrackingInfoList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/ShippingTrackingInfo"
+                    }
+                },
+                "shippingMethodCode": {
+                    "type": "string"
+                },
+                "shippingRegionCode": {
+                    "type": "string"
+                },
+                "trackingRequired": {
+                    "type": "boolean"
+                },
+                "refunds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderRefund"
+                    }
+                },
+                "supplierInvoiceNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrderRefund": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "legacyId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "businessOrderId": {
+                    "type": "string"
+                },
+                "orderId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "shippingAmount": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "refundState": {
+                    "enum": [
+                        "WaitingRefund",
+                        "Refunded",
+                        "Refused"
+                    ],
+                    "type": "string"
+                },
+                "transactionNumber": {
+                    "type": "string"
+                },
+                "createDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "transactionDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "refundItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderRefundItem"
+                    }
+                },
+                "shippingReasonCode": {
+                    "type": "string"
+                },
+                "shippingReasonLabel": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrderRefundItem": {
+            "type": "object",
+            "properties": {
+                "orderDetailId": {
+                    "type": "string"
+                },
+                "amount": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "quantity": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "reasonCode": {
+                    "type": "string"
+                },
+                "reasonLabel": {
+                    "type": "string"
+                },
+                "discountAmount": {
+                    "format": "double",
+                    "type": "number"
+                }
+            }
+        },
+        "ShippingTrackingInfo": {
+            "type": "object",
+            "properties": {
+                "shippingCarrierId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "shippingTrackingNumber": {
+                    "type": "string"
+                },
+                "shippingTrackingURL": {
+                    "type": "string"
+                },
+                "shippingCarrierName": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrderDetail": {
+            "type": "object",
+            "properties": {
+                "orderDetailId": {
+                    "type": "string"
+                },
+                "createDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "lastUpdateDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "acceptanceRejectionDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "cancellationDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "orderDetailState": {
+                    "enum": [
+                        "WaitingAcceptance",
+                        "Accepted",
+                        "ShippingInProgress",
+                        "Shipped",
+                        "Received",
+                        "IncidentOpen",
+                        "Refunded",
+                        "Closed",
+                        "Cancelled",
+                        "Rejected"
+                    ],
+                    "type": "string"
+                },
+                "offerId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "offerLegacyId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "offerLeadTime": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "discountFee": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "discountRate": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "totalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "unitPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "quantity": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "productPartNumber": {
+                    "type": "string"
+                },
+                "supplierSku": {
+                    "type": "string"
+                },
+                "productBusinessId": {
+                    "type": "string"
+                },
+                "adjustedDiscountFee": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedTotalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedQuantity": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "cancellations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderCancellation"
+                    }
+                },
+                "incidents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderIncident"
+                    }
+                },
+                "additionalFields": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/AdditionalField"
+                    }
+                },
+                "productImageUrl": {
+                    "type": "string"
+                },
+                "productCategoryName": {
+                    "type": "string"
+                },
+                "offerDescription": {
+                    "type": "string"
+                }
+            }
+        },
+        "AdditionalField": {
+            "required": [
+                "code",
+                "type",
+                "value"
+            ],
+            "properties": {
+                "type": {
+                    "enum": [
+                        "String",
+                        "Int",
+                        "Long",
+                        "Double",
+                        "Decimal",
+                        "Bool",
+                        "Date"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "type": "object"
+                },
+                "code": {
+                    "type": "string"
+                }
+            }
+        },
+        "AcceptOrderDetailModel": {
+            "type": "object",
+            "properties": {
+                "orderDetailId": {
+                    "type": "string"
+                },
+                "accepted": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "AcceptOrderDetailsCommandBody": {
+            "required": [
+                "acceptOrderDetails"
+            ],
+            "type": "object",
+            "properties": {
+                "acceptOrderDetails": {
+                    "minLength": 1,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/AcceptOrderDetailModel"
+                    }
+                }
+            }
+        },
+        "AcceptOrderDetailErrorResult": {
+            "type": "object",
+            "properties": {
+                "errorMessage": {
+                    "type": "string"
+                },
+                "item": {
+                    "$ref": "#\/definitions\/AcceptOrderDetailModel"
+                }
+            }
+        },
+        "AcceptOrderDetailErrorsPage": {
+            "type": "object",
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/AcceptOrderDetailErrorResult"
+                    }
+                },
+                "errorCount": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            }
+        },
+        "ShippingTrackingInformationModel": {
+            "type": "object",
+            "properties": {
+                "shippingCarrierId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "shippingTrackingNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "ShipOrderModel": {
+            "type": "object",
+            "properties": {
+                "shippingTracking": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/ShippingTrackingInformationModel"
+                    }
+                }
+            }
+        },
+        "Order": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "businessId": {
+                    "type": "string"
+                },
+                "accountingDocumentId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "accountingDocumentNumber": {
+                    "type": "string"
+                },
+                "paymentStatus": {
+                    "enum": [
+                        "Pending",
+                        "Payable",
+                        "Paid",
+                        "Invoiced"
+                    ],
+                    "type": "string"
+                },
+                "createDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "lastUpdateDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "customerDebitedDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "acceptanceRejectionDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "receivedDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "shippedDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "cancellationDateUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "shippingDeadlineUtc": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "leadTimeToShip": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "orderState": {
+                    "enum": [
+                        "WaitingAcceptance",
+                        "Accepted",
+                        "ShippingInProgress",
+                        "Shipped",
+                        "Received",
+                        "IncidentOpen",
+                        "Refunded",
+                        "Closed",
+                        "Cancelled",
+                        "Rejected"
+                    ],
+                    "type": "string"
+                },
+                "customer": {
+                    "$ref": "#\/definitions\/Customer"
+                },
+                "supplierId": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "supplierLegacyId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "supplierBusinessId": {
+                    "type": "string"
+                },
+                "orderDetails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderDetail"
+                    }
+                },
+                "additionalFields": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/AdditionalField"
+                    }
+                },
+                "subtotalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "totalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "totalDiscountFee": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedSubtotalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedTotalPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedTotalDiscountFee": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "shippingPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "adjustedShippingPrice": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "shippingTrackingInfoList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/ShippingTrackingInfo"
+                    }
+                },
+                "shippingMethodCode": {
+                    "type": "string"
+                },
+                "shippingRegionCode": {
+                    "type": "string"
+                },
+                "trackingRequired": {
+                    "type": "boolean"
+                },
+                "refunds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/OrderRefund"
+                    }
+                },
+                "supplierInvoiceNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "CancelOrderDetailModel": {
+            "type": "object",
+            "properties": {
+                "orderDetailId": {
+                    "type": "string"
+                },
+                "cancellationReasonCode": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            }
+        },
+        "CancelOrderDetailsCommandBody": {
+            "required": [
+                "cancelOrderDetails"
+            ],
+            "type": "object",
+            "properties": {
+                "cancelOrderDetails": {
+                    "minLength": 1,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/CancelOrderDetailModel"
+                    }
+                }
+            }
+        },
+        "CancelOrderDetailErrorResult": {
+            "type": "object",
+            "properties": {
+                "errorMessage": {
+                    "type": "string"
+                },
+                "item": {
+                    "$ref": "#\/definitions\/CancelOrderDetailModel"
+                }
+            }
+        },
+        "CancelOrderDetailErrorsPage": {
+            "type": "object",
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/CancelOrderDetailErrorResult"
+                    }
+                },
+                "errorCount": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            }
+        },
+        "UpdateOrderAdditionalFieldsCommandBody": {
+            "required": [
+                "additionalFields"
+            ],
+            "type": "object",
+            "properties": {
+                "additionalFields": {
+                    "minLength": 1,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/AdditionalField"
+                    }
+                }
+            }
+        },
+        "UpdateOrderAdditionalFieldsErrorResult": {
+            "type": "object",
+            "properties": {
+                "errorMessage": {
+                    "type": "string"
+                },
+                "item": {
+                    "$ref": "#\/definitions\/AdditionalField"
+                }
+            }
+        },
+        "UpdateOrderAdditionalFieldsErrorsPage": {
+            "type": "object",
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/UpdateOrderAdditionalFieldsErrorResult"
+                    }
+                },
+                "errorCount": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "basePath": "\/Sales\/Marketplace2\/Orders\/v1",
+    "host": "api.digikey.com",
+    "x-host-sandbox": "sandbox-api.digikey.com",
+    "x-host-production": "api.digikey.com",
+    "securityDefinitions": {
+        "apiKeySecurity": {
+            "type": "apiKey",
+            "name": "X-DIGIKEY-Client-Id",
+            "in": "header"
+        },
+        "oauth2AccessCodeSecurity": {
+            "type": "oauth2",
+            "flow": "accessCode",
+            "authorizationUrl": "https:\/\/api.digikey.com\/v1\/oauth2\/authorize",
+            "tokenUrl": "https:\/\/api.digikey.com\/v1\/oauth2\/token"
+        }
+    },
+    "security": [
+        {
+            "apiKeySecurity": [],
+            "oauth2AccessCodeSecurity": []
+        }
+    ],
+    "tags": []
+}

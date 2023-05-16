@@ -3,11 +3,12 @@ import logging
 from distutils.util import strtobool
 import digikey.oauth.oauth2
 from digikey.exceptions import DigikeyError
-from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
+from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricingDto,
                                            ManufacturerProductDetailsRequest)
 from digikey.v3.productinformation.rest import ApiException
 from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
+from digikey.v3.marketplace import (GetOrdersPage,Order,AcceptOrderDetailErrorsPage,AcceptOrderDetailsCommandBody,ShipOrderModel)
 
 logger = logging.getLogger(__name__)
 
@@ -17,15 +18,17 @@ class DigikeyApiWrapper(object):
         self.sandbox = False
 
         apinames = {
-            digikey.v3.productinformation: 'Search',
-            digikey.v3.ordersupport: 'OrderDetails',
-            digikey.v3.batchproductdetails: 'BatchSearch'
+            digikey.v3.productinformation: 'Search/v3',
+            digikey.v3.ordersupport: 'OrderDetails/v3',
+            digikey.v3.batchproductdetails: 'BatchSearch/v3',
+            digikey.v3.marketplace: 'Sales/Marketplace2/Orders/v1'
         }
 
         apiclasses = {
             digikey.v3.productinformation: digikey.v3.productinformation.PartSearchApi,
             digikey.v3.ordersupport: digikey.v3.ordersupport.OrderDetailsApi,
-            digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi
+            digikey.v3.batchproductdetails: digikey.v3.batchproductdetails.BatchSearchApi,
+            digikey.v3.marketplace: digikey.v3.marketplace.OrdersApi
         }
 
         apiname = apinames[module]
@@ -40,10 +43,10 @@ class DigikeyApiWrapper(object):
             raise DigikeyError('Please provide a valid DIGIKEY_CLIENT_ID and DIGIKEY_CLIENT_SECRET in your env setup')
 
         # Use normal API by default, if DIGIKEY_CLIENT_SANDBOX is True use sandbox API
-        configuration.host = 'https://api.digikey.com/' + apiname + '/v3'
+        configuration.host = 'https://api.digikey.com/' + apiname
         try:
             if bool(strtobool(os.getenv('DIGIKEY_CLIENT_SANDBOX'))):
-                configuration.host = 'https://sandbox-api.digikey.com/' + apiname + '/v3'
+                configuration.host = 'https://sandbox-api.digikey.com/' + apiname
                 self.sandbox = True
         except (ValueError, AttributeError):
             pass
@@ -125,7 +128,7 @@ def product_details(*args, **kwargs) -> ProductDetails:
         return client.call_api_function(*args, **kwargs)
 
 
-def digi_reel_pricing(*args, **kwargs) -> DigiReelPricing:
+def digi_reel_pricing(*args, **kwargs) -> DigiReelPricingDto:
     client = DigikeyApiWrapper('digi_reel_pricing_with_http_info', digikey.v3.productinformation)
 
     if len(args):
@@ -179,3 +182,40 @@ def batch_product_details(*args, **kwargs) -> BatchProductDetailsResponse:
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid BatchProductDetailsRequest argument')
+
+
+def get_orders(*args, **kwargs) -> GetOrdersPage:
+    client = DigikeyApiWrapper('get_orders_with_http_info', digikey.v3.marketplace)
+
+    if len(args) == 0:
+        logger.debug('CALL -> get_orders')
+        return client.call_api_function(*args, **kwargs)
+
+
+def accept_order_lines_by_order_id(*args, **kwargs) -> AcceptOrderDetailErrorsPage:
+    client = DigikeyApiWrapper('accept_order_lines_by_order_id_with_http_info', digikey.v3.marketplace)
+
+    if 'body' in kwargs and type(kwargs['body']) == AcceptOrderDetailsCommandBody:
+        logger.debug('CALL -> accept_order_lines_by_order_id')
+        return client.call_api_function(*args, **kwargs)
+    else:
+        raise DigikeyError('Please provide a valid AcceptOrderDetailsCommandBody argument')
+
+
+def ship_order(*args, **kwargs) -> Order:
+    client = DigikeyApiWrapper('ship_order_with_http_info', digikey.v3.marketplace)
+
+    if 'body' in kwargs and type(kwargs['body']) == ShipOrderModel:
+        logger.debug('CALL -> ship_order')
+        return client.call_api_function(*args, **kwargs)
+    else:
+        raise DigikeyError('Please provide a valid ShipOrderModel argument')
+
+
+def update_supplier_invoice_number(*args, **kwargs) -> Order:
+    client = DigikeyApiWrapper('update_supplier_invoice_number_with_http_info', digikey.v3.marketplace)
+
+    if len(args):
+        logger.info(f'Get order for ID: {args[0]}')
+        return client.call_api_function(*args, **kwargs)
+
