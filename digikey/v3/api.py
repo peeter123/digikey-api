@@ -81,19 +81,29 @@ class DigikeyApiWrapper(object):
                 api_limits['api_requests_limit'] = None
                 api_limits['api_requests_remaining'] = None
 
+    @staticmethod
+    def _store_api_statuscode(statuscode, status):
+        if status is not None and type(status) == dict:
+            status['code'] = int(statuscode)
+
+        logger.debug('API returned code: {}'.format(statuscode))
+
     def call_api_function(self, *args, **kwargs):
         try:
-            # If optional api_limits mutable object is passed use it to store API limits
+            # If optional api_limits, status mutable object is passed use it to store API limits and status code
             api_limits = kwargs.pop('api_limits', None)
+            status = kwargs.pop('status', None)
 
             func = getattr(self._api_instance, self.wrapped_function)
             logger.debug(f'CALL wrapped -> {func.__qualname__}')
             api_response = func(*args, self.authorization, self.x_digikey_client_id, **kwargs)
             self._remaining_requests(api_response[2], api_limits)
+            self._store_api_statuscode(api_response[1], status)
 
             return api_response[0]
         except ApiException as e:
             logger.error(f'Exception when calling {self.wrapped_function}: {e}')
+            self._store_api_statuscode(e.status, status)
 
 
 def keyword_search(*args, **kwargs) -> KeywordSearchResponse:

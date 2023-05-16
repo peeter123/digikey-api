@@ -25,6 +25,8 @@ from digikey.v3.ordersupport.configuration import Configuration
 from digikey.v3.ordersupport.models.address import Address
 from digikey.v3.ordersupport.models.api_error_response import ApiErrorResponse
 from digikey.v3.ordersupport.models.api_validation_error import ApiValidationError
+from digikey.v3.ordersupport.models.back_order_details import BackOrderDetails
+from digikey.v3.ordersupport.models.default_shipping import DefaultShipping
 from digikey.v3.ordersupport.models.line_item import LineItem
 from digikey.v3.ordersupport.models.order_status_response import OrderStatusResponse
 from digikey.v3.ordersupport.models.sales_order_history_item import SalesOrderHistoryItem

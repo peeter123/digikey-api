@@ -12,15 +12,12 @@ from webbrowser import open_new
 
 import requests
 from certauth.certauth import CertificateAuthority
-from fake_useragent import UserAgent
 
+from digikey.constants import USER_AGENT
 from digikey.exceptions import DigikeyOauthException
 
 CA_CERT = 'digikey-api.pem'
 TOKEN_STORAGE = 'token_storage.json'
-
-AUTH_URL_V2 = 'https://sso.digikey.com/as/authorization.oauth2'
-TOKEN_URL_V2 = 'https://sso.digikey.com/as/token.oauth2'
 
 AUTH_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/authorize'
 TOKEN_URL_V3_PROD = 'https://api.digikey.com/v1/oauth2/token'
@@ -108,10 +105,7 @@ class TokenHandler:
                  version: int = 2,
                  sandbox: bool = False):
 
-        if version == 2:
-            self.auth_url = AUTH_URL_V2
-            self.token_url = TOKEN_URL_V2
-        elif version == 3:
+        if version == 3:
             if sandbox:
                 self.auth_url = AUTH_URL_V3_SB
                 self.token_url = TOKEN_URL_V3_SB
@@ -161,7 +155,7 @@ class TokenHandler:
         return url
 
     def __exchange_for_token(self, code):
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
         post_data = {'grant_type': 'authorization_code',
@@ -189,7 +183,7 @@ class TokenHandler:
         return token_json
 
     def __refresh_token(self, refresh_token: str):
-        headers = {'user-agent': f'{UserAgent().firefox}',
+        headers = {'user-agent': USER_AGENT,
                    'Content-type': 'application/x-www-form-urlencoded'
                    }
         post_data = {'grant_type': 'refresh_token',

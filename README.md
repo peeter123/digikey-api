@@ -64,6 +64,23 @@ batch_request = BatchProductDetailsRequest(products=mpn_list)
 part_results = digikey.batch_product_details(body=batch_request)
 ```
 
+## Logging [API V3]
+Logging is not forced upon the user but can be enabled according to convention:
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+digikey_logger = logging.getLogger('digikey')
+digikey_logger.setLevel(logging.DEBUG)
+
+handler = logging.StreamHandler()
+handler.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+digikey_logger.addHandler(handler)
+```
+
 ## Top-level APIs
 
 #### Product Information
@@ -104,47 +121,3 @@ The dict will be filled with the information returned from the API:
 }
 ```
 Sometimes the API does not return any rate limit data, the values will then be set to None.
-
-# API V2 [Deprecated]
-**NOTE: API V2 is not supported anymore by Digi-Key and you cannot register new applications**
-
-See API V3 above to use the new API.
-
-## Register
-Register an app on the Digikey API portal: [Digi-Key API V2](https://api-portal.digikey.com/start). You will need the client
-ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the Oauth2 process.
-
-## Use
-Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
-the library will cache the access token and use the refresh token to automatically refresh your credentials.
-
-```python
-import os
-import digikey
-
-os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
-os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
-
-dkpn = '296-6501-1-ND'
-part = digikey.part(dkpn)
-print(part)
-# <Part mpn=NE555DR>
-
-print(part.manufacturer)
-# 'Texas Instruments'
-```
-
-## Test
-```sh
-python -m pytest --cov=digikey --doctest-modules --ignore=setup.py
-python -m mypy digikey --ignore-missing-imports
-```
-
-## Top-level API
-* `digikey.search()`
-* `digikey.part()`
-
-## Data models
-* `digikey.models.KeywordSearchResult`
-* `digikey.models.Part`
