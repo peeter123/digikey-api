@@ -1,10 +1,10 @@
 Python Client for Digikey API
 =================================
-Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then make a PartDetails call to retrieve all 
-real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some 
+Search for parts in the Digi-Key catalog by keyword using KeywordSearch. Then make a PartDetails call to retrieve all
+real time information about the part including pricing. PartDetails works best with Digi-Key part numbers as some
 manufacturers overlap other manufacturer part numbers.
 
-[![Pypi](https://img.shields.io/pypi/v/digikey-api.svg?color=brightgreen)](https://pypi.org/project/digikey-api/) 
+[![Pypi](https://img.shields.io/pypi/v/digikey-api.svg?color=brightgreen)](https://pypi.org/project/digikey-api/)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-gold.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=53HWHHVCJ3D4J&currency_code=EUR&source=url)
 
 # What does it do
@@ -16,15 +16,19 @@ manufacturers overlap other manufacturer part numbers.
 ```sh
 pip install digikey-api
 
+mkdir -p path/to/cache/dir
+
 export DIGIKEY_CLIENT_ID="client_id"
 export DIGIKEY_CLIENT_SECRET="client_secret"
-export DIGIKEY_STORAGE_PATH="cache_dir"
+export DIGIKEY_STORAGE_PATH="path/to/cache/dir"
 ```
+
+The cache dir is used to store the OAUTH access and refresh token, if you delete it you will need to login again.
 
 # API V3
 ## Register
-Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need 
-the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the 
+Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need
+the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the
 Oauth2 process.
 
 When registering an app the OAuth Callback needs to be set to `https://localhost:8139/digikey_callback`.
@@ -33,27 +37,32 @@ When registering an app the OAuth Callback needs to be set to `https://localhost
 Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
 the library will cache the access token and use the refresh token to automatically refresh your credentials.
 
-You can test your application using the sandbox API, the data returned from a Sandbox API may not be complete, but the 
+You can test your application using the sandbox API, the data returned from a Sandbox API may not be complete, but the
 structure of the Sandbox API response will be a representation of what to expect in Production.
 
-For valid responses make sure you use the client ID and secret for a [Production App](https://developer.digikey.com/documentation/organization)
+For valid responses make sure you ue the client ID and secret for a [Production App](https://developer.digikey.com/documentation/organization).
+Otherwise, it is possible that dummy data is returned and you will pull your hair as to why it doesn't work.
 
 ```python
 import os
+from pathlib import Path
+
 import digikey
 from digikey.v3.productinformation import KeywordSearchRequest
 from digikey.v3.batchproductdetails import BatchProductDetailsRequest
 
+CACHE_DIR = Path('path/to/cache/dir')
+
 os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
 os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
 os.environ['DIGIKEY_CLIENT_SANDBOX'] = 'False'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
+os.environ['DIGIKEY_STORAGE_PATH'] = CACHE_DIR
 
 # Query product number
 dkpn = '296-6501-1-ND'
 part = digikey.product_details(dkpn)
 
-# Search for parts 
+# Search for parts
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
 result = digikey.keyword_search(body=search_request)
 
@@ -104,7 +113,7 @@ All functions from the [OrderDetails](https://developer.digikey.com/products/ord
 TODO
 
 ## API Limits
-The API has a limited amount of requests you can make per time interval [Digikey Rate Limits](https://developer.digikey.com/documentation/shared-concepts#rate-limits). 
+The API has a limited amount of requests you can make per time interval [Digikey Rate Limits](https://developer.digikey.com/documentation/shared-concepts#rate-limits).
 
 It is possible to retrieve the number of max requests and current requests by passing an optional api_limits kwarg to an API function:
 ```python
@@ -112,11 +121,11 @@ api_limit = {}
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
 result = digikey.keyword_search(body=search_request, api_limits=api_limit)
 ```
- 
+
 The dict will be filled with the information returned from the API:
 ```python
-{ 
-    'api_requests_limit': 1000, 
+{
+    'api_requests_limit': 1000,
     'api_requests_remaining': 139
 }
 ```
