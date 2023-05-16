@@ -42,6 +42,7 @@ For valid responses make sure you use the client ID and secret for a [Production
 import os
 import digikey
 from digikey.v3.productinformation import KeywordSearchRequest
+from digikey.v3.batchproductdetails import BatchProductDetailsRequest
 
 os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
 os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
@@ -55,6 +56,12 @@ part = digikey.product_details(dkpn)
 # Search for parts 
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
 result = digikey.keyword_search(body=search_request)
+
+# Only if BatchProductDetails endpoint is explicitly enabled
+# Search for Batch of Parts/Product
+mpn_list = ["0ZCK0050FF2E", "LR1F1K0"] #Length upto 50
+batch_request = BatchProductDetailsRequest(products=mpn_list)
+part_results = digikey.batch_product_details(body=batch_request)
 ```
 
 ## Logging [API V3]
