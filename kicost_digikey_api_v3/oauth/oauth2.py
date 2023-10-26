@@ -273,7 +273,14 @@ class TokenHandler:
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(
                         request, address, server, self._id, self._secret))
-            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=filename, server_side=True)
+
+            ssl_version=ssl.PROTOCOL_TLS
+            certfile=filename
+            context = ssl.SSLContext(ssl_version)
+            context.load_cert_chain(certfile, None)
+
+            httpd.socket = context.wrap_socket(httpd.socket, server_side=True, server_hostname=None)
+
             httpd.stop = 0
 
             # This function will block until it receives a request
