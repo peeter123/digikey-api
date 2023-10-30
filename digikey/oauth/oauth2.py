@@ -248,11 +248,13 @@ class TokenHandler:
         if token_json is None:
             open_new(self.__build_authorization_url())
             filename = self.__generate_certificate()
+            context = ssl.SSLContext(protocol=ssl.PROTOCOL_TLS_SERVER)
+            context.load_cert_chain(certfile=filename)
             httpd = HTTPServer(
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(
                         request, address, server, self._id, self._secret))
-            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=str(Path(filename)), server_side=True)
+            httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
             httpd.stop = 0
 
             # This function will block until it receives a request
