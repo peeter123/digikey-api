@@ -273,7 +273,16 @@ class TokenHandler:
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(
                         request, address, server, self._id, self._secret))
-            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=filename, server_side=True)
+
+            if sys.version_info < (3, 12):
+                # Old mechanism supported upto 3.11
+                httpd.socket = ssl.wrap_socket(httpd.socket, certfile=filename, server_side=True)
+            else:
+                # New mechanism, needs more testing
+                context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+                context.load_cert_chain(filename)
+                httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
+
             httpd.stop = 0
 
             # This function will block until it receives a request
