@@ -1,4 +1,5 @@
-from kicost_digikey_api_v3 import by_digikey_pn, by_keyword, by_manf_pn, configure
+from kicost_digikey_api_v3 import by_digikey_pn, by_keyword, by_manf_pn
+from tools.test_config import configure
 
 # Configuration file
 cfg_file = None
@@ -20,7 +21,7 @@ cfg_file = None
 # , x_digikey_locale_currency = 'EUR', x_digikey_locale_site = 'ES', x_digikey_locale_ship_to_country = 'ES'
 # If you ask for EUR to the US site you'll get USD, they won't charge you in EUR
 
-configure(file=cfg_file)
+configure(cfg_file)
 
 # Query product number
 dkpn = '296-6501-6-ND'
