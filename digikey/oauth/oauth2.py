@@ -105,7 +105,7 @@ class TokenHandler:
                  version: int = 2,
                  sandbox: bool = False):
 
-        if version == 3:
+        if version == 3 or version == 4:
             if sandbox:
                 self.auth_url = AUTH_URL_V3_SB
                 self.token_url = TOKEN_URL_V3_SB
@@ -252,7 +252,9 @@ class TokenHandler:
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(
                         request, address, server, self._id, self._secret))
-            httpd.socket = ssl.wrap_socket(httpd.socket, certfile=str(Path(filename)), server_side=True)
+            context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+            context.load_cert_chain(str(Path(filename)))
+            httpd.socket=context.wrap_socket(httpd.socket,server_side=True,)
             httpd.stop = 0
 
             # This function will block until it receives a request
