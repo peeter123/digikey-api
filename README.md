@@ -25,15 +25,15 @@ export DIGIKEY_STORAGE_PATH="path/to/cache/dir"
 
 The cache dir is used to store the OAUTH access and refresh token, if you delete it you will need to login again.
 
-# API V3
+# API V4
 ## Register
-Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need
+Register an app on the Digikey API portal: [Digi-Key API V4](https://developer.digikey.com/get_started). You will need
 the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the
 Oauth2 process.
 
 When registering an app the OAuth Callback needs to be set to `https://localhost:8139/digikey_callback`.
 
-## Use [API V3]
+## Use [API V4]
 Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
 the library will cache the access token and use the refresh token to automatically refresh your credentials.
 
@@ -73,7 +73,7 @@ batch_request = BatchProductDetailsRequest(products=mpn_list)
 part_results = digikey.batch_product_details(body=batch_request)
 ```
 
-## Logging [API V3]
+## Logging [API V4]
 Logging is not forced upon the user but can be enabled according to convention:
 ```python
 import logging
