@@ -250,6 +250,7 @@ class TokenHandler:
             filename = self.__generate_certificate()
             context = ssl.SSLContext(protocol=ssl.PROTOCOL_TLS_SERVER)
             context.load_cert_chain(certfile=filename)
+
             httpd = HTTPServer(
                     ('localhost', PORT),
                     lambda request, address, server: HTTPServerHandler(

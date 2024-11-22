@@ -1,12 +1,14 @@
-import os
 import logging
+import os
+
 import digikey.oauth.oauth2
 from digikey.exceptions import DigikeyError
+from digikey.utils import strtobool
+from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
+from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
 from digikey.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
                                            ManufacturerProductDetailsRequest)
 from digikey.v3.productinformation.rest import ApiException
-from digikey.v3.ordersupport import (OrderStatusResponse, SalesOrderHistoryItem)
-from digikey.v3.batchproductdetails import (BatchProductDetailsRequest, BatchProductDetailsResponse)
 
 logger = logging.getLogger(__name__)
 
@@ -178,20 +180,3 @@ def batch_product_details(*args, **kwargs) -> BatchProductDetailsResponse:
         return client.call_api_function(*args, **kwargs)
     else:
         raise DigikeyError('Please provide a valid BatchProductDetailsRequest argument')
-
-
-def strtobool(val):
-    """Convert a string representation of truth to true (1) or false (0).
-    True values are 'y', 'yes', 't', 'true', 'on', and '1'; false values
-    are 'n', 'no', 'f', 'false', 'off', and '0'.  Raises ValueError if
-    'val' is anything else.
-
-	Copy from distutils.utils, which was removed in Python 3.12
-    """
-    val = val.lower()
-    if val in ('y', 'yes', 't', 'true', 'on', '1'):
-        return 1
-    elif val in ('n', 'no', 'f', 'false', 'off', '0'):
-        return 0
-    else:
-        raise ValueError("invalid truth value %r" % (val,))
