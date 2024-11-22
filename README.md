@@ -16,13 +16,15 @@ manufacturers overlap other manufacturer part numbers.
 ```sh
 pip install digikey-api
 
-cache_dir=cdir
-mkdir $cache_dir 2>/dev/null
+cache_dir="path/to/cache/dir"
+mkdir -p $cache_dir
 
 export DIGIKEY_CLIENT_ID="client_id"
 export DIGIKEY_CLIENT_SECRET="client_secret"
-export DIGIKEY_STORAGE_PATH=$cache_dir
+export DIGIKEY_STORAGE_PATH="${cache_dir}"
 ```
+
+The cache dir is used to store the OAUTH access and refresh token, if you delete it you will need to login again.
 
 # API V3
 ## Register
@@ -39,17 +41,23 @@ the library will cache the access token and use the refresh token to automatical
 You can test your application using the sandbox API, the data returned from a Sandbox API may not be complete, but the
 structure of the Sandbox API response will be a representation of what to expect in Production.
 
-For valid responses make sure you use the client ID and secret for a [Production App](https://developer.digikey.com/documentation/organization)
+For valid responses make sure you ue the client ID and secret for a [Production App](https://developer.digikey.com/documentation/organization).
+Otherwise, it is possible that dummy data is returned and you will pull your hair as to why it doesn't work.
 
 ```python
 import os
+from pathlib import Path
+
 import digikey
 from digikey.v3.productinformation import KeywordSearchRequest
+from digikey.v3.batchproductdetails import BatchProductDetailsRequest
+
+CACHE_DIR = Path('path/to/cache/dir')
 
 os.environ['DIGIKEY_CLIENT_ID'] = 'client_id'
 os.environ['DIGIKEY_CLIENT_SECRET'] = 'client_secret'
 os.environ['DIGIKEY_CLIENT_SANDBOX'] = 'False'
-os.environ['DIGIKEY_STORAGE_PATH'] = 'cache_dir'
+os.environ['DIGIKEY_STORAGE_PATH'] = CACHE_DIR
 
 # Query product number
 dkpn = '296-6501-1-ND'
@@ -58,6 +66,12 @@ part = digikey.product_details(dkpn)
 # Search for parts
 search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
 result = digikey.keyword_search(body=search_request)
+
+# Only if BatchProductDetails endpoint is explicitly enabled
+# Search for Batch of Parts/Product
+mpn_list = ["0ZCK0050FF2E", "LR1F1K0"] #Length upto 50
+batch_request = BatchProductDetailsRequest(products=mpn_list)
+part_results = digikey.batch_product_details(body=batch_request)
 ```
 
 ## Logging [API V3]
