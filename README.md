@@ -16,11 +16,12 @@ manufacturers overlap other manufacturer part numbers.
 ```sh
 pip install digikey-api
 
-mkdir -p path/to/cache/dir
+cache_dir="path/to/cache/dir"
+mkdir -p $cache_dir
 
 export DIGIKEY_CLIENT_ID="client_id"
 export DIGIKEY_CLIENT_SECRET="client_secret"
-export DIGIKEY_STORAGE_PATH="path/to/cache/dir"
+export DIGIKEY_STORAGE_PATH="${cache_dir}"
 ```
 
 The cache dir is used to store the OAUTH access and refresh token, if you delete it you will need to login again.
