@@ -8,7 +8,7 @@ manufacturers overlap other manufacturer part numbers.
 [![Donate](https://img.shields.io/badge/Donate-PayPal-gold.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=53HWHHVCJ3D4J&currency_code=EUR&source=url)
 
 # What does it do
-`digikey-api` is an [Digkey Part Search API](https://api-portal.digikey.com/node/8517) client for Python 3.6+. API response data is returned as Python objects that attempt to make it easy to get the data you want. Not all endpoints have been implemented.
+`digikey-api` is an [Digkey Part Search API](https://api-portal.digikey.com/node/8517) client for Python 3.12+. API response data is returned as Python objects that attempt to make it easy to get the data you want. Not all endpoints have been implemented.
 
 # Quickstart
 
@@ -26,15 +26,15 @@ export DIGIKEY_STORAGE_PATH="${cache_dir}"
 
 The cache dir is used to store the OAUTH access and refresh token, if you delete it you will need to login again.
 
-# API V3
+# API V4
 ## Register
-Register an app on the Digikey API portal: [Digi-Key API V3](https://developer.digikey.com/get_started). You will need
+Register an app on the Digikey API portal: [Digi-Key API V4](https://developer.digikey.com/get_started). You will need
 the client ID and the client secret to use the API. You will also need a Digi-Key account to authenticate, using the
 Oauth2 process.
 
 When registering an app the OAuth Callback needs to be set to `https://localhost:8139/digikey_callback`.
 
-## Use [API V3]
+## Use [API V4]
 Python will automatically spawn a browser to allow you to authenticate using the Oauth2 process. After obtaining a token
 the library will cache the access token and use the refresh token to automatically refresh your credentials.
 
@@ -49,8 +49,8 @@ import os
 from pathlib import Path
 
 import digikey
-from digikey.v3.productinformation import KeywordSearchRequest
-from digikey.v3.batchproductdetails import BatchProductDetailsRequest
+from digikey.v4.productinformation import KeywordRequest
+from digikey.v4.batchproductdetails import BatchProductDetailsRequest
 
 CACHE_DIR = Path('path/to/cache/dir')
 
@@ -64,7 +64,7 @@ dkpn = '296-6501-1-ND'
 part = digikey.product_details(dkpn)
 
 # Search for parts
-search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
+search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', limit=10, offset = 0)
 result = digikey.keyword_search(body=search_request)
 
 # Only if BatchProductDetails endpoint is explicitly enabled
@@ -74,7 +74,7 @@ batch_request = BatchProductDetailsRequest(products=mpn_list)
 part_results = digikey.batch_product_details(body=batch_request)
 ```
 
-## Logging [API V3]
+## Logging [API V4]
 Logging is not forced upon the user but can be enabled according to convention:
 ```python
 import logging
@@ -119,7 +119,7 @@ The API has a limited amount of requests you can make per time interval [Digikey
 It is possible to retrieve the number of max requests and current requests by passing an optional api_limits kwarg to an API function:
 ```python
 api_limit = {}
-search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', record_count=10)
+search_request = KeywordSearchRequest(keywords='CRCW080510K0FKEA', limit=10)
 result = digikey.keyword_search(body=search_request, api_limits=api_limit)
 ```
 
@@ -130,4 +130,29 @@ The dict will be filled with the information returned from the API:
     'api_requests_remaining': 139
 }
 ```
-Sometimes the API does not return any rate limit data, the values will then be set to None.
+Sometimes the API does not return any rate limit data, the values will then be set to `None`.
+
+
+## Offsets
+The api has a maximum of 50 parts in a request.
+In order to gather more than the limit input into the `KeywordRequest` an offset must be input:
+```python
+# request items 51-100
+search_request = KeywordRequest(keywords='RaspberryPi pico',limit = 50,offset=50)
+```
+
+This can also be used to gather all items to a request very simply:
+```python
+offset = 0
+products = []
+
+while(offset == 0 or (len(result.products) >= 49)):
+
+    search_request = KeywordRequest(keywords='RaspberryPi pico',limit = 50,offset=offset)
+    result = digikey.keyword_search(body=search_request)
+    
+    for product in result.products:
+        products.append(product)
+
+    offset +=50
+```

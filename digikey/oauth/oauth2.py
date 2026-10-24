@@ -105,7 +105,7 @@ class TokenHandler:
                  version: int = 2,
                  sandbox: bool = False):
 
-        if version == 3:
+        if version == 3 or version == 4:
             if sandbox:
                 self.auth_url = AUTH_URL_V3_SB
                 self.token_url = TOKEN_URL_V3_SB
