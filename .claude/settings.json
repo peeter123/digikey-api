@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && uv run --quiet python .claude/hooks/ruff_gate.py",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
