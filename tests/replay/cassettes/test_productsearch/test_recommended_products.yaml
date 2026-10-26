@@ -1,0 +1,74 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/recommendedproducts?limit=3
+  response:
+    body:
+      string: '{"Recommendations":[{"ProductNumber":"296-6501-1-ND","RecommendedProducts":[{"DigiKeyProductNumber":"296-2037-5-ND","ManufacturerProductNumber":"CD4017BE","ManufacturerName":"Texas
+        Instruments","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4015/296%7E4040049%7EN%7E16.jpg","ProductDescription":"IC
+        DECADE COUNTER 10BIT 16DIP","QuantityAvailable":8463,"UnitPrice":1.0,"ProductUrl":"https://www.digikey.com/en/products/detail/texas-instruments/CD4017BE/67253","OtherNames":["-CD4017BEE4-NDR","296-2037-5","-CD4017BE-NDR","-296-2037-5-ND","-CD4017BEE4","2166-CD4017BE-296","-296-2037-5"]},{"DigiKeyProductNumber":"296-1388-2-ND","ManufacturerProductNumber":"LM311DR","ManufacturerName":"Texas
+        Instruments","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/8900/MFG_296%7E4040047-3%7ED%7E8.jpg","ProductDescription":"IC
+        COMPARATOR 1CH 8-SOIC","ProductUrl":"https://www.digikey.com/en/products/detail/texas-instruments/LM311DR/381217","OtherNames":["-LM311DRE4","-LM311DRG4","2156-LM311DR","-LM311DR-NDR","-296-1388-1-ND","296-9534-1","296-1388-2-NDR","296-9534-2-ND","296-9534-2","296-9534-1-ND","296-1388-2","TEXTISLM311DR","296-1388-1","-296-1388-1","296-1388-1-NDR","-LM311DRE4-NDR","296-1388-6","-LM311DRG4-NDR"]},{"DigiKeyProductNumber":"296-10168-2-ND","ManufacturerProductNumber":"TL331IDBVR","ManufacturerName":"Texas
+        Instruments","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/8900/MFG_296%7E4073253-4%7EDBV%7E5.jpg","ProductDescription":"IC
+        COMPARATOR 1CH SOT-23-5","QuantityAvailable":178219,"ProductUrl":"https://www.digikey.com/en/products/detail/texas-instruments/TL331IDBVR/381307","OtherNames":["296-10168-6","-TL331IDBVRG4-NDR","296-10168-2","-296-10168-1","296-10168-1","2156-TL331IDBVR","-TL331IDBVRE4","-TL331IDBVRG4","-TL331IDBVRE4-NDR","-TL331IDBVR-NDR","TEXTISTL331IDBVR","-296-10168-1-ND"]},{"DigiKeyProductNumber":"296-1015-2-ND","ManufacturerProductNumber":"LM393DR","ManufacturerName":"Texas
+        Instruments","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/8900/MFG_296%7E4040047-3%7ED%7E8.jpg","ProductDescription":"IC
+        COMPARATOR 2CH 8-SOIC","ProductUrl":"https://www.digikey.com/en/products/detail/texas-instruments/LM393DR/276659","OtherNames":["296-1015-1","TEXTISLM393DR","296-1015-2","296-1015-2-NDR","-LM393DR-NDR","-296-1015-1","-LM393DRG4-NDR","296-1015-6","2156-LM393DR","-LM393DRE4-NDR","-LM393DRE4","-296-1015-1-ND","-LM393DRG4"]},{"DigiKeyProductNumber":"1N4148W-FDITR-ND","ManufacturerProductNumber":"1N4148W-7-F","ManufacturerName":"Diodes
+        Incorporated","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/8898/MFG_31%7ESOD123%7E%7E2.jpg","ProductDescription":"DIODE
+        STANDARD 100V 300MA SOD123","ProductUrl":"https://www.digikey.com/en/products/detail/diodes-incorporated/1N4148W-7-F/814371","OtherNames":["1N4148W-FDIDKR","1N4148W7F","1N4148W-FDITR","1N4148W-FDICT","IN4148W-7-F"]},{"DigiKeyProductNumber":"3386P-104LF-ND","ManufacturerProductNumber":"3386P-1-104LF","ManufacturerName":"Bourns
+        Inc.","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2383/3386P%20SERIES.jpg","ProductDescription":"TRIMMER
+        100K OHM 0.5W PC PIN TOP","QuantityAvailable":4629,"UnitPrice":1.0,"ProductUrl":"https://www.digikey.com/en/products/detail/bourns-inc/3386P-1-104LF/1088524","OtherNames":["3386P-1-104LF-ND","3386P1104LF","3386P-104LF"]},{"DigiKeyProductNumber":"3361P-104GLFTR-ND","ManufacturerProductNumber":"3361P-1-104GLF","ManufacturerName":"Bourns
+        Inc.","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2423/3361P%20SERIES.jpg","ProductDescription":"TRIMMER
+        100K OHM 0.5W GW TOP ADJ","QuantityAvailable":17047,"UnitPrice":1.0,"ProductUrl":"https://www.digikey.com/en/products/detail/bourns-inc/3361P-1-104GLF/1088369","OtherNames":["3361P-1-104GLFTR-ND","3361P-104GLFDKR","3361P-104GLFTR","3361P-1-104GLFCT-ND","3361P-104GLFCT","3361P1104GLF"]},{"DigiKeyProductNumber":"296-25940-2-ND","ManufacturerProductNumber":"CD4017BM96","ManufacturerName":"Texas
+        Instruments","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/3982/296%7E4040047-6%7ED%7E16.JPG","ProductDescription":"IC
+        DECADE COUNTER 10BIT 16SOIC","QuantityAvailable":3417,"ProductUrl":"https://www.digikey.com/en/products/detail/texas-instruments/CD4017BM96/1690809","OtherNames":["296-25940-6","-CD4017BM96G4-NDR","CD4017BM96-ND","296-25940-2","CD4017BM96E4-ND","296-25940-1","-296-25940-1-ND","-CD4017BM96G4","-CD4017BM96E4","-296-25940-1","-CD4017BM96E4-NDR","CD4017BM96E4"]},{"DigiKeyProductNumber":"NE555S-13DITR-ND","ManufacturerProductNumber":"NE555S-13","ManufacturerName":"Diodes
+        Incorporated","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/5741/31%7E8SO-3.9%7E%7E8.jpg","ProductDescription":"IC
+        OSC SNGL TIMER 500KHZ 8-SOIC","QuantityAvailable":13694,"ProductUrl":"https://www.digikey.com/en/products/detail/diodes-incorporated/NE555S-13/2921391","OtherNames":["NE555S-13DITR","NE555S13","NE555S-13DIDKR","NE555S-13DICT"]},{"DigiKeyProductNumber":"4878-BC547BCT-ND","ManufacturerProductNumber":"BC547B","ManufacturerName":"Diotec
+        Semiconductor","PrimaryPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/7962/MFG_4878%7ETO92-FORMED%7E%7E3.jpg","ProductDescription":"TRANS
+        NPN 45V 0.1A TO-92","QuantityAvailable":23311,"ProductUrl":"https://www.digikey.com/en/products/detail/diotec-semiconductor/BC547B/13164496","OtherNames":["4878-BC547BDKRINACTIVE","4878-BC547BDKR-ND","4878-BC547BDKR","4878-BC547BTR","2796-BC547BTR-ND","2796-BC547BTR","4878-BC547BCT"]}],"SearchLocaleUsed":{"Site":"US","Language":"en","Currency":"USD"}}]}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '992'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -80,6 +80,11 @@ DigiKey uses OAuth2. Pick the flow with `auth=`:
 | `"authorization_code"` | 3-legged | Data tied to your DigiKey account, such as `MyPricing`. Opens a browser once. |
 | `"authorization_code_manual"` | 3-legged | The same on a headless machine: open the printed URL anywhere and paste back the URL you were redirected to. |
 
+Your app must be subscribed to each API product it calls (ProductSearch v4, OrderStatus v4) on the
+developer portal, or DigiKey answers `401 Invalid clientId. X-DIGIKEY-Client-Id invalid for requested
+resource`. With `client_credentials` there is no logged-in user, so OrderStatus also needs
+`account_id=` (your DigiKey account number).
+
 For the 3-legged flows, set the app's OAuth callback to `https://localhost:8139/digikey_callback`. The
 token is stored in `storage_path` (by default the user cache directory, e.g.
 `~/.cache/digikey-api`) and refreshed automatically, so you only log in again when the refresh token

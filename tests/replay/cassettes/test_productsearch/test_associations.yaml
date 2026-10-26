@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/associations
+  response:
+    body:
+      string: '{"ProductAssociations":{"Kits":[],"MatingProducts":[],"AssociatedProducts":[],"ForUseWithProducts":[{"ProductUrl":"https://www.digikey.com/en/products/detail/mikroelektronika/MIKROE-2376/6165550","Description":"C
+        METER CLICK","Manufacturer":{"Id":1471,"Name":"MikroElektronika"},"ManufacturerProductNumber":"MIKROE-2376","UnitPrice":"11","QuantityAvailable":8,"DigiKeyProductNumber":"1471-1642-ND"},{"ProductUrl":"https://www.digikey.com/en/products/detail/mikroelektronika/MIKROE-2032/5824523","Description":"PULSE
+        CLICK","Manufacturer":{"Id":1471,"Name":"MikroElektronika"},"ManufacturerProductNumber":"MIKROE-2032","UnitPrice":"30","QuantityAvailable":3,"DigiKeyProductNumber":"1471-1549-ND"}]},"SearchLocaleUsed":{"Site":"US","Language":"en","Currency":"USD"}}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '991'
+    status:
+      code: 200
+      message: OK
+version: 1

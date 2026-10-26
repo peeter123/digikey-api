@@ -1,10 +1,22 @@
 from __future__ import annotations
 
+import os
+from pathlib import Path
+
 import pytest
 
 from digikey import DigikeyClient
 
-pytestmark = pytest.mark.vcr
+CASSETTE = Path(__file__).parent / "cassettes" / "test_orderstatus" / "test_search_and_retrieve_orders.yaml"
+
+pytestmark = [
+    pytest.mark.vcr,
+    # Recording needs a sandbox app subscribed to OrderStatus v4; until then the unit tests cover it.
+    pytest.mark.skipif(
+        not CASSETTE.exists() and not os.getenv("DIGIKEY_SANDBOX_CLIENT_ID"),
+        reason="no OrderStatus cassette recorded yet",
+    ),
+]
 
 
 def test_search_and_retrieve_orders(sandbox: DigikeyClient) -> None:
