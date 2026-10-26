@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/pricingbyquantity/100
+  response:
+    body:
+      string: "{\"RequestedProduct\":\"296-6501-1-ND\",\"RequestedQuantity\":100,\"ProductUrl\":\"https://www.digikey.com/en/products/detail/texas-instruments/NE555DR/372491\",\"ManufacturerPartNumber\":\"NE555DR\",\"Manufacturer\":{\"Id\":296,\"Name\":\"Texas
+        Instruments\"},\"Description\":{\"ProductDescription\":\"IC OSC SNGL TIMER
+        100KHZ 8-SOIC\",\"DetailedDescription\":\"555 Type, Timer/Oscillator (Single)
+        IC 100kHz 8-SOIC\"},\"SettingsUsed\":{\"SearchLocaleUsed\":{\"Site\":\"US\",\"Language\":\"en\",\"Currency\":\"USD\"}},\"MyPricingOptions\":[],\"StandardPricingOptions\":[{\"PricingOption\":\"Exact\",\"TotalQuantityPriced\":100,\"TotalPrice\":17.67,\"Products\":[{\"DigiKeyProductNumber\":\"296-6501-1-ND\",\"QuantityPriced\":100,\"MinimumOrderQuantity\":1,\"ExtendedPrice\":17.67,\"UnitPrice\":0.1767,\"PackageType\":{\"Id\":2,\"Name\":\"Cut
+        Tape (CT)\"},\"TariffInformation\":{}}]},{\"PricingOption\":\"Exact\",\"TotalQuantityPriced\":100,\"TotalPrice\":24.67,\"Products\":[{\"DigiKeyProductNumber\":\"296-6501-6-ND\",\"QuantityPriced\":100,\"MinimumOrderQuantity\":1,\"ExtendedPrice\":24.67,\"UnitPrice\":0.2467,\"PackageType\":{\"Id\":243,\"Name\":\"Digi-Reel\xAE\"},\"TariffInformation\":{}}]},{\"PricingOption\":\"MinimumOrderQuantity\",\"TotalQuantityPriced\":1788,\"TotalPrice\":303.96,\"QuantityAvailable\":130433,\"Products\":[{\"DigiKeyProductNumber\":\"2156-NE555DR-ND\",\"QuantityPriced\":1788,\"MinimumOrderQuantity\":1788,\"ExtendedPrice\":303.96,\"UnitPrice\":0.17,\"PackageType\":{\"Id\":3,\"Name\":\"Bulk\"},\"TariffInformation\":{},\"Marketplace\":true}]},{\"PricingOption\":\"MinimumOrderQuantity\",\"TotalQuantityPriced\":2500,\"TotalPrice\":352.23,\"Products\":[{\"DigiKeyProductNumber\":\"296-6501-2-ND\",\"QuantityPriced\":2500,\"MinimumOrderQuantity\":2500,\"ExtendedPrice\":352.23,\"UnitPrice\":0.14089,\"PackageType\":{\"Id\":1,\"Name\":\"Tape
+        & Reel (TR)\"},\"TariffInformation\":{}}]}],\"AccountIdUsed\":0,\"CustomerIdUsed\":0}"
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '995'
+    status:
+      code: 200
+      message: OK
+version: 1

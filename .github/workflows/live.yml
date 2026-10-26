@@ -1,0 +1,42 @@
+name: Live API
+
+# Weekly smoke test against the real DigiKey API. A scheduled failure opens (or updates) an
+# issue, which is the early warning that DigiKey changed or retired something.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    environment: live
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.2  # no moving major tags; Dependabot bumps this
+      - run: uv sync --locked --group test
+      - run: uv run pytest -m live -v -rs
+        env:
+          DIGIKEY_LIVE: "1"
+          DIGIKEY_PROD_CLIENT_ID: ${{ secrets.DIGIKEY_PROD_CLIENT_ID }}
+          DIGIKEY_PROD_CLIENT_SECRET: ${{ secrets.DIGIKEY_PROD_CLIENT_SECRET }}
+          DIGIKEY_SANDBOX_CLIENT_ID: ${{ secrets.DIGIKEY_SANDBOX_CLIENT_ID }}
+          DIGIKEY_SANDBOX_CLIENT_SECRET: ${{ secrets.DIGIKEY_SANDBOX_CLIENT_SECRET }}
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create live-api --color B60205 --description "Live DigiKey API check failed" --force
+          existing=$(gh issue list --label live-api --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Still failing: $RUN_URL"
+          else
+            gh issue create --label live-api --title "Live DigiKey API check failed" \
+              --body "The weekly live smoke test failed: $RUN_URL. DigiKey may have changed the API or expired the test app credentials."
+          fi

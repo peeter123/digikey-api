@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/digireelpricing?requestedQuantity=500
+  response:
+    body:
+      string: '{"ReelingFee":7.0,"UnitPrice":0.1688,"ExtendedPrice":84.4000,"RequestedQuantity":500,"SearchLocaleUsed":{"Site":"US","Language":"en","Currency":"USD"},"AccountIdUsed":0,"CustomerIdUsed":0}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '994'
+    status:
+      code: 200
+      message: OK
+version: 1

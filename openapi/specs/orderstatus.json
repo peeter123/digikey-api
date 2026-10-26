@@ -1,0 +1,785 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "OrderStatus",
+    "description": "Retrieve a list of orders within a date range or get the status and contents of a specific order. Note: When you place an order with DigiKey, we create a single “Order” in our internal systems and one or more “Sales Orders.” On our website and packing materials, we mention SalesOrder Number, Sales Order ID and Order Number. Those are referencing the “Sales Order ID” and not the “Order Number.”",
+    "termsOfService": "https://www.digikey.com/en/terms-and-conditions",
+    "contact": {
+      "name": "API Support",
+      "url": "https://developer.digikey.com/support"
+    },
+    "version": "v4"
+  },
+  "securityDefinitions": {
+    "apiKeySecurity": {
+      "type": "apiKey",
+      "name": "X-DIGIKEY-Client-Id",
+      "in": "header"
+    },
+    "oauth2ApplicationSecurity": {
+      "type": "oauth2",
+      "flow": "application",
+      "tokenUrl": "https://api.digikey.com/v1/oauth2/token"
+    }
+  },
+  "security": [
+    {
+      "apiKeySecurity": [],
+      "oauth2ApplicationSecurity": []
+    }
+  ],
+  "host": "api.digikey.com",
+  "x-host-sandbox": "sandbox-api.digikey.com",
+  "x-host-production": "api.digikey.com",
+  "basePath": "/orderstatus/v4",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/orders": {
+      "get": {
+        "tags": [
+          "OrderHistory"
+        ],
+        "summary": "Retrieves a list of orders in a specified date range",
+        "description": "This API uses both two-legged OAuth and three-legged OAuth. <a href=\"https://developer.digikey.com/documentations#tab_link_4\" target=\"_blank\">See Documentation | OAuth 2.0: 2 Legged Flow</a> or <a href=\"https://developer.digikey.com/documentation?atab=tab_link_5\">OAuth 2.0: 3 Legged Flow</a> for information.\r\n\n</br>Which endpoint should I use?\r\n<ul><li>If you know the SalesOrderID for the Order you want to retrieve information, call the RetrieveSalesOrder endpoint.</li><li>Otherwise, call the SearchOrders endpoint and specify a date range. This endpoint will return the same information for every Order placed during that time period.</li></ul>",
+        "operationId": "SearchOrders",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Shared",
+            "description": "Determines if all orders placed by the AccountID used in the request will return. True means all will be retrieved, false means only the user’s orders will be returned.\r\n*Default value : false*",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "StartDate",
+            "description": "Starting date of the date range for order history. Format: YYYY-MM-DD\r\n*Default value: current day - 30 days*",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "in": "query",
+            "name": "EndDate",
+            "description": "Ending date of the date range for order history. Format: YYYY-MM-DD\r\n*Default value: current date*",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "in": "query",
+            "name": "PageNumber",
+            "description": "PageNumber to use in pagination\r\n            *Default value: 1*",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "PageSize",
+            "description": "PageSize to use in pagination\r\n            *Default value : 10\r\n            Maximum value: 25*",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Client-Id",
+            "description": "The Client Id for your app.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Locale-Language",
+            "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.\nDefault value: en",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Locale-Currency",
+            "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.\nDefault value: primary currency for the entered Locale-site.",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Locale-Site",
+            "description": "We return the order’s status in English unless you set the Locale to alternative values. They do not need to be the same ones used to place the Order.   Two letter country/region code. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Account-Id",
+            "description": "Your DigiKey AccountID. This optional field should be populated when your email address is associated with more than one Account and you are using 3-legged OAuth. If you are using 2-Legged OAuth, it is a required field to receive a successful response.\n\nWe use the AccountID to determine which Sales Orders will be returned.\n\nSelect ‘My account’ above to learn more about AccountIDs.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/OrderResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request - The input model is invalid or malformed.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token is expired or Client Id or subscription are invalid.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "403": {
+            "description": "The target resource is forbidden.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "404": {
+            "description": "Not Found - The requested resource could not be found",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Your rate limit has been exceeded",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "500": {
+            "description": "An unhandled error occurred.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable - The service is temporarily unavailable",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/salesorder/{salesOrderId}": {
+      "get": {
+        "tags": [
+          "OrderHistory"
+        ],
+        "summary": "Retrieves a SalesOrder for a specific salesOrderId",
+        "description": "This API uses both two-legged OAuth and three-legged OAuth. <a href=\"https://developer.digikey.com/documentations#tab_link_4\" target=\"_blank\">See Documentation | OAuth 2.0: 2 Legged Flow</a> or <a href=\"https://developer.digikey.com/documentation?atab=tab_link_5\">OAuth 2.0: 3 Legged Flow</a> for information.\r\n\n</br>Which endpoint should I use?\r\n<ul><li>If you know the SalesOrderID for the Order you want to retrieve information, call the RetrieveSalesOrder endpoint.</li><li>Otherwise, call the SearchOrders endpoint and specify a date range. This endpoint will return the same information for every Order placed during that time period.</li></ul>",
+        "operationId": "RetrieveSalesOrder",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "salesOrderId",
+            "description": "The ID number for the Sales Order you want to retrieve.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Client-Id",
+            "description": "The Client Id for your app.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Locale-Language",
+            "description": "Two letter code for language to search on. Language must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.\nDefault value: en",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Locale-Currency",
+            "description": "Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.\nDefault value: primary currency for the entered Locale-site.",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-DIGIKEY-Locale-Site",
+            "description": "We return the order’s status in English unless you set the Locale to alternative values. They do not need to be the same ones used to place the Order.   Two letter country/region code. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SalesOrder"
+            }
+          },
+          "400": {
+            "description": "Bad Request - The input model is invalid or malformed.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token is expired or Client Id or subscription are invalid.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "403": {
+            "description": "The target resource is forbidden.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "404": {
+            "description": "Not Found - The requested resource could not be found",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Your rate limit has been exceeded",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "500": {
+            "description": "An unhandled error occurred.",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable - The service is temporarily unavailable",
+            "schema": {
+              "$ref": "#/definitions/DKProblemDetails"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Address": {
+      "type": "object",
+      "properties": {
+        "FirstName": {
+          "description": "First name on address",
+          "type": "string",
+          "example": "John"
+        },
+        "LastName": {
+          "description": "Last name on address",
+          "type": "string",
+          "example": "Doe"
+        },
+        "CompanyName": {
+          "description": "Company name on address",
+          "type": "string",
+          "example": "Corporation X"
+        },
+        "AddressLine1": {
+          "description": "First address line",
+          "type": "string",
+          "example": "123 North Street"
+        },
+        "AddressLine2": {
+          "description": "Second address line",
+          "type": "string",
+          "example": "123 North Street"
+        },
+        "AddressLine3": {
+          "description": "Third address line",
+          "type": "string",
+          "example": "123 North Street"
+        },
+        "City": {
+          "description": "City on address",
+          "type": "string",
+          "example": "Metrocity"
+        },
+        "State": {
+          "description": "State code on address",
+          "type": "string",
+          "example": "MN"
+        },
+        "County": {
+          "description": "County on address",
+          "type": "string",
+          "example": "Little County"
+        },
+        "ZipCode": {
+          "description": "Zip code on address",
+          "type": "string",
+          "example": "78303"
+        },
+        "IsoCode": {
+          "description": "Country on address",
+          "type": "string",
+          "example": "USA"
+        },
+        "Phone": {
+          "description": "Phone number on address",
+          "type": "string",
+          "example": "555-555-5555"
+        },
+        "InvoiceId": {
+          "format": "int32",
+          "description": "Invoice ID of order",
+          "type": "integer",
+          "example": 12345678
+        }
+      },
+      "additionalProperties": false
+    },
+    "Contact": {
+      "description": "The contact information for a given customer",
+      "type": "object",
+      "properties": {
+        "FirstName": {
+          "description": "The first name of the customer",
+          "type": "string"
+        },
+        "LastName": {
+          "description": "The last name of the customer",
+          "type": "string"
+        },
+        "Email": {
+          "description": "The email address of the customer",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DKProblemDetails": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "string"
+        },
+        "correlationId": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "readOnly": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ItemShipInfo": {
+      "type": "object",
+      "properties": {
+        "QuantityShipped": {
+          "format": "int32",
+          "description": "Quantity of item shipped",
+          "type": "integer",
+          "example": 3
+        },
+        "InvoiceId": {
+          "format": "int32",
+          "description": "Invoice ID of given item",
+          "type": "integer",
+          "example": 12345678
+        },
+        "ShippedDate": {
+          "format": "date-time",
+          "description": "Date shipped",
+          "type": "string",
+          "example": "2023-01-26T09:03:54-06:00"
+        },
+        "TrackingNumber": {
+          "description": "Tracking number of the shipment",
+          "type": "string"
+        },
+        "ExpectedDeliveryDate": {
+          "description": "Expected date item to be delivered by",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LineItem": {
+      "description": "LineItem for a given Sales Order",
+      "type": "object",
+      "properties": {
+        "SalesOrderId": {
+          "format": "int32",
+          "description": "Sales order ID for given line item",
+          "type": "integer",
+          "example": 123456789
+        },
+        "DetailId": {
+          "format": "int32",
+          "description": "DK detail ID for given line item",
+          "type": "integer"
+        },
+        "TotalPrice": {
+          "format": "double",
+          "description": "Total price of all details, Shipping Charges, Sales Tax, Tariffs, GST, HST",
+          "type": "number"
+        },
+        "PurchaseOrder": {
+          "description": "Customer purchase order",
+          "type": "string"
+        },
+        "CustomerReference": {
+          "description": "Customer part number for reference",
+          "type": "string"
+        },
+        "CountryOfOrigin": {
+          "description": "Country of origin",
+          "type": "string"
+        },
+        "DigiKeyProductNumber": {
+          "description": "DigiKey product number for given line item",
+          "type": "string",
+          "example": "P5555"
+        },
+        "ManufacturerProductNumber": {
+          "description": "Manufacturer part number for given line item",
+          "type": "string",
+          "example": "ECA-1VHG102"
+        },
+        "Description": {
+          "description": "Description of part for given line item",
+          "type": "string",
+          "example": "CAP ALUM 1000UF 20% 35V RADIAL"
+        },
+        "PackType": {
+          "description": "PackType of given line item",
+          "enum": [
+            "TapeReel",
+            "CutTape",
+            "Bulk",
+            "TapeBox",
+            "Tube",
+            "Tray",
+            "Box",
+            "Bag",
+            "Spools",
+            "DigiReel",
+            "Strip",
+            "Bottle",
+            "Canister",
+            "Book",
+            "Dispenser",
+            "Sheet",
+            "Pail",
+            "Can",
+            "Case",
+            "RetailPkg",
+            "DigiSpool",
+            "ElectronicDelivery",
+            "None"
+          ],
+          "type": "string",
+          "example": "TapeReel"
+        },
+        "QuantityInitialRequested": {
+          "format": "int32",
+          "description": "The total initial quantity requested on the order.",
+          "type": "integer",
+          "readOnly": true
+        },
+        "QuantityOrdered": {
+          "format": "int32",
+          "description": "The accepted Quantity of the order. QuantityOrdered will be the same as QuantityInitialRequested at order entry. If changes are made to quantity it will be reflected in QuantityOrdered",
+          "type": "integer",
+          "example": 20
+        },
+        "QuantityShipped": {
+          "format": "int32",
+          "description": "The sum quantity shipped",
+          "type": "integer",
+          "example": 14
+        },
+        "QuantityReserved": {
+          "format": "int32",
+          "description": "The Quantity reserved and not shipped.",
+          "type": "integer",
+          "example": 14
+        },
+        "QuantityBackOrder": {
+          "format": "int32",
+          "description": "Quantity on backorder",
+          "type": "integer",
+          "example": 3
+        },
+        "UnitPrice": {
+          "format": "double",
+          "description": "Unit price of product",
+          "type": "number",
+          "example": 578000
+        },
+        "PoLineItemNumber": {
+          "description": "Line item number provided on purchase order",
+          "type": "string"
+        },
+        "ItemShipments": {
+          "description": "List of item shipments for given lineitem",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemShipInfo"
+          }
+        },
+        "Schedules": {
+          "description": "List of schedules for given line item",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Schedule"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Order": {
+      "type": "object",
+      "properties": {
+        "OrderNumber": {
+          "format": "int64",
+          "description": "OrderNumber of the order",
+          "type": "integer",
+          "example": 123456789012345
+        },
+        "CustomerId": {
+          "format": "int32",
+          "description": "CustomerID of the order",
+          "type": "integer",
+          "example": 123456789
+        },
+        "DateEntered": {
+          "format": "date-time",
+          "description": "Date the order was entered",
+          "type": "string",
+          "example": "2019-05-30T21:16:13.7526329Z"
+        },
+        "Currency": {
+          "description": "Currency used to pay for order",
+          "type": "string",
+          "example": "USD"
+        },
+        "PONumber": {
+          "description": "Purchase order number of the order",
+          "type": "string",
+          "example": "3129082341"
+        },
+        "EntireOrderStatus": {
+          "$ref": "#/definitions/OrderStatusInfo"
+        },
+        "SalesOrders": {
+          "description": "List of the salesOrders",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SalesOrder"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderResponse": {
+      "type": "object",
+      "properties": {
+        "TotalOrders": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Order"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderStatusInfo": {
+      "type": "object",
+      "properties": {
+        "OrderStatus": {
+          "description": "Status of order",
+          "enum": [
+            "Unknown",
+            "Received",
+            "Processing",
+            "ProcessingPartialShipment",
+            "ProcessingAwaitingBackorders",
+            "ProcessingShipBackorder",
+            "ProcessingScheduledShipmentsMultipleRelease",
+            "ProcessingScheduledShipmentSingleRelease",
+            "ProcessingScheduledShipmentMsc",
+            "ProcessingDkAnd3rdParty",
+            "ProcessingMultiple3rdParty",
+            "Shipped",
+            "Delivered",
+            "GenericDelay",
+            "Canceled",
+            "Proforma",
+            "ActionRequiredWireTransfer"
+          ],
+          "type": "string"
+        },
+        "ShortDescription": {
+          "description": "Short description of order status",
+          "type": "string"
+        },
+        "LongDescription": {
+          "description": "Longer description of order status",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SalesOrder": {
+      "description": "DTO for a Sales Order",
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "format": "int32",
+          "description": "Customer ID for the sales order",
+          "type": "integer",
+          "example": 123456789
+        },
+        "Contact": {
+          "$ref": "#/definitions/Contact"
+        },
+        "SalesOrderId": {
+          "format": "int32",
+          "description": "Sales order ID for the sales order",
+          "type": "integer",
+          "example": 123456789
+        },
+        "Status": {
+          "$ref": "#/definitions/SalesOrderStatusInfo"
+        },
+        "PurchaseOrder": {
+          "description": "Purchase order number of the sales order",
+          "type": "string",
+          "example": "3129082341"
+        },
+        "TotalPrice": {
+          "format": "double",
+          "description": "Total price of all details, Shipping Charges, Sales Tax, Tariffs, GST, HST",
+          "type": "number"
+        },
+        "DateEntered": {
+          "format": "date-time",
+          "description": "Date the sales order was entered",
+          "type": "string",
+          "example": "2019-05-30T21:16:13.7526329Z"
+        },
+        "OrderNumber": {
+          "format": "int64",
+          "description": "Order number of the sales order",
+          "type": "integer",
+          "example": 123456789012345
+        },
+        "ShipMethod": {
+          "description": "Method used to ship items in sales order",
+          "type": "string",
+          "example": "UPS Overnight"
+        },
+        "Currency": {
+          "description": "Currency used to place sales order",
+          "type": "string",
+          "example": "USD"
+        },
+        "ShippingAddress": {
+          "$ref": "#/definitions/Address"
+        },
+        "LineItems": {
+          "description": "List of line items for a sales order",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LineItem"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "SalesOrderStatusInfo": {
+      "type": "object",
+      "properties": {
+        "SalesOrderStatus": {
+          "description": "Status of order",
+          "enum": [
+            "Unknown",
+            "Received",
+            "Processing",
+            "Processing3rdParty",
+            "ProcessingPartialShipment",
+            "ProcessingAwaitingBackorders",
+            "ProcessingShipBackorder",
+            "ProcessingScheduledShipmentMultipleRelease",
+            "ProcessingScheduledShipmentSingleRelease",
+            "ProcessingScheduledShipmentMsc",
+            "Shipped",
+            "Delivered",
+            "GenericDelay",
+            "Canceled",
+            "Proforma",
+            "ActionRequiredWireTransfer"
+          ],
+          "type": "string"
+        },
+        "ShortDescription": {
+          "description": "Short description of order status",
+          "type": "string"
+        },
+        "LongDescription": {
+          "description": "Longer description of order status",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Schedule": {
+      "type": "object",
+      "properties": {
+        "QuantityScheduled": {
+          "format": "int32",
+          "description": "Quantity scheduled to be shipped",
+          "type": "integer"
+        },
+        "ScheduledDate": {
+          "format": "date-time",
+          "description": "Date the shipment is scheduled to be delivered to the customer",
+          "type": "string",
+          "example": "2019-05-30T21:16:13.7526329Z"
+        },
+        "DigiKeyReleaseDate": {
+          "format": "date-time",
+          "description": "Date the shipment is scheduled to depart DigiKey’s facility",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "tags": []
+}

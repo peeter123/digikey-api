@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/alternatepackaging
+  response:
+    body:
+      string: '{"AlternatePackagings":{"AlternatePackaging":[{"ProductUrl":"https://www.digikey.com/en/products/detail/texas-instruments/NE555D/280641","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"NE555D","UnitPrice":"0","DigiKeyProductNumber":"296-16792-ND"}]},"SearchLocaleUsed":{"Site":"US","Language":"en","Currency":"USD"}}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '990'
+    status:
+      code: 200
+      message: OK
+version: 1

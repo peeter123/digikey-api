@@ -1,0 +1,101 @@
+[build-system]
+requires = ["hatchling>=1.27", "hatch-vcs>=0.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "digikey-api"
+dynamic = ["version"]
+description = "Python client for the DigiKey v4 APIs (ProductSearch, OrderStatus)"
+readme = "README.md"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [{ name = "Peter Oostewechel", email = "peter_oostewechel@hotmail.com" }]
+requires-python = ">=3.10"
+keywords = ["digikey", "electronics", "parts", "api", "bom"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+]
+dependencies = [
+    # generated clients (digikey/v4/*)
+    "pydantic>=2.11",
+    "python-dateutil>=2.8.2",
+    "typing-extensions>=4.7.1",
+    "urllib3>=2.1,<3",
+    # hand-written layer
+    "cryptography>=42",
+    "platformdirs>=3",
+    "requests>=2.31",
+]
+
+[project.urls]
+Homepage = "https://github.com/peeter123/digikey-api"
+Changelog = "https://github.com/peeter123/digikey-api/blob/master/CHANGELOG.md"
+Issues = "https://github.com/peeter123/digikey-api/issues"
+
+[dependency-groups]
+test = [
+    "pytest>=8",
+    "pytest-cov>=5",
+    "pytest-recording>=0.13",
+    "responses>=0.25",
+    "vcrpy>=6",
+]
+dev = [
+    { include-group = "test" },
+    "mypy>=1.10",
+    "ruff>=0.6",
+    "types-python-dateutil",
+    "types-requests",
+]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.sdist]
+include = ["digikey", "openapi", "tests", "CHANGELOG.md"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["digikey"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["digikey/v4"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["digikey"]
+exclude = ["^digikey/v4/"]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["digikey.v4.*"]
+ignore_errors = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-markers", "-m", "not live"]
+markers = ["live: calls the real DigiKey API (needs DIGIKEY_LIVE=1 and credentials)"]
+
+[tool.coverage.run]
+source = ["digikey"]
+omit = ["digikey/v4/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
+exclude_also = ["if TYPE_CHECKING:", "raise NotImplementedError"]

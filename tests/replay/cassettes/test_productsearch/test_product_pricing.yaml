@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/pricing?limit=1
+  response:
+    body:
+      string: "{\"ProductsCount\":1,\"ProductPricings\":[{\"ManufacturerProductNumber\":\"NE555DR\",\"Manufacturer\":{\"Id\":296,\"Name\":\"Texas
+        Instruments\"},\"Description\":{\"ProductDescription\":\"IC OSC SNGL TIMER
+        100KHZ 8-SOIC\",\"DetailedDescription\":\"555 Type, Timer/Oscillator (Single)
+        IC 100kHz 8-SOIC\"},\"ProductUrl\":\"\",\"IsDiscontinued\":false,\"NormallyStocking\":true,\"IsObsolete\":false,\"ManufacturerLeadWeeks\":\"20\",\"ManufacturerPublicQuantity\":0,\"StandardPackage\":2500,\"ExportControlClassNumber\":\"EAR99\",\"HtsusCode\":\"8542.39.0070\",\"MoistureSensitivityLevel\":\"1
+        \ (Unlimited)\",\"IsBoNotAllowed\":false,\"IsNcnr\":false,\"Categories\":[{\"CategoryId\":32,\"Level\":0,\"Name\":\"Integrated
+        Circuits (ICs)\"},{\"CategoryId\":2006,\"Level\":1,\"Name\":\"Clock/Timing\"},{\"CategoryId\":689,\"Level\":2,\"Name\":\"Programmable
+        Timers and Oscillators\"}],\"ContainsLithium\":false,\"ContainsMercury\":false,\"IsEndOfLife\":false,\"OtherNames\":[\"-NE555DR-NDR\",\"2156-NE555DR\",\"-296-6501-1\",\"296-6501-2-NDR\",\"296-6501-2\",\"-NE555DRG4-NDR\",\"296-6501-1\",\"296-6501-6\",\"-NE555DRG4\",\"TEXTISNE555DR\",\"-NE555DRE4\",\"-296-6501-1-ND\",\"-NE555DRE4-NDR\"],\"ProductVariations\":[{\"DigiKeyProductNumber\":\"2156-NE555DR-ND\",\"QuantityAvailableforPackageType\":130433,\"MinimumOrderQuantity\":1788,\"PackageType\":{\"Id\":3,\"Name\":\"Bulk\"},\"MarketPlace\":true,\"StandardPricing\":[{\"BreakQuantity\":1788,\"UnitPrice\":0.17,\"TotalPrice\":303.96}],\"MyPricing\":[],\"IsTariffActive\":false},{\"DigiKeyProductNumber\":\"296-6501-6-ND\",\"QuantityAvailableforPackageType\":47362,\"MinimumOrderQuantity\":1,\"PackageType\":{\"Id\":243,\"Name\":\"Digi-Reel\xAE\"},\"MarketPlace\":false,\"StandardPricing\":[{\"BreakQuantity\":1,\"UnitPrice\":0.33,\"TotalPrice\":0.33},{\"BreakQuantity\":10,\"UnitPrice\":0.231,\"TotalPrice\":2.310},{\"BreakQuantity\":25,\"UnitPrice\":0.2052,\"TotalPrice\":5.1300},{\"BreakQuantity\":100,\"UnitPrice\":0.1767,\"TotalPrice\":17.6700},{\"BreakQuantity\":250,\"UnitPrice\":0.16304,\"TotalPrice\":40.76000},{\"BreakQuantity\":500,\"UnitPrice\":0.1548,\"TotalPrice\":77.4000},{\"BreakQuantity\":1000,\"UnitPrice\":0.14804,\"TotalPrice\":148.04000}],\"MyPricing\":[],\"IsTariffActive\":false,\"DigiReelingFee\":7.0},{\"DigiKeyProductNumber\":\"296-6501-1-ND\",\"QuantityAvailableforPackageType\":47362,\"MinimumOrderQuantity\":1,\"PackageType\":{\"Id\":2,\"Name\":\"Cut
+        Tape (CT)\"},\"MarketPlace\":false,\"StandardPricing\":[{\"BreakQuantity\":1,\"UnitPrice\":0.33,\"TotalPrice\":0.33},{\"BreakQuantity\":10,\"UnitPrice\":0.231,\"TotalPrice\":2.310},{\"BreakQuantity\":25,\"UnitPrice\":0.2052,\"TotalPrice\":5.1300},{\"BreakQuantity\":100,\"UnitPrice\":0.1767,\"TotalPrice\":17.6700},{\"BreakQuantity\":250,\"UnitPrice\":0.16304,\"TotalPrice\":40.76000},{\"BreakQuantity\":500,\"UnitPrice\":0.1548,\"TotalPrice\":77.4000},{\"BreakQuantity\":1000,\"UnitPrice\":0.14804,\"TotalPrice\":148.04000}],\"MyPricing\":[],\"IsTariffActive\":false},{\"DigiKeyProductNumber\":\"296-6501-2-ND\",\"QuantityAvailableforPackageType\":45000,\"MinimumOrderQuantity\":2500,\"PackageType\":{\"Id\":1,\"Name\":\"Tape
+        & Reel (TR)\"},\"MarketPlace\":false,\"StandardPricing\":[{\"BreakQuantity\":2500,\"UnitPrice\":0.14089,\"TotalPrice\":352.22500},{\"BreakQuantity\":5000,\"UnitPrice\":0.13659,\"TotalPrice\":682.95000},{\"BreakQuantity\":7500,\"UnitPrice\":0.13443,\"TotalPrice\":1008.22500},{\"BreakQuantity\":12500,\"UnitPrice\":0.13204,\"TotalPrice\":1650.50000},{\"BreakQuantity\":17500,\"UnitPrice\":0.13064,\"TotalPrice\":2286.20000},{\"BreakQuantity\":25000,\"UnitPrice\":0.1293,\"TotalPrice\":3232.5000}],\"MyPricing\":[],\"IsTariffActive\":false}]}],\"SettingsUsed\":{\"SearchLocale\":{\"Site\":\"US\",\"Language\":\"en\",\"Currency\":\"USD\"},\"Filters\":{}},\"AccountIdUsed\":0,\"CustomerIdUsed\":0}"
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '996'
+    status:
+      code: 200
+      message: OK
+version: 1

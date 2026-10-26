@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/media
+  response:
+    body:
+      string: '{"MediaLinks":[{"MediaType":"Datasheets","Title":"xy555 Datasheet","Url":"https://www.ti.com/lit/ds/symlink/na555.pdf?ts=1779184670697&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FNA555"},{"MediaType":"Product
+        Photos","Title":"8 SOIC","SmallPhoto":"https://mm.digikey.com/Volume0/opasdata/d220001/derivates/1/003/251/211/MFG_296%7E4040047-3%7ED%7E8_sml%28200x200%29.jpg","Thumbnail":"https://mm.digikey.com/Volume0/opasdata/d220001/derivates/3/003/251/211/MFG_296%7E4040047-3%7ED%7E8_tmb%2864x64%29.jpg","Url":"https://mm.digikey.com/Volume0/opasdata/d220001/derivates/6/003/251/211/MFG_296%7E4040047-3%7ED%7E8_web%28640x640%29.jpg"},{"MediaType":"Featured
+        Product","Title":"xx555 Single Precision Timers","Url":"https://www.digikey.com/product-highlight/t/texas-instruments/xx555-single-precision-timers"},{"MediaType":"PCN
+        Design/Specification","Title":"Mult Dev 27/Jul/2023","Url":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5488/PCN20230627002.1.pdf"},{"MediaType":"PCN
+        Design/Specification","Title":"Mult Dev Datasheet 12/Feb/2025","Url":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/203/PCN20250212004.1.pdf"},{"MediaType":"PCN
+        Design/Specification","Title":"NE555 Timers Design Change 27/Mar/2026","Url":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8924/PCN20260326003.1.pdf"},{"MediaType":"PCN
+        Assembly/Origin","Title":"Assembly Site Addition Rev 8/Dec/2015","Url":"https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2129/PCN20151016001B.pdf"},{"MediaType":"EDA
+        Models","Title":"NE555DR by SnapEDA","Url":"https://www.snapeda.com/parts/NE555DR/Texas%20Instruments/view-part/?ref=digikey"},{"MediaType":"EDA
+        Models","Title":"NE555DR by Ultra Librarian","Url":"https://app.ultralibrarian.com/details/161D9F92-103F-11E9-AB3A-0A3560A4CCCC/Texas-Instruments/NE555DR?ref=digikey"}]}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '989'
+    status:
+      code: 200
+      message: OK
+version: 1

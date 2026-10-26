@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: DigiKey API account, credentials or quota problems
+    url: https://developer.digikey.com/support
+    about: Problems with your DigiKey app or account are handled by DigiKey, not this project.

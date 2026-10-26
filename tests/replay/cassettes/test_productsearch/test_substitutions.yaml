@@ -1,0 +1,90 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/substitutions
+  response:
+    body:
+      string: '{"ProductSubstitutesCount":28,"ProductSubstitutes":[{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/onsemi/MC1455DR2G/1478984","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"MC1455DR2G","UnitPrice":"0.44","QuantityAvailable":45000,"DigiKeyProductNumber":"MC1455DR2GOSTR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/onsemi/MC1455DR2G/1478984","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"MC1455DR2G","UnitPrice":"0.44","QuantityAvailable":2537,"DigiKeyProductNumber":"MC1455DR2GOSCT-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/onsemi/MC1455DR2G/1478984","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"MC1455DR2G","UnitPrice":"0.44","DigiKeyProductNumber":"MC1455DR2GOSDKR-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/LM555CMX-NOPB/334887","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LM555CMX/NOPB","UnitPrice":"1.27","QuantityAvailable":37500,"DigiKeyProductNumber":"LM555CMX/NOPBTR-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/LM555CMX-NOPB/334887","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LM555CMX/NOPB","UnitPrice":"1.27","QuantityAvailable":2190,"DigiKeyProductNumber":"LM555CMX/NOPBCT-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/LM555CMX-NOPB/334887","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LM555CMX/NOPB","UnitPrice":"1.27","DigiKeyProductNumber":"LM555CMX/NOPBDKR-ND"},{"SubstituteType":"Upgrade","ProductUrl":"/en/products/detail/onsemi/MC1455BDR2G/1478982","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"MC1455BDR2G","UnitPrice":"0.43","QuantityAvailable":25000,"DigiKeyProductNumber":"MC1455BDR2GOSTR-ND"},{"SubstituteType":"Upgrade","ProductUrl":"/en/products/detail/onsemi/MC1455BDR2G/1478982","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"MC1455BDR2G","UnitPrice":"0.43","QuantityAvailable":978,"DigiKeyProductNumber":"MC1455BDR2GOSCT-ND"},{"SubstituteType":"Upgrade","ProductUrl":"/en/products/detail/onsemi/MC1455BDR2G/1478982","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"MC1455BDR2G","UnitPrice":"0.43","DigiKeyProductNumber":"MC1455BDR2GOSDKR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/texas-instruments/LMC555CMX-NOPB/334874","Description":"IC
+        OSC SINGLE TIMER 3MHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LMC555CMX/NOPB","UnitPrice":"1.15","QuantityAvailable":11991,"DigiKeyProductNumber":"LMC555CMX/NOPBTR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/texas-instruments/LMC555CMX-NOPB/334874","Description":"IC
+        OSC SINGLE TIMER 3MHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LMC555CMX/NOPB","UnitPrice":"1.15","QuantityAvailable":168,"DigiKeyProductNumber":"LMC555CMX/NOPBCT-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/texas-instruments/LMC555CMX-NOPB/334874","Description":"IC
+        OSC SINGLE TIMER 3MHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LMC555CMX/NOPB","UnitPrice":"1.15","DigiKeyProductNumber":"LMC555CMX/NOPBDKR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/texas-instruments/LM555CM-NOPB/32603","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LM555CM/NOPB","UnitPrice":"1.51","QuantityAvailable":7847,"DigiKeyProductNumber":"LM555CM/NOPB-ND"},{"SubstituteType":"Upgrade","ProductUrl":"/en/products/detail/onsemi/NCV1455BDR2G/921406","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"NCV1455BDR2G","UnitPrice":"0.4","QuantityAvailable":2500,"DigiKeyProductNumber":"NCV1455BDR2GOSTR-ND"},{"SubstituteType":"Upgrade","ProductUrl":"/en/products/detail/onsemi/NCV1455BDR2G/921406","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"NCV1455BDR2G","UnitPrice":"0.4","QuantityAvailable":2473,"DigiKeyProductNumber":"NCV1455BDR2GOSCT-ND"},{"SubstituteType":"Upgrade","ProductUrl":"/en/products/detail/onsemi/NCV1455BDR2G/921406","Description":"IC
+        OSC SINGLE TIMER 8-SOIC","Manufacturer":{"Id":488,"Name":"onsemi"},"ManufacturerProductNumber":"NCV1455BDR2G","UnitPrice":"0.4","DigiKeyProductNumber":"NCV1455BDR2GOSDKR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/diodes-incorporated/NA555S-13/2921393","Description":"IC
+        OSC SNGL TIMER 500KHZ 8-SOIC","Manufacturer":{"Id":31,"Name":"Diodes Incorporated"},"ManufacturerProductNumber":"NA555S-13","UnitPrice":"0.37","QuantityAvailable":2500,"DigiKeyProductNumber":"NA555S-13DITR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/diodes-incorporated/NA555S-13/2921393","Description":"IC
+        OSC SNGL TIMER 500KHZ 8-SOIC","Manufacturer":{"Id":31,"Name":"Diodes Incorporated"},"ManufacturerProductNumber":"NA555S-13","UnitPrice":"0.37","QuantityAvailable":1897,"DigiKeyProductNumber":"NA555S-13DICT-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/diodes-incorporated/NA555S-13/2921393","Description":"IC
+        OSC SNGL TIMER 500KHZ 8-SOIC","Manufacturer":{"Id":31,"Name":"Diodes Incorporated"},"ManufacturerProductNumber":"NA555S-13","UnitPrice":"0.37","DigiKeyProductNumber":"NA555S-13DIDKR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/rohm-semiconductor/BD9555FVM-CGTR/8028670","Description":"IC
+        OSC TIMER CONTROL 8-VSSOP","Manufacturer":{"Id":846,"Name":"Rohm Semiconductor"},"ManufacturerProductNumber":"BD9555FVM-CGTR","UnitPrice":"1.6","DigiKeyProductNumber":"BD9555FVM-CGTR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/rohm-semiconductor/BD9555FVM-CGTR/8028670","Description":"IC
+        OSC TIMER CONTROL 8-VSSOP","Manufacturer":{"Id":846,"Name":"Rohm Semiconductor"},"ManufacturerProductNumber":"BD9555FVM-CGTR","UnitPrice":"1.6","QuantityAvailable":2109,"DigiKeyProductNumber":"BD9555FVM-CGCT-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/rohm-semiconductor/BD9555FVM-CGTR/8028670","Description":"IC
+        OSC TIMER CONTROL 8-VSSOP","Manufacturer":{"Id":846,"Name":"Rohm Semiconductor"},"ManufacturerProductNumber":"BD9555FVM-CGTR","UnitPrice":"1.6","DigiKeyProductNumber":"BD9555FVM-CGDKR-ND"},{"SubstituteType":"Similar","ProductUrl":"/en/products/detail/texas-instruments/LMC555CM-NOPB/32621","Description":"IC
+        OSC SINGLE TIMER 3MHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LMC555CM/NOPB","UnitPrice":"0","DigiKeyProductNumber":"LMC555CM/NOPB-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/LM555CMX/3697982","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"LM555CMX","UnitPrice":"0.8469","DigiKeyProductNumber":"LM555CMXTR-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/NE555DRE4/1571965","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"NE555DRE4","UnitPrice":"0.08827","DigiKeyProductNumber":"NE555DRE4-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/NE555DRG4/1571966","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"NE555DRG4","UnitPrice":"0.25","DigiKeyProductNumber":"296-35912-2-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/NE555DRG4/1571966","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"NE555DRG4","UnitPrice":"0.25","DigiKeyProductNumber":"296-35912-1-ND"},{"SubstituteType":"Parametric
+        Equivalent","ProductUrl":"/en/products/detail/texas-instruments/NE555DRG4/1571966","Description":"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC","Manufacturer":{"Id":296,"Name":"Texas Instruments"},"ManufacturerProductNumber":"NE555DRG4","UnitPrice":"0.25","DigiKeyProductNumber":"296-35912-6-ND"}],"SearchLocaleUsed":{"Site":"US","Language":"en","Currency":"USD"}}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '993'
+    status:
+      code: 200
+      message: OK
+version: 1

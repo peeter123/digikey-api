@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/296-6501-1-ND/productdetails
+  response:
+    body:
+      string: "{\"SearchLocaleUsed\":{\"Site\":\"US\",\"Language\":\"en\",\"Currency\":\"USD\"},\"Product\":{\"Description\":{\"ProductDescription\":\"IC
+        OSC SNGL TIMER 100KHZ 8-SOIC\",\"DetailedDescription\":\"555 Type, Timer/Oscillator
+        (Single) IC 100kHz 8-SOIC\"},\"Manufacturer\":{\"Id\":296,\"Name\":\"Texas
+        Instruments\"},\"ManufacturerProductNumber\":\"NE555DR\",\"UnitPrice\":0.33,\"ProductUrl\":\"https://www.digikey.com/en/products/detail/texas-instruments/NE555DR/372491\",\"DatasheetUrl\":\"https://www.ti.com/lit/ds/symlink/na555.pdf?ts=1779184670697&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FNA555\",\"PhotoUrl\":\"https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/8900/MFG_296%7E4040047-3%7ED%7E8.jpg\",\"ProductVariations\":[{\"DigiKeyProductNumber\":\"296-6501-2-ND\",\"PackageType\":{\"Id\":1,\"Name\":\"Tape
+        & Reel (TR)\"},\"StandardPricing\":[{\"BreakQuantity\":2500,\"UnitPrice\":0.14089,\"TotalPrice\":352.22500},{\"BreakQuantity\":5000,\"UnitPrice\":0.13659,\"TotalPrice\":682.95000},{\"BreakQuantity\":7500,\"UnitPrice\":0.13443,\"TotalPrice\":1008.22500},{\"BreakQuantity\":12500,\"UnitPrice\":0.13204,\"TotalPrice\":1650.50000},{\"BreakQuantity\":17500,\"UnitPrice\":0.13064,\"TotalPrice\":2286.20000},{\"BreakQuantity\":25000,\"UnitPrice\":0.1293,\"TotalPrice\":3232.5000}],\"MyPricing\":[],\"MarketPlace\":false,\"TariffActive\":false,\"Supplier\":{\"Id\":296,\"Name\":\"Texas
+        Instruments\"},\"QuantityAvailableforPackageType\":45000,\"MaxQuantityForDistribution\":999999999,\"MinimumOrderQuantity\":2500,\"StandardPackage\":2500,\"DigiReelFee\":0.0},{\"DigiKeyProductNumber\":\"296-6501-1-ND\",\"PackageType\":{\"Id\":2,\"Name\":\"Cut
+        Tape (CT)\"},\"StandardPricing\":[{\"BreakQuantity\":1,\"UnitPrice\":0.33,\"TotalPrice\":0.33},{\"BreakQuantity\":10,\"UnitPrice\":0.231,\"TotalPrice\":2.310},{\"BreakQuantity\":25,\"UnitPrice\":0.2052,\"TotalPrice\":5.1300},{\"BreakQuantity\":100,\"UnitPrice\":0.1767,\"TotalPrice\":17.6700},{\"BreakQuantity\":250,\"UnitPrice\":0.16304,\"TotalPrice\":40.76000},{\"BreakQuantity\":500,\"UnitPrice\":0.1548,\"TotalPrice\":77.4000},{\"BreakQuantity\":1000,\"UnitPrice\":0.14804,\"TotalPrice\":148.04000}],\"MyPricing\":[],\"MarketPlace\":false,\"TariffActive\":false,\"Supplier\":{\"Id\":296,\"Name\":\"Texas
+        Instruments\"},\"QuantityAvailableforPackageType\":47362,\"MaxQuantityForDistribution\":999999999,\"MinimumOrderQuantity\":1,\"StandardPackage\":1,\"DigiReelFee\":0.0},{\"DigiKeyProductNumber\":\"296-6501-6-ND\",\"PackageType\":{\"Id\":243,\"Name\":\"Digi-Reel\xAE\"},\"StandardPricing\":[{\"BreakQuantity\":1,\"UnitPrice\":0.33,\"TotalPrice\":0.33},{\"BreakQuantity\":10,\"UnitPrice\":0.231,\"TotalPrice\":2.310},{\"BreakQuantity\":25,\"UnitPrice\":0.2052,\"TotalPrice\":5.1300},{\"BreakQuantity\":100,\"UnitPrice\":0.1767,\"TotalPrice\":17.6700},{\"BreakQuantity\":250,\"UnitPrice\":0.16304,\"TotalPrice\":40.76000},{\"BreakQuantity\":500,\"UnitPrice\":0.1548,\"TotalPrice\":77.4000},{\"BreakQuantity\":1000,\"UnitPrice\":0.14804,\"TotalPrice\":148.04000}],\"MyPricing\":[],\"MarketPlace\":false,\"TariffActive\":false,\"Supplier\":{\"Id\":296,\"Name\":\"Texas
+        Instruments\"},\"QuantityAvailableforPackageType\":47362,\"MaxQuantityForDistribution\":999999999,\"MinimumOrderQuantity\":1,\"StandardPackage\":1,\"DigiReelFee\":7.0},{\"DigiKeyProductNumber\":\"2156-NE555DR-ND\",\"PackageType\":{\"Id\":3,\"Name\":\"Bulk\"},\"StandardPricing\":[{\"BreakQuantity\":1788,\"UnitPrice\":0.17,\"TotalPrice\":303.96}],\"MyPricing\":[],\"MarketPlace\":true,\"TariffActive\":false,\"Supplier\":{\"Id\":2156,\"Name\":\"Rochester
+        Electronics, LLC\"},\"QuantityAvailableforPackageType\":130433,\"MaxQuantityForDistribution\":130433,\"MinimumOrderQuantity\":1788,\"DigiReelFee\":0.0}],\"QuantityAvailable\":177795,\"ProductStatus\":{\"Id\":0,\"Status\":\"Active\"},\"BackOrderNotAllowed\":false,\"NormallyStocking\":true,\"Discontinued\":false,\"EndOfLife\":false,\"Ncnr\":false,\"PrimaryVideoUrl\":\"\",\"Parameters\":[{\"ParameterId\":183,\"ParameterText\":\"Type\",\"ParameterType\":\"String\",\"ValueId\":\"243489\",\"ValueText\":\"555
+        Type, Timer/Oscillator (Single)\"},{\"ParameterId\":435,\"ParameterText\":\"Count\",\"ParameterType\":\"String\",\"ValueId\":\"1\",\"ValueText\":\"-\"},{\"ParameterId\":139,\"ParameterText\":\"Frequency\",\"ParameterType\":\"String\",\"ValueId\":\"68724\",\"ValueText\":\"100kHz\"},{\"ParameterId\":276,\"ParameterText\":\"Voltage
+        - Supply\",\"ParameterType\":\"String\",\"ValueId\":\"208636\",\"ValueText\":\"4.5V
+        ~ 16V\"},{\"ParameterId\":2095,\"ParameterText\":\"Current - Supply\",\"ParameterType\":\"UnitOfMeasure\",\"ValueId\":\"10
+        mA\",\"ValueText\":\"10 mA\"},{\"ParameterId\":252,\"ParameterText\":\"Operating
+        Temperature\",\"ParameterType\":\"String\",\"ValueId\":\"38976\",\"ValueText\":\"0\xB0C
+        ~ 70\xB0C\"},{\"ParameterId\":16,\"ParameterText\":\"Package / Case\",\"ParameterType\":\"String\",\"ValueId\":\"294928\",\"ValueText\":\"8-SOIC
+        (0.154\\\", 3.90mm Width)\"},{\"ParameterId\":1291,\"ParameterText\":\"Supplier
+        Device Package\",\"ParameterType\":\"String\",\"ValueId\":\"294926\",\"ValueText\":\"8-SOIC\"},{\"ParameterId\":69,\"ParameterText\":\"Mounting
+        Type\",\"ParameterType\":\"String\",\"ValueId\":\"409393\",\"ValueText\":\"Surface
+        Mount\"}],\"BaseProductNumber\":{\"Id\":6589,\"Name\":\"NE555\"},\"Category\":{\"CategoryId\":32,\"ParentId\":0,\"Name\":\"Integrated
+        Circuits (ICs)\",\"ProductCount\":0,\"NewProductCount\":0,\"ImageUrl\":\"https://mm.digikey.com/Volume0/opasdata/d220001/derivates/3/010/153/598/8-SOIC%2CM8_tmb.jpg\",\"SeoDescription\":\"Integrated
+        circuits combine a large number of transistors and other elementary electronic
+        components in miniaturized form into a single physical device, that is designed
+        for a specific purpose or function and characterized by its performance of
+        that function rather than by the behavior of its component pieces. Examples
+        include microcontrollers, battery monitors and charge controllers, analog
+        to digital converters, operational amplifiers, logic gates, voltage regulators,
+        gate drivers, motro controllers, and others.\",\"ChildCategories\":[{\"CategoryId\":2006,\"ParentId\":32,\"Name\":\"Clock/Timing\",\"ProductCount\":0,\"NewProductCount\":0,\"ImageUrl\":\"https://mm.digikey.com/Volume0/opasdata/d220001/derivates/3/100/966/073/296_8-SOIC_tmb.jpg\",\"SeoDescription\":\"Clock/Timing
+        products are used to provide timing for data transmission. There are specified
+        categories including application-specific, buffers, drivers, generators, PLLs,
+        frequency synthesizers, delay lines, IC batteries, programmable timers and
+        oscillators, and real-time clocks.\",\"ChildCategories\":[{\"CategoryId\":689,\"ParentId\":2006,\"Name\":\"Programmable
+        Timers and Oscillators\",\"ProductCount\":0,\"NewProductCount\":0,\"ImageUrl\":\"https://mm.digikey.com/Volume0/opasdata/d220001/derivates/3/010/153/598/8-SOIC%2CM8_tmb.jpg\",\"SeoDescription\":\"Devices
+        that can be set to provide timing pulses at a specified frequency.\",\"ChildCategories\":[]}]}]},\"ManufacturerLeadWeeks\":\"20\",\"ManufacturerPublicQuantity\":0,\"Series\":{\"Id\":818,\"Name\":\"-\"},\"Classifications\":{\"ReachStatus\":\"REACH
+        Unaffected\",\"RohsStatus\":\"ROHS3 Compliant\",\"MoistureSensitivityLevel\":\"1
+        \ (Unlimited)\",\"ExportControlClassNumber\":\"EAR99\",\"HtsusCode\":\"8542.39.0070\"},\"OtherNames\":[\"-NE555DR-NDR\",\"2156-NE555DR\",\"-296-6501-1\",\"296-6501-2-NDR\",\"296-6501-2\",\"-NE555DRG4-NDR\",\"296-6501-1\",\"296-6501-6\",\"-NE555DRG4\",\"TEXTISNE555DR\",\"-NE555DRE4\",\"-296-6501-1-ND\",\"-NE555DRE4-NDR\"]},\"AccountIdUsed\":0,\"CustomerIdUsed\":0}"
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '998'
+    status:
+      code: 200
+      message: OK
+version: 1

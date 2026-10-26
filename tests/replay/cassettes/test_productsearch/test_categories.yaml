@@ -1,0 +1,1119 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/categories
+  response:
+    body:
+      string: '{"ProductCount":50,"Categories":[{"CategoryId":28,"Name":"Anti-Static,
+        ESD, Clean Room Products","ProductCount":8963,"Children":[{"CategoryId":605,"ParentId":28,"Name":"Anti-Static,
+        ESD Bags, Materials","ProductCount":1279,"Children":[]},{"CategoryId":610,"ParentId":28,"Name":"Anti-Static,
+        ESD Clothing","ProductCount":1278,"Children":[]},{"CategoryId":607,"ParentId":28,"Name":"Anti-Static,
+        ESD Device Containers","ProductCount":1142,"Children":[]},{"CategoryId":606,"ParentId":28,"Name":"Anti-Static,
+        ESD Grounding Mats","ProductCount":1489,"Children":[]},{"CategoryId":604,"ParentId":28,"Name":"Anti-Static,
+        ESD Straps, Grounding Cords","ProductCount":820,"Children":[]},{"CategoryId":603,"ParentId":28,"Name":"Anti-Static,
+        ESD, Clean Room Accessories","ProductCount":1336,"Children":[]},{"CategoryId":611,"ParentId":28,"Name":"Clean
+        Room Swabs and Brushes","ProductCount":341,"Children":[]},{"CategoryId":608,"ParentId":28,"Name":"Clean
+        Room Treatments, Cleaners, Wipes","ProductCount":413,"Children":[]},{"CategoryId":609,"ParentId":28,"Name":"Ionizer
+        Equipment","ProductCount":345,"Children":[]},{"CategoryId":1016,"ParentId":28,"Name":"Modular
+        ESD Desks, Workstations","ProductCount":109,"Children":[]},{"CategoryId":612,"ParentId":28,"Name":"Monitors,
+        Testers","ProductCount":411,"Children":[]}]},{"CategoryId":10,"Name":"Audio
+        Products","ProductCount":13034,"Children":[{"CategoryId":159,"ParentId":10,"Name":"Accessories","ProductCount":891,"Children":[]},{"CategoryId":157,"ParentId":10,"Name":"Alarms,
+        Buzzers, and Sirens","ProductCount":6897,"Children":[]},{"CategoryId":998,"ParentId":10,"Name":"Amplifiers","ProductCount":43,"Children":[]},{"CategoryId":160,"ParentId":10,"Name":"Buzzer
+        Elements, Piezo Benders","ProductCount":316,"Children":[]},{"CategoryId":158,"ParentId":10,"Name":"Microphones","ProductCount":1515,"Children":[]},{"CategoryId":156,"ParentId":10,"Name":"Speakers","ProductCount":3369,"Children":[]},{"CategoryId":1004,"ParentId":10,"Name":"Vacuum
+        Tubes","ProductCount":3,"Children":[]}]},{"CategoryId":6,"Name":"Battery Products","ProductCount":8979,"Children":[{"CategoryId":90,"ParentId":6,"Name":"Batteries
+        Non-Rechargeable (Primary)","ProductCount":1805,"Children":[]},{"CategoryId":91,"ParentId":6,"Name":"Batteries
+        Rechargeable (Secondary)","ProductCount":1889,"Children":[]},{"CategoryId":85,"ParentId":6,"Name":"Battery
+        Chargers","ProductCount":738,"Children":[]},{"CategoryId":86,"ParentId":6,"Name":"Battery
+        Holders, Clips, Contacts","ProductCount":1782,"Children":[]},{"CategoryId":89,"ParentId":6,"Name":"Battery
+        Packs","ProductCount":1954,"Children":[]},{"CategoryId":87,"ParentId":6,"Name":"Battery
+        Product Accessories","ProductCount":740,"Children":[]},{"CategoryId":88,"ParentId":6,"Name":"Cigarette
+        Lighter Assemblies","ProductCount":71,"Children":[]}]},{"CategoryId":27,"Name":"Boxes,
+        Enclosures, Racks","ProductCount":94320,"Children":[{"CategoryId":589,"ParentId":27,"Name":"Backplanes","ProductCount":101,"Children":[]},{"CategoryId":595,"ParentId":27,"Name":"Box
+        Accessories","ProductCount":11029,"Children":[]},{"CategoryId":596,"ParentId":27,"Name":"Box
+        Components","ProductCount":5350,"Children":[]},{"CategoryId":594,"ParentId":27,"Name":"Boxes","ProductCount":33122,"Children":[]},{"CategoryId":960,"ParentId":27,"Name":"Cams","ProductCount":71,"Children":[]},{"CategoryId":600,"ParentId":27,"Name":"Card
+        Guide Accessories","ProductCount":489,"Children":[]},{"CategoryId":591,"ParentId":27,"Name":"Card
+        Guides","ProductCount":748,"Children":[]},{"CategoryId":601,"ParentId":27,"Name":"Card
+        Rack Accessories","ProductCount":369,"Children":[]},{"CategoryId":588,"ParentId":27,"Name":"Card
+        Racks","ProductCount":255,"Children":[]},{"CategoryId":975,"ParentId":27,"Name":"Evaluation,
+        Development Board Enclosures","ProductCount":1077,"Children":[]},{"CategoryId":590,"ParentId":27,"Name":"Handles","ProductCount":8042,"Children":[]},{"CategoryId":973,"ParentId":27,"Name":"Latches,
+        Locks","ProductCount":1492,"Children":[]},{"CategoryId":593,"ParentId":27,"Name":"Patchbay,
+        Jack Panel Accessories","ProductCount":400,"Children":[]},{"CategoryId":592,"ParentId":27,"Name":"Patchbay,
+        Jack Panels","ProductCount":2999,"Children":[]},{"CategoryId":598,"ParentId":27,"Name":"Rack
+        Accessories","ProductCount":13821,"Children":[]},{"CategoryId":599,"ParentId":27,"Name":"Rack
+        Components","ProductCount":6582,"Children":[]},{"CategoryId":602,"ParentId":27,"Name":"Rack
+        Thermal Management","ProductCount":3510,"Children":[]},{"CategoryId":597,"ParentId":27,"Name":"Racks","ProductCount":4053,"Children":[]},{"CategoryId":1097,"ParentId":27,"Name":"Storage","ProductCount":759,"Children":[]},{"CategoryId":1098,"ParentId":27,"Name":"Storage
+        Accessories","ProductCount":51,"Children":[]}]},{"CategoryId":21,"Name":"Cable
+        Assemblies","ProductCount":1043534,"Children":[{"CategoryId":2038,"ParentId":21,"Name":"Barrel
+        Connector Cables","ProductCount":2156,"Children":[{"CategoryId":463,"ParentId":2038,"Name":"Barrel
+        Audio Cables","ProductCount":1221,"Children":[]},{"CategoryId":464,"ParentId":2038,"Name":"Barrel
+        Power Cables","ProductCount":935,"Children":[]}]},{"CategoryId":459,"ParentId":21,"Name":"Between
+        Series Adapter Cables","ProductCount":6250,"Children":[]},{"CategoryId":448,"ParentId":21,"Name":"Circular
+        Cable Assemblies","ProductCount":95363,"Children":[]},{"CategoryId":456,"ParentId":21,"Name":"Coaxial
+        Cables (RF)","ProductCount":545145,"Children":[]},{"CategoryId":466,"ParentId":21,"Name":"D-Shaped,
+        Centronics Cables","ProductCount":469,"Children":[]},{"CategoryId":461,"ParentId":21,"Name":"D-Sub
+        Cables","ProductCount":15531,"Children":[]},{"CategoryId":449,"ParentId":21,"Name":"Fiber
+        Optic Cables","ProductCount":50894,"Children":[]},{"CategoryId":454,"ParentId":21,"Name":"Firewire
+        Cables (IEEE 1394)","ProductCount":156,"Children":[]},{"CategoryId":458,"ParentId":21,"Name":"Flat
+        Flex Jumpers, Cables (FFC, FPC)","ProductCount":2081,"Children":[]},{"CategoryId":457,"ParentId":21,"Name":"Flat
+        Flex Ribbon Jumpers, Cables","ProductCount":28867,"Children":[]},{"CategoryId":453,"ParentId":21,"Name":"Jumper
+        Wires, Pre-Crimped Leads","ProductCount":23210,"Children":[]},{"CategoryId":465,"ParentId":21,"Name":"LGH
+        Cables","ProductCount":404,"Children":[]},{"CategoryId":451,"ParentId":21,"Name":"Modular/Ethernet
+        Cables (RJ45, RJ11)","ProductCount":53204,"Children":[]},{"CategoryId":460,"ParentId":21,"Name":"Pluggable
+        Cables","ProductCount":17923,"Children":[]},{"CategoryId":452,"ParentId":21,"Name":"Power,
+        Line Cables and Extension Cords","ProductCount":6857,"Children":[]},{"CategoryId":450,"ParentId":21,"Name":"Rectangular
+        Cable Assemblies","ProductCount":182339,"Children":[]},{"CategoryId":468,"ParentId":21,"Name":"Smart
+        Cables","ProductCount":137,"Children":[]},{"CategoryId":469,"ParentId":21,"Name":"Solid
+        State Lighting Cables","ProductCount":290,"Children":[]},{"CategoryId":467,"ParentId":21,"Name":"Specialized
+        Cable Assemblies","ProductCount":2160,"Children":[]},{"CategoryId":455,"ParentId":21,"Name":"USB
+        Cables","ProductCount":6783,"Children":[]},{"CategoryId":462,"ParentId":21,"Name":"Video
+        Cables (DVI, HDMI)","ProductCount":3315,"Children":[]}]},{"CategoryId":22,"Name":"Cables,
+        Wires","ProductCount":100903,"Children":[{"CategoryId":475,"ParentId":22,"Name":"Coaxial
+        Cables (RF)","ProductCount":4046,"Children":[]},{"CategoryId":471,"ParentId":22,"Name":"Fiber
+        Optic Cables","ProductCount":4291,"Children":[]},{"CategoryId":476,"ParentId":22,"Name":"Flat
+        Flex Cables (FFC, FPC)","ProductCount":174,"Children":[]},{"CategoryId":472,"ParentId":22,"Name":"Flat
+        Ribbon Cables","ProductCount":6617,"Children":[]},{"CategoryId":477,"ParentId":22,"Name":"Modular
+        - Flat Cable","ProductCount":292,"Children":[]},{"CategoryId":473,"ParentId":22,"Name":"Multiple
+        Conductor Cables","ProductCount":55759,"Children":[]},{"CategoryId":474,"ParentId":22,"Name":"Single
+        Conductor Cables (Hook-Up Wire)","ProductCount":29617,"Children":[]},{"CategoryId":470,"ParentId":22,"Name":"Wire
+        Wrap","ProductCount":107,"Children":[]}]},{"CategoryId":23,"Name":"Cables,
+        Wires - Management","ProductCount":148782,"Children":[{"CategoryId":479,"ParentId":23,"Name":"Accessories","ProductCount":24718,"Children":[]},{"CategoryId":491,"ParentId":23,"Name":"Bushings,
+        Grommets","ProductCount":4933,"Children":[]},{"CategoryId":492,"ParentId":23,"Name":"Cable
+        and Cord Grips","ProductCount":20729,"Children":[]},{"CategoryId":490,"ParentId":23,"Name":"Cable
+        Supports and Fasteners","ProductCount":7383,"Children":[]},{"CategoryId":488,"ParentId":23,"Name":"Cable
+        Ties - Holders and Mountings","ProductCount":1468,"Children":[]},{"CategoryId":482,"ParentId":23,"Name":"Cable
+        Ties and Zip Ties","ProductCount":7463,"Children":[]},{"CategoryId":485,"ParentId":23,"Name":"Cold
+        Shrink Tape, Tubing","ProductCount":127,"Children":[]},{"CategoryId":481,"ParentId":23,"Name":"Fiber
+        Optic Cables","ProductCount":148,"Children":[]},{"CategoryId":494,"ParentId":23,"Name":"Grounding
+        Braid, Straps","ProductCount":953,"Children":[]},{"CategoryId":499,"ParentId":23,"Name":"Heat
+        Shrink Boots, Caps","ProductCount":5989,"Children":[]},{"CategoryId":489,"ParentId":23,"Name":"Heat
+        Shrink Fabric","ProductCount":310,"Children":[]},{"CategoryId":483,"ParentId":23,"Name":"Heat
+        Shrink Tubing","ProductCount":17143,"Children":[]},{"CategoryId":497,"ParentId":23,"Name":"Heat
+        Shrink Wrap","ProductCount":21,"Children":[]},{"CategoryId":484,"ParentId":23,"Name":"Labels,
+        Labeling","ProductCount":11002,"Children":[]},{"CategoryId":493,"ParentId":23,"Name":"Markers","ProductCount":17887,"Children":[]},{"CategoryId":480,"ParentId":23,"Name":"Protective
+        Hoses, Solid Tubing, Sleeving","ProductCount":7450,"Children":[]},{"CategoryId":498,"ParentId":23,"Name":"Pulling,
+        Support Grips","ProductCount":729,"Children":[]},{"CategoryId":478,"ParentId":23,"Name":"Solder
+        Sleeve","ProductCount":2665,"Children":[]},{"CategoryId":495,"ParentId":23,"Name":"Spiral
+        Wrap, Expandable Sleeving","ProductCount":3940,"Children":[]},{"CategoryId":496,"ParentId":23,"Name":"Splice
+        Enclosures, Protection","ProductCount":296,"Children":[]},{"CategoryId":2039,"ParentId":23,"Name":"Wire
+        Ducts, Raceways","ProductCount":13428,"Children":[{"CategoryId":487,"ParentId":2039,"Name":"Wire
+        Duct, Raceway Accessories","ProductCount":7474,"Children":[]},{"CategoryId":957,"ParentId":2039,"Name":"Wire
+        Duct, Raceway Covers","ProductCount":885,"Children":[]},{"CategoryId":486,"ParentId":2039,"Name":"Wire
+        Ducts, Raceways","ProductCount":5069,"Children":[]}]}]},{"CategoryId":3,"Name":"Capacitors","ProductCount":1426710,"Children":[{"CategoryId":63,"ParentId":3,"Name":"Accessories","ProductCount":221,"Children":[]},{"CategoryId":69,"ParentId":3,"Name":"Aluminum
+        - Polymer Capacitors","ProductCount":10656,"Children":[]},{"CategoryId":58,"ParentId":3,"Name":"Aluminum
+        Electrolytic Capacitors","ProductCount":115559,"Children":[]},{"CategoryId":57,"ParentId":3,"Name":"Capacitor
+        Networks, Arrays","ProductCount":1370,"Children":[]},{"CategoryId":60,"ParentId":3,"Name":"Ceramic
+        Capacitors","ProductCount":952229,"Children":[]},{"CategoryId":61,"ParentId":3,"Name":"Electric
+        Double Layer Capacitors (EDLC), Supercapacitors","ProductCount":3283,"Children":[]},{"CategoryId":62,"ParentId":3,"Name":"Film
+        Capacitors","ProductCount":163623,"Children":[]},{"CategoryId":64,"ParentId":3,"Name":"Mica
+        and PTFE Capacitors","ProductCount":9111,"Children":[]},{"CategoryId":2112,"ParentId":3,"Name":"Motor
+        Start, Motor Run Capacitors (AC)","ProductCount":3083,"Children":[]},{"CategoryId":67,"ParentId":3,"Name":"Niobium
+        Oxide Capacitors","ProductCount":214,"Children":[]},{"CategoryId":68,"ParentId":3,"Name":"Silicon
+        Capacitors","ProductCount":427,"Children":[]},{"CategoryId":70,"ParentId":3,"Name":"Tantalum
+        - Polymer Capacitors","ProductCount":13363,"Children":[]},{"CategoryId":59,"ParentId":3,"Name":"Tantalum
+        Capacitors","ProductCount":147472,"Children":[]},{"CategoryId":66,"ParentId":3,"Name":"Thin
+        Film Capacitors","ProductCount":4513,"Children":[]},{"CategoryId":65,"ParentId":3,"Name":"Trimmers,
+        Variable Capacitors","ProductCount":1586,"Children":[]}]},{"CategoryId":9,"Name":"Circuit
+        Protection","ProductCount":314683,"Children":[{"CategoryId":143,"ParentId":9,"Name":"Circuit
+        Breakers","ProductCount":82720,"Children":[]},{"CategoryId":145,"ParentId":9,"Name":"Circuit
+        Protection Accessories","ProductCount":13239,"Children":[]},{"CategoryId":155,"ParentId":9,"Name":"Electrical,
+        Specialty Fuses","ProductCount":27957,"Children":[]},{"CategoryId":140,"ParentId":9,"Name":"Fuseholders","ProductCount":7011,"Children":[]},{"CategoryId":139,"ParentId":9,"Name":"Fuses","ProductCount":25133,"Children":[]},{"CategoryId":142,"ParentId":9,"Name":"Gas
+        Discharge Tube Arresters (GDT)","ProductCount":4654,"Children":[]},{"CategoryId":148,"ParentId":9,"Name":"Ground
+        Fault Circuit Interrupter (GFCI)","ProductCount":835,"Children":[]},{"CategoryId":151,"ParentId":9,"Name":"Inrush
+        Current Limiters (ICL)","ProductCount":2410,"Children":[]},{"CategoryId":154,"ParentId":9,"Name":"Lighting
+        Protection","ProductCount":78,"Children":[]},{"CategoryId":150,"ParentId":9,"Name":"PTC
+        Resettable Fuses","ProductCount":5309,"Children":[]},{"CategoryId":152,"ParentId":9,"Name":"Surge
+        Suppression ICs","ProductCount":568,"Children":[]},{"CategoryId":146,"ParentId":9,"Name":"Thermal
+        Cutoffs (Thermal Fuses)","ProductCount":413,"Children":[]},{"CategoryId":2040,"ParentId":9,"Name":"Transient
+        Voltage Suppressors (TVS)","ProductCount":118862,"Children":[{"CategoryId":149,"ParentId":2040,"Name":"Mixed
+        Technology","ProductCount":1196,"Children":[]},{"CategoryId":992,"ParentId":2040,"Name":"Surge
+        Protection Devices (SPDs)","ProductCount":11986,"Children":[]},{"CategoryId":147,"ParentId":2040,"Name":"Thyristors","ProductCount":2507,"Children":[]},{"CategoryId":144,"ParentId":2040,"Name":"TVS
+        Diodes","ProductCount":103173,"Children":[]}]},{"CategoryId":141,"ParentId":9,"Name":"Varistors,
+        MOVs","ProductCount":25494,"Children":[]}]},{"CategoryId":38,"Name":"Computer
+        Equipment","ProductCount":12465,"Children":[{"CategoryId":881,"ParentId":38,"Name":"Accessories","ProductCount":5541,"Children":[]},{"CategoryId":888,"ParentId":38,"Name":"Adapter
+        Cards","ProductCount":1319,"Children":[]},{"CategoryId":882,"ParentId":38,"Name":"Adapters,
+        Converters","ProductCount":1509,"Children":[]},{"CategoryId":889,"ParentId":38,"Name":"Brackets","ProductCount":59,"Children":[]},{"CategoryId":898,"ParentId":38,"Name":"Cameras,
+        Projectors","ProductCount":348,"Children":[]},{"CategoryId":893,"ParentId":38,"Name":"Computer
+        Mouse, Trackballs","ProductCount":224,"Children":[]},{"CategoryId":899,"ParentId":38,"Name":"Desktop
+        Joysticks, Simulation Products","ProductCount":48,"Children":[]},{"CategoryId":885,"ParentId":38,"Name":"Keyboards","ProductCount":579,"Children":[]},{"CategoryId":890,"ParentId":38,"Name":"KVM
+        Switches (Keyboard Video Mouse)","ProductCount":403,"Children":[]},{"CategoryId":896,"ParentId":38,"Name":"KVM
+        Switches (Keyboard Video Mouse) - Cables","ProductCount":170,"Children":[]},{"CategoryId":891,"ParentId":38,"Name":"Magnetic
+        Strip, Smart Card Readers","ProductCount":58,"Children":[]},{"CategoryId":895,"ParentId":38,"Name":"Memory
+        Card Readers","ProductCount":37,"Children":[]},{"CategoryId":900,"ParentId":38,"Name":"Monitors","ProductCount":600,"Children":[]},{"CategoryId":887,"ParentId":38,"Name":"Printers,
+        Label Makers","ProductCount":471,"Children":[]},{"CategoryId":883,"ParentId":38,"Name":"Privacy
+        Filters, Screen Protectors","ProductCount":599,"Children":[]},{"CategoryId":986,"ParentId":38,"Name":"Server
+        Acceleration Cards","ProductCount":52,"Children":[]},{"CategoryId":1015,"ParentId":38,"Name":"USB
+        Hubs","ProductCount":448,"Children":[]}]},{"CategoryId":20,"Name":"Connectors,
+        Interconnects","ProductCount":5686943,"Children":[{"CategoryId":2026,"ParentId":20,"Name":"AC
+        Power Connectors","ProductCount":16206,"Children":[{"CategoryId":1170,"ParentId":2026,"Name":"Plugs
+        and Receptacles","ProductCount":7746,"Children":[]},{"CategoryId":341,"ParentId":2026,"Name":"Power
+        Entry Connector Accessories","ProductCount":1332,"Children":[]},{"CategoryId":301,"ParentId":2026,"Name":"Power
+        Entry Modules (PEM)","ProductCount":7128,"Children":[]}]},{"CategoryId":2000,"ParentId":20,"Name":"Backplane
+        Connectors","ProductCount":53341,"Children":[{"CategoryId":386,"ParentId":2000,"Name":"ARINC","ProductCount":808,"Children":[]},{"CategoryId":430,"ParentId":2000,"Name":"ARINC
+        Inserts","ProductCount":788,"Children":[]},{"CategoryId":343,"ParentId":2000,"Name":"Backplane
+        Connector Accessories","ProductCount":2251,"Children":[]},{"CategoryId":335,"ParentId":2000,"Name":"Backplane
+        Connector Contacts","ProductCount":2353,"Children":[]},{"CategoryId":372,"ParentId":2000,"Name":"Backplane
+        Connector Housings","ProductCount":9338,"Children":[]},{"CategoryId":307,"ParentId":2000,"Name":"DIN
+        41612","ProductCount":4691,"Children":[]},{"CategoryId":406,"ParentId":2000,"Name":"Hard
+        Metric, Standard","ProductCount":3653,"Children":[]},{"CategoryId":407,"ParentId":2000,"Name":"Specialized","ProductCount":29459,"Children":[]}]},{"CategoryId":2001,"ParentId":20,"Name":"Banana
+        and Tip Connectors","ProductCount":2454,"Children":[{"CategoryId":351,"ParentId":2001,"Name":"Banana
+        and Tip Connector Accessories","ProductCount":64,"Children":[]},{"CategoryId":381,"ParentId":2001,"Name":"Banana
+        and Tip Connector Adapters","ProductCount":85,"Children":[]},{"CategoryId":310,"ParentId":2001,"Name":"Binding
+        Posts","ProductCount":367,"Children":[]},{"CategoryId":302,"ParentId":2001,"Name":"Jacks,
+        Plugs","ProductCount":1938,"Children":[]}]},{"CategoryId":2002,"ParentId":20,"Name":"Barrel
+        Connectors","ProductCount":4347,"Children":[{"CategoryId":434,"ParentId":2002,"Name":"Audio
+        Connectors","ProductCount":2723,"Children":[]},{"CategoryId":348,"ParentId":2002,"Name":"Barrel
+        Connector Accessories","ProductCount":169,"Children":[]},{"CategoryId":376,"ParentId":2002,"Name":"Barrel
+        Connector Adapters","ProductCount":231,"Children":[]},{"CategoryId":435,"ParentId":2002,"Name":"Power
+        Connectors","ProductCount":1224,"Children":[]}]},{"CategoryId":373,"ParentId":20,"Name":"Between
+        Series Adapters","ProductCount":900,"Children":[]},{"CategoryId":2003,"ParentId":20,"Name":"Blade
+        Type Power Connectors","ProductCount":4927,"Children":[{"CategoryId":360,"ParentId":2003,"Name":"Blade
+        Type Power Connector Accessories","ProductCount":607,"Children":[]},{"CategoryId":357,"ParentId":2003,"Name":"Blade
+        Type Power Connector Assemblies","ProductCount":3082,"Children":[]},{"CategoryId":420,"ParentId":2003,"Name":"Blade
+        Type Power Connector Contacts","ProductCount":420,"Children":[]},{"CategoryId":419,"ParentId":2003,"Name":"Blade
+        Type Power Connector Housings","ProductCount":818,"Children":[]}]},{"CategoryId":2004,"ParentId":20,"Name":"Card
+        Edge Connectors","ProductCount":614824,"Children":[{"CategoryId":349,"ParentId":2004,"Name":"Card
+        Edge Connector Accessories","ProductCount":181,"Children":[]},{"CategoryId":429,"ParentId":2004,"Name":"Card
+        Edge Connector Adapters","ProductCount":70,"Children":[]},{"CategoryId":345,"ParentId":2004,"Name":"Card
+        Edge Connector Contacts","ProductCount":142,"Children":[]},{"CategoryId":354,"ParentId":2004,"Name":"Card
+        Edge Connector Housings","ProductCount":247,"Children":[]},{"CategoryId":303,"ParentId":2004,"Name":"Edgeboard
+        Connectors","ProductCount":614184,"Children":[]}]},{"CategoryId":2005,"ParentId":20,"Name":"Circular
+        Connectors","ProductCount":3270561,"Children":[{"CategoryId":313,"ParentId":2005,"Name":"Backshells
+        and Cable Clamps","ProductCount":66624,"Children":[]},{"CategoryId":329,"ParentId":2005,"Name":"Circular
+        Connector Accessories","ProductCount":69580,"Children":[]},{"CategoryId":378,"ParentId":2005,"Name":"Circular
+        Connector Adapters","ProductCount":48045,"Children":[]},{"CategoryId":436,"ParentId":2005,"Name":"Circular
+        Connector Assemblies","ProductCount":2417476,"Children":[]},{"CategoryId":330,"ParentId":2005,"Name":"Circular
+        Connector Contacts","ProductCount":6913,"Children":[]},{"CategoryId":320,"ParentId":2005,"Name":"Circular
+        Connector Housings","ProductCount":661923,"Children":[]}]},{"CategoryId":2007,"ParentId":20,"Name":"Coaxial
+        Connectors (RF)","ProductCount":45474,"Children":[{"CategoryId":342,"ParentId":2007,"Name":"Coaxial
+        Connector (RF) Accessories","ProductCount":2845,"Children":[]},{"CategoryId":374,"ParentId":2007,"Name":"Coaxial
+        Connector (RF) Adapters","ProductCount":9496,"Children":[]},{"CategoryId":437,"ParentId":2007,"Name":"Coaxial
+        Connector (RF) Assemblies","ProductCount":30892,"Children":[]},{"CategoryId":388,"ParentId":2007,"Name":"Coaxial
+        Connector (RF) Contacts","ProductCount":408,"Children":[]},{"CategoryId":382,"ParentId":2007,"Name":"Coaxial
+        Connector (RF) Terminators","ProductCount":1833,"Children":[]}]},{"CategoryId":2008,"ParentId":20,"Name":"Contacts","ProductCount":4432,"Children":[{"CategoryId":311,"ParentId":2008,"Name":"Contacts,
+        Spring Loaded (Pogo Pins), and Pressure","ProductCount":771,"Children":[]},{"CategoryId":416,"ParentId":2008,"Name":"Leadframe","ProductCount":61,"Children":[]},{"CategoryId":336,"ParentId":2008,"Name":"Multi
+        Purpose","ProductCount":3600,"Children":[]}]},{"CategoryId":2011,"ParentId":20,"Name":"D-Sub,
+        D-Shaped Connectors","ProductCount":320648,"Children":[{"CategoryId":438,"ParentId":2011,"Name":"Centronics
+        Connectors","ProductCount":2573,"Children":[]},{"CategoryId":439,"ParentId":2011,"Name":"D-Sub
+        Connector Assemblies","ProductCount":265702,"Children":[]},{"CategoryId":339,"ParentId":2011,"Name":"D-Sub,
+        D-Shaped Connector Accessories","ProductCount":2955,"Children":[]},{"CategoryId":375,"ParentId":2011,"Name":"D-Sub,
+        D-Shaped Connector Adapters","ProductCount":1462,"Children":[]},{"CategoryId":355,"ParentId":2011,"Name":"D-Sub,
+        D-Shaped Connector Backshells, Hoods","ProductCount":8590,"Children":[]},{"CategoryId":332,"ParentId":2011,"Name":"D-Sub,
+        D-Shaped Connector Contacts","ProductCount":2017,"Children":[]},{"CategoryId":321,"ParentId":2011,"Name":"D-Sub,
+        D-Shaped Connector Housings","ProductCount":35583,"Children":[]},{"CategoryId":447,"ParentId":2011,"Name":"D-Sub,
+        D-Shaped Connector Jackscrews","ProductCount":1735,"Children":[]},{"CategoryId":383,"ParentId":2011,"Name":"D-Sub,
+        D-Shaped Connector Terminators","ProductCount":31,"Children":[]}]},{"CategoryId":2013,"ParentId":20,"Name":"FFC,
+        FPC (Flat Flexible) Connectors","ProductCount":17342,"Children":[{"CategoryId":350,"ParentId":2013,"Name":"FFC,
+        FPC (Flat Flexible) Connector Accessories","ProductCount":62,"Children":[]},{"CategoryId":399,"ParentId":2013,"Name":"FFC,
+        FPC (Flat Flexible) Connector Assemblies","ProductCount":16733,"Children":[]},{"CategoryId":344,"ParentId":2013,"Name":"FFC,
+        FPC (Flat Flexible) Connector Contacts","ProductCount":121,"Children":[]},{"CategoryId":390,"ParentId":2013,"Name":"FFC,
+        FPC (Flat Flexible) Connector Housings","ProductCount":426,"Children":[]}]},{"CategoryId":2014,"ParentId":20,"Name":"Fiber
+        Optic Connectors","ProductCount":6071,"Children":[{"CategoryId":389,"ParentId":2014,"Name":"Fiber
+        Optic Connector Accessories","ProductCount":691,"Children":[]},{"CategoryId":387,"ParentId":2014,"Name":"Fiber
+        Optic Connector Adapters","ProductCount":3142,"Children":[]},{"CategoryId":440,"ParentId":2014,"Name":"Fiber
+        Optic Connector Assemblies","ProductCount":1942,"Children":[]},{"CategoryId":445,"ParentId":2014,"Name":"Fiber
+        Optic Connector Housings","ProductCount":296,"Children":[]}]},{"CategoryId":2015,"ParentId":20,"Name":"Heavy
+        Duty Connectors","ProductCount":24396,"Children":[{"CategoryId":358,"ParentId":2015,"Name":"Heavy
+        Duty Connector Accessories","ProductCount":3649,"Children":[]},{"CategoryId":327,"ParentId":2015,"Name":"Heavy
+        Duty Connector Assemblies","ProductCount":1023,"Children":[]},{"CategoryId":337,"ParentId":2015,"Name":"Heavy
+        Duty Connector Contacts","ProductCount":1957,"Children":[]},{"CategoryId":362,"ParentId":2015,"Name":"Heavy
+        Duty Connector Frames","ProductCount":581,"Children":[]},{"CategoryId":363,"ParentId":2015,"Name":"Heavy
+        Duty Connector Housings, Hoods, Bases","ProductCount":12950,"Children":[]},{"CategoryId":361,"ParentId":2015,"Name":"Heavy
+        Duty Connector Inserts, Modules","ProductCount":4236,"Children":[]}]},{"CategoryId":2017,"ParentId":20,"Name":"Keystone
+        Connectors","ProductCount":3659,"Children":[{"CategoryId":426,"ParentId":2017,"Name":"Keystone
+        Connector Accessories","ProductCount":335,"Children":[]},{"CategoryId":427,"ParentId":2017,"Name":"Keystone
+        Faceplates, Frames","ProductCount":1443,"Children":[]},{"CategoryId":428,"ParentId":2017,"Name":"Keystone
+        Inserts","ProductCount":1881,"Children":[]}]},{"CategoryId":441,"ParentId":20,"Name":"LGH
+        Connectors","ProductCount":338,"Children":[]},{"CategoryId":2021,"ParentId":20,"Name":"Memory
+        Connectors","ProductCount":3414,"Children":[{"CategoryId":413,"ParentId":2021,"Name":"Inline
+        Module Sockets","ProductCount":1398,"Children":[]},{"CategoryId":352,"ParentId":2021,"Name":"Memory
+        Connector Accessories","ProductCount":129,"Children":[]},{"CategoryId":414,"ParentId":2021,"Name":"PC
+        Card Sockets","ProductCount":1868,"Children":[]},{"CategoryId":421,"ParentId":2021,"Name":"PC
+        Cards - Adapters","ProductCount":19,"Children":[]}]},{"CategoryId":2022,"ParentId":20,"Name":"Modular/Ethernet
+        Connectors","ProductCount":22393,"Children":[{"CategoryId":366,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector (RJ45, RJ11) Jacks","ProductCount":11938,"Children":[]},{"CategoryId":367,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector (RJ45, RJ11) Plugs","ProductCount":1698,"Children":[]},{"CategoryId":365,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector (RJ45) Jacks With Magnetics","ProductCount":6043,"Children":[]},{"CategoryId":442,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector Accessories","ProductCount":1171,"Children":[]},{"CategoryId":379,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector Adapters","ProductCount":1263,"Children":[]},{"CategoryId":403,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector Plug Housings","ProductCount":184,"Children":[]},{"CategoryId":418,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector Wiring Blocks","ProductCount":72,"Children":[]},{"CategoryId":417,"ParentId":2022,"Name":"Modular/Ethernet
+        Connector Wiring Blocks Accessories","ProductCount":24,"Children":[]}]},{"CategoryId":2023,"ParentId":20,"Name":"Photovoltaic
+        (Solar Panel) Connectors","ProductCount":591,"Children":[{"CategoryId":424,"ParentId":2023,"Name":"Photovoltaic
+        (Solar Panel) Connector Accessories","ProductCount":102,"Children":[]},{"CategoryId":326,"ParentId":2023,"Name":"Photovoltaic
+        (Solar Panel) Connector Assemblies","ProductCount":413,"Children":[]},{"CategoryId":423,"ParentId":2023,"Name":"Photovoltaic
+        (Solar Panel) Connector Contacts","ProductCount":76,"Children":[]}]},{"CategoryId":2024,"ParentId":20,"Name":"Pluggable
+        Connectors","ProductCount":6473,"Children":[{"CategoryId":346,"ParentId":2024,"Name":"Pluggable
+        Connector Accessories","ProductCount":534,"Children":[]},{"CategoryId":443,"ParentId":2024,"Name":"Pluggable
+        Connector Assemblies","ProductCount":5939,"Children":[]}]},{"CategoryId":2027,"ParentId":20,"Name":"Rectangular
+        Connectors","ProductCount":952596,"Children":[{"CategoryId":308,"ParentId":2027,"Name":"Arrays,
+        Edge Type, Mezzanine (Board to Board)","ProductCount":32199,"Children":[]},{"CategoryId":317,"ParentId":2027,"Name":"Board
+        In, Direct Wire to Board","ProductCount":2017,"Children":[]},{"CategoryId":400,"ParentId":2027,"Name":"Board
+        Spacers, Stackers (Board to Board)","ProductCount":303604,"Children":[]},{"CategoryId":316,"ParentId":2027,"Name":"Free
+        Hanging, Panel Mount","ProductCount":23127,"Children":[]},{"CategoryId":314,"ParentId":2027,"Name":"Headers,
+        Male Pins","ProductCount":345655,"Children":[]},{"CategoryId":315,"ParentId":2027,"Name":"Headers,
+        Receptacles, Female Sockets","ProductCount":172353,"Children":[]},{"CategoryId":318,"ParentId":2027,"Name":"Headers,
+        Specialty Pin","ProductCount":8192,"Children":[]},{"CategoryId":340,"ParentId":2027,"Name":"Rectangular
+        Connector Accessories","ProductCount":8447,"Children":[]},{"CategoryId":380,"ParentId":2027,"Name":"Rectangular
+        Connector Adapters","ProductCount":392,"Children":[]},{"CategoryId":331,"ParentId":2027,"Name":"Rectangular
+        Connector Contacts","ProductCount":8394,"Children":[]},{"CategoryId":319,"ParentId":2027,"Name":"Rectangular
+        Connector Housings","ProductCount":35670,"Children":[]},{"CategoryId":408,"ParentId":2027,"Name":"Spring
+        Loaded","ProductCount":12546,"Children":[]}]},{"CategoryId":304,"ParentId":20,"Name":"Shunts,
+        Jumpers","ProductCount":1187,"Children":[]},{"CategoryId":2028,"ParentId":20,"Name":"Sockets
+        for ICs, Transistors","ProductCount":16929,"Children":[{"CategoryId":409,"ParentId":2028,"Name":"IC
+        Sockets","ProductCount":16526,"Children":[]},{"CategoryId":410,"ParentId":2028,"Name":"Socket
+        Accessories","ProductCount":171,"Children":[]},{"CategoryId":411,"ParentId":2028,"Name":"Socket
+        Adapters","ProductCount":232,"Children":[]}]},{"CategoryId":2029,"ParentId":20,"Name":"Solid
+        State Lighting Connectors","ProductCount":1911,"Children":[{"CategoryId":432,"ParentId":2029,"Name":"Solid
+        State Lighting Connector Accessories","ProductCount":284,"Children":[]},{"CategoryId":444,"ParentId":2029,"Name":"Solid
+        State Lighting Connector Assemblies","ProductCount":1381,"Children":[]},{"CategoryId":446,"ParentId":2029,"Name":"Solid
+        State Lighting Connector Contacts","ProductCount":246,"Children":[]}]},{"CategoryId":2030,"ParentId":20,"Name":"Terminal
+        Blocks","ProductCount":234218,"Children":[{"CategoryId":368,"ParentId":2030,"Name":"Barrier
+        Blocks","ProductCount":41494,"Children":[]},{"CategoryId":369,"ParentId":2030,"Name":"Din
+        Rail, Channel","ProductCount":11540,"Children":[]},{"CategoryId":370,"ParentId":2030,"Name":"Headers,
+        Plugs and Sockets","ProductCount":91533,"Children":[]},{"CategoryId":431,"ParentId":2030,"Name":"Interface
+        Modules","ProductCount":1640,"Children":[]},{"CategoryId":425,"ParentId":2030,"Name":"Panel
+        Mount","ProductCount":1366,"Children":[]},{"CategoryId":412,"ParentId":2030,"Name":"Power
+        Distribution","ProductCount":1667,"Children":[]},{"CategoryId":433,"ParentId":2030,"Name":"Specialized","ProductCount":3942,"Children":[]},{"CategoryId":2033,"ParentId":2030,"Name":"Terminal
+        Block Accessories","ProductCount":24048,"Children":[{"CategoryId":309,"ParentId":2033,"Name":"Accessories","ProductCount":8761,"Children":[]},{"CategoryId":385,"ParentId":2033,"Name":"Terminal
+        Block Jumpers","ProductCount":3772,"Children":[]},{"CategoryId":384,"ParentId":2033,"Name":"Terminal
+        Block Marker Strips","ProductCount":8592,"Children":[]},{"CategoryId":364,"ParentId":2033,"Name":"Terminal
+        Block Wire Ferrules","ProductCount":2923,"Children":[]}]},{"CategoryId":322,"ParentId":2030,"Name":"Terminal
+        Block Adapters","ProductCount":646,"Children":[]},{"CategoryId":338,"ParentId":2030,"Name":"Terminal
+        Block Contacts","ProductCount":71,"Children":[]},{"CategoryId":371,"ParentId":2030,"Name":"Wire
+        to Board","ProductCount":56271,"Children":[]}]},{"CategoryId":422,"ParentId":20,"Name":"Terminal
+        Junction Systems","ProductCount":2908,"Children":[]},{"CategoryId":306,"ParentId":20,"Name":"Terminal
+        Strips and Turret Boards","ProductCount":492,"Children":[]},{"CategoryId":2031,"ParentId":20,"Name":"Terminals","ProductCount":47381,"Children":[{"CategoryId":393,"ParentId":2031,"Name":"Barrel,
+        Bullet Connectors","ProductCount":457,"Children":[]},{"CategoryId":402,"ParentId":2031,"Name":"Foil
+        Connectors","ProductCount":34,"Children":[]},{"CategoryId":325,"ParentId":2031,"Name":"Housings,
+        Boots","ProductCount":1805,"Children":[]},{"CategoryId":404,"ParentId":2031,"Name":"Knife
+        Connectors","ProductCount":60,"Children":[]},{"CategoryId":395,"ParentId":2031,"Name":"Lugs","ProductCount":6780,"Children":[]},{"CategoryId":353,"ParentId":2031,"Name":"Magnetic
+        Wire Connectors","ProductCount":902,"Children":[]},{"CategoryId":324,"ParentId":2031,"Name":"PC
+        Pin Receptacles, Socket Connectors","ProductCount":5651,"Children":[]},{"CategoryId":323,"ParentId":2031,"Name":"PC
+        Pin, Single Post Connectors","ProductCount":2943,"Children":[]},{"CategoryId":392,"ParentId":2031,"Name":"Quick
+        Connects, Quick Disconnect Connectors","ProductCount":5965,"Children":[]},{"CategoryId":394,"ParentId":2031,"Name":"Ring
+        Connectors","ProductCount":8869,"Children":[]},{"CategoryId":396,"ParentId":2031,"Name":"Screw
+        Connectors","ProductCount":881,"Children":[]},{"CategoryId":401,"ParentId":2031,"Name":"Solder
+        Lug Connectors","ProductCount":74,"Children":[]},{"CategoryId":391,"ParentId":2031,"Name":"Spade
+        Connectors","ProductCount":3203,"Children":[]},{"CategoryId":356,"ParentId":2031,"Name":"Specialized
+        Connectors","ProductCount":3463,"Children":[]},{"CategoryId":415,"ParentId":2031,"Name":"Terminal
+        Accessories","ProductCount":407,"Children":[]},{"CategoryId":405,"ParentId":2031,"Name":"Terminal
+        Adapters","ProductCount":100,"Children":[]},{"CategoryId":328,"ParentId":2031,"Name":"Turret
+        Connectors","ProductCount":856,"Children":[]},{"CategoryId":397,"ParentId":2031,"Name":"Wire
+        Pin Connectors","ProductCount":324,"Children":[]},{"CategoryId":305,"ParentId":2031,"Name":"Wire
+        Splice Connectors","ProductCount":4416,"Children":[]},{"CategoryId":398,"ParentId":2031,"Name":"Wire
+        to Board Connectors","ProductCount":191,"Children":[]}]},{"CategoryId":2032,"ParentId":20,"Name":"USB,
+        DVI, HDMI Connectors","ProductCount":6530,"Children":[{"CategoryId":347,"ParentId":2032,"Name":"USB,
+        DVI, HDMI Connector Accessories","ProductCount":355,"Children":[]},{"CategoryId":377,"ParentId":2032,"Name":"USB,
+        DVI, HDMI Connector Adapters","ProductCount":1032,"Children":[]},{"CategoryId":312,"ParentId":2032,"Name":"USB,
+        DVI, HDMI Connector Assemblies","ProductCount":5143,"Children":[]}]}]},{"CategoryId":12,"Name":"Crystals,
+        Oscillators, Resonators","ProductCount":561503,"Children":[{"CategoryId":175,"ParentId":12,"Name":"Crystal,
+        Oscillator, Resonator Accessories","ProductCount":162,"Children":[]},{"CategoryId":171,"ParentId":12,"Name":"Crystals","ProductCount":117565,"Children":[]},{"CategoryId":172,"ParentId":12,"Name":"Oscillators","ProductCount":427744,"Children":[]},{"CategoryId":176,"ParentId":12,"Name":"Pin
+        Configurable/Selectable Oscillators","ProductCount":4490,"Children":[]},{"CategoryId":169,"ParentId":12,"Name":"Programmable
+        Oscillators","ProductCount":8981,"Children":[]},{"CategoryId":174,"ParentId":12,"Name":"Resonators","ProductCount":1932,"Children":[]},{"CategoryId":170,"ParentId":12,"Name":"Stand
+        Alone Programmers","ProductCount":27,"Children":[]},{"CategoryId":173,"ParentId":12,"Name":"VCOs
+        (Voltage Controlled Oscillators)","ProductCount":602,"Children":[]}]},{"CategoryId":33,"Name":"Development
+        Boards, Kits, Programmers","ProductCount":71687,"Children":[{"CategoryId":783,"ParentId":33,"Name":"Accessories","ProductCount":2926,"Children":[]},{"CategoryId":2041,"ParentId":33,"Name":"Evaluation
+        Boards","ProductCount":60236,"Children":[{"CategoryId":791,"ParentId":2041,"Name":"Analog
+        to Digital Converters (ADCs) Evaluation Boards","ProductCount":1924,"Children":[]},{"CategoryId":789,"ParentId":2041,"Name":"Audio
+        Amplifier Evaluation Boards","ProductCount":760,"Children":[]},{"CategoryId":792,"ParentId":2041,"Name":"DC/DC
+        & AC/DC (Off-Line) SMPS Evaluation Boards","ProductCount":7495,"Children":[]},{"CategoryId":793,"ParentId":2041,"Name":"Digital
+        to Analog Converters (DACs) Evaluation Boards","ProductCount":738,"Children":[]},{"CategoryId":796,"ParentId":2041,"Name":"Embedded
+        Complex Logic (FPGA, CPLD) Evaluation Boards","ProductCount":1106,"Children":[]},{"CategoryId":786,"ParentId":2041,"Name":"Embedded
+        MCU, DSP Evaluation Boards","ProductCount":5721,"Children":[]},{"CategoryId":787,"ParentId":2041,"Name":"Evaluation
+        and Demonstration Boards and Kits","ProductCount":15600,"Children":[]},{"CategoryId":797,"ParentId":2041,"Name":"Expansion
+        Boards, Daughter Cards","ProductCount":8522,"Children":[]},{"CategoryId":794,"ParentId":2041,"Name":"LED
+        Driver Evaluation Boards","ProductCount":1501,"Children":[]},{"CategoryId":790,"ParentId":2041,"Name":"Linear
+        Voltage Regulator Evaluation Boards","ProductCount":972,"Children":[]},{"CategoryId":788,"ParentId":2041,"Name":"Op
+        Amp Evaluation Boards","ProductCount":1084,"Children":[]},{"CategoryId":1165,"ParentId":2041,"Name":"RF,
+        RFID, Wireless Evaluation Boards","ProductCount":10714,"Children":[]},{"CategoryId":795,"ParentId":2041,"Name":"Sensor
+        Evaluation Boards","ProductCount":4099,"Children":[]}]},{"CategoryId":799,"ParentId":33,"Name":"Programmers,
+        Emulators, and Debuggers","ProductCount":1197,"Children":[]},{"CategoryId":798,"ParentId":33,"Name":"Programming
+        Adapters, Sockets","ProductCount":1969,"Children":[]},{"CategoryId":784,"ParentId":33,"Name":"Software,
+        Services","ProductCount":5359,"Children":[]}]},{"CategoryId":19,"Name":"Discrete
+        Semiconductor Products","ProductCount":259485,"Children":[{"CategoryId":1164,"ParentId":19,"Name":"Current
+        Regulation - Diodes, Transistors","ProductCount":1035,"Children":[]},{"CategoryId":2042,"ParentId":19,"Name":"Diodes","ProductCount":148873,"Children":[{"CategoryId":299,"ParentId":2042,"Name":"Bridge
+        Rectifiers","ProductCount":7335,"Children":[]},{"CategoryId":2085,"ParentId":2042,"Name":"Rectifiers","ProductCount":67315,"Children":[{"CategoryId":286,"ParentId":2085,"Name":"Diode
+        Arrays","ProductCount":16133,"Children":[]},{"CategoryId":280,"ParentId":2085,"Name":"Single
+        Diodes","ProductCount":51182,"Children":[]}]},{"CategoryId":284,"ParentId":2042,"Name":"RF
+        Diodes","ProductCount":2091,"Children":[]},{"CategoryId":282,"ParentId":2042,"Name":"Variable
+        Capacitance (Varicaps, Varactors)","ProductCount":887,"Children":[]},{"CategoryId":2086,"ParentId":2042,"Name":"Zener","ProductCount":71245,"Children":[{"CategoryId":287,"ParentId":2086,"Name":"Single
+        Zener Diodes","ProductCount":68875,"Children":[]},{"CategoryId":295,"ParentId":2086,"Name":"Zener
+        Diode Arrays","ProductCount":2370,"Children":[]}]}]},{"CategoryId":296,"ParentId":19,"Name":"Power
+        Driver Modules","ProductCount":1349,"Children":[]},{"CategoryId":2043,"ParentId":19,"Name":"Thyristors","ProductCount":10563,"Children":[{"CategoryId":274,"ParentId":2043,"Name":"DIACs,
+        SIDACs","ProductCount":320,"Children":[]},{"CategoryId":281,"ParentId":2043,"Name":"SCRs","ProductCount":4005,"Children":[]},{"CategoryId":298,"ParentId":2043,"Name":"SCRs
+        - Modules","ProductCount":2437,"Children":[]},{"CategoryId":300,"ParentId":2043,"Name":"TRIACs","ProductCount":3801,"Children":[]}]},{"CategoryId":2045,"ParentId":19,"Name":"Transistors","ProductCount":97665,"Children":[{"CategoryId":2087,"ParentId":2045,"Name":"Bipolar
+        (BJT)","ProductCount":31661,"Children":[{"CategoryId":283,"ParentId":2087,"Name":"Bipolar
+        RF Transistors","ProductCount":1653,"Children":[]},{"CategoryId":277,"ParentId":2087,"Name":"Bipolar
+        Transistor Arrays","ProductCount":2208,"Children":[]},{"CategoryId":293,"ParentId":2087,"Name":"Bipolar
+        Transistor Arrays, Pre-Biased","ProductCount":2206,"Children":[]},{"CategoryId":276,"ParentId":2087,"Name":"Single
+        Bipolar Transistors","ProductCount":21184,"Children":[]},{"CategoryId":292,"ParentId":2087,"Name":"Single,
+        Pre-Biased Bipolar Transistors","ProductCount":4410,"Children":[]}]},{"CategoryId":2088,"ParentId":2045,"Name":"FETs,
+        MOSFETs","ProductCount":57200,"Children":[{"CategoryId":289,"ParentId":2088,"Name":"FET,
+        MOSFET Arrays","ProductCount":6357,"Children":[]},{"CategoryId":285,"ParentId":2088,"Name":"RF
+        FETs, MOSFETs","ProductCount":3557,"Children":[]},{"CategoryId":278,"ParentId":2088,"Name":"Single
+        FETs, MOSFETs","ProductCount":47286,"Children":[]}]},{"CategoryId":2089,"ParentId":2045,"Name":"IGBTs","ProductCount":7431,"Children":[{"CategoryId":291,"ParentId":2089,"Name":"IGBT
+        Arrays","ProductCount":18,"Children":[]},{"CategoryId":297,"ParentId":2089,"Name":"IGBT
+        Modules","ProductCount":3066,"Children":[]},{"CategoryId":279,"ParentId":2089,"Name":"Single
+        IGBTs","ProductCount":4347,"Children":[]}]},{"CategoryId":288,"ParentId":2045,"Name":"JFETs","ProductCount":1138,"Children":[]},{"CategoryId":290,"ParentId":2045,"Name":"Programmable
+        Unijunction","ProductCount":41,"Children":[]},{"CategoryId":294,"ParentId":2045,"Name":"Special
+        Purpose","ProductCount":194,"Children":[]}]}]},{"CategoryId":45,"Name":"Embedded
+        Computers","ProductCount":11139,"Children":[{"CategoryId":931,"ParentId":45,"Name":"Embedded
+        Computer Accessories","ProductCount":1727,"Children":[]},{"CategoryId":932,"ParentId":45,"Name":"Embedded
+        Computer Interface Boards","ProductCount":814,"Children":[]},{"CategoryId":721,"ParentId":45,"Name":"Microcontroller,
+        Microprocessor, FPGA, SOM Modules","ProductCount":2442,"Children":[]},{"CategoryId":933,"ParentId":45,"Name":"Single
+        Board Computers (SBCs)","ProductCount":6156,"Children":[]}]},{"CategoryId":16,"Name":"Fans,
+        Blowers, Thermal Management","ProductCount":181860,"Children":[{"CategoryId":2046,"ParentId":16,"Name":"Fans","ProductCount":29838,"Children":[{"CategoryId":216,"ParentId":2046,"Name":"AC
+        Fans","ProductCount":4294,"Children":[]},{"CategoryId":217,"ParentId":2046,"Name":"DC
+        Brushless Fans (BLDC)","ProductCount":23582,"Children":[]},{"CategoryId":223,"ParentId":2046,"Name":"Fan
+        Accessories","ProductCount":604,"Children":[]},{"CategoryId":974,"ParentId":2046,"Name":"Fan
+        Cords","ProductCount":273,"Children":[]},{"CategoryId":221,"ParentId":2046,"Name":"Finger
+        Guards, Filters & Sleeves","ProductCount":1085,"Children":[]}]},{"CategoryId":1005,"ParentId":16,"Name":"Heat
+        Tape, Heat Blankets and Heaters","ProductCount":5758,"Children":[]},{"CategoryId":2047,"ParentId":16,"Name":"Thermal","ProductCount":146264,"Children":[{"CategoryId":220,"ParentId":2047,"Name":"Adhesives,
+        Epoxies, Greases, Pastes","ProductCount":929,"Children":[]},{"CategoryId":977,"ParentId":2047,"Name":"Heat
+        Pipes, Vapor Chambers","ProductCount":1369,"Children":[]},{"CategoryId":219,"ParentId":2047,"Name":"Heat
+        Sinks","ProductCount":122858,"Children":[]},{"CategoryId":226,"ParentId":2047,"Name":"Liquid
+        Cooling, Heating","ProductCount":381,"Children":[]},{"CategoryId":218,"ParentId":2047,"Name":"Pads,
+        Sheets, Bridges","ProductCount":17086,"Children":[]},{"CategoryId":224,"ParentId":2047,"Name":"Thermal
+        Accessories","ProductCount":1792,"Children":[]},{"CategoryId":225,"ParentId":2047,"Name":"Thermoelectric,
+        Peltier Assemblies","ProductCount":183,"Children":[]},{"CategoryId":222,"ParentId":2047,"Name":"Thermoelectric,
+        Peltier Modules","ProductCount":1666,"Children":[]}]}]},{"CategoryId":36,"Name":"Filters","ProductCount":49506,"Children":[{"CategoryId":840,"ParentId":36,"Name":"Cable
+        Ferrites","ProductCount":1973,"Children":[]},{"CategoryId":846,"ParentId":36,"Name":"Ceramic
+        Filters","ProductCount":1268,"Children":[]},{"CategoryId":839,"ParentId":36,"Name":"Common
+        Mode Chokes","ProductCount":9796,"Children":[]},{"CategoryId":842,"ParentId":36,"Name":"DSL
+        Filters","ProductCount":18,"Children":[]},{"CategoryId":835,"ParentId":36,"Name":"EMI/RFI
+        Filters (LC, RC Networks)","ProductCount":2311,"Children":[]},{"CategoryId":845,"ParentId":36,"Name":"Feed
+        Through, Pass Through Capacitors","ProductCount":4115,"Children":[]},{"CategoryId":841,"ParentId":36,"Name":"Ferrite
+        Beads and Chips","ProductCount":8636,"Children":[]},{"CategoryId":843,"ParentId":36,"Name":"Ferrite
+        Disks and Plates","ProductCount":137,"Children":[]},{"CategoryId":834,"ParentId":36,"Name":"Filter
+        Accessories","ProductCount":70,"Children":[]},{"CategoryId":837,"ParentId":36,"Name":"Helical
+        Filters","ProductCount":6,"Children":[]},{"CategoryId":847,"ParentId":36,"Name":"Monolithic
+        Crystals","ProductCount":103,"Children":[]},{"CategoryId":838,"ParentId":36,"Name":"Power
+        Line Filter Modules","ProductCount":14499,"Children":[]},{"CategoryId":844,"ParentId":36,"Name":"RF
+        Filters","ProductCount":4491,"Children":[]},{"CategoryId":836,"ParentId":36,"Name":"SAW
+        Filters","ProductCount":2083,"Children":[]}]},{"CategoryId":26,"Name":"Hardware,
+        Fasteners, Accessories","ProductCount":280688,"Children":[{"CategoryId":569,"ParentId":26,"Name":"Accessories","ProductCount":2408,"Children":[]},{"CategoryId":979,"ParentId":26,"Name":"Bearings","ProductCount":257,"Children":[]},{"CategoryId":582,"ParentId":26,"Name":"Board
+        Spacers, Standoffs","ProductCount":20061,"Children":[]},{"CategoryId":578,"ParentId":26,"Name":"Board
+        Supports","ProductCount":4861,"Children":[]},{"CategoryId":570,"ParentId":26,"Name":"Bumpers,
+        Feet, Pads, Grips","ProductCount":5833,"Children":[]},{"CategoryId":954,"ParentId":26,"Name":"Clips,
+        Hangers, Hooks","ProductCount":385,"Children":[]},{"CategoryId":585,"ParentId":26,"Name":"Component
+        Insulators, Mounts, Spacers","ProductCount":740,"Children":[]},{"CategoryId":580,"ParentId":26,"Name":"DIN
+        Rail Channel","ProductCount":2142,"Children":[]},{"CategoryId":587,"ParentId":26,"Name":"Foam","ProductCount":537,"Children":[]},{"CategoryId":976,"ParentId":26,"Name":"Hinges","ProductCount":872,"Children":[]},{"CategoryId":581,"ParentId":26,"Name":"Hole
+        Plugs - Tapered Caps","ProductCount":4792,"Children":[]},{"CategoryId":568,"ParentId":26,"Name":"Knobs","ProductCount":7192,"Children":[]},{"CategoryId":579,"ParentId":26,"Name":"Miscellaneous","ProductCount":6404,"Children":[]},{"CategoryId":574,"ParentId":26,"Name":"Mounting
+        Brackets","ProductCount":269,"Children":[]},{"CategoryId":573,"ParentId":26,"Name":"Nuts","ProductCount":1329,"Children":[]},{"CategoryId":967,"ParentId":26,"Name":"Reclosable
+        Fasteners","ProductCount":1627,"Children":[]},{"CategoryId":576,"ParentId":26,"Name":"Rivets","ProductCount":3084,"Children":[]},{"CategoryId":584,"ParentId":26,"Name":"Screw
+        Grommets","ProductCount":499,"Children":[]},{"CategoryId":572,"ParentId":26,"Name":"Screws,
+        Bolts","ProductCount":26906,"Children":[]},{"CategoryId":1172,"ParentId":26,"Name":"Seals
+        - Cord Stock","ProductCount":1022,"Children":[]},{"CategoryId":1171,"ParentId":26,"Name":"Seals
+        - O-Rings","ProductCount":6765,"Children":[]},{"CategoryId":3004,"ParentId":26,"Name":"Springs","ProductCount":14594,"Children":[{"CategoryId":1002,"ParentId":3004,"Name":"Compression,
+        Tapered Springs","ProductCount":11383,"Children":[]},{"CategoryId":1006,"ParentId":3004,"Name":"Extension,
+        Drawbar Springs","ProductCount":2605,"Children":[]},{"CategoryId":1007,"ParentId":3004,"Name":"Torsion
+        Springs","ProductCount":606,"Children":[]}]},{"CategoryId":586,"ParentId":26,"Name":"Structural,
+        Motion Hardware","ProductCount":162354,"Children":[]},{"CategoryId":2048,"ParentId":26,"Name":"Washers","ProductCount":5755,"Children":[{"CategoryId":583,"ParentId":2048,"Name":"Bushing,
+        Shoulder Washers","ProductCount":2401,"Children":[]},{"CategoryId":571,"ParentId":2048,"Name":"Standard
+        Washers","ProductCount":3354,"Children":[]}]}]},{"CategoryId":4,"Name":"Inductors,
+        Coils, Chokes","ProductCount":167000,"Children":[{"CategoryId":72,"ParentId":4,"Name":"Adjustable
+        Inductors","ProductCount":267,"Children":[]},{"CategoryId":73,"ParentId":4,"Name":"Arrays,
+        Signal Transformers","ProductCount":1310,"Children":[]},{"CategoryId":74,"ParentId":4,"Name":"Delay
+        Lines","ProductCount":50,"Children":[]},{"CategoryId":71,"ParentId":4,"Name":"Fixed
+        Inductors","ProductCount":165113,"Children":[]},{"CategoryId":75,"ParentId":4,"Name":"Wireless
+        Charging Coils","ProductCount":260,"Children":[]}]},{"CategoryId":34,"Name":"Industrial
+        Automation and Controls","ProductCount":336710,"Children":[{"CategoryId":1014,"ParentId":34,"Name":"Cable
+        and Hose Carriers, Drag Chains","ProductCount":206,"Children":[]},{"CategoryId":808,"ParentId":34,"Name":"Cam
+        Positioners","ProductCount":17,"Children":[]},{"CategoryId":2049,"ParentId":34,"Name":"Controllers","ProductCount":23046,"Children":[{"CategoryId":823,"ParentId":2049,"Name":"Cable
+        Assemblies","ProductCount":4441,"Children":[]},{"CategoryId":816,"ParentId":2049,"Name":"Controller
+        Accessories","ProductCount":2205,"Children":[]},{"CategoryId":806,"ParentId":2049,"Name":"Liquid,
+        Level","ProductCount":587,"Children":[]},{"CategoryId":821,"ParentId":2049,"Name":"PLC
+        Modules","ProductCount":4472,"Children":[]},{"CategoryId":801,"ParentId":2049,"Name":"Process,
+        Temperature","ProductCount":9450,"Children":[]},{"CategoryId":814,"ParentId":2049,"Name":"Programmable
+        (PLC, PAC)","ProductCount":1891,"Children":[]}]},{"CategoryId":2115,"ParentId":34,"Name":"Graphical/Numeric
+        Displays","ProductCount":25,"Children":[]},{"CategoryId":1013,"ParentId":34,"Name":"Greases
+        and Lubricants","ProductCount":141,"Children":[]},{"CategoryId":2050,"ParentId":34,"Name":"Human
+        Machine Interface (HMI)","ProductCount":2899,"Children":[{"CategoryId":947,"ParentId":2050,"Name":"Human
+        Machine Interface (HMI) Accessories","ProductCount":939,"Children":[]},{"CategoryId":946,"ParentId":2050,"Name":"Machine
+        Interface","ProductCount":1960,"Children":[]}]},{"CategoryId":800,"ParentId":34,"Name":"Industrial
+        Automation Accessories","ProductCount":12685,"Children":[]},{"CategoryId":815,"ParentId":34,"Name":"Industrial
+        Equipment","ProductCount":4588,"Children":[]},{"CategoryId":2051,"ParentId":34,"Name":"Industrial
+        Lighting","ProductCount":3726,"Children":[{"CategoryId":1063,"ParentId":2051,"Name":"Pick
+        to Light","ProductCount":636,"Children":[]},{"CategoryId":1061,"ParentId":2051,"Name":"Task
+        Lighting","ProductCount":3090,"Children":[]}]},{"CategoryId":2052,"ParentId":34,"Name":"Industrial
+        Lighting Control","ProductCount":281,"Children":[{"CategoryId":819,"ParentId":2052,"Name":"Lighting
+        Control","ProductCount":168,"Children":[]},{"CategoryId":820,"ParentId":2052,"Name":"Lighting
+        Control Accessories","ProductCount":113,"Children":[]}]},{"CategoryId":1062,"ParentId":34,"Name":"Industrial
+        PCs","ProductCount":6726,"Children":[]},{"CategoryId":2114,"ParentId":34,"Name":"Industrial
+        Sensors","ProductCount":159429,"Children":[{"CategoryId":1070,"ParentId":2114,"Name":"Color
+        Sensors - Industrial","ProductCount":120,"Children":[]},{"CategoryId":1075,"ParentId":2114,"Name":"Encoders
+        - Industrial","ProductCount":14314,"Children":[]},{"CategoryId":1068,"ParentId":2114,"Name":"Float,
+        Level Sensors - Industrial","ProductCount":3699,"Children":[]},{"CategoryId":1067,"ParentId":2114,"Name":"Flow
+        Sensors - Industrial","ProductCount":8132,"Children":[]},{"CategoryId":1066,"ParentId":2114,"Name":"Force
+        Sensors, Load Cells - Industrial","ProductCount":3331,"Children":[]},{"CategoryId":562,"ParentId":2114,"Name":"Photoelectric,
+        Industrial","ProductCount":23139,"Children":[]},{"CategoryId":1065,"ParentId":2114,"Name":"Position,
+        Proximity, Speed (Modules) - Industrial","ProductCount":439,"Children":[]},{"CategoryId":1069,"ParentId":2114,"Name":"Pressure
+        Sensors, Transducers - Industrial","ProductCount":86246,"Children":[]},{"CategoryId":1074,"ParentId":2114,"Name":"Proximity
+        Sensors - Industrial","ProductCount":15629,"Children":[]},{"CategoryId":1073,"ParentId":2114,"Name":"Temperature
+        Sensors - Analog and Digital Output - Industrial","ProductCount":1920,"Children":[]},{"CategoryId":1072,"ParentId":2114,"Name":"Thermostats
+        - Mechanical - Industrial","ProductCount":2259,"Children":[]},{"CategoryId":1071,"ParentId":2114,"Name":"Ultrasonic
+        Receivers, Transmitters - Industrial","ProductCount":201,"Children":[]}]},{"CategoryId":804,"ParentId":34,"Name":"Industrial
+        Specialized","ProductCount":1007,"Children":[]},{"CategoryId":978,"ParentId":34,"Name":"Liquid
+        Filtration","ProductCount":516,"Children":[]},{"CategoryId":2053,"ParentId":34,"Name":"Machine
+        Vision","ProductCount":6772,"Children":[{"CategoryId":1059,"ParentId":2053,"Name":"Bar
+        Code Readers","ProductCount":1946,"Children":[]},{"CategoryId":828,"ParentId":2053,"Name":"Camera/Sensors","ProductCount":3189,"Children":[]},{"CategoryId":827,"ParentId":2053,"Name":"Control/Processing","ProductCount":199,"Children":[]},{"CategoryId":826,"ParentId":2053,"Name":"Machine
+        Vision Lighting","ProductCount":1438,"Children":[]}]},{"CategoryId":2054,"ParentId":34,"Name":"Monitors","ProductCount":2059,"Children":[{"CategoryId":807,"ParentId":2054,"Name":"Current/Voltage
+        Transducer Monitors","ProductCount":789,"Children":[]},{"CategoryId":811,"ParentId":2054,"Name":"Relay
+        Output Monitors","ProductCount":1270,"Children":[]}]},{"CategoryId":2055,"ParentId":34,"Name":"Panel
+        Meters","ProductCount":5575,"Children":[{"CategoryId":802,"ParentId":2055,"Name":"Counters,
+        Hour Meters","ProductCount":1638,"Children":[]},{"CategoryId":805,"ParentId":2055,"Name":"Meters","ProductCount":3284,"Children":[]},{"CategoryId":818,"ParentId":2055,"Name":"Panel
+        Meter Accessories","ProductCount":653,"Children":[]}]},{"CategoryId":2056,"ParentId":34,"Name":"Pneumatics,
+        Hydraulics","ProductCount":83466,"Children":[{"CategoryId":1054,"ParentId":2056,"Name":"Actuators/Cylinders","ProductCount":9964,"Children":[]},{"CategoryId":1052,"ParentId":2056,"Name":"Fittings,
+        Couplings, and Distributors","ProductCount":13392,"Children":[]},{"CategoryId":1053,"ParentId":2056,"Name":"Pneumatics
+        Accessories","ProductCount":23315,"Children":[]},{"CategoryId":1051,"ParentId":2056,"Name":"Preparation/Treatment","ProductCount":3288,"Children":[]},{"CategoryId":1022,"ParentId":2056,"Name":"Shock
+        Absorbers, Dampers","ProductCount":2107,"Children":[]},{"CategoryId":1021,"ParentId":2056,"Name":"Tubing,
+        Hose, Piping","ProductCount":4104,"Children":[]},{"CategoryId":809,"ParentId":2056,"Name":"Valves
+        and Control","ProductCount":27296,"Children":[]}]},{"CategoryId":810,"ParentId":34,"Name":"Protection
+        Relays & Systems","ProductCount":1085,"Children":[]},{"CategoryId":2057,"ParentId":34,"Name":"Robotics","ProductCount":5061,"Children":[{"CategoryId":994,"ParentId":2057,"Name":"End
+        Effectors","ProductCount":2002,"Children":[]},{"CategoryId":995,"ParentId":2057,"Name":"Robotics
+        Accessories","ProductCount":2361,"Children":[]},{"CategoryId":993,"ParentId":2057,"Name":"Robots","ProductCount":698,"Children":[]}]},{"CategoryId":1020,"ParentId":34,"Name":"Signal
+        Conditioners and Isolators","ProductCount":1947,"Children":[]},{"CategoryId":953,"ParentId":34,"Name":"Stackable
+        Tower Lighting, Beacons, and Components","ProductCount":10171,"Children":[]},{"CategoryId":952,"ParentId":34,"Name":"Time
+        Delay Relays","ProductCount":5282,"Children":[]}]},{"CategoryId":49,"Name":"Industrial
+        Supplies","ProductCount":14418,"Children":[{"CategoryId":1076,"ParentId":49,"Name":"Carts
+        and Trucks","ProductCount":735,"Children":[]},{"CategoryId":2092,"ParentId":49,"Name":"Dock
+        and Warehouse","ProductCount":205,"Children":[{"CategoryId":1099,"ParentId":2092,"Name":"Air
+        Curtain Doors","ProductCount":88,"Children":[]},{"CategoryId":1096,"ParentId":2092,"Name":"Dock
+        Equipment","ProductCount":86,"Children":[]},{"CategoryId":1078,"ParentId":2092,"Name":"Ladders,
+        Steps, and Platforms","ProductCount":24,"Children":[]},{"CategoryId":1155,"ParentId":2092,"Name":"Mirrors","ProductCount":7,"Children":[]}]},{"CategoryId":2093,"ParentId":49,"Name":"Electrical","ProductCount":331,"Children":[{"CategoryId":1079,"ParentId":2093,"Name":"Cords,
+        Wires and Accessories","ProductCount":12,"Children":[]},{"CategoryId":1080,"ParentId":2093,"Name":"Generators","ProductCount":21,"Children":[]},{"CategoryId":1081,"ParentId":2093,"Name":"Lighting","ProductCount":281,"Children":[]},{"CategoryId":1082,"ParentId":2093,"Name":"Lighting
+        Accessories","ProductCount":17,"Children":[]}]},{"CategoryId":2094,"ParentId":49,"Name":"Fans","ProductCount":231,"Children":[{"CategoryId":1100,"ParentId":2094,"Name":"Agricultural,
+        Dock and Exhaust","ProductCount":22,"Children":[]},{"CategoryId":1101,"ParentId":2094,"Name":"Blowers
+        and Floor Dryers","ProductCount":33,"Children":[]},{"CategoryId":1102,"ParentId":2094,"Name":"Components
+        - Motors","ProductCount":66,"Children":[]},{"CategoryId":1103,"ParentId":2094,"Name":"Components
+        and Accessories","ProductCount":35,"Children":[]},{"CategoryId":1104,"ParentId":2094,"Name":"Household,
+        Office and Pedestal Fans","ProductCount":75,"Children":[]}]},{"CategoryId":2095,"ParentId":49,"Name":"HVAC","ProductCount":2420,"Children":[{"CategoryId":1105,"ParentId":2095,"Name":"Air
+        Conditioners","ProductCount":192,"Children":[]},{"CategoryId":1106,"ParentId":2095,"Name":"Air
+        Filters","ProductCount":292,"Children":[]},{"CategoryId":1108,"ParentId":2095,"Name":"Air
+        Purifiers, Dehumidifiers and Humidifiers","ProductCount":16,"Children":[]},{"CategoryId":1109,"ParentId":2095,"Name":"Heaters","ProductCount":1818,"Children":[]},{"CategoryId":1124,"ParentId":2095,"Name":"HVAC
+        Parts and Accessories","ProductCount":102,"Children":[]}]},{"CategoryId":1110,"ParentId":49,"Name":"Janitorial
+        and Maintenance Products","ProductCount":3017,"Children":[]},{"CategoryId":2096,"ParentId":49,"Name":"Maintenance","ProductCount":507,"Children":[{"CategoryId":1083,"ParentId":2096,"Name":"Air
+        Compressor Tools and Accessories","ProductCount":382,"Children":[]},{"CategoryId":1084,"ParentId":2096,"Name":"Air
+        Compressors","ProductCount":2,"Children":[]},{"CategoryId":1085,"ParentId":2096,"Name":"Magnets","ProductCount":5,"Children":[]},{"CategoryId":1086,"ParentId":2096,"Name":"Mats","ProductCount":118,"Children":[]}]},{"CategoryId":2097,"ParentId":49,"Name":"Office
+        Equipment","ProductCount":694,"Children":[{"CategoryId":1126,"ParentId":2097,"Name":"File
+        Cabinets, Bookcases","ProductCount":78,"Children":[]},{"CategoryId":1127,"ParentId":2097,"Name":"Food
+        Storage and Preparation","ProductCount":46,"Children":[]},{"CategoryId":1128,"ParentId":2097,"Name":"Office
+        Supplies","ProductCount":473,"Children":[]},{"CategoryId":1129,"ParentId":2097,"Name":"Water
+        Fountains and Refilling Stations","ProductCount":97,"Children":[]}]},{"CategoryId":2098,"ParentId":49,"Name":"Office
+        Furniture","ProductCount":547,"Children":[{"CategoryId":1131,"ParentId":2098,"Name":"Partitions
+        and Accessories","ProductCount":472,"Children":[]},{"CategoryId":1132,"ParentId":2098,"Name":"Safes,
+        Secure Storage","ProductCount":44,"Children":[]},{"CategoryId":1133,"ParentId":2098,"Name":"Tables","ProductCount":31,"Children":[]}]},{"CategoryId":2099,"ParentId":49,"Name":"Outdoor
+        Products","ProductCount":1381,"Children":[{"CategoryId":1134,"ParentId":2099,"Name":"Bikes,
+        Racks and Locks","ProductCount":26,"Children":[]},{"CategoryId":1135,"ParentId":2099,"Name":"Canopies,
+        Shelters and Sheds","ProductCount":11,"Children":[]},{"CategoryId":1144,"ParentId":2099,"Name":"Cans,
+        Trash Cans and Covers","ProductCount":100,"Children":[]},{"CategoryId":1136,"ParentId":2099,"Name":"Cold
+        Weather Products, Clothing","ProductCount":175,"Children":[]},{"CategoryId":1138,"ParentId":2099,"Name":"Lawn
+        Tools","ProductCount":28,"Children":[]},{"CategoryId":1139,"ParentId":2099,"Name":"Miscellaneous","ProductCount":82,"Children":[]},{"CategoryId":1140,"ParentId":2099,"Name":"Mowers,
+        Vacuums, Blowers and Cutters","ProductCount":8,"Children":[]},{"CategoryId":1141,"ParentId":2099,"Name":"Outdoor
+        Furniture","ProductCount":129,"Children":[]},{"CategoryId":1142,"ParentId":2099,"Name":"Parking
+        Lot and Safety","ProductCount":812,"Children":[]},{"CategoryId":1143,"ParentId":2099,"Name":"Snow
+        and Ice Removal","ProductCount":10,"Children":[]}]},{"CategoryId":2100,"ParentId":49,"Name":"Product,
+        Material Handling and Storage","ProductCount":3055,"Children":[{"CategoryId":1145,"ParentId":2100,"Name":"Building/Construction
+        Products","ProductCount":87,"Children":[]},{"CategoryId":1089,"ParentId":2100,"Name":"Dollies","ProductCount":8,"Children":[]},{"CategoryId":1090,"ParentId":2100,"Name":"Drum
+        Accessories","ProductCount":77,"Children":[]},{"CategoryId":1091,"ParentId":2100,"Name":"Drum
+        Cradles, Lifts, Trucks","ProductCount":78,"Children":[]},{"CategoryId":1092,"ParentId":2100,"Name":"Drum
+        Pumps","ProductCount":28,"Children":[]},{"CategoryId":1093,"ParentId":2100,"Name":"Drums,
+        Pails","ProductCount":9,"Children":[]},{"CategoryId":1146,"ParentId":2100,"Name":"Pallets","ProductCount":3,"Children":[]},{"CategoryId":1148,"ParentId":2100,"Name":"Rack,
+        Shelving, Stand Accessories","ProductCount":510,"Children":[]},{"CategoryId":1147,"ParentId":2100,"Name":"Racks,
+        Shelving, Stands","ProductCount":1797,"Children":[]},{"CategoryId":1149,"ParentId":2100,"Name":"Storage
+        Containers and Bins","ProductCount":458,"Children":[]}]},{"CategoryId":2101,"ParentId":49,"Name":"Safety","ProductCount":86,"Children":[{"CategoryId":1094,"ParentId":2101,"Name":"Absorbents,
+        Trays and Cleaners","ProductCount":34,"Children":[]},{"CategoryId":1095,"ParentId":2101,"Name":"Exit
+        Signs and Emergency Lights","ProductCount":21,"Children":[]},{"CategoryId":1150,"ParentId":2101,"Name":"Fuel,
+        Oil and General Purpose Cans","ProductCount":31,"Children":[]}]},{"CategoryId":1151,"ParentId":49,"Name":"Shipping
+        and Packaging Products","ProductCount":424,"Children":[]},{"CategoryId":2103,"ParentId":49,"Name":"Storage
+        Containers & Bins","ProductCount":1,"Children":[{"CategoryId":1152,"ParentId":2103,"Name":"Garage
+        Storage and Organization","ProductCount":1,"Children":[]}]},{"CategoryId":1153,"ParentId":49,"Name":"Vehicle
+        Maintenance and Customization Products","ProductCount":80,"Children":[]},{"CategoryId":2104,"ParentId":49,"Name":"Workstation,
+        Office Furniture and Equipment","ProductCount":704,"Children":[{"CategoryId":1116,"ParentId":2104,"Name":"Carts
+        and Stands","ProductCount":42,"Children":[]},{"CategoryId":1117,"ParentId":2104,"Name":"Chairs
+        and Stools","ProductCount":261,"Children":[]},{"CategoryId":1118,"ParentId":2104,"Name":"Computer
+        Workstations","ProductCount":136,"Children":[]},{"CategoryId":1154,"ParentId":2104,"Name":"Hazardous
+        Material, Safety Cabinets","ProductCount":33,"Children":[]},{"CategoryId":1087,"ParentId":2104,"Name":"Lockers,
+        Storage Cabinets and Accessories","ProductCount":230,"Children":[]},{"CategoryId":1088,"ParentId":2104,"Name":"Turntables","ProductCount":2,"Children":[]}]}]},{"CategoryId":32,"Name":"Integrated
+        Circuits (ICs)","ProductCount":638792,"Children":[{"CategoryId":741,"ParentId":32,"Name":"Audio
+        Special Purpose","ProductCount":1400,"Children":[]},{"CategoryId":2006,"ParentId":32,"Name":"Clock/Timing","ProductCount":23168,"Children":[{"CategoryId":763,"ParentId":2006,"Name":"Application
+        Specific Clock/Timing","ProductCount":3068,"Children":[]},{"CategoryId":764,"ParentId":2006,"Name":"Clock
+        Buffers, Drivers","ProductCount":3925,"Children":[]},{"CategoryId":728,"ParentId":2006,"Name":"Clock
+        Generators, PLLs, Frequency Synthesizers","ProductCount":11532,"Children":[]},{"CategoryId":688,"ParentId":2006,"Name":"Delay
+        Lines","ProductCount":655,"Children":[]},{"CategoryId":762,"ParentId":2006,"Name":"IC
+        Batteries","ProductCount":4,"Children":[]},{"CategoryId":689,"ParentId":2006,"Name":"Programmable
+        Timers and Oscillators","ProductCount":1589,"Children":[]},{"CategoryId":690,"ParentId":2006,"Name":"Real
+        Time Clocks","ProductCount":2395,"Children":[]}]},{"CategoryId":2009,"ParentId":32,"Name":"Data
+        Acquisition","ProductCount":33705,"Children":[{"CategoryId":768,"ParentId":2009,"Name":"ADCs/DACs
+        - Special Purpose","ProductCount":3009,"Children":[]},{"CategoryId":724,"ParentId":2009,"Name":"Analog
+        Front End (AFE)","ProductCount":761,"Children":[]},{"CategoryId":700,"ParentId":2009,"Name":"Analog
+        to Digital Converters (ADC)","ProductCount":14139,"Children":[]},{"CategoryId":717,"ParentId":2009,"Name":"Digital
+        Potentiometers","ProductCount":4242,"Children":[]},{"CategoryId":701,"ParentId":2009,"Name":"Digital
+        to Analog Converters (DAC)","ProductCount":10926,"Children":[]},{"CategoryId":775,"ParentId":2009,"Name":"Touch
+        Screen Controllers","ProductCount":628,"Children":[]}]},{"CategoryId":2012,"ParentId":32,"Name":"Embedded","ProductCount":135890,"Children":[{"CategoryId":769,"ParentId":2012,"Name":"Application
+        Specific Microcontrollers","ProductCount":2127,"Children":[]},{"CategoryId":695,"ParentId":2012,"Name":"CPLDs
+        (Complex Programmable Logic Devices)","ProductCount":4056,"Children":[]},{"CategoryId":698,"ParentId":2012,"Name":"DSP
+        (Digital Signal Processors)","ProductCount":6642,"Children":[]},{"CategoryId":696,"ParentId":2012,"Name":"FPGAs
+        (Field Programmable Gate Array)","ProductCount":24970,"Children":[]},{"CategoryId":767,"ParentId":2012,"Name":"FPGAs
+        (Field Programmable Gate Array) with Microcontrollers","ProductCount":60,"Children":[]},{"CategoryId":685,"ParentId":2012,"Name":"Microcontrollers","ProductCount":81348,"Children":[]},{"CategoryId":694,"ParentId":2012,"Name":"Microprocessors","ProductCount":9704,"Children":[]},{"CategoryId":719,"ParentId":2012,"Name":"PLDs
+        (Programmable Logic Device)","ProductCount":1078,"Children":[]},{"CategoryId":777,"ParentId":2012,"Name":"System
+        On Chip (SoC)","ProductCount":5905,"Children":[]}]},{"CategoryId":2016,"ParentId":32,"Name":"Interface","ProductCount":51148,"Children":[{"CategoryId":780,"ParentId":2016,"Name":"Analog
+        Switches - Special Purpose","ProductCount":2064,"Children":[]},{"CategoryId":747,"ParentId":2016,"Name":"Analog
+        Switches, Multiplexers, Demultiplexers","ProductCount":10069,"Children":[]},{"CategoryId":716,"ParentId":2016,"Name":"CODECS","ProductCount":1551,"Children":[]},{"CategoryId":753,"ParentId":2016,"Name":"Controllers","ProductCount":3389,"Children":[]},{"CategoryId":723,"ParentId":2016,"Name":"Direct
+        Digital Synthesis (DDS)","ProductCount":103,"Children":[]},{"CategoryId":710,"ParentId":2016,"Name":"Drivers,
+        Receivers, Transceivers","ProductCount":17305,"Children":[]},{"CategoryId":709,"ParentId":2016,"Name":"Encoders,
+        Decoders, Converters","ProductCount":510,"Children":[]},{"CategoryId":735,"ParentId":2016,"Name":"Filters
+        - Active","ProductCount":955,"Children":[]},{"CategoryId":749,"ParentId":2016,"Name":"I/O
+        Expanders","ProductCount":1178,"Children":[]},{"CategoryId":722,"ParentId":2016,"Name":"Modems
+        - ICs and Modules","ProductCount":293,"Children":[]},{"CategoryId":778,"ParentId":2016,"Name":"Modules","ProductCount":129,"Children":[]},{"CategoryId":752,"ParentId":2016,"Name":"Sensor
+        and Detector Interfaces","ProductCount":1257,"Children":[]},{"CategoryId":560,"ParentId":2016,"Name":"Sensor,
+        Capacitive Touch","ProductCount":657,"Children":[]},{"CategoryId":755,"ParentId":2016,"Name":"Serializers,
+        Deserializers","ProductCount":1191,"Children":[]},{"CategoryId":756,"ParentId":2016,"Name":"Signal
+        Buffers, Repeaters, Splitters","ProductCount":1411,"Children":[]},{"CategoryId":683,"ParentId":2016,"Name":"Signal
+        Terminators","ProductCount":229,"Children":[]},{"CategoryId":754,"ParentId":2016,"Name":"Specialized","ProductCount":4429,"Children":[]},{"CategoryId":702,"ParentId":2016,"Name":"Telecom","ProductCount":3006,"Children":[]},{"CategoryId":714,"ParentId":2016,"Name":"UARTs
+        (Universal Asynchronous Receiver Transmitter)","ProductCount":1026,"Children":[]},{"CategoryId":733,"ParentId":2016,"Name":"Voice
+        Record and Playback","ProductCount":396,"Children":[]}]},{"CategoryId":2018,"ParentId":32,"Name":"Linear","ProductCount":45460,"Children":[{"CategoryId":2034,"ParentId":2018,"Name":"Amplifiers","ProductCount":38131,"Children":[{"CategoryId":742,"ParentId":2034,"Name":"Audio
+        Amplifiers","ProductCount":4259,"Children":[]},{"CategoryId":687,"ParentId":2034,"Name":"Instrumentation,
+        Op Amps, Buffer Amps","ProductCount":30997,"Children":[]},{"CategoryId":771,"ParentId":2034,"Name":"Special
+        Purpose Amplifiers","ProductCount":1411,"Children":[]},{"CategoryId":737,"ParentId":2034,"Name":"Video
+        Amps and Modules","ProductCount":1464,"Children":[]}]},{"CategoryId":772,"ParentId":2018,"Name":"Analog
+        Multipliers, Dividers","ProductCount":154,"Children":[]},{"CategoryId":692,"ParentId":2018,"Name":"Comparators","ProductCount":4946,"Children":[]},{"CategoryId":684,"ParentId":2018,"Name":"Video
+        Processing","ProductCount":2229,"Children":[]}]},{"CategoryId":2019,"ParentId":32,"Name":"Logic","ProductCount":58770,"Children":[{"CategoryId":704,"ParentId":2019,"Name":"Buffers,
+        Drivers, Receivers, Transceivers","ProductCount":14142,"Children":[]},{"CategoryId":773,"ParentId":2019,"Name":"Comparators","ProductCount":378,"Children":[]},{"CategoryId":731,"ParentId":2019,"Name":"Counters,
+        Dividers","ProductCount":2590,"Children":[]},{"CategoryId":707,"ParentId":2019,"Name":"FIFOs
+        Memory","ProductCount":2907,"Children":[]},{"CategoryId":706,"ParentId":2019,"Name":"Flip
+        Flops","ProductCount":6254,"Children":[]},{"CategoryId":705,"ParentId":2019,"Name":"Gates
+        and Inverters","ProductCount":13589,"Children":[]},{"CategoryId":770,"ParentId":2019,"Name":"Gates
+        and Inverters - Multi-Function, Configurable","ProductCount":1195,"Children":[]},{"CategoryId":708,"ParentId":2019,"Name":"Latches","ProductCount":2891,"Children":[]},{"CategoryId":711,"ParentId":2019,"Name":"Multivibrators","ProductCount":731,"Children":[]},{"CategoryId":720,"ParentId":2019,"Name":"Parity
+        Generators and Checkers","ProductCount":175,"Children":[]},{"CategoryId":712,"ParentId":2019,"Name":"Shift
+        Registers","ProductCount":2136,"Children":[]},{"CategoryId":743,"ParentId":2019,"Name":"Signal
+        Switches, Multiplexers, Decoders","ProductCount":7239,"Children":[]},{"CategoryId":703,"ParentId":2019,"Name":"Specialty
+        Logic","ProductCount":1257,"Children":[]},{"CategoryId":732,"ParentId":2019,"Name":"Translators,
+        Level Shifters","ProductCount":2807,"Children":[]},{"CategoryId":725,"ParentId":2019,"Name":"Universal
+        Bus Functions","ProductCount":479,"Children":[]}]},{"CategoryId":2020,"ParentId":32,"Name":"Memory","ProductCount":58361,"Children":[{"CategoryId":766,"ParentId":2020,"Name":"Batteries","ProductCount":12,"Children":[]},{"CategoryId":697,"ParentId":2020,"Name":"Configuration
+        PROMs for FPGAs","ProductCount":582,"Children":[]},{"CategoryId":736,"ParentId":2020,"Name":"Controllers","ProductCount":298,"Children":[]},{"CategoryId":774,"ParentId":2020,"Name":"Memory","ProductCount":57469,"Children":[]}]},{"CategoryId":2025,"ParentId":32,"Name":"Power
+        Management (PMIC)","ProductCount":228328,"Children":[{"CategoryId":748,"ParentId":2025,"Name":"AC
+        DC Converters, Offline Switchers","ProductCount":4456,"Children":[]},{"CategoryId":781,"ParentId":2025,"Name":"Battery
+        Chargers","ProductCount":3437,"Children":[]},{"CategoryId":713,"ParentId":2025,"Name":"Battery
+        Management","ProductCount":4743,"Children":[]},{"CategoryId":734,"ParentId":2025,"Name":"Current
+        Regulation/Management","ProductCount":1459,"Children":[]},{"CategoryId":715,"ParentId":2025,"Name":"DC
+        DC Switching Controllers","ProductCount":10702,"Children":[]},{"CategoryId":729,"ParentId":2025,"Name":"Display
+        Drivers","ProductCount":1163,"Children":[]},{"CategoryId":765,"ParentId":2025,"Name":"Energy
+        Metering","ProductCount":489,"Children":[]},{"CategoryId":746,"ParentId":2025,"Name":"Full,
+        Half-Bridge (H Bridge) Drivers","ProductCount":1324,"Children":[]},{"CategoryId":730,"ParentId":2025,"Name":"Gate
+        Drivers","ProductCount":6400,"Children":[]},{"CategoryId":718,"ParentId":2025,"Name":"Hot
+        Swap Controllers","ProductCount":2041,"Children":[]},{"CategoryId":681,"ParentId":2025,"Name":"Laser
+        Drivers","ProductCount":392,"Children":[]},{"CategoryId":745,"ParentId":2025,"Name":"LED
+        Drivers","ProductCount":6978,"Children":[]},{"CategoryId":751,"ParentId":2025,"Name":"Lighting,
+        Ballast Controllers","ProductCount":453,"Children":[]},{"CategoryId":744,"ParentId":2025,"Name":"Motor
+        Drivers, Controllers","ProductCount":5039,"Children":[]},{"CategoryId":758,"ParentId":2025,"Name":"OR
+        Controllers, Ideal Diodes","ProductCount":656,"Children":[]},{"CategoryId":759,"ParentId":2025,"Name":"PFC
+        (Power Factor Correction)","ProductCount":1038,"Children":[]},{"CategoryId":726,"ParentId":2025,"Name":"Power
+        Distribution Switches, Load Drivers","ProductCount":7424,"Children":[]},{"CategoryId":761,"ParentId":2025,"Name":"Power
+        Management - Specialized","ProductCount":8233,"Children":[]},{"CategoryId":779,"ParentId":2025,"Name":"Power
+        Over Ethernet (PoE) Controllers","ProductCount":827,"Children":[]},{"CategoryId":760,"ParentId":2025,"Name":"Power
+        Supply Controllers, Monitors","ProductCount":2003,"Children":[]},{"CategoryId":740,"ParentId":2025,"Name":"RMS
+        to DC Converters","ProductCount":132,"Children":[]},{"CategoryId":750,"ParentId":2025,"Name":"Special
+        Purpose Regulators","ProductCount":4690,"Children":[]},{"CategoryId":691,"ParentId":2025,"Name":"Supervisors","ProductCount":38841,"Children":[]},{"CategoryId":738,"ParentId":2025,"Name":"Thermal
+        Management","ProductCount":474,"Children":[]},{"CategoryId":727,"ParentId":2025,"Name":"V/F
+        and F/V Converters","ProductCount":134,"Children":[]},{"CategoryId":693,"ParentId":2025,"Name":"Voltage
+        Reference","ProductCount":8464,"Children":[]},{"CategoryId":739,"ParentId":2025,"Name":"Voltage
+        Regulators - DC DC Switching Regulators","ProductCount":37061,"Children":[]},{"CategoryId":776,"ParentId":2025,"Name":"Voltage
+        Regulators - Linear + Switching","ProductCount":1509,"Children":[]},{"CategoryId":757,"ParentId":2025,"Name":"Voltage
+        Regulators - Linear Regulator Controllers","ProductCount":414,"Children":[]},{"CategoryId":699,"ParentId":2025,"Name":"Voltage
+        Regulators - Linear, Low Drop Out (LDO) Regulators","ProductCount":67352,"Children":[]}]},{"CategoryId":686,"ParentId":32,"Name":"Specialized
+        ICs","ProductCount":2562,"Children":[]}]},{"CategoryId":39,"Name":"Isolators","ProductCount":29452,"Children":[{"CategoryId":901,"ParentId":39,"Name":"Digital
+        Isolators","ProductCount":5857,"Children":[]},{"CategoryId":906,"ParentId":39,"Name":"Isolators
+        - Gate Drivers","ProductCount":4505,"Children":[]},{"CategoryId":2058,"ParentId":39,"Name":"Optocouplers,
+        Optoisolators","ProductCount":18969,"Children":[{"CategoryId":902,"ParentId":2058,"Name":"Logic
+        Output Optoisolators","ProductCount":2591,"Children":[]},{"CategoryId":903,"ParentId":2058,"Name":"Transistor,
+        Photovoltaic Output Optoisolators","ProductCount":14380,"Children":[]},{"CategoryId":904,"ParentId":2058,"Name":"Triac,
+        SCR Output Optoisolators","ProductCount":1998,"Children":[]}]},{"CategoryId":905,"ParentId":39,"Name":"Special
+        Purpose Isolators","ProductCount":121,"Children":[]}]},{"CategoryId":31,"Name":"Kits","ProductCount":19823,"Children":[{"CategoryId":669,"ParentId":31,"Name":"Audio
+        Kits","ProductCount":45,"Children":[]},{"CategoryId":663,"ParentId":31,"Name":"Cable
+        Assembly Kits","ProductCount":38,"Children":[]},{"CategoryId":665,"ParentId":31,"Name":"Cables,
+        Wires - Single Conductors Kits","ProductCount":14461,"Children":[]},{"CategoryId":651,"ParentId":31,"Name":"Capacitor
+        Kits","ProductCount":802,"Children":[]},{"CategoryId":666,"ParentId":31,"Name":"Circuit
+        Protection - Assortment Kits","ProductCount":93,"Children":[]},{"CategoryId":667,"ParentId":31,"Name":"Circuit
+        Protection Kits - Fuse","ProductCount":230,"Children":[]},{"CategoryId":668,"ParentId":31,"Name":"Circuit
+        Protection Kits - TVS Diodes","ProductCount":31,"Children":[]},{"CategoryId":660,"ParentId":31,"Name":"Connector
+        Adapter Kits","ProductCount":49,"Children":[]},{"CategoryId":656,"ParentId":31,"Name":"Connector
+        Kits","ProductCount":881,"Children":[]},{"CategoryId":671,"ParentId":31,"Name":"Crystal
+        Kits","ProductCount":7,"Children":[]},{"CategoryId":659,"ParentId":31,"Name":"Discrete
+        Assortment Kits","ProductCount":44,"Children":[]},{"CategoryId":646,"ParentId":31,"Name":"EMI,
+        Filter Kits","ProductCount":216,"Children":[]},{"CategoryId":674,"ParentId":31,"Name":"Fiber
+        Optic Kits","ProductCount":83,"Children":[]},{"CategoryId":645,"ParentId":31,"Name":"Hardware
+        Kits","ProductCount":105,"Children":[]},{"CategoryId":675,"ParentId":31,"Name":"Heat
+        Shrink Tubing Kits","ProductCount":208,"Children":[]},{"CategoryId":655,"ParentId":31,"Name":"Inductor
+        Kits","ProductCount":387,"Children":[]},{"CategoryId":658,"ParentId":31,"Name":"Integrated
+        Circuits (ICs) Kits","ProductCount":69,"Children":[]},{"CategoryId":649,"ParentId":31,"Name":"Kit
+        Accessories","ProductCount":30,"Children":[]},{"CategoryId":647,"ParentId":31,"Name":"LED
+        Kits","ProductCount":54,"Children":[]},{"CategoryId":657,"ParentId":31,"Name":"Miscellaneous","ProductCount":225,"Children":[]},{"CategoryId":676,"ParentId":31,"Name":"Optics
+        - Light Pipe Kits","ProductCount":8,"Children":[]},{"CategoryId":652,"ParentId":31,"Name":"Potentiometer
+        Kits","ProductCount":32,"Children":[]},{"CategoryId":672,"ParentId":31,"Name":"Prototyping
+        Boards, Fabrication Kits","ProductCount":61,"Children":[]},{"CategoryId":653,"ParentId":31,"Name":"Resistor
+        Kits","ProductCount":578,"Children":[]},{"CategoryId":677,"ParentId":31,"Name":"RF
+        Shield Kits","ProductCount":31,"Children":[]},{"CategoryId":662,"ParentId":31,"Name":"Sensor
+        Kits","ProductCount":478,"Children":[]},{"CategoryId":650,"ParentId":31,"Name":"Static
+        Control Kit","ProductCount":374,"Children":[]},{"CategoryId":678,"ParentId":31,"Name":"Switch
+        Kits","ProductCount":53,"Children":[]},{"CategoryId":673,"ParentId":31,"Name":"Tape
+        Kits","ProductCount":31,"Children":[]},{"CategoryId":664,"ParentId":31,"Name":"Thermistor
+        Kits","ProductCount":19,"Children":[]},{"CategoryId":654,"ParentId":31,"Name":"Transformer
+        Kits","ProductCount":36,"Children":[]},{"CategoryId":661,"ParentId":31,"Name":"Wire
+        and Cable Tie Kits","ProductCount":64,"Children":[]}]},{"CategoryId":980,"Name":"Labels,
+        Signs, Barriers, Identification","ProductCount":45738,"Children":[{"CategoryId":983,"ParentId":980,"Name":"Barriers,
+        Barricades, Floor Markings, Tapes","ProductCount":1141,"Children":[]},{"CategoryId":987,"ParentId":980,"Name":"Label,
+        Sign, Barrier Accessories","ProductCount":903,"Children":[]},{"CategoryId":981,"ParentId":980,"Name":"Labels,
+        Stickers, Decals - Blank","ProductCount":14583,"Children":[]},{"CategoryId":982,"ParentId":980,"Name":"Labels,
+        Stickers, Decals - Preprinted","ProductCount":10336,"Children":[]},{"CategoryId":577,"ParentId":980,"Name":"Lockouts,
+        Padlocks","ProductCount":2119,"Children":[]},{"CategoryId":985,"ParentId":980,"Name":"Signs,
+        Nameplates, Posters","ProductCount":13145,"Children":[]},{"CategoryId":984,"ParentId":980,"Name":"Tags","ProductCount":3511,"Children":[]}]},{"CategoryId":35,"Name":"Line
+        Protection, Distribution, Backups","ProductCount":13435,"Children":[{"CategoryId":833,"ParentId":35,"Name":"DC
+        to AC (Power) Inverters","ProductCount":688,"Children":[]},{"CategoryId":830,"ParentId":35,"Name":"Line
+        Conditioners","ProductCount":70,"Children":[]},{"CategoryId":831,"ParentId":35,"Name":"Line
+        Protection, Distribution Accessories","ProductCount":5183,"Children":[]},{"CategoryId":832,"ParentId":35,"Name":"Power
+        Distribution, Surge Protectors","ProductCount":5260,"Children":[]},{"CategoryId":829,"ParentId":35,"Name":"Uninterruptible
+        Power Supply (UPS) Systems","ProductCount":2234,"Children":[]}]},{"CategoryId":46,"Name":"Magnetics
+        - Transformer, Inductor Components","ProductCount":13908,"Children":[{"CategoryId":935,"ParentId":46,"Name":"Bobbins
+        (Coil Formers), Mounts, Hardware","ProductCount":878,"Children":[]},{"CategoryId":936,"ParentId":46,"Name":"Ferrite
+        Cores","ProductCount":12059,"Children":[]},{"CategoryId":934,"ParentId":46,"Name":"Magnet
+        Wire","ProductCount":971,"Children":[]}]},{"CategoryId":47,"Name":"Maker/DIY,
+        Educational","ProductCount":2930,"Children":[{"CategoryId":937,"ParentId":47,"Name":"Books,
+        Media","ProductCount":296,"Children":[]},{"CategoryId":939,"ParentId":47,"Name":"Educational
+        Kits","ProductCount":1499,"Children":[]},{"CategoryId":941,"ParentId":47,"Name":"Gadgets,
+        Gizmos","ProductCount":135,"Children":[]},{"CategoryId":938,"ParentId":47,"Name":"Prototyping,
+        Fabrication","ProductCount":127,"Children":[]},{"CategoryId":942,"ParentId":47,"Name":"Robotics
+        Kits","ProductCount":558,"Children":[]},{"CategoryId":940,"ParentId":47,"Name":"Wearables","ProductCount":315,"Children":[]}]},{"CategoryId":24,"Name":"Memory
+        - Modules, Cards","ProductCount":15035,"Children":[{"CategoryId":505,"ParentId":24,"Name":"Memory
+        - Modules","ProductCount":2784,"Children":[]},{"CategoryId":500,"ParentId":24,"Name":"Memory
+        Card, Module Accessories","ProductCount":88,"Children":[]},{"CategoryId":501,"ParentId":24,"Name":"Memory
+        Cards","ProductCount":3291,"Children":[]},{"CategoryId":503,"ParentId":24,"Name":"Solid
+        State Drives (SSDs), Hard Disk Drives (HDDs)","ProductCount":8259,"Children":[]},{"CategoryId":502,"ParentId":24,"Name":"Specialized","ProductCount":56,"Children":[]},{"CategoryId":504,"ParentId":24,"Name":"USB
+        Flash Drives","ProductCount":557,"Children":[]}]},{"CategoryId":13,"Name":"Motors,
+        Actuators, Solenoids and Drivers","ProductCount":163236,"Children":[{"CategoryId":177,"ParentId":13,"Name":"Accessories","ProductCount":12393,"Children":[]},{"CategoryId":1157,"ParentId":13,"Name":"Electric
+        Actuators/Cylinders","ProductCount":118917,"Children":[]},{"CategoryId":181,"ParentId":13,"Name":"Motor
+        Driver Boards, Modules","ProductCount":14500,"Children":[]},{"CategoryId":178,"ParentId":13,"Name":"Motors
+        - AC, DC","ProductCount":9708,"Children":[]},{"CategoryId":180,"ParentId":13,"Name":"Solenoids","ProductCount":431,"Children":[]},{"CategoryId":179,"ParentId":13,"Name":"Stepper
+        Motors","ProductCount":2008,"Children":[]},{"CategoryId":2113,"ParentId":13,"Name":"Variable
+        Frequency Drives (VFDs, VSDs)","ProductCount":5279,"Children":[]}]},{"CategoryId":44,"Name":"Networking
+        Solutions","ProductCount":28282,"Children":[{"CategoryId":925,"ParentId":44,"Name":"Accessories","ProductCount":3704,"Children":[]},{"CategoryId":928,"ParentId":44,"Name":"Gateways,
+        Routers","ProductCount":7740,"Children":[]},{"CategoryId":929,"ParentId":44,"Name":"Media
+        Converters","ProductCount":3763,"Children":[]},{"CategoryId":926,"ParentId":44,"Name":"Miscellaneous","ProductCount":3503,"Children":[]},{"CategoryId":930,"ParentId":44,"Name":"Serial
+        Device Servers","ProductCount":1334,"Children":[]},{"CategoryId":927,"ParentId":44,"Name":"Switches,
+        Hubs","ProductCount":8238,"Children":[]}]},{"CategoryId":42,"Name":"Optical
+        Inspection Equipment","ProductCount":4432,"Children":[{"CategoryId":915,"ParentId":42,"Name":"Arms,
+        Mounts, Stands","ProductCount":138,"Children":[]},{"CategoryId":913,"ParentId":42,"Name":"Cameras","ProductCount":60,"Children":[]},{"CategoryId":916,"ParentId":42,"Name":"Eyepieces,
+        Lenses","ProductCount":136,"Children":[]},{"CategoryId":920,"ParentId":42,"Name":"Illumination
+        Sources","ProductCount":101,"Children":[]},{"CategoryId":917,"ParentId":42,"Name":"Lamps
+        - Magnifying, Task","ProductCount":883,"Children":[]},{"CategoryId":918,"ParentId":42,"Name":"Loupes,
+        Magnifiers","ProductCount":95,"Children":[]},{"CategoryId":1121,"ParentId":42,"Name":"Machine
+        Vision - Accessories","ProductCount":1084,"Children":[]},{"CategoryId":1077,"ParentId":42,"Name":"Machine
+        Vision - Lenses","ProductCount":604,"Children":[]},{"CategoryId":914,"ParentId":42,"Name":"Microscopes","ProductCount":545,"Children":[]},{"CategoryId":912,"ParentId":42,"Name":"Optical
+        Inspection Accessories","ProductCount":616,"Children":[]},{"CategoryId":919,"ParentId":42,"Name":"Video
+        Inspection Systems","ProductCount":170,"Children":[]}]},{"CategoryId":41,"Name":"Optics","ProductCount":2075,"Children":[{"CategoryId":1156,"ParentId":41,"Name":"Beamsplitters","ProductCount":39,"Children":[]},{"CategoryId":1044,"ParentId":41,"Name":"Filters","ProductCount":65,"Children":[]},{"CategoryId":2060,"ParentId":41,"Name":"Laser
+        Optics","ProductCount":279,"Children":[{"CategoryId":1042,"ParentId":2060,"Name":"Beam
+        Expanders","ProductCount":20,"Children":[]},{"CategoryId":1041,"ParentId":2060,"Name":"F-Theta
+        Lenses","ProductCount":46,"Children":[]},{"CategoryId":1048,"ParentId":2060,"Name":"Faraday
+        Isolators","ProductCount":54,"Children":[]},{"CategoryId":1043,"ParentId":2060,"Name":"Focus
+        Lenses","ProductCount":4,"Children":[]},{"CategoryId":1050,"ParentId":2060,"Name":"Laser
+        Modulators","ProductCount":93,"Children":[]},{"CategoryId":1120,"ParentId":2060,"Name":"Laser
+        Optics Accessories","ProductCount":28,"Children":[]},{"CategoryId":1049,"ParentId":2060,"Name":"Pockels
+        Cells","ProductCount":34,"Children":[]}]},{"CategoryId":1045,"ParentId":41,"Name":"Lenses","ProductCount":1478,"Children":[]},{"CategoryId":1158,"ParentId":41,"Name":"Mirrors","ProductCount":132,"Children":[]},{"CategoryId":1046,"ParentId":41,"Name":"Polarizers","ProductCount":63,"Children":[]},{"CategoryId":1122,"ParentId":41,"Name":"Prisms","ProductCount":19,"Children":[]}]},{"CategoryId":7,"Name":"Optoelectronics","ProductCount":258730,"Children":[{"CategoryId":97,"ParentId":7,"Name":"Ballasts,
+        Inverters","ProductCount":282,"Children":[]},{"CategoryId":106,"ParentId":7,"Name":"Circuit
+        Board Indicators, Arrays, Light Bars, Bar Graphs","ProductCount":7203,"Children":[]},{"CategoryId":104,"ParentId":7,"Name":"Cold
+        Cathode Fluorescent (CCFL) & UV Lamps","ProductCount":200,"Children":[]},{"CategoryId":1168,"ParentId":7,"Name":"Display
+        Backlights","ProductCount":97,"Children":[]},{"CategoryId":93,"ParentId":7,"Name":"Display
+        Bezels, Lenses","ProductCount":88,"Children":[]},{"CategoryId":114,"ParentId":7,"Name":"Display,
+        Monitor - LCD Driver/Controller","ProductCount":99,"Children":[]},{"CategoryId":127,"ParentId":7,"Name":"Electroluminescent","ProductCount":85,"Children":[]},{"CategoryId":119,"ParentId":7,"Name":"Fiber
+        Optic Attenuators","ProductCount":300,"Children":[]},{"CategoryId":117,"ParentId":7,"Name":"Fiber
+        Optic Receivers","ProductCount":360,"Children":[]},{"CategoryId":120,"ParentId":7,"Name":"Fiber
+        Optic Switches, Multiplexers, Demultiplexers","ProductCount":863,"Children":[]},{"CategoryId":118,"ParentId":7,"Name":"Fiber
+        Optic Transceiver Modules","ProductCount":26551,"Children":[]},{"CategoryId":116,"ParentId":7,"Name":"Fiber
+        Optic Transmitters - Discrete","ProductCount":223,"Children":[]},{"CategoryId":115,"ParentId":7,"Name":"Fiber
+        Optic Transmitters - Drive Circuitry Integrated","ProductCount":104,"Children":[]},{"CategoryId":1119,"ParentId":7,"Name":"HeNe
+        Laser Heads","ProductCount":25,"Children":[]},{"CategoryId":1009,"ParentId":7,"Name":"HeNe
+        Laser System Accessories","ProductCount":11,"Children":[]},{"CategoryId":1008,"ParentId":7,"Name":"HeNe
+        Laser Systems","ProductCount":31,"Children":[]},{"CategoryId":100,"ParentId":7,"Name":"Holders,
+        Spacers, Standoffs","ProductCount":3785,"Children":[]},{"CategoryId":101,"ParentId":7,"Name":"Incandescent,
+        Neon Lamps","ProductCount":2542,"Children":[]},{"CategoryId":109,"ParentId":7,"Name":"Lamp
+        Replacements","ProductCount":1450,"Children":[]},{"CategoryId":966,"ParentId":7,"Name":"Laser
+        Diode, Module Accessories","ProductCount":84,"Children":[]},{"CategoryId":1055,"ParentId":7,"Name":"Laser
+        Diodes, Laser Modules - Laser Delivery, Laser Fibers","ProductCount":1017,"Children":[]},{"CategoryId":95,"ParentId":7,"Name":"Laser
+        Diodes, Modules","ProductCount":1656,"Children":[]},{"CategoryId":99,"ParentId":7,"Name":"LCD,
+        OLED Character and Numeric","ProductCount":2043,"Children":[]},{"CategoryId":107,"ParentId":7,"Name":"LCD,
+        OLED, Graphic","ProductCount":5246,"Children":[]},{"CategoryId":126,"ParentId":7,"Name":"LED
+        Addressable, Specialty","ProductCount":604,"Children":[]},{"CategoryId":92,"ParentId":7,"Name":"LED
+        Character and Numeric","ProductCount":5356,"Children":[]},{"CategoryId":111,"ParentId":7,"Name":"LED
+        COBs, Engines, Modules, Strips","ProductCount":38758,"Children":[]},{"CategoryId":125,"ParentId":7,"Name":"LED
+        Color Lighting","ProductCount":5646,"Children":[]},{"CategoryId":96,"ParentId":7,"Name":"LED
+        Dot Matrix and Cluster","ProductCount":609,"Children":[]},{"CategoryId":94,"ParentId":7,"Name":"LED
+        Emitters - Infrared, UV, Visible","ProductCount":4498,"Children":[]},{"CategoryId":105,"ParentId":7,"Name":"LED
+        Indication - Discrete","ProductCount":25843,"Children":[]},{"CategoryId":129,"ParentId":7,"Name":"LED
+        Lighting Kits","ProductCount":65,"Children":[]},{"CategoryId":121,"ParentId":7,"Name":"LED
+        Thermal Products","ProductCount":331,"Children":[]},{"CategoryId":124,"ParentId":7,"Name":"LED
+        White Lighting","ProductCount":46302,"Children":[]},{"CategoryId":112,"ParentId":7,"Name":"Lenses","ProductCount":3690,"Children":[]},{"CategoryId":102,"ParentId":7,"Name":"Light
+        Pipes","ProductCount":35084,"Children":[]},{"CategoryId":1161,"ParentId":7,"Name":"Lighting
+        Fixtures","ProductCount":162,"Children":[]},{"CategoryId":98,"ParentId":7,"Name":"Optoelectronics
+        Accessories","ProductCount":6981,"Children":[]},{"CategoryId":1047,"ParentId":7,"Name":"Optomechanical","ProductCount":479,"Children":[]},{"CategoryId":108,"ParentId":7,"Name":"Panel
+        Indicators, Pilot Lights","ProductCount":28637,"Children":[]},{"CategoryId":122,"ParentId":7,"Name":"Reflectors","ProductCount":467,"Children":[]},{"CategoryId":123,"ParentId":7,"Name":"Remote
+        Phosphor Light Source","ProductCount":269,"Children":[]},{"CategoryId":110,"ParentId":7,"Name":"Touch
+        Screen Overlays","ProductCount":221,"Children":[]},{"CategoryId":103,"ParentId":7,"Name":"Vacuum
+        Fluorescent (VFD)","ProductCount":221,"Children":[]},{"CategoryId":128,"ParentId":7,"Name":"Xenon
+        Lighting","ProductCount":162,"Children":[]}]},{"CategoryId":5,"Name":"Potentiometers,
+        Variable Resistors","ProductCount":704703,"Children":[{"CategoryId":76,"ParentId":5,"Name":"Accessories","ProductCount":160,"Children":[]},{"CategoryId":83,"ParentId":5,"Name":"Adjustable
+        Power Resistor","ProductCount":1065,"Children":[]},{"CategoryId":82,"ParentId":5,"Name":"Joystick
+        Potentiometers","ProductCount":20,"Children":[]},{"CategoryId":84,"ParentId":5,"Name":"Rotary
+        Potentiometers, Rheostats","ProductCount":670139,"Children":[]},{"CategoryId":79,"ParentId":5,"Name":"Scale
+        Dials","ProductCount":111,"Children":[]},{"CategoryId":78,"ParentId":5,"Name":"Slide
+        Potentiometers","ProductCount":14001,"Children":[]},{"CategoryId":77,"ParentId":5,"Name":"Thumbwheel
+        Potentiometers","ProductCount":385,"Children":[]},{"CategoryId":80,"ParentId":5,"Name":"Trimmer
+        Potentiometers","ProductCount":18784,"Children":[]},{"CategoryId":81,"ParentId":5,"Name":"Value
+        Display Potentiometers","ProductCount":38,"Children":[]}]},{"CategoryId":43,"Name":"Power
+        Supplies - Board Mount","ProductCount":108329,"Children":[{"CategoryId":923,"ParentId":43,"Name":"AC
+        DC Converters","ProductCount":7536,"Children":[]},{"CategoryId":921,"ParentId":43,"Name":"Board
+        Mount Power Supply Accessories","ProductCount":903,"Children":[]},{"CategoryId":922,"ParentId":43,"Name":"DC
+        DC Converters","ProductCount":99572,"Children":[]},{"CategoryId":924,"ParentId":43,"Name":"LED
+        Drivers","ProductCount":318,"Children":[]}]},{"CategoryId":8,"Name":"Power
+        Supplies - External/Internal (Off-Board)","ProductCount":81535,"Children":[{"CategoryId":135,"ParentId":8,"Name":"AC
+        AC Wall Power Adapters","ProductCount":218,"Children":[]},{"CategoryId":955,"ParentId":8,"Name":"AC
+        DC Configurable Power Supplies (Factory Assembled)","ProductCount":362,"Children":[]},{"CategoryId":134,"ParentId":8,"Name":"AC
+        DC Configurable Power Supply Chassis","ProductCount":1429,"Children":[]},{"CategoryId":136,"ParentId":8,"Name":"AC
+        DC Configurable Power Supply Modules","ProductCount":316,"Children":[]},{"CategoryId":133,"ParentId":8,"Name":"AC
+        DC Converters","ProductCount":44367,"Children":[]},{"CategoryId":130,"ParentId":8,"Name":"AC
+        DC Desktop, Wall Power Adapters","ProductCount":15306,"Children":[]},{"CategoryId":132,"ParentId":8,"Name":"DC
+        DC Converters","ProductCount":6127,"Children":[]},{"CategoryId":131,"ParentId":8,"Name":"External/Internal
+        Power Supply Accessories","ProductCount":2084,"Children":[]},{"CategoryId":1064,"ParentId":8,"Name":"Industrial,
+        DIN Rail Power Supplies","ProductCount":5110,"Children":[]},{"CategoryId":137,"ParentId":8,"Name":"LED
+        Drivers","ProductCount":5144,"Children":[]},{"CategoryId":138,"ParentId":8,"Name":"Power
+        over Ethernet (PoE)","ProductCount":1072,"Children":[]}]},{"CategoryId":30,"Name":"Prototyping,
+        Fabrication Products","ProductCount":6590,"Children":[{"CategoryId":943,"ParentId":30,"Name":"3D
+        Printers","ProductCount":79,"Children":[]},{"CategoryId":956,"ParentId":30,"Name":"3D
+        Printing Accessories","ProductCount":417,"Children":[]},{"CategoryId":944,"ParentId":30,"Name":"3D
+        Printing Materials","ProductCount":1282,"Children":[]},{"CategoryId":635,"ParentId":30,"Name":"Accessories","ProductCount":355,"Children":[]},{"CategoryId":643,"ParentId":30,"Name":"Adapter,
+        Breakout Boards","ProductCount":1710,"Children":[]},{"CategoryId":641,"ParentId":30,"Name":"Card
+        Extenders","ProductCount":60,"Children":[]},{"CategoryId":642,"ParentId":30,"Name":"Coating,
+        Grease, Repair","ProductCount":403,"Children":[]},{"CategoryId":1159,"ParentId":30,"Name":"Custom
+        Configurable PCB''s","ProductCount":12,"Children":[]},{"CategoryId":644,"ParentId":30,"Name":"Drill
+        Bits, End Mills","ProductCount":516,"Children":[]},{"CategoryId":639,"ParentId":30,"Name":"Etching
+        and Fabrication Equipment","ProductCount":56,"Children":[]},{"CategoryId":640,"ParentId":30,"Name":"Jumper
+        Wire","ProductCount":641,"Children":[]},{"CategoryId":972,"ParentId":30,"Name":"PCB
+        Routers, Milling Machines","ProductCount":34,"Children":[]},{"CategoryId":636,"ParentId":30,"Name":"Prototype
+        Boards Perforated","ProductCount":724,"Children":[]},{"CategoryId":637,"ParentId":30,"Name":"Prototype
+        Boards Unperforated","ProductCount":66,"Children":[]},{"CategoryId":638,"ParentId":30,"Name":"Solderless
+        Breadboards","ProductCount":235,"Children":[]}]},{"CategoryId":14,"Name":"Relays","ProductCount":80705,"Children":[{"CategoryId":182,"ParentId":14,"Name":"Accessories","ProductCount":6051,"Children":[]},{"CategoryId":962,"ParentId":14,"Name":"Automotive
+        Relays","ProductCount":2392,"Children":[]},{"CategoryId":969,"ParentId":14,"Name":"Contactors
+        (Electromechanical)","ProductCount":14177,"Children":[]},{"CategoryId":970,"ParentId":14,"Name":"Contactors
+        (Solid State)","ProductCount":851,"Children":[]},{"CategoryId":963,"ParentId":14,"Name":"High
+        Frequency (RF) Relays","ProductCount":1012,"Children":[]},{"CategoryId":190,"ParentId":14,"Name":"I/O
+        Relay Module Racks","ProductCount":233,"Children":[]},{"CategoryId":186,"ParentId":14,"Name":"I/O
+        Relay Modules","ProductCount":832,"Children":[]},{"CategoryId":188,"ParentId":14,"Name":"Power
+        Relays, Over 2 Amps","ProductCount":32983,"Children":[]},{"CategoryId":964,"ParentId":14,"Name":"Reed
+        Relays","ProductCount":1635,"Children":[]},{"CategoryId":184,"ParentId":14,"Name":"Relay
+        Sockets","ProductCount":1958,"Children":[]},{"CategoryId":189,"ParentId":14,"Name":"Signal
+        Relays, Up to 2 Amps","ProductCount":9101,"Children":[]},{"CategoryId":183,"ParentId":14,"Name":"Solid
+        State Relays (SSR)","ProductCount":9480,"Children":[]}]},{"CategoryId":2,"Name":"Resistors","ProductCount":1792179,"Children":[{"CategoryId":51,"ParentId":2,"Name":"Accessories","ProductCount":186,"Children":[]},{"CategoryId":54,"ParentId":2,"Name":"Chassis
+        Mount Resistors","ProductCount":31146,"Children":[]},{"CategoryId":52,"ParentId":2,"Name":"Chip
+        Resistor - Surface Mount","ProductCount":1189239,"Children":[]},{"CategoryId":56,"ParentId":2,"Name":"Precision
+        Trimmed Resistors","ProductCount":9,"Children":[]},{"CategoryId":50,"ParentId":2,"Name":"Resistor
+        Networks, Arrays","ProductCount":44699,"Children":[]},{"CategoryId":55,"ParentId":2,"Name":"Specialized
+        Resistors","ProductCount":1610,"Children":[]},{"CategoryId":53,"ParentId":2,"Name":"Through
+        Hole Resistors","ProductCount":525290,"Children":[]}]},{"CategoryId":37,"Name":"RF
+        and Wireless","ProductCount":105936,"Children":[{"CategoryId":852,"ParentId":37,"Name":"Attenuators","ProductCount":7328,"Children":[]},{"CategoryId":849,"ParentId":37,"Name":"Balun","ProductCount":1178,"Children":[]},{"CategoryId":866,"ParentId":37,"Name":"RF
+        Accessories","ProductCount":5434,"Children":[]},{"CategoryId":860,"ParentId":37,"Name":"RF
+        Amplifiers","ProductCount":6432,"Children":[]},{"CategoryId":875,"ParentId":37,"Name":"RF
+        Antennas","ProductCount":19279,"Children":[]},{"CategoryId":1010,"ParentId":37,"Name":"RF
+        Circulators and Isolators","ProductCount":3713,"Children":[]},{"CategoryId":878,"ParentId":37,"Name":"RF
+        Demodulators","ProductCount":225,"Children":[]},{"CategoryId":862,"ParentId":37,"Name":"RF
+        Detectors","ProductCount":509,"Children":[]},{"CategoryId":850,"ParentId":37,"Name":"RF
+        Directional Coupler","ProductCount":3227,"Children":[]},{"CategoryId":876,"ParentId":37,"Name":"RF
+        Front End (LNA + PA)","ProductCount":668,"Children":[]},{"CategoryId":863,"ParentId":37,"Name":"RF
+        Misc ICs and Modules","ProductCount":3282,"Children":[]},{"CategoryId":861,"ParentId":37,"Name":"RF
+        Mixers","ProductCount":1525,"Children":[]},{"CategoryId":877,"ParentId":37,"Name":"RF
+        Modulators","ProductCount":202,"Children":[]},{"CategoryId":868,"ParentId":37,"Name":"RF
+        Multiplexers","ProductCount":1456,"Children":[]},{"CategoryId":864,"ParentId":37,"Name":"RF
+        Power Controller ICs","ProductCount":51,"Children":[]},{"CategoryId":851,"ParentId":37,"Name":"RF
+        Power Dividers/Splitters","ProductCount":1737,"Children":[]},{"CategoryId":873,"ParentId":37,"Name":"RF
+        Receiver, Transmitter, and Transceiver Finished Units","ProductCount":2376,"Children":[]},{"CategoryId":870,"ParentId":37,"Name":"RF
+        Receivers","ProductCount":1822,"Children":[]},{"CategoryId":867,"ParentId":37,"Name":"RF
+        Shields","ProductCount":14478,"Children":[]},{"CategoryId":865,"ParentId":37,"Name":"RF
+        Switches","ProductCount":6372,"Children":[]},{"CategoryId":879,"ParentId":37,"Name":"RF
+        Transceiver ICs","ProductCount":5182,"Children":[]},{"CategoryId":872,"ParentId":37,"Name":"RF
+        Transceiver Modules and Modems","ProductCount":7954,"Children":[]},{"CategoryId":871,"ParentId":37,"Name":"RF
+        Transmitters","ProductCount":600,"Children":[]},{"CategoryId":945,"ParentId":37,"Name":"RFI
+        and EMI - Contacts, Fingerstock and Gaskets","ProductCount":3723,"Children":[]},{"CategoryId":869,"ParentId":37,"Name":"RFI
+        and EMI - Shielding and Absorbing Materials","ProductCount":3269,"Children":[]},{"CategoryId":857,"ParentId":37,"Name":"RFID
+        Accessories","ProductCount":249,"Children":[]},{"CategoryId":855,"ParentId":37,"Name":"RFID
+        Antennas","ProductCount":520,"Children":[]},{"CategoryId":854,"ParentId":37,"Name":"RFID
+        Reader Modules","ProductCount":607,"Children":[]},{"CategoryId":853,"ParentId":37,"Name":"RFID
+        Transponders, Tags","ProductCount":831,"Children":[]},{"CategoryId":880,"ParentId":37,"Name":"RFID,
+        RF Access, Monitoring ICs","ProductCount":1634,"Children":[]},{"CategoryId":1163,"ParentId":37,"Name":"Subscriber
+        Identification Module (SIM) Cards","ProductCount":73,"Children":[]}]},{"CategoryId":2116,"Name":"Safety
+        Products","ProductCount":26962,"Children":[{"CategoryId":2117,"ParentId":2116,"Name":"Direct
+        Human Safety","ProductCount":3522,"Children":[{"CategoryId":259,"ParentId":2117,"Name":"Personal
+        Protective Equipment (PPE)","ProductCount":3522,"Children":[]}]},{"CategoryId":2091,"ParentId":2116,"Name":"Machine
+        Safety","ProductCount":19563,"Children":[{"CategoryId":1060,"ParentId":2091,"Name":"Interlock
+        Switches","ProductCount":4049,"Children":[]},{"CategoryId":1123,"ParentId":2091,"Name":"Machine
+        Safety - Accessories","ProductCount":1387,"Children":[]},{"CategoryId":1058,"ParentId":2091,"Name":"Machine
+        Safety - Bumpers and Edges","ProductCount":95,"Children":[]},{"CategoryId":822,"ParentId":2091,"Name":"Machine
+        Safety - Controllers","ProductCount":429,"Children":[]},{"CategoryId":988,"ParentId":2091,"Name":"Machine
+        Safety - Laser Scanners","ProductCount":412,"Children":[]},{"CategoryId":959,"ParentId":2091,"Name":"Machine
+        Safety - Light Curtains, Light Grids","ProductCount":11573,"Children":[]},{"CategoryId":1057,"ParentId":2091,"Name":"Machine
+        Safety - Mats","ProductCount":123,"Children":[]},{"CategoryId":989,"ParentId":2091,"Name":"Safety
+        Relays","ProductCount":1495,"Children":[]}]},{"CategoryId":2118,"ParentId":2116,"Name":"User
+        Controlled Safety","ProductCount":3877,"Children":[{"CategoryId":968,"ParentId":2118,"Name":"Cable
+        Pull Switches","ProductCount":655,"Children":[]},{"CategoryId":1056,"ParentId":2118,"Name":"Emergency
+        Stop (E-Stop) Switches","ProductCount":3222,"Children":[]}]}]},{"CategoryId":25,"Name":"Sensors,
+        Transducers","ProductCount":201145,"Children":[{"CategoryId":539,"ParentId":25,"Name":"Color
+        Sensors","ProductCount":91,"Children":[]},{"CategoryId":525,"ParentId":25,"Name":"Current
+        Sensors","ProductCount":6413,"Children":[]},{"CategoryId":507,"ParentId":25,"Name":"Encoders","ProductCount":16096,"Children":[]},{"CategoryId":521,"ParentId":25,"Name":"Float,
+        Level Sensors","ProductCount":3817,"Children":[]},{"CategoryId":520,"ParentId":25,"Name":"Flow
+        Sensors","ProductCount":848,"Children":[]},{"CategoryId":531,"ParentId":25,"Name":"Force
+        Sensors, Load Cells","ProductCount":1250,"Children":[]},{"CategoryId":530,"ParentId":25,"Name":"Gas
+        Sensors","ProductCount":1855,"Children":[]},{"CategoryId":529,"ParentId":25,"Name":"Humidity,
+        Moisture Sensors","ProductCount":1696,"Children":[]},{"CategoryId":538,"ParentId":25,"Name":"IrDA
+        Transceiver Modules","ProductCount":140,"Children":[]},{"CategoryId":522,"ParentId":25,"Name":"LVDT
+        Transducers (Linear Variable Differential Transformer)","ProductCount":567,"Children":[]},{"CategoryId":2068,"ParentId":25,"Name":"Magnetic
+        Sensors","ProductCount":8958,"Children":[{"CategoryId":553,"ParentId":2068,"Name":"Compass,
+        Magnetic Field (Modules)","ProductCount":35,"Children":[]},{"CategoryId":554,"ParentId":2068,"Name":"Linear,
+        Compass (ICs)","ProductCount":1460,"Children":[]},{"CategoryId":552,"ParentId":2068,"Name":"Position,
+        Proximity, Speed (Modules)","ProductCount":3218,"Children":[]},{"CategoryId":565,"ParentId":2068,"Name":"Switches
+        (Solid State)","ProductCount":4245,"Children":[]}]},{"CategoryId":2069,"ParentId":25,"Name":"Magnets","ProductCount":1716,"Children":[{"CategoryId":511,"ParentId":2069,"Name":"Multi
+        Purpose Magnets","ProductCount":1577,"Children":[]},{"CategoryId":566,"ParentId":2069,"Name":"Sensor
+        Matched Magnets","ProductCount":139,"Children":[]}]},{"CategoryId":2070,"ParentId":25,"Name":"Motion
+        Sensors","ProductCount":5388,"Children":[{"CategoryId":515,"ParentId":2070,"Name":"Accelerometers","ProductCount":2725,"Children":[]},{"CategoryId":555,"ParentId":2070,"Name":"Gyroscopes","ProductCount":181,"Children":[]},{"CategoryId":567,"ParentId":2070,"Name":"IMUs
+        (Inertial Measurement Units)","ProductCount":550,"Children":[]},{"CategoryId":533,"ParentId":2070,"Name":"Inclinometers","ProductCount":548,"Children":[]},{"CategoryId":534,"ParentId":2070,"Name":"Optical
+        Motion Sensors","ProductCount":740,"Children":[]},{"CategoryId":523,"ParentId":2070,"Name":"Tilt
+        Switches","ProductCount":91,"Children":[]},{"CategoryId":519,"ParentId":2070,"Name":"Vibration
+        Sensors","ProductCount":553,"Children":[]}]},{"CategoryId":551,"ParentId":25,"Name":"Multifunction","ProductCount":372,"Children":[]},{"CategoryId":2071,"ParentId":25,"Name":"Optical
+        Sensors","ProductCount":13010,"Children":[{"CategoryId":536,"ParentId":2071,"Name":"Ambient
+        Light, IR, UV Sensors","ProductCount":1051,"Children":[]},{"CategoryId":1003,"ParentId":2071,"Name":"Camera
+        Modules","ProductCount":1544,"Children":[]},{"CategoryId":542,"ParentId":2071,"Name":"Distance
+        Measuring","ProductCount":993,"Children":[]},{"CategoryId":532,"ParentId":2071,"Name":"Image
+        Sensors, Camera","ProductCount":1872,"Children":[]},{"CategoryId":540,"ParentId":2071,"Name":"Photo
+        Detectors - CdS Cells","ProductCount":89,"Children":[]},{"CategoryId":545,"ParentId":2071,"Name":"Photo
+        Detectors - Logic Output","ProductCount":144,"Children":[]},{"CategoryId":541,"ParentId":2071,"Name":"Photo
+        Detectors - Remote Receiver","ProductCount":1448,"Children":[]},{"CategoryId":543,"ParentId":2071,"Name":"Photodiodes","ProductCount":1425,"Children":[]},{"CategoryId":547,"ParentId":2071,"Name":"Photointerrupters
+        - Slot Type - Logic Output","ProductCount":999,"Children":[]},{"CategoryId":548,"ParentId":2071,"Name":"Photointerrupters
+        - Slot Type - Transistor Output","ProductCount":1294,"Children":[]},{"CategoryId":1011,"ParentId":2071,"Name":"Photonics
+        - Counters, Detectors, SPCM (Single Photon Counting Module)","ProductCount":756,"Children":[]},{"CategoryId":544,"ParentId":2071,"Name":"Phototransistors","ProductCount":847,"Children":[]},{"CategoryId":546,"ParentId":2071,"Name":"Reflective
+        - Analog Output","ProductCount":358,"Children":[]},{"CategoryId":556,"ParentId":2071,"Name":"Reflective
+        - Logic Output","ProductCount":190,"Children":[]}]},{"CategoryId":509,"ParentId":25,"Name":"Particle,
+        Dust Sensors","ProductCount":69,"Children":[]},{"CategoryId":2072,"ParentId":25,"Name":"Position
+        Sensors","ProductCount":19760,"Children":[{"CategoryId":549,"ParentId":2072,"Name":"Angle,
+        Linear Position Measuring","ProductCount":19760,"Children":[]}]},{"CategoryId":512,"ParentId":25,"Name":"Pressure
+        Sensors, Transducers","ProductCount":16186,"Children":[]},{"CategoryId":524,"ParentId":25,"Name":"Proximity
+        Sensors","ProductCount":5228,"Children":[]},{"CategoryId":563,"ParentId":25,"Name":"Proximity/Occupancy
+        Sensors Finished Units","ProductCount":642,"Children":[]},{"CategoryId":949,"ParentId":25,"Name":"Sensor
+        Cable Accessories","ProductCount":1339,"Children":[]},{"CategoryId":950,"ParentId":25,"Name":"Sensor
+        Cable Assemblies","ProductCount":7526,"Children":[]},{"CategoryId":951,"ParentId":25,"Name":"Sensor
+        Interface Junction Blocks","ProductCount":3238,"Children":[]},{"CategoryId":510,"ParentId":25,"Name":"Sensor,
+        Transducer Accessories","ProductCount":15598,"Children":[]},{"CategoryId":557,"ParentId":25,"Name":"Sensor,
+        Transducer Amplifiers","ProductCount":1550,"Children":[]},{"CategoryId":528,"ParentId":25,"Name":"Shock
+        Sensors","ProductCount":65,"Children":[]},{"CategoryId":514,"ParentId":25,"Name":"Solar
+        Cells","ProductCount":597,"Children":[]},{"CategoryId":561,"ParentId":25,"Name":"Specialized
+        Sensors","ProductCount":2574,"Children":[]},{"CategoryId":559,"ParentId":25,"Name":"Strain
+        Gauges","ProductCount":1481,"Children":[]},{"CategoryId":2075,"ParentId":25,"Name":"Temperature
+        Sensors","ProductCount":60951,"Children":[{"CategoryId":518,"ParentId":2075,"Name":"Analog
+        and Digital Output","ProductCount":3856,"Children":[]},{"CategoryId":508,"ParentId":2075,"Name":"NTC
+        Thermistors","ProductCount":12423,"Children":[]},{"CategoryId":550,"ParentId":2075,"Name":"PTC
+        Thermistors","ProductCount":1011,"Children":[]},{"CategoryId":535,"ParentId":2075,"Name":"RTD
+        (Resistance Temperature Detector)","ProductCount":5598,"Children":[]},{"CategoryId":513,"ParentId":2075,"Name":"Thermocouples,
+        Temperature Probes","ProductCount":35891,"Children":[]},{"CategoryId":516,"ParentId":2075,"Name":"Thermostats
+        - Mechanical","ProductCount":1372,"Children":[]},{"CategoryId":564,"ParentId":2075,"Name":"Thermostats
+        - Solid State","ProductCount":800,"Children":[]}]},{"CategoryId":971,"ParentId":25,"Name":"Touch
+        Sensors","ProductCount":107,"Children":[]},{"CategoryId":527,"ParentId":25,"Name":"Ultrasonic
+        Receivers, Transmitters","ProductCount":2017,"Children":[]}]},{"CategoryId":18,"Name":"Soldering,
+        Desoldering, Rework Products","ProductCount":14475,"Children":[{"CategoryId":265,"ParentId":18,"Name":"Desoldering
+        Braid, Wick, Pumps","ProductCount":460,"Children":[]},{"CategoryId":266,"ParentId":18,"Name":"Flux,
+        Flux Remover","ProductCount":450,"Children":[]},{"CategoryId":269,"ParentId":18,"Name":"Fume,
+        Smoke Extraction","ProductCount":152,"Children":[]},{"CategoryId":267,"ParentId":18,"Name":"Holders,
+        Stands","ProductCount":160,"Children":[]},{"CategoryId":262,"ParentId":18,"Name":"Solder","ProductCount":1782,"Children":[]},{"CategoryId":263,"ParentId":18,"Name":"Solder
+        Sponges, Tip Cleaners","ProductCount":146,"Children":[]},{"CategoryId":272,"ParentId":18,"Name":"Solder
+        Stencils, Templates","ProductCount":647,"Children":[]},{"CategoryId":268,"ParentId":18,"Name":"Soldering
+        Irons, Tweezers, Handles","ProductCount":464,"Children":[]},{"CategoryId":261,"ParentId":18,"Name":"Soldering,
+        Desoldering, Rework Accessories","ProductCount":4295,"Children":[]},{"CategoryId":264,"ParentId":18,"Name":"Soldering,
+        Desoldering, Rework Stations","ProductCount":484,"Children":[]},{"CategoryId":270,"ParentId":18,"Name":"Soldering,
+        Desoldering, Rework Tips, Nozzles","ProductCount":5435,"Children":[]}]},{"CategoryId":15,"Name":"Switches","ProductCount":289130,"Children":[{"CategoryId":192,"ParentId":15,"Name":"Accessories","ProductCount":16981,"Children":[]},{"CategoryId":215,"ParentId":15,"Name":"Accessories
+        - Boots, Seals","ProductCount":727,"Children":[]},{"CategoryId":210,"ParentId":15,"Name":"Accessories
+        - Caps","ProductCount":5480,"Children":[]},{"CategoryId":2076,"ParentId":15,"Name":"Configurable
+        Switch Components","ProductCount":24063,"Children":[{"CategoryId":206,"ParentId":2076,"Name":"Configurable
+        Switch Bodies","ProductCount":19202,"Children":[]},{"CategoryId":207,"ParentId":2076,"Name":"Configurable
+        Switch Contact Blocks","ProductCount":1717,"Children":[]},{"CategoryId":208,"ParentId":2076,"Name":"Configurable
+        Switch Illumination Sources","ProductCount":1285,"Children":[]},{"CategoryId":209,"ParentId":2076,"Name":"Configurable
+        Switch Lens","ProductCount":1859,"Children":[]}]},{"CategoryId":194,"ParentId":15,"Name":"DIP
+        Switches","ProductCount":8605,"Children":[]},{"CategoryId":153,"ParentId":15,"Name":"Disconnect
+        Switch Components","ProductCount":3718,"Children":[]},{"CategoryId":196,"ParentId":15,"Name":"Keylock
+        Switches","ProductCount":17638,"Children":[]},{"CategoryId":202,"ParentId":15,"Name":"Keypad
+        Switches","ProductCount":516,"Children":[]},{"CategoryId":198,"ParentId":15,"Name":"Limit
+        Switches","ProductCount":25234,"Children":[]},{"CategoryId":193,"ParentId":15,"Name":"Magnetic,
+        Reed Switches","ProductCount":952,"Children":[]},{"CategoryId":204,"ParentId":15,"Name":"Navigation
+        Switches, Joystick","ProductCount":2203,"Children":[]},{"CategoryId":212,"ParentId":15,"Name":"Programmable
+        Display Switches","ProductCount":40,"Children":[]},{"CategoryId":199,"ParentId":15,"Name":"Pushbutton
+        Switches","ProductCount":73220,"Children":[]},{"CategoryId":211,"ParentId":15,"Name":"Pushbutton
+        Switches - Hall Effect","ProductCount":90,"Children":[]},{"CategoryId":195,"ParentId":15,"Name":"Rocker
+        Switches","ProductCount":41643,"Children":[]},{"CategoryId":200,"ParentId":15,"Name":"Rotary
+        Switches","ProductCount":7533,"Children":[]},{"CategoryId":203,"ParentId":15,"Name":"Selector
+        Switches","ProductCount":19690,"Children":[]},{"CategoryId":213,"ParentId":15,"Name":"Slide
+        Switches","ProductCount":3609,"Children":[]},{"CategoryId":197,"ParentId":15,"Name":"Tactile
+        Switches","ProductCount":14198,"Children":[]},{"CategoryId":214,"ParentId":15,"Name":"Thumbwheel
+        Switches","ProductCount":491,"Children":[]},{"CategoryId":201,"ParentId":15,"Name":"Toggle
+        Switches","ProductCount":22499,"Children":[]}]},{"CategoryId":40,"Name":"Tapes,
+        Adhesives, Materials","ProductCount":31650,"Children":[{"CategoryId":961,"ParentId":40,"Name":"2D
+        Materials","ProductCount":96,"Children":[]},{"CategoryId":907,"ParentId":40,"Name":"Accessories","ProductCount":241,"Children":[]},{"CategoryId":965,"ParentId":40,"Name":"Films","ProductCount":450,"Children":[]},{"CategoryId":909,"ParentId":40,"Name":"Glue,
+        Adhesives, Applicators","ProductCount":3985,"Children":[]},{"CategoryId":2107,"ParentId":40,"Name":"Raw
+        Materials - Composites","ProductCount":623,"Children":[]},{"CategoryId":2106,"ParentId":40,"Name":"Raw
+        Materials - Felt","ProductCount":38,"Children":[]},{"CategoryId":2105,"ParentId":40,"Name":"Raw
+        Materials - Foam","ProductCount":1626,"Children":[]},{"CategoryId":2108,"ParentId":40,"Name":"Raw
+        Materials - Graphite","ProductCount":38,"Children":[]},{"CategoryId":2110,"ParentId":40,"Name":"Raw
+        Materials - Plastics","ProductCount":5923,"Children":[]},{"CategoryId":2109,"ParentId":40,"Name":"Raw
+        Materials - Rubber","ProductCount":4151,"Children":[]},{"CategoryId":908,"ParentId":40,"Name":"Tape","ProductCount":14360,"Children":[]},{"CategoryId":910,"ParentId":40,"Name":"Tape
+        Dispensers","ProductCount":119,"Children":[]}]},{"CategoryId":29,"Name":"Test
+        and Measurement","ProductCount":44287,"Children":[{"CategoryId":1017,"ParentId":29,"Name":"Data
+        Acquisition (DAQ)","ProductCount":2279,"Children":[]},{"CategoryId":1018,"ParentId":29,"Name":"GPIB
+        & Communications","ProductCount":132,"Children":[]},{"CategoryId":613,"ParentId":29,"Name":"Test
+        and Measurement Accessories","ProductCount":9552,"Children":[]},{"CategoryId":2078,"ParentId":29,"Name":"Test
+        Equipment","ProductCount":16459,"Children":[{"CategoryId":958,"ParentId":2078,"Name":"Combination
+        Sets","ProductCount":135,"Children":[]},{"CategoryId":634,"ParentId":2078,"Name":"Electrical
+        Testers, Current Probes","ProductCount":1370,"Children":[]},{"CategoryId":632,"ParentId":2078,"Name":"Environmental
+        Testers","ProductCount":3660,"Children":[]},{"CategoryId":1019,"ParentId":2078,"Name":"Force/Torque
+        Gauges","ProductCount":294,"Children":[]},{"CategoryId":630,"ParentId":2078,"Name":"Function
+        Generators","ProductCount":224,"Children":[]},{"CategoryId":615,"ParentId":2078,"Name":"Multimeters","ProductCount":804,"Children":[]},{"CategoryId":614,"ParentId":2078,"Name":"Oscilloscopes","ProductCount":658,"Children":[]},{"CategoryId":633,"ParentId":2078,"Name":"Power
+        Supplies (Test, Bench)","ProductCount":2167,"Children":[]},{"CategoryId":631,"ParentId":2078,"Name":"RF
+        Analyzers","ProductCount":153,"Children":[]},{"CategoryId":618,"ParentId":2078,"Name":"Specialty
+        Equipment","ProductCount":6041,"Children":[]},{"CategoryId":619,"ParentId":2078,"Name":"Variable
+        Transformers","ProductCount":953,"Children":[]}]},{"CategoryId":2079,"ParentId":29,"Name":"Test
+        Leads","ProductCount":13094,"Children":[{"CategoryId":623,"ParentId":2079,"Name":"Alligator,
+        Crocodile, Heavy Duty Clips","ProductCount":758,"Children":[]},{"CategoryId":627,"ParentId":2079,"Name":"Banana,
+        Meter Interface","ProductCount":2800,"Children":[]},{"CategoryId":625,"ParentId":2079,"Name":"BNC
+        Interface","ProductCount":342,"Children":[]},{"CategoryId":620,"ParentId":2079,"Name":"Grabbers,
+        Hooks","ProductCount":477,"Children":[]},{"CategoryId":624,"ParentId":2079,"Name":"IC
+        Clips","ProductCount":165,"Children":[]},{"CategoryId":626,"ParentId":2079,"Name":"Jumper,
+        Specialty","ProductCount":790,"Children":[]},{"CategoryId":628,"ParentId":2079,"Name":"Kits,
+        Assortments","ProductCount":253,"Children":[]},{"CategoryId":629,"ParentId":2079,"Name":"Oscilloscope
+        Probes","ProductCount":483,"Children":[]},{"CategoryId":621,"ParentId":2079,"Name":"Thermocouples,
+        Temperature Probes","ProductCount":7026,"Children":[]}]},{"CategoryId":616,"ParentId":29,"Name":"Test
+        Points","ProductCount":408,"Children":[]},{"CategoryId":622,"ParentId":29,"Name":"Test
+        Probe Tips","ProductCount":609,"Children":[]},{"CategoryId":617,"ParentId":29,"Name":"Thermometers","ProductCount":1754,"Children":[]}]},{"CategoryId":17,"Name":"Tools","ProductCount":179694,"Children":[{"CategoryId":948,"ParentId":17,"Name":"Abrasives
+        and Surface Conditioning Products","ProductCount":16788,"Children":[]},{"CategoryId":227,"ParentId":17,"Name":"Accessories","ProductCount":16574,"Children":[]},{"CategoryId":245,"ParentId":17,"Name":"Assorted
+        Tool Kits","ProductCount":1428,"Children":[]},{"CategoryId":1023,"ParentId":17,"Name":"Brushes","ProductCount":18,"Children":[]},{"CategoryId":260,"ParentId":17,"Name":"Chemicals,
+        Cleaners","ProductCount":684,"Children":[]},{"CategoryId":2111,"ParentId":17,"Name":"Crimpers,
+        Applicators, Presses","ProductCount":72343,"Children":[{"CategoryId":232,"ParentId":2111,"Name":"Crimp
+        Heads, Die Sets","ProductCount":5273,"Children":[]},{"CategoryId":250,"ParentId":2111,"Name":"Crimper,
+        Applicator, Press Accessories","ProductCount":49245,"Children":[]},{"CategoryId":228,"ParentId":2111,"Name":"Crimpers,
+        Applicators, Presses","ProductCount":17825,"Children":[]}]},{"CategoryId":2080,"ParentId":17,"Name":"Dispensing
+        Equipment","ProductCount":2701,"Children":[{"CategoryId":990,"ParentId":2080,"Name":"Applicators,
+        Dispensers","ProductCount":138,"Children":[]},{"CategoryId":991,"ParentId":2080,"Name":"Bottles,
+        Syringes","ProductCount":689,"Children":[]},{"CategoryId":271,"ParentId":2080,"Name":"Tips,
+        Nozzles","ProductCount":1874,"Children":[]}]},{"CategoryId":241,"ParentId":17,"Name":"Excavators,
+        Hooks, Picks, Probes, Tuning Tools","ProductCount":209,"Children":[]},{"CategoryId":256,"ParentId":17,"Name":"Fiber
+        Optics and Accessories","ProductCount":747,"Children":[]},{"CategoryId":237,"ParentId":17,"Name":"Flashlights","ProductCount":313,"Children":[]},{"CategoryId":246,"ParentId":17,"Name":"Hammers","ProductCount":647,"Children":[]},{"CategoryId":255,"ParentId":17,"Name":"Heat
+        Guns, Torches, Accessories","ProductCount":1186,"Children":[]},{"CategoryId":257,"ParentId":17,"Name":"Hex,
+        Torx Keys","ProductCount":1481,"Children":[]},{"CategoryId":229,"ParentId":17,"Name":"Insertion,
+        Extraction","ProductCount":3153,"Children":[]},{"CategoryId":242,"ParentId":17,"Name":"Knives,
+        Scissors, Cutting Tools","ProductCount":1631,"Children":[]},{"CategoryId":1111,"ParentId":17,"Name":"Paint
+        Supplies","ProductCount":99,"Children":[]},{"CategoryId":243,"ParentId":17,"Name":"Pliers","ProductCount":2634,"Children":[]},{"CategoryId":1112,"ParentId":17,"Name":"Pressure
+        Washers","ProductCount":6,"Children":[]},{"CategoryId":244,"ParentId":17,"Name":"Punchdown,
+        Blades","ProductCount":170,"Children":[]},{"CategoryId":248,"ParentId":17,"Name":"Punches","ProductCount":375,"Children":[]},{"CategoryId":2081,"ParentId":17,"Name":"Screwdrivers,
+        Nut Drivers and Sets","ProductCount":12564,"Children":[{"CategoryId":236,"ParentId":2081,"Name":"Screw
+        and Nut Driver Bits, Blades and Handles","ProductCount":5604,"Children":[]},{"CategoryId":249,"ParentId":2081,"Name":"Screw
+        and Nut Driver Sets","ProductCount":2247,"Children":[]},{"CategoryId":239,"ParentId":2081,"Name":"Screw
+        and Nut Drivers","ProductCount":4713,"Children":[]}]},{"CategoryId":2082,"ParentId":17,"Name":"Socket
+        and Socket Handles","ProductCount":9065,"Children":[{"CategoryId":247,"ParentId":2082,"Name":"Socket
+        Sets","ProductCount":966,"Children":[]},{"CategoryId":251,"ParentId":2082,"Name":"Sockets,
+        Handles","ProductCount":8099,"Children":[]}]},{"CategoryId":233,"ParentId":17,"Name":"Specialized
+        Tools","ProductCount":20785,"Children":[]},{"CategoryId":238,"ParentId":17,"Name":"Spiral
+        Wrap, Expandable Sleeving","ProductCount":51,"Children":[]},{"CategoryId":252,"ParentId":17,"Name":"Staking
+        Tools","ProductCount":58,"Children":[]},{"CategoryId":1113,"ParentId":17,"Name":"Tool
+        Bags, Boxes and Cabinets","ProductCount":512,"Children":[]},{"CategoryId":240,"ParentId":17,"Name":"Tweezers","ProductCount":2584,"Children":[]},{"CategoryId":235,"ParentId":17,"Name":"Vacuums","ProductCount":133,"Children":[]},{"CategoryId":253,"ParentId":17,"Name":"Vises","ProductCount":116,"Children":[]},{"CategoryId":234,"ParentId":17,"Name":"Wire
+        Cutters","ProductCount":2359,"Children":[]},{"CategoryId":230,"ParentId":17,"Name":"Wire
+        Strippers and Accessories","ProductCount":1611,"Children":[]},{"CategoryId":254,"ParentId":17,"Name":"Wire
+        Tie Guns and Accessories","ProductCount":268,"Children":[]},{"CategoryId":231,"ParentId":17,"Name":"Wire
+        Wrap","ProductCount":66,"Children":[]},{"CategoryId":2083,"ParentId":17,"Name":"Workbenches,
+        Stations and Accessories","ProductCount":777,"Children":[{"CategoryId":1115,"ParentId":2083,"Name":"Workbench
+        and Station Accessories","ProductCount":239,"Children":[]},{"CategoryId":1114,"ParentId":2083,"Name":"Workbenches
+        and Stations","ProductCount":538,"Children":[]}]},{"CategoryId":258,"ParentId":17,"Name":"Wrenches","ProductCount":5558,"Children":[]}]},{"CategoryId":11,"Name":"Transformers","ProductCount":18685,"Children":[{"CategoryId":161,"ParentId":11,"Name":"Accessories","ProductCount":200,"Children":[]},{"CategoryId":162,"ParentId":11,"Name":"Audio
+        Transformers","ProductCount":948,"Children":[]},{"CategoryId":163,"ParentId":11,"Name":"Current
+        Sense Transformers","ProductCount":2952,"Children":[]},{"CategoryId":167,"ParentId":11,"Name":"Isolation
+        Transformers and Autotransformers, Step Up, Step Down","ProductCount":706,"Children":[]},{"CategoryId":164,"ParentId":11,"Name":"Power
+        Transformers","ProductCount":6897,"Children":[]},{"CategoryId":166,"ParentId":11,"Name":"Pulse
+        Transformers","ProductCount":5063,"Children":[]},{"CategoryId":165,"ParentId":11,"Name":"Specialty
+        Transformers","ProductCount":259,"Children":[]},{"CategoryId":168,"ParentId":11,"Name":"Switching
+        Converter, SMPS Transformers","ProductCount":1660,"Children":[]}]},{"CategoryId":1,"Name":"Uncategorized","ProductCount":175145,"Children":[{"CategoryId":48,"ParentId":1,"Name":"Unclassified","ProductCount":175145,"Children":[]}]}],"SearchLocaleUsed":{"Site":"US","Language":"en","Currency":"USD"}}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '987'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/categories/28
+  response:
+    body:
+      string: '{"Category":{"CategoryId":28,"Name":"Anti-Static, ESD, Clean Room Products","ProductCount":8963,"Children":[{"CategoryId":605,"ParentId":28,"Name":"Anti-Static,
+        ESD Bags, Materials","ProductCount":1279,"Children":[]},{"CategoryId":610,"ParentId":28,"Name":"Anti-Static,
+        ESD Clothing","ProductCount":1278,"Children":[]},{"CategoryId":607,"ParentId":28,"Name":"Anti-Static,
+        ESD Device Containers","ProductCount":1142,"Children":[]},{"CategoryId":606,"ParentId":28,"Name":"Anti-Static,
+        ESD Grounding Mats","ProductCount":1489,"Children":[]},{"CategoryId":604,"ParentId":28,"Name":"Anti-Static,
+        ESD Straps, Grounding Cords","ProductCount":820,"Children":[]},{"CategoryId":603,"ParentId":28,"Name":"Anti-Static,
+        ESD, Clean Room Accessories","ProductCount":1336,"Children":[]},{"CategoryId":611,"ParentId":28,"Name":"Clean
+        Room Swabs and Brushes","ProductCount":341,"Children":[]},{"CategoryId":608,"ParentId":28,"Name":"Clean
+        Room Treatments, Cleaners, Wipes","ProductCount":413,"Children":[]},{"CategoryId":609,"ParentId":28,"Name":"Ionizer
+        Equipment","ProductCount":345,"Children":[]},{"CategoryId":1016,"ParentId":28,"Name":"Modular
+        ESD Desks, Workstations","ProductCount":109,"Children":[]},{"CategoryId":612,"ParentId":28,"Name":"Monitors,
+        Testers","ProductCount":411,"Children":[]}]},"SearchLocaleUsed":{"Site":"US","Language":"en","Currency":"USD"}}'
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '986'
+    status:
+      code: 200
+      message: OK
+version: 1

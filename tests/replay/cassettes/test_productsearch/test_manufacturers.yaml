@@ -1,0 +1,1512 @@
+interactions:
+- request:
+    body: REDACTED
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://api.digikey.com/v1/oauth2/token
+  response:
+    body:
+      string: '{"access_token": "REDACTED", "expires_in": 599, "token_type": "Bearer"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - REDACTED
+      X-DIGIKEY-Client-Id:
+      - REDACTED
+      X-DIGIKEY-Locale-Currency:
+      - USD
+      X-DIGIKEY-Locale-Site:
+      - US
+    method: GET
+    uri: https://api.digikey.com/products/v4/search/manufacturers
+  response:
+    body:
+      string: "{\"Manufacturers\":[{\"Id\":2322,\"Name\":\"1GLOBAL\"},{\"Id\":4350,\"Name\":\"2J
+        Antennas\"},{\"Id\":6182,\"Name\":\"3-5 Power Electronics GmbH\"},{\"Id\":5709,\"Name\":\"3DMakerpro\"},{\"Id\":2276,\"Name\":\"3G
+        Shielding Specialties LP\"},{\"Id\":6211,\"Name\":\"3L Coils\"},{\"Id\":19,\"Name\":\"3M\"},{\"Id\":1067,\"Name\":\"3M
+        (TC)\"},{\"Id\":5368,\"Name\":\"3M Healthcare\"},{\"Id\":2089,\"Name\":\"3M
+        Touch Systems\"},{\"Id\":5503,\"Name\":\"3PEAK\"},{\"Id\":4900,\"Name\":\"3RLab,
+        Inc.\"},{\"Id\":5280,\"Name\":\"3S (Solid State System)\"},{\"Id\":2114,\"Name\":\"4D
+        LCD Pty Ltd\"},{\"Id\":1613,\"Name\":\"4D Systems Pty Ltd\"},{\"Id\":6052,\"Name\":\"4XEM\"},{\"Id\":3082,\"Name\":\"5G
+        HUB\"},{\"Id\":3745,\"Name\":\"7STARLAKE\"},{\"Id\":4876,\"Name\":\"80/20,
+        LLC\"},{\"Id\":600509,\"Name\":\"A.M.K. Magnetics Inc\"},{\"Id\":3715,\"Name\":\"A&D
+        Engineering\"},{\"Id\":602001,\"Name\":\"ABB Control\"},{\"Id\":6308,\"Name\":\"ABB
+        Electrification (Thomas and Betts)\"},{\"Id\":6463,\"Name\":\"ABBATRON\"},{\"Id\":601780,\"Name\":\"Abbotec\"},{\"Id\":4163,\"Name\":\"ABC
+        Taiwan Electronics Corp.\"},{\"Id\":1662,\"Name\":\"ABLIC Inc.\"},{\"Id\":535,\"Name\":\"Abracon
+        LLC\"},{\"Id\":6290,\"Name\":\"Abracon LLC\"},{\"Id\":4637,\"Name\":\"Absolute
+        Process Instruments Inc.\"},{\"Id\":5148,\"Name\":\"AC Connectors\"},{\"Id\":2352,\"Name\":\"AC
+        Electronics\"},{\"Id\":3479,\"Name\":\"AC Tasarim\"},{\"Id\":602240,\"Name\":\"AC
+        WORKS\xAE\"},{\"Id\":3642,\"Name\":\"Accelerated Memory Production, Inc.\"},{\"Id\":2910,\"Name\":\"ACCES
+        I/O Products, Inc.\"},{\"Id\":4151,\"Name\":\"Accessories for America\"},{\"Id\":1891,\"Name\":\"Acconeer
+        AB\"},{\"Id\":602450,\"Name\":\"Accsense\"},{\"Id\":6103,\"Name\":\"Accuenergy\"},{\"Id\":4178,\"Name\":\"Accurate
+        Screw Machine\"},{\"Id\":602136,\"Name\":\"Accuride\"},{\"Id\":600303,\"Name\":\"AccuTherm\u2122\"},{\"Id\":5792,\"Name\":\"Ace
+        Controls\"},{\"Id\":2955,\"Name\":\"Aceinna Electric Inc.\"},{\"Id\":2783,\"Name\":\"ACEINNA,
+        Inc.\"},{\"Id\":4294,\"Name\":\"Aces Connectors\"},{\"Id\":134,\"Name\":\"ACL
+        Staticide Inc\"},{\"Id\":601651,\"Name\":\"Acme Electric\"},{\"Id\":196,\"Name\":\"Acme
+        Electric/Amveco/Actown\"},{\"Id\":602086,\"Name\":\"Aconno\"},{\"Id\":5006,\"Name\":\"Acopian
+        Power Supplies\"},{\"Id\":4232,\"Name\":\"Acroname\"},{\"Id\":601997,\"Name\":\"ACTEK
+        MANUFACTURING\"},{\"Id\":600497,\"Name\":\"Acti\"},{\"Id\":3294,\"Name\":\"Actinius
+        B.V.\"},{\"Id\":600512,\"Name\":\"Action Pump\"},{\"Id\":2495,\"Name\":\"Actuonix
+        Motion Devices Inc\"},{\"Id\":600393,\"Name\":\"Acudor\"},{\"Id\":602288,\"Name\":\"Acute
+        Technology, Inc.\"},{\"Id\":1528,\"Name\":\"Adafruit Industries LLC\"},{\"Id\":2342,\"Name\":\"Adam
+        Equipment\"},{\"Id\":2057,\"Name\":\"Adam Tech\"},{\"Id\":6307,\"Name\":\"Adamczewski
+        Elektronische Messtechnik GmbH\"},{\"Id\":6427,\"Name\":\"Adams Magnetic Products\"},{\"Id\":602366,\"Name\":\"Adaptaflex\"},{\"Id\":602359,\"Name\":\"Adapter
+        Technology\"},{\"Id\":4670,\"Name\":\"ADATA\"},{\"Id\":600395,\"Name\":\"Adcraft\"},{\"Id\":5631,\"Name\":\"ADDA
+        USA INC\"},{\"Id\":2098,\"Name\":\"Adels-Contact\"},{\"Id\":600184,\"Name\":\"Adeunis
+        RF\"},{\"Id\":601781,\"Name\":\"ADI Electronics\"},{\"Id\":602481,\"Name\":\"Adler
+        Electric\"},{\"Id\":600489,\"Name\":\"ADLINK Technology\"},{\"Id\":6668,\"Name\":\"ADLINK
+        Technology Inc.\"},{\"Id\":4127,\"Name\":\"Adoretek\"},{\"Id\":2837,\"Name\":\"ADSANTEC\"},{\"Id\":2534,\"Name\":\"Advance
+        Circuits\"},{\"Id\":2533,\"Name\":\"Advance Circuits Quick Turn\"},{\"Id\":600368,\"Name\":\"Advance
+        IR\"},{\"Id\":2162,\"Name\":\"Advanced Cable Ties, Inc.\"},{\"Id\":5812,\"Name\":\"Advanced
+        Energy\"},{\"Id\":3227,\"Name\":\"Advanced Fiber Resources (Wuhan), Ltd.\"},{\"Id\":1014,\"Name\":\"Advanced
+        Linear Devices Inc.\"},{\"Id\":600061,\"Name\":\"Advanced Micro Devices\"},{\"Id\":2451,\"Name\":\"Advanced
+        Micro Lites\"},{\"Id\":209,\"Name\":\"Advanced Photonix\"},{\"Id\":602273,\"Name\":\"Advanced
+        Prototype Molding\"},{\"Id\":684,\"Name\":\"Advanced Thermal Solutions Inc.\"},{\"Id\":5995,\"Name\":\"Advanced-Connectek
+        USA\"},{\"Id\":2963,\"Name\":\"Advantech\"},{\"Id\":1588,\"Name\":\"Advantech
+        Corp\"},{\"Id\":2084,\"Name\":\"Advantech Corporation\"},{\"Id\":1717,\"Name\":\"Aearo
+        Technologies LLC, a 3M company\"},{\"Id\":602528,\"Name\":\"AED Battery Exchange\"},{\"Id\":5080,\"Name\":\"AEI\"},{\"Id\":5978,\"Name\":\"AEM
+        Central Semiconductor\"},{\"Id\":5673,\"Name\":\"AEM Components\"},{\"Id\":5752,\"Name\":\"AEM
+        Renaissance Electronics\"},{\"Id\":5433,\"Name\":\"AEM, Inc.\"},{\"Id\":602533,\"Name\":\"AEMC
+        Instruments\"},{\"Id\":6106,\"Name\":\"Aeons Technologies\"},{\"Id\":2905,\"Name\":\"Aeonsemi,
+        Inc\"},{\"Id\":1615,\"Name\":\"Aeris\"},{\"Id\":601782,\"Name\":\"Aero Electric\"},{\"Id\":5793,\"Name\":\"Aerotate\"},{\"Id\":600402,\"Name\":\"Aervoe\"},{\"Id\":602480,\"Name\":\"Aetek\"},{\"Id\":601653,\"Name\":\"AFL
+        (American Fujikura)\"},{\"Id\":600001,\"Name\":\"Agere Systems\"},{\"Id\":5665,\"Name\":\"AgileMwT\"},{\"Id\":4001,\"Name\":\"Agilink
+        Microwires\"},{\"Id\":5267,\"Name\":\"Agilink Microwires\"},{\"Id\":602110,\"Name\":\"Agiltron
+        Inc\"},{\"Id\":5195,\"Name\":\"Agrowtek Inc.\"},{\"Id\":4570,\"Name\":\"Ai-Thinker\"},{\"Id\":4193,\"Name\":\"AIC
+        tech Inc.\"},{\"Id\":602487,\"Name\":\"Aiconics\"},{\"Id\":600403,\"Name\":\"Aidata\"},{\"Id\":4680,\"Name\":\"AideTek\"},{\"Id\":5221,\"Name\":\"AideTek\"},{\"Id\":600404,\"Name\":\"Aignep
+        USA\"},{\"Id\":600514,\"Name\":\"Aigner\"},{\"Id\":600470,\"Name\":\"Aillen\"},{\"Id\":2272,\"Name\":\"Aim
+        Dynamics\"},{\"Id\":3491,\"Name\":\"AIMS Power\"},{\"Id\":602360,\"Name\":\"aimtec\"},{\"Id\":6685,\"Name\":\"AipuPower\"},{\"Id\":3041,\"Name\":\"Air
+        Science USA LLC\"},{\"Id\":601874,\"Name\":\"AirBorn\"},{\"Id\":4134,\"Name\":\"AirBorn,
+        a Molex company\"},{\"Id\":2944,\"Name\":\"Airgain\"},{\"Id\":1477,\"Name\":\"Airgain.\"},{\"Id\":600517,\"Name\":\"Airmaster
+        Fan\"},{\"Id\":600408,\"Name\":\"AirSpade\"},{\"Id\":2613,\"Name\":\"AIRTEC
+        Pneumatics\"},{\"Id\":4798,\"Name\":\"AIStorm, Inc\"},{\"Id\":6548,\"Name\":\"AIT
+        Sensing\"},{\"Id\":3568,\"Name\":\"Aitronics Inc. (AiT)\"},{\"Id\":1851,\"Name\":\"AK-Nord
+        GmbH\"},{\"Id\":3997,\"Name\":\"Aker Technology Corp\"},{\"Id\":2754,\"Name\":\"Aker
+        Technology Corp.\"},{\"Id\":5171,\"Name\":\"Akoustis- RFMi\"},{\"Id\":600519,\"Name\":\"Akro-Mils\"},{\"Id\":6173,\"Name\":\"akYtec\"},{\"Id\":5830,\"Name\":\"Alberko
+        Heatsinkonline\"},{\"Id\":3992,\"Name\":\"Alchemy Power Inc.\"},{\"Id\":6456,\"Name\":\"ALE\"},{\"Id\":3050,\"Name\":\"ALFA
+        Network Inc.\"},{\"Id\":5851,\"Name\":\"Alicat Scientific\"},{\"Id\":6478,\"Name\":\"ALIENCELL\"},{\"Id\":6562,\"Name\":\"Alif
+        Semiconductor\"},{\"Id\":6674,\"Name\":\"Alight Tech Inc\"},{\"Id\":4729,\"Name\":\"All
+        Electronics Hardware Inc\"},{\"Id\":4269,\"Name\":\"All In Retail\"},{\"Id\":6686,\"Name\":\"Allbesmart\"},{\"Id\":600318,\"Name\":\"ALLDAQ\"},{\"Id\":620,\"Name\":\"Allegro
+        MicroSystems\"},{\"Id\":2455,\"Name\":\"Alliance\"},{\"Id\":602383,\"Name\":\"Alliance
+        Magnets\"},{\"Id\":1450,\"Name\":\"Alliance Memory, Inc.\"},{\"Id\":1817,\"Name\":\"Alliance
+        Sensors Group\"},{\"Id\":3475,\"Name\":\"Allied Components International\"},{\"Id\":2285,\"Name\":\"Allied
+        Vision, Inc.\"},{\"Id\":600524,\"Name\":\"Allway Tools\"},{\"Id\":600204,\"Name\":\"Almit\"},{\"Id\":2003,\"Name\":\"Alorium
+        Technology, LLC\"},{\"Id\":785,\"Name\":\"Alpha & Omega Semiconductor Inc.\"},{\"Id\":601938,\"Name\":\"Alpha
+        Digital\"},{\"Id\":216,\"Name\":\"Alpha Wire\"},{\"Id\":2916,\"Name\":\"AlphaLab,
+        Inc\"},{\"Id\":4809,\"Name\":\"Alps Alpine\"},{\"Id\":4328,\"Name\":\"Altech\"},{\"Id\":1920,\"Name\":\"Altech
+        Corporation\"},{\"Id\":6572,\"Name\":\"Altelix LLC\"},{\"Id\":544,\"Name\":\"Altera\"},{\"Id\":600071,\"Name\":\"Altera\"},{\"Id\":2040,\"Name\":\"Altran
+        Magnetics, LLC\"},{\"Id\":4795,\"Name\":\"Amano Cincinnati, Inc.\"},{\"Id\":4430,\"Name\":\"Amazing\"},{\"Id\":6417,\"Name\":\"Ambient
+        Scientific\"},{\"Id\":5128,\"Name\":\"Ambiq Micro, Inc.\"},{\"Id\":4664,\"Name\":\"AMBO\"},{\"Id\":122,\"Name\":\"AMD\"},{\"Id\":4236,\"Name\":\"AMEC
+        Thermasol\"},{\"Id\":5633,\"Name\":\"AMERICAFA INC.\"},{\"Id\":2491,\"Name\":\"American
+        Beauty Tools\"},{\"Id\":2007,\"Name\":\"American Bright Optoelectronics Corporation\"},{\"Id\":288,\"Name\":\"American
+        Electrical Inc.\"},{\"Id\":600532,\"Name\":\"American Furniture Classics\"},{\"Id\":1691,\"Name\":\"American
+        Hakko Products, Inc.\"},{\"Id\":600533,\"Name\":\"American International Electric\"},{\"Id\":600534,\"Name\":\"American
+        Lock\"},{\"Id\":3331,\"Name\":\"American Micro Products\"},{\"Id\":600536,\"Name\":\"American
+        Moving Supplies\"},{\"Id\":2460,\"Name\":\"American Opto Plus LED\"},{\"Id\":1512,\"Name\":\"American
+        P.C.B Company\"},{\"Id\":6087,\"Name\":\"American Power Design Inc.\"},{\"Id\":4513,\"Name\":\"American
+        Recorder Technologies, Inc.\"},{\"Id\":600538,\"Name\":\"American Specialties,
+        Inc\"},{\"Id\":600539,\"Name\":\"American Standard\"},{\"Id\":1284,\"Name\":\"American
+        Technical Ceramics\"},{\"Id\":3385,\"Name\":\"American Zettler\"},{\"Id\":3060,\"Name\":\"Amerivacs\"},{\"Id\":2757,\"Name\":\"Amerway
+        Inc\"},{\"Id\":600540,\"Name\":\"Ames\"},{\"Id\":419,\"Name\":\"Amgis, LLC\"},{\"Id\":766,\"Name\":\"AMI
+        Semiconductor Inc.\"},{\"Id\":600543,\"Name\":\"Ammex\"},{\"Id\":6406,\"Name\":\"AMobile
+        Solutions Corp.\"},{\"Id\":600847,\"Name\":\"amp Inc\"},{\"Id\":2676,\"Name\":\"Amp'ed
+        RF Tech\"},{\"Id\":6619,\"Name\":\"AMPAK\"},{\"Id\":2991,\"Name\":\"Ampco
+        Safety Tools\"},{\"Id\":5643,\"Name\":\"Ampere Forge LLC\"},{\"Id\":45,\"Name\":\"Amphenol
+        Advanced Sensors\"},{\"Id\":600369,\"Name\":\"Amphenol Advanced Sensors (NovaSensor)\"},{\"Id\":600370,\"Name\":\"Amphenol
+        Advanced Sensors (Telaire)\"},{\"Id\":600371,\"Name\":\"Amphenol Advanced
+        Sensors (Thermometrics)\"},{\"Id\":1178,\"Name\":\"Amphenol Aerospace Operations\"},{\"Id\":600312,\"Name\":\"Amphenol
+        Air LB\"},{\"Id\":602456,\"Name\":\"Amphenol Air LB France\"},{\"Id\":601084,\"Name\":\"Amphenol
+        Air LB Germany\"},{\"Id\":5762,\"Name\":\"Amphenol Airmar\"},{\"Id\":1812,\"Name\":\"Amphenol
+        Alden Products Company\"},{\"Id\":442,\"Name\":\"Amphenol All Sensors Corporation\"},{\"Id\":1818,\"Name\":\"Amphenol
+        Anytek\"},{\"Id\":600366,\"Name\":\"Amphenol Audio\"},{\"Id\":3272,\"Name\":\"Amphenol
+        Cables on Demand\"},{\"Id\":4305,\"Name\":\"Amphenol Canada Corporation -
+        Military and Aerospace\"},{\"Id\":2317,\"Name\":\"Amphenol CDI\"},{\"Id\":626,\"Name\":\"Amphenol
+        CONEC\"},{\"Id\":600073,\"Name\":\"Amphenol Corporation\"},{\"Id\":5362,\"Name\":\"Amphenol
+        CS (High Speed IO)\"},{\"Id\":2217,\"Name\":\"Amphenol Custom Cable\"},{\"Id\":1968,\"Name\":\"Amphenol
+        Fiber Systems International\"},{\"Id\":5207,\"Name\":\"Amphenol i2s\"},{\"Id\":2188,\"Name\":\"Amphenol
+        ICC\"},{\"Id\":664,\"Name\":\"Amphenol ICC (Commercial Products)\"},{\"Id\":609,\"Name\":\"Amphenol
+        ICC (FCI)\"},{\"Id\":339,\"Name\":\"Amphenol Industrial Operations\"},{\"Id\":600321,\"Name\":\"Amphenol
+        Interconnect India\"},{\"Id\":600313,\"Name\":\"Amphenol Limited\"},{\"Id\":600314,\"Name\":\"Amphenol
+        LTD\"},{\"Id\":1754,\"Name\":\"Amphenol LTW\"},{\"Id\":4995,\"Name\":\"Amphenol
+        LTW\"},{\"Id\":602065,\"Name\":\"Amphenol Matrix\"},{\"Id\":6601,\"Name\":\"Amphenol
+        Micro-Coax\"},{\"Id\":1949,\"Name\":\"Amphenol Narda-MITEQ\"},{\"Id\":1967,\"Name\":\"Amphenol
+        NEXUS Technologies\"},{\"Id\":4239,\"Name\":\"Amphenol Onanon\"},{\"Id\":4199,\"Name\":\"Amphenol
+        PCB Piezotronics\"},{\"Id\":623,\"Name\":\"Amphenol PCD\"},{\"Id\":1032,\"Name\":\"Amphenol
+        PCD Shenzhen\"},{\"Id\":3299,\"Name\":\"Amphenol PCTEL\"},{\"Id\":1993,\"Name\":\"Amphenol
+        Piher Sensing Systems\"},{\"Id\":4306,\"Name\":\"Amphenol Positronic\"},{\"Id\":2496,\"Name\":\"Amphenol
+        Procom\"},{\"Id\":4932,\"Name\":\"Amphenol ProLabs\"},{\"Id\":115,\"Name\":\"Amphenol
+        RF\"},{\"Id\":5932,\"Name\":\"Amphenol RFS Technologies\"},{\"Id\":3241,\"Name\":\"Amphenol
+        Rochester Sensors\"},{\"Id\":1782,\"Name\":\"Amphenol SGX Sensortech\"},{\"Id\":889,\"Name\":\"Amphenol
+        Sine Systems Corp\"},{\"Id\":600315,\"Name\":\"Amphenol Socapex\"},{\"Id\":1819,\"Name\":\"Amphenol
+        Spectra-Strip\"},{\"Id\":734,\"Name\":\"Amphenol SSI Technologies\"},{\"Id\":1678,\"Name\":\"Amphenol
+        SV Microwave\"},{\"Id\":3936,\"Name\":\"Amphenol Technical Products International\"},{\"Id\":4197,\"Name\":\"Amphenol
+        The Modal Shop\"},{\"Id\":1946,\"Name\":\"Amphenol Times Microwave Systems\"},{\"Id\":4965,\"Name\":\"Amphenol
+        TPC Wire & Cable\"},{\"Id\":300637,\"Name\":\"Amphenol Tuchel Industrial\"},{\"Id\":2053,\"Name\":\"Amphenol
+        Wilcoxon Sensing Technologies\"},{\"Id\":5984,\"Name\":\"Amphenol XMA\"},{\"Id\":1603,\"Name\":\"Ampleon
+        USA Inc.\"},{\"Id\":3841,\"Name\":\"Amplifier Solutions Corp.\"},{\"Id\":705,\"Name\":\"Amprobe\"},{\"Id\":961,\"Name\":\"ams
+        OSRAM\"},{\"Id\":475,\"Name\":\"ams OSRAM AG\"},{\"Id\":4991,\"Name\":\"ams-OSRAM
+        USA INC.\"},{\"Id\":4889,\"Name\":\"Amstat Industries, Inc.\"},{\"Id\":5863,\"Name\":\"AMT
+        - Apex Material Technology Corp.\"},{\"Id\":3315,\"Name\":\"Amtery Corporation\"},{\"Id\":4489,\"Name\":\"AMTI
+        Products\"},{\"Id\":681,\"Name\":\"Amulet Technologies LLC\"},{\"Id\":601983,\"Name\":\"AMX
+        Solar\"},{\"Id\":4355,\"Name\":\"AMX3d\"},{\"Id\":600239,\"Name\":\"Anadigics\"},{\"Id\":505,\"Name\":\"Analog
+        Devices Inc.\"},{\"Id\":175,\"Name\":\"Analog Devices Inc./Maxim Integrated\"},{\"Id\":5289,\"Name\":\"Analog
+        Microelectronics\"},{\"Id\":5318,\"Name\":\"Analog Power Inc.\"},{\"Id\":3838,\"Name\":\"Analog
+        Technologies\"},{\"Id\":4022,\"Name\":\"Analog Technologies, Inc.\"},{\"Id\":3460,\"Name\":\"Anamet
+        Electrical\"},{\"Id\":3078,\"Name\":\"Anatech Electronics Inc.\"},{\"Id\":5550,\"Name\":\"Anatech
+        Microwave Company\"},{\"Id\":5783,\"Name\":\"ANavS GmbH\"},{\"Id\":4530,\"Name\":\"ANBON
+        SEMICONDUCTOR (INT'L) LIMITED\"},{\"Id\":600545,\"Name\":\"Ancra International\"},{\"Id\":4298,\"Name\":\"AnD
+        Cable Products Inc.\"},{\"Id\":1744,\"Name\":\"AnDAPT, Inc.\"},{\"Id\":2243,\"Name\":\"Anderson
+        Power Products, Inc.\"},{\"Id\":3200,\"Name\":\"Anfield Industries\"},{\"Id\":602388,\"Name\":\"Angler\"},{\"Id\":4814,\"Name\":\"Angst+Pfister
+        Sensors and Power AG\"},{\"Id\":600547,\"Name\":\"Ansell\"},{\"Id\":602122,\"Name\":\"Antaira
+        Technologies\"},{\"Id\":2480,\"Name\":\"Antenna Technologies Limited Company\"},{\"Id\":5900,\"Name\":\"Antenom
+        Antenna Technologies\"},{\"Id\":627,\"Name\":\"Antenova\"},{\"Id\":602312,\"Name\":\"Antigravity
+        Batteries\"},{\"Id\":2850,\"Name\":\"Antimatter Research, Inc.\"},{\"Id\":600300,\"Name\":\"Antistat
+        Inc\"},{\"Id\":600548,\"Name\":\"Anvil\"},{\"Id\":2994,\"Name\":\"ANYSOLAR
+        Ltd\"},{\"Id\":602369,\"Name\":\"AOS Thermal Compounds\"},{\"Id\":1582,\"Name\":\"Apacer
+        Memory America\"},{\"Id\":600549,\"Name\":\"Apache Hose & Belting\"},{\"Id\":600550,\"Name\":\"Apache
+        Mills\"},{\"Id\":679,\"Name\":\"APEM Inc.\"},{\"Id\":1240,\"Name\":\"Apex
+        Microtechnology\"},{\"Id\":72,\"Name\":\"Apex Tool Group\"},{\"Id\":3389,\"Name\":\"APG
+        Vision\"},{\"Id\":5130,\"Name\":\"ApisLogik\"},{\"Id\":335,\"Name\":\"APM
+        Hexseal\"},{\"Id\":3394,\"Name\":\"Applied Kilovolts Ltd.\"},{\"Id\":5787,\"Name\":\"Applied
+        Measurements Limited\"},{\"Id\":3484,\"Name\":\"Applied Physics Systems\"},{\"Id\":600552,\"Name\":\"Aprilaire\"},{\"Id\":2667,\"Name\":\"APS\"},{\"Id\":5875,\"Name\":\"APSEMI\"},{\"Id\":837,\"Name\":\"Aptina-ON
+        Semiconductor\"},{\"Id\":2179,\"Name\":\"Aquantia Corp\"},{\"Id\":600556,\"Name\":\"Aquaverve\"},{\"Id\":600557,\"Name\":\"AR
+        North America\"},{\"Id\":6071,\"Name\":\"Arad Connectivity\"},{\"Id\":2454,\"Name\":\"Aras
+        Power Technologies\"},{\"Id\":39,\"Name\":\"Aratas (Formerly Omron Components)\"},{\"Id\":6524,\"Name\":\"Arbol
+        Micro\"},{\"Id\":3436,\"Name\":\"Arc Suppression Technologies\"},{\"Id\":3550,\"Name\":\"ARCH
+        Electronics Corp\"},{\"Id\":4017,\"Name\":\"Archimedes Controls\"},{\"Id\":600261,\"Name\":\"ARCOL\"},{\"Id\":602290,\"Name\":\"ARCTIC\"},{\"Id\":4679,\"Name\":\"Arducam\"},{\"Id\":1050,\"Name\":\"Arduino\"},{\"Id\":3619,\"Name\":\"ARDUSIMPLE\"},{\"Id\":601804,\"Name\":\"AriCell\"},{\"Id\":3560,\"Name\":\"Arieltech\"},{\"Id\":43,\"Name\":\"Aries
+        Electronics\"},{\"Id\":3199,\"Name\":\"ARIES Embedded\"},{\"Id\":4450,\"Name\":\"ARK
+        Electronics\"},{\"Id\":3281,\"Name\":\"ArkX Laboratories\"},{\"Id\":4461,\"Name\":\"Arlitech
+        Electronic Corp.\"},{\"Id\":685,\"Name\":\"ARM\"},{\"Id\":600561,\"Name\":\"Arrow
+        Pneumatics\"},{\"Id\":600563,\"Name\":\"Arsenal\"},{\"Id\":748,\"Name\":\"Artaflex
+        Inc.\"},{\"Id\":4695,\"Name\":\"Artekit Labs\"},{\"Id\":454,\"Name\":\"ARTESYN
+        / Advanced Energy\"},{\"Id\":1078,\"Name\":\"Artesyn Embedded Technologies/Embedded
+        Power\"},{\"Id\":4545,\"Name\":\"Artisan Power\"},{\"Id\":602283,\"Name\":\"Arts
+        Energy\"},{\"Id\":3356,\"Name\":\"ASAHI CROSSLINK CORP\"},{\"Id\":974,\"Name\":\"Asahi
+        Kasei Microdevices/AKM\"},{\"Id\":6592,\"Name\":\"Asahi Rubber Inc. - EU\"},{\"Id\":4602,\"Name\":\"Ascend
+        Frequency Devices\"},{\"Id\":4712,\"Name\":\"Ascentta\"},{\"Id\":602004,\"Name\":\"ASI-Automation
+        Systems Interconnect\"},{\"Id\":3500,\"Name\":\"ASI-Ez\"},{\"Id\":3716,\"Name\":\"ASO
+        Safety Solutions\"},{\"Id\":5266,\"Name\":\"Asset Instruments Engineering
+        Ltd\"},{\"Id\":123,\"Name\":\"Assmann WSW Components\"},{\"Id\":3365,\"Name\":\"Astera
+        Labs, Inc.\"},{\"Id\":358,\"Name\":\"Astro Tool Corp\"},{\"Id\":2622,\"Name\":\"Astrodyne
+        TDI\"},{\"Id\":6455,\"Name\":\"Astrodyne TDI\"},{\"Id\":3518,\"Name\":\"Asus\"},{\"Id\":4821,\"Name\":\"ATC-Diversified
+        Electronics\"},{\"Id\":6650,\"Name\":\"ATE Electronics s.r.l.\"},{\"Id\":3441,\"Name\":\"ATGBICS\"},{\"Id\":4636,\"Name\":\"ATGBICS\"},{\"Id\":5926,\"Name\":\"Athena
+        Computer Power Corporation\"},{\"Id\":6012,\"Name\":\"ATL\"},{\"Id\":6077,\"Name\":\"Atlas
+        Power Technologies Inc.\"},{\"Id\":4152,\"Name\":\"Atlas Scientific\"},{\"Id\":5016,\"Name\":\"Atlas
+        Scientific\"},{\"Id\":313,\"Name\":\"Atmel\"},{\"Id\":2949,\"Name\":\"Atom
+        Adhesives\"},{\"Id\":600363,\"Name\":\"Atomic\"},{\"Id\":1710,\"Name\":\"ATOP
+        Technologies\"},{\"Id\":1282,\"Name\":\"ATP Electronics, Inc.\"},{\"Id\":2663,\"Name\":\"Atrix
+        International\"},{\"Id\":2665,\"Name\":\"Attabox\"},{\"Id\":4827,\"Name\":\"ATTEND
+        Technology\"},{\"Id\":602447,\"Name\":\"AU Optronics Corporation\"},{\"Id\":600106,\"Name\":\"Audience\"},{\"Id\":1922,\"Name\":\"Audiowell
+        International LLC\"},{\"Id\":4373,\"Name\":\"Auer Signal\"},{\"Id\":602420,\"Name\":\"Aufmaster\"},{\"Id\":602389,\"Name\":\"Auray\"},{\"Id\":602484,\"Name\":\"Aurel\"},{\"Id\":3572,\"Name\":\"Austin
+        American Technology\"},{\"Id\":4110,\"Name\":\"Austin Hardware\"},{\"Id\":600278,\"Name\":\"Austria
+        Micro\"},{\"Id\":6531,\"Name\":\"Automate Matrix\"},{\"Id\":4728,\"Name\":\"Automation
+        Components, Inc.\"},{\"Id\":6723,\"Name\":\"AutoMetrics\"},{\"Id\":3689,\"Name\":\"Autonics\"},{\"Id\":600260,\"Name\":\"Autonics.\"},{\"Id\":5779,\"Name\":\"Availink\"},{\"Id\":6547,\"Name\":\"AVATEC\"},{\"Id\":243,\"Name\":\"Aven
+        Tools\"},{\"Id\":6591,\"Name\":\"AVERMEDIA TECHNOLOGIES, INC.\"},{\"Id\":1543,\"Name\":\"Avery
+        Dennison RFID\"},{\"Id\":600477,\"Name\":\"AVG\"},{\"Id\":5996,\"Name\":\"AVG/EZAutomation\"},{\"Id\":2937,\"Name\":\"AVMATRIX\"},{\"Id\":5620,\"Name\":\"Avondale
+        Innovative Products LLC\"},{\"Id\":3425,\"Name\":\"AVR Global Technologies,
+        Inc\"},{\"Id\":5838,\"Name\":\"AW Coil\"},{\"Id\":5580,\"Name\":\"AWID\"},{\"Id\":601939,\"Name\":\"Axetris\"},{\"Id\":6506,\"Name\":\"AXL
+        Systems\"},{\"Id\":3387,\"Name\":\"AZ Displays\"},{\"Id\":1790,\"Name\":\"Azoteq
+        (Pty) Ltd\"},{\"Id\":2004,\"Name\":\"Azumo\"},{\"Id\":5904,\"Name\":\"AzureWave
+        Technologies, Inc.\"},{\"Id\":522,\"Name\":\"B B Battery\"},{\"Id\":5618,\"Name\":\"B.J.
+        Plastic Molding Co., Inc.\"},{\"Id\":1165,\"Name\":\"B&B SmartWorx, Inc.\"},{\"Id\":5015,\"Name\":\"B&J-USA
+        Inc.\"},{\"Id\":3600,\"Name\":\"B&J-USA, Inc.\"},{\"Id\":22,\"Name\":\"B&K
+        Precision\"},{\"Id\":3083,\"Name\":\"B+B Thermo-Technik GmbH\"},{\"Id\":600498,\"Name\":\"Baaske
+        Medical\"},{\"Id\":600578,\"Name\":\"Baldor-Reliance\"},{\"Id\":600579,\"Name\":\"Ballymore\"},{\"Id\":600580,\"Name\":\"Balt\"},{\"Id\":2391,\"Name\":\"Band
+        Solutions LLC\"},{\"Id\":2170,\"Name\":\"Banner Engineering Corporation\"},{\"Id\":3701,\"Name\":\"Bansbach
+        easylift\"},{\"Id\":1932,\"Name\":\"Bantam Tools\"},{\"Id\":600581,\"Name\":\"Bare
+        Ground\"},{\"Id\":602196,\"Name\":\"Barksdale Control Products\"},{\"Id\":4101,\"Name\":\"BARNHILL
+        BOLT CO., INC.\"},{\"Id\":600582,\"Name\":\"Barska\"},{\"Id\":6647,\"Name\":\"BARTEC
+        US Corp.\"},{\"Id\":3760,\"Name\":\"Bartels Mikrotechnik GmbH\"},{\"Id\":2893,\"Name\":\"Bartovation\"},{\"Id\":2370,\"Name\":\"BasicMicro.com\"},{\"Id\":2938,\"Name\":\"Basler
+        Inc.\"},{\"Id\":5326,\"Name\":\"Battery Alliance\"},{\"Id\":3414,\"Name\":\"Battery
+        Store, Inc.\"},{\"Id\":2788,\"Name\":\"BatteryGuy\"},{\"Id\":600585,\"Name\":\"Bayco\"},{\"Id\":4196,\"Name\":\"BBM
+        Battery\"},{\"Id\":3707,\"Name\":\"BDE Technology\"},{\"Id\":600587,\"Name\":\"BE
+        Pressure\"},{\"Id\":460,\"Name\":\"Beacon EmbeddedWorks\"},{\"Id\":600588,\"Name\":\"Beacon-Morris\"},{\"Id\":2820,\"Name\":\"BeagleBoard\"},{\"Id\":2246,\"Name\":\"Beagleboard.org\"},{\"Id\":3925,\"Name\":\"Beanair
+        Sensors\"},{\"Id\":978,\"Name\":\"BECOM Systems GmbH\"},{\"Id\":6544,\"Name\":\"Beisit\"},{\"Id\":507,\"Name\":\"Bel
+        Fuse Inc.\"},{\"Id\":1847,\"Name\":\"Bel Inc.\"},{\"Id\":179,\"Name\":\"Bel
+        Power Solutions\"},{\"Id\":135,\"Name\":\"Belden Inc.\"},{\"Id\":600342,\"Name\":\"Belden
+        Universal\"},{\"Id\":6171,\"Name\":\"Belleson\"},{\"Id\":2277,\"Name\":\"Bellnix
+        Co., Ltd.\"},{\"Id\":5395,\"Name\":\"BellWether\"},{\"Id\":600107,\"Name\":\"Belton\"},{\"Id\":600595,\"Name\":\"Bemis\"},{\"Id\":600002,\"Name\":\"Benchmarq\"},{\"Id\":2902,\"Name\":\"BenchPro\"},{\"Id\":2190,\"Name\":\"Bend
+        Labs, Inc.\"},{\"Id\":600428,\"Name\":\"Benedict GmbH\"},{\"Id\":3792,\"Name\":\"Benjamin
+        VERNOUX\"},{\"Id\":602516,\"Name\":\"Bentley Harris\"},{\"Id\":4770,\"Name\":\"BeRex
+        Corp\"},{\"Id\":4704,\"Name\":\"BeRex Inc\"},{\"Id\":4842,\"Name\":\"BeRex
+        Inc\"},{\"Id\":211,\"Name\":\"Bergquist\"},{\"Id\":2145,\"Name\":\"Berkeley
+        Nuclonics Corporation (Directed Energy Inc)\"},{\"Id\":600596,\"Name\":\"Berko\"},{\"Id\":4931,\"Name\":\"BERNIER
+        Connect\"},{\"Id\":4393,\"Name\":\"Bertech\"},{\"Id\":5418,\"Name\":\"Best
+        In Batteries\"},{\"Id\":5897,\"Name\":\"Bestact Solutions Inc.\"},{\"Id\":2895,\"Name\":\"BeStar
+        Technologies, Inc.\"},{\"Id\":600599,\"Name\":\"Bestt Liebco\"},{\"Id\":600604,\"Name\":\"Better
+        Packages\"},{\"Id\":602387,\"Name\":\"BEULER\"},{\"Id\":2920,\"Name\":\"Bevco\"},{\"Id\":5951,\"Name\":\"Bevigor\"},{\"Id\":4208,\"Name\":\"Beyond
+        LED Technology\"},{\"Id\":5476,\"Name\":\"BEYONDTECH\"},{\"Id\":186,\"Name\":\"BFirst
+        Industrial\"},{\"Id\":5004,\"Name\":\"BHW Technologies\"},{\"Id\":6117,\"Name\":\"Bicker
+        Elektronik GmbH\"},{\"Id\":4282,\"Name\":\"Big Cat Cables\"},{\"Id\":600606,\"Name\":\"Big
+        D Industries\"},{\"Id\":2280,\"Name\":\"Binho LLC\"},{\"Id\":2001,\"Name\":\"BiPOM
+        Electronics, Inc.\"},{\"Id\":2282,\"Name\":\"Birk Manufacturing\"},{\"Id\":600614,\"Name\":\"Bissell
+        Commercial\"},{\"Id\":492,\"Name\":\"Bivar Inc.\"},{\"Id\":6166,\"Name\":\"BizAutom\"},{\"Id\":6494,\"Name\":\"BizLink\"},{\"Id\":600616,\"Name\":\"Black
+        Diamond\"},{\"Id\":5303,\"Name\":\"Black Oak Engineering, LLC\"},{\"Id\":600617,\"Name\":\"Blackhawk
+        By Proto\"},{\"Id\":5635,\"Name\":\"BlockMaster Electronics\"},{\"Id\":601937,\"Name\":\"Blu
+        Element\"},{\"Id\":139,\"Name\":\"Blue Earth Research\"},{\"Id\":5109,\"Name\":\"Bluelec\"},{\"Id\":602140,\"Name\":\"Bluelounge\"},{\"Id\":6539,\"Name\":\"BlueOptics
+        by CBO GmbH\"},{\"Id\":3867,\"Name\":\"Blues Wireless\"},{\"Id\":4508,\"Name\":\"Blueshift\"},{\"Id\":600621,\"Name\":\"Bluff
+        Manufacturing\"},{\"Id\":6662,\"Name\":\"Boardoza\"},{\"Id\":600624,\"Name\":\"Bobrick\"},{\"Id\":4097,\"Name\":\"Boca
+        Bearing Company\"},{\"Id\":600625,\"Name\":\"Boen\"},{\"Id\":4777,\"Name\":\"Bolton
+        Technical\"},{\"Id\":600627,\"Name\":\"Bon Tool Co.\"},{\"Id\":600343,\"Name\":\"Bondhus\"},{\"Id\":1757,\"Name\":\"Bopla
+        Enclosures\"},{\"Id\":2158,\"Name\":\"Boreas Technologies\"},{\"Id\":600628,\"Name\":\"Bosch\"},{\"Id\":6217,\"Name\":\"Bosch\"},{\"Id\":828,\"Name\":\"Bosch
+        Sensortec\"},{\"Id\":600629,\"Name\":\"Boss\"},{\"Id\":3240,\"Name\":\"BotBlox\"},{\"Id\":2071,\"Name\":\"Botron
+        Company Inc.\"},{\"Id\":601689,\"Name\":\"Bott\"},{\"Id\":5469,\"Name\":\"Boulder
+        Engineering Studio, BES\"},{\"Id\":118,\"Name\":\"Bourns Inc.\"},{\"Id\":3670,\"Name\":\"Bowman
+        Dispensers\"},{\"Id\":600632,\"Name\":\"Box Partners\"},{\"Id\":600248,\"Name\":\"Boxco\"},{\"Id\":59,\"Name\":\"Boyd
+        Laconia, LLC\"},{\"Id\":5702,\"Name\":\"Boyd Woburn\"},{\"Id\":600633,\"Name\":\"Bradley
+        Corporation\"},{\"Id\":600634,\"Name\":\"Brady\"},{\"Id\":2267,\"Name\":\"Brady
+        Corporation\"},{\"Id\":2265,\"Name\":\"Brainboxes\"},{\"Id\":602451,\"Name\":\"BrainChild\"},{\"Id\":6278,\"Name\":\"Brainchip\"},{\"Id\":6595,\"Name\":\"Brechel
+        Electronic (BE-IIS)\"},{\"Id\":600637,\"Name\":\"Brecknell\"},{\"Id\":976,\"Name\":\"Bridgelux\"},{\"Id\":2005,\"Name\":\"Bridgetek
+        Pte Ltd.\"},{\"Id\":600640,\"Name\":\"Brighton-Best\"},{\"Id\":4723,\"Name\":\"Brightworks
+        Technology, Inc\"},{\"Id\":6540,\"Name\":\"Brightworks Technology, Inc\"},{\"Id\":6474,\"Name\":\"BrisbaneSilicon\"},{\"Id\":3795,\"Name\":\"BriskHeat\"},{\"Id\":602534,\"Name\":\"BRK\"},{\"Id\":516,\"Name\":\"Broadcom
+        Limited\"},{\"Id\":3461,\"Name\":\"Broadsens Corporation\"},{\"Id\":4225,\"Name\":\"BroadWave
+        Technologies, Inc.\"},{\"Id\":4188,\"Name\":\"Brook Livin\"},{\"Id\":600647,\"Name\":\"Buckhorn\"},{\"Id\":377,\"Name\":\"Bud
+        Industries\"},{\"Id\":2390,\"Name\":\"BuildTak\"},{\"Id\":708,\"Name\":\"Bulgin\"},{\"Id\":2042,\"Name\":\"Bumper
+        Specialties Inc.\"},{\"Id\":600062,\"Name\":\"Burr Brown\"},{\"Id\":4526,\"Name\":\"BusBoard
+        Prototype Systems\"},{\"Id\":600651,\"Name\":\"Buyers Products\"},{\"Id\":5369,\"Name\":\"BYTe
+        Semiconductor\"},{\"Id\":4333,\"Name\":\"BZBGEAR\"},{\"Id\":101,\"Name\":\"C-TON
+        Industries\"},{\"Id\":6387,\"Name\":\"C/A Design\"},{\"Id\":4506,\"Name\":\"C&B/RESI\"},{\"Id\":108,\"Name\":\"C&K\"},{\"Id\":2649,\"Name\":\"c3controls\"},{\"Id\":6635,\"Name\":\"CABA
+        Tech\"},{\"Id\":600222,\"Name\":\"CableMAX\"},{\"Id\":600474,\"Name\":\"Cabur\"},{\"Id\":6293,\"Name\":\"Cactus
+        Materials Inc.\"},{\"Id\":683,\"Name\":\"Caddock Electronics Inc.\"},{\"Id\":600657,\"Name\":\"Cadet\"},{\"Id\":1768,\"Name\":\"Cal
+        Test Electronics\"},{\"Id\":4713,\"Name\":\"Cal-Chip Electronics, Inc.\"},{\"Id\":600661,\"Name\":\"Cal-Mil\"},{\"Id\":600658,\"Name\":\"Calculated
+        Industries\"},{\"Id\":1526,\"Name\":\"Calian\"},{\"Id\":600660,\"Name\":\"California
+        Air Tools\"},{\"Id\":600003,\"Name\":\"California Micro Devices\"},{\"Id\":1440,\"Name\":\"Calmark/Birtcher\"},{\"Id\":602377,\"Name\":\"Caloritech\"},{\"Id\":601654,\"Name\":\"Calrad\"},{\"Id\":4802,\"Name\":\"CalRamic
+        Technologies LLC\"},{\"Id\":6351,\"Name\":\"Calumino Pty Ltd\"},{\"Id\":5022,\"Name\":\"Cambion\"},{\"Id\":4768,\"Name\":\"Cambridge
+        GaN Devices\"},{\"Id\":4641,\"Name\":\"CamdenBoss Ltd\"},{\"Id\":601703,\"Name\":\"Camelion\"},{\"Id\":6223,\"Name\":\"Camemake\"},{\"Id\":4431,\"Name\":\"Camozzi
+        Automation\"},{\"Id\":600662,\"Name\":\"Campbell Hausfeld\"},{\"Id\":4861,\"Name\":\"Canaan
+        Semiconductor Pty Ltd\"},{\"Id\":600443,\"Name\":\"CANADUINO\xAE\"},{\"Id\":600663,\"Name\":\"Canarm\"},{\"Id\":6094,\"Name\":\"Canimal
+        Systems Inc.\"},{\"Id\":2157,\"Name\":\"Canon\"},{\"Id\":317,\"Name\":\"Cantherm\"},{\"Id\":5450,\"Name\":\"CAP-XX\"},{\"Id\":4267,\"Name\":\"CAP-XX
+        Ltd Supercapacitors\"},{\"Id\":600262,\"Name\":\"CapeScint\"},{\"Id\":3692,\"Name\":\"Caplugs\"},{\"Id\":3899,\"Name\":\"CAPTRON\"},{\"Id\":1066,\"Name\":\"Carclo
+        Technical Plastics\"},{\"Id\":370,\"Name\":\"Cardinal Components Inc.\"},{\"Id\":602361,\"Name\":\"Carl
+        Kammerling (CK Tools)\"},{\"Id\":432,\"Name\":\"Carling Technologies\"},{\"Id\":600666,\"Name\":\"Carlisle\"},{\"Id\":1864,\"Name\":\"Carlo
+        Gavazzi Inc.\"},{\"Id\":600668,\"Name\":\"Carol Brand\"},{\"Id\":601998,\"Name\":\"CARR
+        LANE MANUFACTURING\"},{\"Id\":601929,\"Name\":\"Carrdan Corporation\"},{\"Id\":600670,\"Name\":\"Carson
+        Optical\"},{\"Id\":602472,\"Name\":\"Carton Optical\"},{\"Id\":602386,\"Name\":\"Casil\"},{\"Id\":6379,\"Name\":\"CASMO
+        CABLE\"},{\"Id\":4632,\"Name\":\"Cassia Networks\"},{\"Id\":600671,\"Name\":\"Cassida
+        Corporation\"},{\"Id\":600672,\"Name\":\"Casters, Wheels & Industrial Handling\"},{\"Id\":6222,\"Name\":\"Castle
+        Creations\"},{\"Id\":602378,\"Name\":\"Cata-Dyne\"},{\"Id\":736,\"Name\":\"Catalyst
+        Semiconductor Inc.\"},{\"Id\":5694,\"Name\":\"Cavli Wireless\"},{\"Id\":6191,\"Name\":\"CAVU\"},{\"Id\":471,\"Name\":\"CBM
+        America Corporation\"},{\"Id\":602353,\"Name\":\"CCL Security Products\"},{\"Id\":600673,\"Name\":\"CD\"},{\"Id\":4688,\"Name\":\"CDA
+        (Zhifengwei Technology)\"},{\"Id\":602130,\"Name\":\"CEC Industries\"},{\"Id\":5950,\"Name\":\"CEC
+        Xtal\"},{\"Id\":51,\"Name\":\"CEL\"},{\"Id\":3667,\"Name\":\"Celduc Inc.\"},{\"Id\":602336,\"Name\":\"Cembre\"},{\"Id\":6670,\"Name\":\"Cenfire\"},{\"Id\":3586,\"Name\":\"Central
+        Components Manufacturing\"},{\"Id\":1514,\"Name\":\"Central Semiconductor
+        Corp\"},{\"Id\":4161,\"Name\":\"Central Technologies\"},{\"Id\":5766,\"Name\":\"Centric
+        RF\"},{\"Id\":4864,\"Name\":\"Centron Technology Inc.\"},{\"Id\":600679,\"Name\":\"Century
+        Drill & Tool\"},{\"Id\":2343,\"Name\":\"Century Spring Corp\"},{\"Id\":602348,\"Name\":\"CERiO
+        Corporation\"},{\"Id\":6273,\"Name\":\"Cervoz\"},{\"Id\":4407,\"Name\":\"CESYS\"},{\"Id\":1888,\"Name\":\"CEVA
+        Technologies, Inc.\"},{\"Id\":5611,\"Name\":\"CFSensor\"},{\"Id\":4645,\"Name\":\"CGS
+        Tape\"},{\"Id\":1040,\"Name\":\"CH Products\"},{\"Id\":600683,\"Name\":\"Chadko\"},{\"Id\":5066,\"Name\":\"Chair
+        Master\"},{\"Id\":2603,\"Name\":\"Challenge Electronics\"},{\"Id\":600686,\"Name\":\"Chapin\"},{\"Id\":6655,\"Name\":\"Chauron
+        Technology\"},{\"Id\":600688,\"Name\":\"Checkers Industrial Products\"},{\"Id\":565,\"Name\":\"Chemi-Con\"},{\"Id\":3189,\"Name\":\"Chempure
+        Brand Chemicals\"},{\"Id\":75,\"Name\":\"Chemtronics\"},{\"Id\":600691,\"Name\":\"Cherne\"},{\"Id\":1644,\"Name\":\"Cherry
+        Americas LLC\"},{\"Id\":3014,\"Name\":\"Cheval\"},{\"Id\":600692,\"Name\":\"Chicago
+        Lighthouse\"},{\"Id\":600693,\"Name\":\"Chicago Pneumatic\"},{\"Id\":4191,\"Name\":\"Chinsan
+        (Elite)\"},{\"Id\":315,\"Name\":\"Chip Quik Inc.\"},{\"Id\":2376,\"Name\":\"Chip
+        Shine / CSRF\"},{\"Id\":600056,\"Name\":\"Chipcon\"},{\"Id\":602258,\"Name\":\"Chiplus\"},{\"Id\":5388,\"Name\":\"Chipsee\"},{\"Id\":602143,\"Name\":\"Chipsen\"},{\"Id\":6505,\"Name\":\"CHK
+        Power Quality Pty Ltd\"},{\"Id\":2150,\"Name\":\"Chogori Technologies Inc.\"},{\"Id\":2661,\"Name\":\"ChromeLED\"},{\"Id\":6725,\"Name\":\"CHY-TECH
+        (H.K.) INDUSTRIAL CO., LIMITED\"},{\"Id\":1233,\"Name\":\"Cicoil\"},{\"Id\":116,\"Name\":\"Cinch
+        Connectivity Solutions\"},{\"Id\":367,\"Name\":\"Cinch Connectivity Solutions
+        AIM-Cambridge\"},{\"Id\":24,\"Name\":\"Cinch Connectivity Solutions Johnson\"},{\"Id\":652,\"Name\":\"Cinch
+        Connectivity Solutions Midwest Microwave\"},{\"Id\":1255,\"Name\":\"Cinch
+        Connectivity Solutions Semflex\"},{\"Id\":1097,\"Name\":\"Cinch Connectivity
+        Solutions Trompeter\"},{\"Id\":2034,\"Name\":\"Cincon Electronics Co. LTD\"},{\"Id\":5913,\"Name\":\"Circuit
+        Concepts, LLC\"},{\"Id\":3728,\"Name\":\"Circuit Design\"},{\"Id\":3090,\"Name\":\"Circuit
+        Dojo\"},{\"Id\":5520,\"Name\":\"Circuit Insights, LLC\"},{\"Id\":980,\"Name\":\"Circuitco
+        Electronics LLC\"},{\"Id\":598,\"Name\":\"Cirrus Logic Inc.\"},{\"Id\":601861,\"Name\":\"CISCO\"},{\"Id\":600420,\"Name\":\"Cisco
+        Systems, Inc.\"},{\"Id\":2449,\"Name\":\"CIT Relay and Switch\"},{\"Id\":3723,\"Name\":\"CITEL\"},{\"Id\":1642,\"Name\":\"Citizen\"},{\"Id\":300,\"Name\":\"Citizen
+        Finedevice Co Ltd\"},{\"Id\":1933,\"Name\":\"City Technology\"},{\"Id\":600697,\"Name\":\"Classic
+        Coffee Concepts\"},{\"Id\":600699,\"Name\":\"Clauss\"},{\"Id\":4654,\"Name\":\"CLIFF
+        Electronic Components Ltd\"},{\"Id\":600703,\"Name\":\"Clift Industries\"},{\"Id\":601899,\"Name\":\"Club3D\"},{\"Id\":2216,\"Name\":\"CML
+        Innovative Technologies LTD\"},{\"Id\":2032,\"Name\":\"CML Micro\"},{\"Id\":4330,\"Name\":\"CMOS
+        SENSOR INC.\"},{\"Id\":1175,\"Name\":\"CNC Tech\"},{\"Id\":6169,\"Name\":\"Cnlinko\"},{\"Id\":600281,\"Name\":\"CO-NETIC\xAE
+        AA CABLE SHIELD\xAE\"},{\"Id\":600706,\"Name\":\"Coast\"},{\"Id\":4442,\"Name\":\"Coax
+        Connectors Ltd\"},{\"Id\":6581,\"Name\":\"Cobb Technology\"},{\"Id\":5162,\"Name\":\"Cocom
+        Consumer Electronics Ltd\"},{\"Id\":4044,\"Name\":\"CODACA\"},{\"Id\":600707,\"Name\":\"Codelocks\"},{\"Id\":5754,\"Name\":\"CODIXX
+        AG\"},{\"Id\":3456,\"Name\":\"Coex\"},{\"Id\":4870,\"Name\":\"Coherent\"},{\"Id\":2457,\"Name\":\"Coilcraft\"},{\"Id\":600028,\"Name\":\"Coilmx\"},{\"Id\":602346,\"Name\":\"Cole
+        Hersee\"},{\"Id\":4158,\"Name\":\"Cologne Chip\"},{\"Id\":25,\"Name\":\"Comair
+        Rotron\"},{\"Id\":641,\"Name\":\"Comchip Technology\"},{\"Id\":2283,\"Name\":\"Comet
+        America, LP\"},{\"Id\":600710,\"Name\":\"Comfort Zone\"},{\"Id\":600711,\"Name\":\"Commercial
+        Zone\"},{\"Id\":4946,\"Name\":\"Commonlands\"},{\"Id\":3131,\"Name\":\"Compass
+        Instruments\"},{\"Id\":5693,\"Name\":\"Component Basics\"},{\"Id\":6249,\"Name\":\"Comport
+        Data Inc.\"},{\"Id\":4771,\"Name\":\"CompuCablePlusUSA\"},{\"Id\":5412,\"Name\":\"CompuCablePlusUSA\"},{\"Id\":6389,\"Name\":\"Compulab\"},{\"Id\":5393,\"Name\":\"Computer
+        Components Inc\"},{\"Id\":600713,\"Name\":\"Comstar\"},{\"Id\":1835,\"Name\":\"Comus
+        International\"},{\"Id\":602547,\"Name\":\"Concentric International\"},{\"Id\":2395,\"Name\":\"Concord
+        Electronics\"},{\"Id\":2079,\"Name\":\"Conductive Containers, Inc.\"},{\"Id\":2210,\"Name\":\"ConductRF\"},{\"Id\":600258,\"Name\":\"Conesys\"},{\"Id\":600004,\"Name\":\"Conexant\"},{\"Id\":809,\"Name\":\"ConnectBlue\"},{\"Id\":3477,\"Name\":\"Connective
+        Peripherals Pte Ltd\"},{\"Id\":222,\"Name\":\"Connor Winfield\"},{\"Id\":600714,\"Name\":\"Conntek\"},{\"Id\":4598,\"Name\":\"Conquer\"},{\"Id\":2080,\"Name\":\"Conta-Clip,
+        Inc.\"},{\"Id\":6447,\"Name\":\"Contacthings Solution\"},{\"Id\":2717,\"Name\":\"Continental
+        Battery Systems\"},{\"Id\":602144,\"Name\":\"Continental Control Systems\"},{\"Id\":600716,\"Name\":\"Continental
+        Dynamics\"},{\"Id\":602411,\"Name\":\"Contrel\"},{\"Id\":3732,\"Name\":\"ControlAir\"},{\"Id\":2907,\"Name\":\"ControlByWeb\"},{\"Id\":468,\"Name\":\"Conxall/Switchcraft\"},{\"Id\":5791,\"Name\":\"Cookiecad\"},{\"Id\":602089,\"Name\":\"CoolCAD\"},{\"Id\":2671,\"Name\":\"Coolgear\"},{\"Id\":4165,\"Name\":\"Cooling
+        Source\"},{\"Id\":4846,\"Name\":\"Coolmag TC\"},{\"Id\":2643,\"Name\":\"Cooltron
+        Industrial Supply\"},{\"Id\":600720,\"Name\":\"Cooper-Atkins\"},{\"Id\":539,\"Name\":\"Copeland
+        Communications Inc.\"},{\"Id\":4015,\"Name\":\"Copper Mountain Technologies\"},{\"Id\":3920,\"Name\":\"CoreHW
+        Semiconductor Ltd\"},{\"Id\":3103,\"Name\":\"CoreLED Systems, LLC\"},{\"Id\":4624,\"Name\":\"Corelis\"},{\"Id\":6241,\"Name\":\"CorePower
+        Magnetics\"},{\"Id\":6163,\"Name\":\"Corleto Industries\"},{\"Id\":1572,\"Name\":\"Cornell
+        Dubilier / Illinois Capacitor\"},{\"Id\":338,\"Name\":\"Cornell Dubilier Knowles\"},{\"Id\":5876,\"Name\":\"COROS
+        BATTERY USA\"},{\"Id\":2483,\"Name\":\"Correct Products, Inc.\"},{\"Id\":601784,\"Name\":\"Corsair\"},{\"Id\":6174,\"Name\":\"Cortek
+        Test Solutions\"},{\"Id\":600722,\"Name\":\"Cortina Safety\"},{\"Id\":1776,\"Name\":\"Cosel
+        USA, Inc.\"},{\"Id\":602538,\"Name\":\"COSELSYNC\"},{\"Id\":601891,\"Name\":\"Cotek\"},{\"Id\":306,\"Name\":\"Coto
+        Technology\"},{\"Id\":600725,\"Name\":\"Coxreels\"},{\"Id\":600727,\"Name\":\"CPP\"},{\"Id\":6523,\"Name\":\"CPTI\"},{\"Id\":582,\"Name\":\"CR
+        Magnetics Inc.\"},{\"Id\":4791,\"Name\":\"CR Technology\"},{\"Id\":206,\"Name\":\"Cramer
+        Co.\"},{\"Id\":602311,\"Name\":\"CRC\"},{\"Id\":4095,\"Name\":\"Creality 3D\"},{\"Id\":90,\"Name\":\"Cree
+        LED\"},{\"Id\":602250,\"Name\":\"Cristek\"},{\"Id\":3977,\"Name\":\"Criterion
+        Instruments Limited\"},{\"Id\":1057,\"Name\":\"Critical Link LLC\"},{\"Id\":966,\"Name\":\"Crouzet\"},{\"Id\":2720,\"Name\":\"Crown
+        Matting Technologies\"},{\"Id\":6471,\"Name\":\"CRYPTNOX\"},{\"Id\":3482,\"Name\":\"Crystalfontz\"},{\"Id\":744,\"Name\":\"Crystek
+        Corporation\"},{\"Id\":3636,\"Name\":\"CS Hyde Company\"},{\"Id\":602329,\"Name\":\"CSB
+        Battery\"},{\"Id\":2539,\"Name\":\"CTi Sensors\"},{\"Id\":119,\"Name\":\"CTS
+        Electrocomponents\"},{\"Id\":60,\"Name\":\"CTS Resistor Products\"},{\"Id\":294,\"Name\":\"CTS
+        Thermal Management Products\"},{\"Id\":110,\"Name\":\"CTS-Frequency Controls\"},{\"Id\":4505,\"Name\":\"CubeMars\"},{\"Id\":6569,\"Name\":\"Cubic\"},{\"Id\":6434,\"Name\":\"Cubit\"},{\"Id\":102,\"Name\":\"CUI
+        Inc.\"},{\"Id\":6323,\"Name\":\"CUI Supply\"},{\"Id\":364,\"Name\":\"Curtis
+        Industries\"},{\"Id\":267,\"Name\":\"Curtis Instruments Inc.\"},{\"Id\":429,\"Name\":\"Custom
+        Computer Services Inc. (CCS)\"},{\"Id\":6302,\"Name\":\"Custom Heaters and
+        Research\"},{\"Id\":602019,\"Name\":\"Cutler Hammer, Div of Eaton Corp\"},{\"Id\":2987,\"Name\":\"Cvilux
+        USA\"},{\"Id\":32,\"Name\":\"CW Industries\"},{\"Id\":5201,\"Name\":\"Cyber
+        Power Systems (USA) Inc.\"},{\"Id\":3983,\"Name\":\"Cyberdata Corporation\"},{\"Id\":859,\"Name\":\"Cymbet
+        Corporation\"},{\"Id\":6220,\"Name\":\"Cypherbridge Systems\"},{\"Id\":428,\"Name\":\"Cypress
+        Semiconductor Corp\"},{\"Id\":3614,\"Name\":\"Cytron Technologies Sdn Bhd\"},{\"Id\":5063,\"Name\":\"D-Line
+        USA\"},{\"Id\":4221,\"Name\":\"D.SignT\"},{\"Id\":3040,\"Name\":\"Daburn\"},{\"Id\":49,\"Name\":\"Daburn
+        Electronics\"},{\"Id\":5806,\"Name\":\"DACO Semiconductor\"},{\"Id\":600739,\"Name\":\"Dahle\"},{\"Id\":600482,\"Name\":\"Dahua\"},{\"Id\":3773,\"Name\":\"Dakota
+        Micro, Inc.\"},{\"Id\":6504,\"Name\":\"Dalicap\"},{\"Id\":406,\"Name\":\"Dallas
+        Semiconductor\"},{\"Id\":6481,\"Name\":\"Damage Prevention Solutions\"},{\"Id\":2186,\"Name\":\"Danisense
+        A/S\"},{\"Id\":3145,\"Name\":\"Dantona Industries\"},{\"Id\":3906,\"Name\":\"Darfon\"},{\"Id\":600742,\"Name\":\"Dart\"},{\"Id\":2456,\"Name\":\"Dart
+        Controls\"},{\"Id\":2382,\"Name\":\"DATAFORTH\"},{\"Id\":602452,\"Name\":\"DataTaker\"},{\"Id\":1857,\"Name\":\"Datawave
+        LLC\"},{\"Id\":600743,\"Name\":\"Datrex\"},{\"Id\":600744,\"Name\":\"Datum\"},{\"Id\":1525,\"Name\":\"Dave
+        Embedded Systems\"},{\"Id\":1722,\"Name\":\"Davies Molding, LLC\"},{\"Id\":6027,\"Name\":\"DB
+        Products\"},{\"Id\":2104,\"Name\":\"DB Unlimited\"},{\"Id\":600746,\"Name\":\"DBI-Sala\"},{\"Id\":2721,\"Name\":\"DComponents\"},{\"Id\":5245,\"Name\":\"DComponents\"},{\"Id\":3130,\"Name\":\"ddm
+        hopt+schuler\"},{\"Id\":601994,\"Name\":\"DE-STA-CO\"},{\"Id\":6356,\"Name\":\"Dean
+        Technology Inc / DTI\"},{\"Id\":2839,\"Name\":\"Deca\"},{\"Id\":600751,\"Name\":\"Dectron\"},{\"Id\":5360,\"Name\":\"DediProg\"},{\"Id\":4157,\"Name\":\"Deepwave
+        Digital\"},{\"Id\":6156,\"Name\":\"DEEPX\"},{\"Id\":602191,\"Name\":\"Degson\"},{\"Id\":5478,\"Name\":\"DEHN\"},{\"Id\":5098,\"Name\":\"DEICO\"},{\"Id\":5678,\"Name\":\"Dekist\"},{\"Id\":197,\"Name\":\"Delevan\"},{\"Id\":3247,\"Name\":\"Delkin
+        Devices, Inc.\"},{\"Id\":714,\"Name\":\"DeLorme\"},{\"Id\":603,\"Name\":\"Delta
+        Electronics\"},{\"Id\":2035,\"Name\":\"Delta Electronics/Components\"},{\"Id\":2037,\"Name\":\"Delta
+        Electronics/Cyntec\"},{\"Id\":2039,\"Name\":\"Delta Electronics/Industrial
+        Automation\"},{\"Id\":602097,\"Name\":\"Demiurg\"},{\"Id\":5512,\"Name\":\"DENRYO\"},{\"Id\":5095,\"Name\":\"Densitron\"},{\"Id\":602442,\"Name\":\"Dent
+        Instruments\"},{\"Id\":16,\"Name\":\"Desco\"},{\"Id\":2654,\"Name\":\"Desco
+        Industries, Inc, ESDSystems\"},{\"Id\":5585,\"Name\":\"DESTACO\"},{\"Id\":602458,\"Name\":\"Detco
+        Industries Inc.\"},{\"Id\":601930,\"Name\":\"Deuer Mfg Co\"},{\"Id\":5010,\"Name\":\"Devtank
+        Limited IOT\"},{\"Id\":600755,\"Name\":\"DeWalt\"},{\"Id\":600756,\"Name\":\"DeWalt
+        Engineered by Powers\"},{\"Id\":6153,\"Name\":\"DEWETRON\"},{\"Id\":1738,\"Name\":\"DFRobot\"},{\"Id\":6162,\"Name\":\"Dgtronix\"},{\"Id\":6741,\"Name\":\"DHMSCare\"},{\"Id\":4252,\"Name\":\"di-soric\"},{\"Id\":350,\"Name\":\"Dialight\"},{\"Id\":2572,\"Name\":\"Diamond
+        Systems\"},{\"Id\":6228,\"Name\":\"Diamond Technologies Inc.\"},{\"Id\":600299,\"Name\":\"DICTOPRO\"},{\"Id\":602,\"Name\":\"Digi\"},{\"Id\":600759,\"Name\":\"Digi-Pas\"},{\"Id\":600302,\"Name\":\"Digifast\"},{\"Id\":8,\"Name\":\"DigiKey\"},{\"Id\":876,\"Name\":\"DigiKey
+        Evaluation Boards\"},{\"Id\":7,\"Name\":\"DigiKey Kit (VA)\"},{\"Id\":602135,\"Name\":\"DigiKey
+        Standard\"},{\"Id\":955,\"Name\":\"DigiKey/Cree\"},{\"Id\":1286,\"Name\":\"Digilent,
+        Inc.\"},{\"Id\":2256,\"Name\":\"Digipas Technologies Inc\"},{\"Id\":2647,\"Name\":\"Digital
+        Power Corporation\"},{\"Id\":1661,\"Name\":\"Digital Six Labs\"},{\"Id\":586,\"Name\":\"Digital
+        View Inc.\"},{\"Id\":2800,\"Name\":\"DigiVac\"},{\"Id\":600448,\"Name\":\"Digiwave\"},{\"Id\":5605,\"Name\":\"DIGMESA\"},{\"Id\":601825,\"Name\":\"DIN
+        Space Inc.\"},{\"Id\":5239,\"Name\":\"DINKLE Corporation USA\"},{\"Id\":2861,\"Name\":\"Dinkle
+        Corporation, USA\"},{\"Id\":2420,\"Name\":\"Dino-Lite\"},{\"Id\":3832,\"Name\":\"DINStorage\"},{\"Id\":6491,\"Name\":\"Dio\"},{\"Id\":31,\"Name\":\"Diodes
+        Incorporated\"},{\"Id\":5796,\"Name\":\"Dioo Microcircuits Co., Ltd.\"},{\"Id\":4878,\"Name\":\"Diotec
+        Semiconductor\"},{\"Id\":5072,\"Name\":\"DIRAK, Inc.\"},{\"Id\":1481,\"Name\":\"Display
+        Visions\"},{\"Id\":1756,\"Name\":\"Displaytech\"},{\"Id\":4761,\"Name\":\"DIT\"},{\"Id\":601655,\"Name\":\"Ditek\"},{\"Id\":2236,\"Name\":\"DiTom
+        Microwave\"},{\"Id\":2698,\"Name\":\"Divelbiss Corporation\"},{\"Id\":4369,\"Name\":\"Diwell
+        Electronics\"},{\"Id\":600764,\"Name\":\"Dixon\"},{\"Id\":3237,\"Name\":\"DK
+        Red\"},{\"Id\":4071,\"Name\":\"DK Red Quick Turn\"},{\"Id\":6069,\"Name\":\"DK
+        SENSOR CO.,LTD\"},{\"Id\":3190,\"Name\":\"DLC Display Co.,Ltd\"},{\"Id\":5622,\"Name\":\"DLK
+        Electronics\"},{\"Id\":813,\"Name\":\"DLP Design Inc.\"},{\"Id\":5153,\"Name\":\"DMC\"},{\"Id\":4910,\"Name\":\"DMX
+        Engineering\"},{\"Id\":4386,\"Name\":\"DNmicron\"},{\"Id\":601968,\"Name\":\"Dobot\"},{\"Id\":602511,\"Name\":\"DOLD\"},{\"Id\":600767,\"Name\":\"Dot
+        Shot\"},{\"Id\":2547,\"Name\":\"DOU YEE ENTERPRISES\"},{\"Id\":6579,\"Name\":\"Douglas
+        Innovation\"},{\"Id\":600192,\"Name\":\"DOW\"},{\"Id\":5191,\"Name\":\"Dow-Key
+        Microwave Corporation\"},{\"Id\":6243,\"Name\":\"DPTechnics\"},{\"Id\":5090,\"Name\":\"Dracal
+        Technologies\"},{\"Id\":2486,\"Name\":\"Dranetz Technologies Inc.\"},{\"Id\":2017,\"Name\":\"Dremel\"},{\"Id\":1018,\"Name\":\"Dresden
+        Elektronik\"},{\"Id\":602098,\"Name\":\"Drexia\"},{\"Id\":600770,\"Name\":\"Dri-Eaz\"},{\"Id\":5607,\"Name\":\"DSG-Canusa\"},{\"Id\":4051,\"Name\":\"DSI\"},{\"Id\":4836,\"Name\":\"Dunbar\"},{\"Id\":600485,\"Name\":\"Dunwell
+        Tech, Inc\"},{\"Id\":600419,\"Name\":\"Dupont\"},{\"Id\":6570,\"Name\":\"Duracap\"},{\"Id\":600776,\"Name\":\"Duracell\"},{\"Id\":3046,\"Name\":\"Duracell
+        Industrial Operations, Inc.\"},{\"Id\":600777,\"Name\":\"DuraStripe\"},{\"Id\":601691,\"Name\":\"Durham
+        Mfg.\"},{\"Id\":5257,\"Name\":\"Dusun\"},{\"Id\":5879,\"Name\":\"Dwyer\"},{\"Id\":4338,\"Name\":\"Dycotec
+        Materials Ltd\"},{\"Id\":6358,\"Name\":\"Dylan Innovations\"},{\"Id\":600782,\"Name\":\"Dymo\"},{\"Id\":600784,\"Name\":\"Dyna-Glo\"},{\"Id\":600783,\"Name\":\"Dynabrade\"},{\"Id\":601656,\"Name\":\"Dynacom\"},{\"Id\":6436,\"Name\":\"Dynament
+        Ltd.\"},{\"Id\":600785,\"Name\":\"Dynamic Fluid Components\"},{\"Id\":2602,\"Name\":\"Dynapar\"},{\"Id\":600786,\"Name\":\"Dynarex\"},{\"Id\":600787,\"Name\":\"Dyson\"},{\"Id\":5413,\"Name\":\"E
+        Connector Solutions\"},{\"Id\":1272,\"Name\":\"E Ink Corporation\"},{\"Id\":141,\"Name\":\"E-Switch\"},{\"Id\":302,\"Name\":\"E-T-A\"},{\"Id\":6057,\"Name\":\"E-tec
+        Interconnect AG\"},{\"Id\":4137,\"Name\":\"E-Z LOK\"},{\"Id\":5519,\"Name\":\"E-Z
+        LOK\"},{\"Id\":461,\"Name\":\"E-Z-Hook\"},{\"Id\":1158,\"Name\":\"E2IP Technologies
+        Inc.\"},{\"Id\":601670,\"Name\":\"Eagle Mfg\"},{\"Id\":602284,\"Name\":\"Eagle
+        Picher\"},{\"Id\":1948,\"Name\":\"EAO\"},{\"Id\":3289,\"Name\":\"Earth People
+        Technology\"},{\"Id\":2541,\"Name\":\"EarthLCD\"},{\"Id\":4627,\"Name\":\"Ease
+        Electronics\"},{\"Id\":2769,\"Name\":\"East Electronics\"},{\"Id\":6300,\"Name\":\"EasyBraid\"},{\"Id\":2041,\"Name\":\"Eaton
+        - Bussmann Electrical Division\"},{\"Id\":283,\"Name\":\"Eaton - Electronics
+        Division\"},{\"Id\":5730,\"Name\":\"Eaton Electrical\"},{\"Id\":95,\"Name\":\"Eaton
+        Tripp Lite\"},{\"Id\":6215,\"Name\":\"Eaton Wiring Devices\"},{\"Id\":4813,\"Name\":\"EBconnections\"},{\"Id\":5579,\"Name\":\"EBE
+        sensors+motion\"},{\"Id\":4478,\"Name\":\"Ebelong\"},{\"Id\":602376,\"Name\":\"Eberhard\"},{\"Id\":381,\"Name\":\"ebm-papst
+        Inc.\"},{\"Id\":5828,\"Name\":\"EC Sense\"},{\"Id\":3152,\"Name\":\"Eccel
+        Technology Limited\"},{\"Id\":3634,\"Name\":\"ECCO\"},{\"Id\":600792,\"Name\":\"Echomax\"},{\"Id\":601881,\"Name\":\"Eck\"},{\"Id\":600794,\"Name\":\"Eclipse\"},{\"Id\":4307,\"Name\":\"Eclipse
+        Magnetics Ltd\"},{\"Id\":3235,\"Name\":\"Eclipse Tools\"},{\"Id\":2773,\"Name\":\"Ecliptek\"},{\"Id\":600796,\"Name\":\"Eco-Products\"},{\"Id\":4259,\"Name\":\"eco4life\"},{\"Id\":602145,\"Name\":\"Ecohouzng\"},{\"Id\":6433,\"Name\":\"Ecolto
+        Energy\"},{\"Id\":602343,\"Name\":\"Econ Connect\"},{\"Id\":600795,\"Name\":\"Econoco\"},{\"Id\":50,\"Name\":\"ECS
+        Inc.\"},{\"Id\":2968,\"Name\":\"Ectron Corporation\"},{\"Id\":151,\"Name\":\"EDAC
+        Inc.\"},{\"Id\":4555,\"Name\":\"EDATEC\"},{\"Id\":3710,\"Name\":\"Edgelight
+        LLC\"},{\"Id\":600799,\"Name\":\"EDIC\"},{\"Id\":600800,\"Name\":\"Edsal\"},{\"Id\":2590,\"Name\":\"EDSYN
+        INCORPORATED\"},{\"Id\":600802,\"Name\":\"Edwards Signaling\"},{\"Id\":600803,\"Name\":\"Eemax\"},{\"Id\":2400,\"Name\":\"EFCO
+        Technology Corporation\"},{\"Id\":2134,\"Name\":\"Efinix, Inc.\"},{\"Id\":602410,\"Name\":\"eGauge\"},{\"Id\":4047,\"Name\":\"Egis
+        Mobile Electric\"},{\"Id\":600805,\"Name\":\"EGO\"},{\"Id\":5082,\"Name\":\"EI
+        Sensor Technologies\"},{\"Id\":2439,\"Name\":\"EIC SEMICONDUCTOR INC.\"},{\"Id\":5695,\"Name\":\"EIM
+        Technology\"},{\"Id\":4698,\"Name\":\"Eisele Connectors\"},{\"Id\":600806,\"Name\":\"Eklind
+        Tool\"},{\"Id\":600006,\"Name\":\"Elantec\"},{\"Id\":602409,\"Name\":\"Elastel\"},{\"Id\":6254,\"Name\":\"ElastiSense
+        Sensor Technology\"},{\"Id\":2615,\"Name\":\"ELBA LUBES\"},{\"Id\":6470,\"Name\":\"ELCO\"},{\"Id\":5131,\"Name\":\"Elecrow\"},{\"Id\":602488,\"Name\":\"Elector
+        Adaptor\"},{\"Id\":1413,\"Name\":\"Electric Imp Inc.\"},{\"Id\":3214,\"Name\":\"Electric
+        Motors & Specialties\"},{\"Id\":5404,\"Name\":\"Electro Terminal GmbH & Co
+        KG\"},{\"Id\":602025,\"Name\":\"Electrocube\"},{\"Id\":5757,\"Name\":\"Electrocube,
+        Inc.\"},{\"Id\":5624,\"Name\":\"ELECTROHMS\"},{\"Id\":3831,\"Name\":\"ElectronAix\"},{\"Id\":5572,\"Name\":\"Electronic
+        Prototypes\"},{\"Id\":600431,\"Name\":\"ElectronicMaster\"},{\"Id\":6098,\"Name\":\"Electronics4all.ca\"},{\"Id\":451,\"Name\":\"Electroswitch\"},{\"Id\":2591,\"Name\":\"Electrotech
+        Sales Group LLC\"},{\"Id\":3892,\"Name\":\"Electroverge\"},{\"Id\":6414,\"Name\":\"ELEGRP\"},{\"Id\":600808,\"Name\":\"Elephant\"},{\"Id\":4175,\"Name\":\"Elesa
+        USA Corporation\"},{\"Id\":5096,\"Name\":\"Elettrotek Kabel North America\"},{\"Id\":5955,\"Name\":\"ElFys,
+        Inc.\"},{\"Id\":5566,\"Name\":\"eLichens\"},{\"Id\":601671,\"Name\":\"Elkay\"},{\"Id\":602407,\"Name\":\"Elko\"},{\"Id\":5132,\"Name\":\"ELKO
+        EP North America\"},{\"Id\":602253,\"Name\":\"Ella Engineering\"},{\"Id\":3824,\"Name\":\"Ellenex\"},{\"Id\":2275,\"Name\":\"Ellsworth
+        Adhesives\"},{\"Id\":604,\"Name\":\"Elna America\"},{\"Id\":5542,\"Name\":\"Elosoft\"},{\"Id\":4388,\"Name\":\"Elpress
+        Inc.\"},{\"Id\":2366,\"Name\":\"Elprotronic Inc.\"},{\"Id\":4874,\"Name\":\"ELT
+        SENSOR CORP\"},{\"Id\":6006,\"Name\":\"Eltek Group\"},{\"Id\":602443,\"Name\":\"Elvid\"},{\"Id\":2651,\"Name\":\"EM
+        Microelectronic\"},{\"Id\":4118,\"Name\":\"EM4, LLC\"},{\"Id\":3416,\"Name\":\"EMA
+        Design Automation\"},{\"Id\":2227,\"Name\":\"EMAC, Inc.\"},{\"Id\":6765,\"Name\":\"EMASS\"},{\"Id\":600810,\"Name\":\"Embassy
+        Industries\"},{\"Id\":982,\"Name\":\"Embedded Artists\"},{\"Id\":6025,\"Name\":\"emcfixSHOP\"},{\"Id\":3928,\"Name\":\"Emcod
+        Lighting Group\"},{\"Id\":2478,\"Name\":\"EMI FILTER COMPANY\"},{\"Id\":4805,\"Name\":\"EMO
+        Systems Inc\"},{\"Id\":600430,\"Name\":\"EMOSAFE\"},{\"Id\":6597,\"Name\":\"EMS\"},{\"Id\":4414,\"Name\":\"Encitech
+        Connectors AB\"},{\"Id\":2879,\"Name\":\"Enclustra FPGA Solutions\"},{\"Id\":2239,\"Name\":\"Encoder
+        Products Company\"},{\"Id\":6135,\"Name\":\"Encore Wire\"},{\"Id\":2579,\"Name\":\"enDAQ\"},{\"Id\":867,\"Name\":\"Endeavor
+        Consulting Group, LLC\"},{\"Id\":4614,\"Name\":\"Endress+Hauser\"},{\"Id\":3743,\"Name\":\"eneflux
+        armtek magnetics inc.\"},{\"Id\":5124,\"Name\":\"ENEPAQ\"},{\"Id\":4058,\"Name\":\"Enerdoor\"},{\"Id\":547,\"Name\":\"Energizer
+        Battery Company\"},{\"Id\":6396,\"Name\":\"Energy Access Inc\"},{\"Id\":602309,\"Name\":\"Energy
+        Plus\"},{\"Id\":5064,\"Name\":\"Energy Re-Connect Ltd.\"},{\"Id\":601993,\"Name\":\"ENERPAC
+        PRODUCTION AUTOMATION\"},{\"Id\":842,\"Name\":\"EnerSys\"},{\"Id\":722,\"Name\":\"Enfis\"},{\"Id\":3941,\"Name\":\"Enhance
+        Electronics\"},{\"Id\":2140,\"Name\":\"ENM Company\"},{\"Id\":1733,\"Name\":\"enmo
+        Technologies\"},{\"Id\":1084,\"Name\":\"Enocean\"},{\"Id\":600814,\"Name\":\"Enpac\"},{\"Id\":1280,\"Name\":\"Enpirion\"},{\"Id\":4764,\"Name\":\"Entaniya\"},{\"Id\":5797,\"Name\":\"ENTITY
+        ELETTRONICA\"},{\"Id\":600472,\"Name\":\"EntryGuard\u2122\"},{\"Id\":4621,\"Name\":\"Envig\"},{\"Id\":4169,\"Name\":\"Envistia
+        Mall\"},{\"Id\":5561,\"Name\":\"EnyGy\"},{\"Id\":917,\"Name\":\"EPC\"},{\"Id\":4107,\"Name\":\"EPC
+        Space, LLC\"},{\"Id\":6588,\"Name\":\"EPCO\"},{\"Id\":6693,\"Name\":\"epidox.solutions\"},{\"Id\":5242,\"Name\":\"EPIGAP
+        OSA Photonics\"},{\"Id\":5213,\"Name\":\"Epoxy Technology\"},{\"Id\":114,\"Name\":\"EPSON\"},{\"Id\":6110,\"Name\":\"ept,
+        inc\"},{\"Id\":2367,\"Name\":\"EPtronics, Inc.\"},{\"Id\":483,\"Name\":\"Equinox
+        Technologies\"},{\"Id\":600818,\"Name\":\"Equip by T&S\"},{\"Id\":600819,\"Name\":\"Equipto\"},{\"Id\":600820,\"Name\":\"ERB
+        Safety\"},{\"Id\":600821,\"Name\":\"Ergodyne\"},{\"Id\":600823,\"Name\":\"Ergotron\"},{\"Id\":3973,\"Name\":\"Ergotronix
+        LLC\"},{\"Id\":1800,\"Name\":\"ERP Power, LLC\"},{\"Id\":600825,\"Name\":\"Escali\"},{\"Id\":602235,\"Name\":\"ESD
+        check\"},{\"Id\":600826,\"Name\":\"ESD Systems\"},{\"Id\":1904,\"Name\":\"Espressif
+        Systems\"},{\"Id\":2199,\"Name\":\"ESPROS Photonics AG\"},{\"Id\":2082,\"Name\":\"Essentra
+        Access Solutions\"},{\"Id\":145,\"Name\":\"Essentra Components\"},{\"Id\":4370,\"Name\":\"eSUN\"},{\"Id\":2387,\"Name\":\"ETA-USA\"},{\"Id\":5997,\"Name\":\"ETEK
+        MICROELECTRONICS\"},{\"Id\":5256,\"Name\":\"ETI Systems\"},{\"Id\":602448,\"Name\":\"ETM\"},{\"Id\":602428,\"Name\":\"ETR
+        Electronics\"},{\"Id\":2174,\"Name\":\"Etron Technology, Inc.\"},{\"Id\":6264,\"Name\":\"ETS
+        Alliance\"},{\"Id\":6138,\"Name\":\"Euchips Electronics Inc\"},{\"Id\":602474,\"Name\":\"euro-block\"},{\"Id\":2985,\"Name\":\"European
+        Thermodynamics Ltd\"},{\"Id\":602546,\"Name\":\"Everix\"},{\"Id\":602147,\"Name\":\"Everki\"},{\"Id\":1080,\"Name\":\"Everlight
+        Electronics Co Ltd\"},{\"Id\":819,\"Name\":\"Everspin Technologies Inc.\"},{\"Id\":6457,\"Name\":\"EVident
+        Battery\"},{\"Id\":600831,\"Name\":\"Evolution Sorbent Products\"},{\"Id\":5272,\"Name\":\"EVVO\"},{\"Id\":2447,\"Name\":\"EW
+        Electronics\"},{\"Id\":600833,\"Name\":\"Exair\"},{\"Id\":600084,\"Name\":\"Exar\"},{\"Id\":5795,\"Name\":\"Excel
+        Blades\"},{\"Id\":5916,\"Name\":\"Excel Cell Electronic Co., Ltd.\"},{\"Id\":601692,\"Name\":\"Excel
+        Dryer\"},{\"Id\":1601,\"Name\":\"Excelitas Technologies\"},{\"Id\":633,\"Name\":\"EXCELSYS
+        / Advanced Energy\"},{\"Id\":2827,\"Name\":\"Excelta Corporation\"},{\"Id\":600836,\"Name\":\"Expo\"},{\"Id\":600837,\"Name\":\"Expo
+        Engineered\"},{\"Id\":5373,\"Name\":\"EXPRESS 24 LLC\"},{\"Id\":2821,\"Name\":\"EXXELIA\"},{\"Id\":600493,\"Name\":\"EXXELIA
+        Sic Safco\"},{\"Id\":600426,\"Name\":\"EXXELIA Temex\"},{\"Id\":4857,\"Name\":\"EYang
+        Technology\"},{\"Id\":600840,\"Name\":\"EZ Lok\"},{\"Id\":602287,\"Name\":\"EZmotion\"},{\"Id\":3058,\"Name\":\"EZQuest,
+        Inc.\"},{\"Id\":776,\"Name\":\"Ezurio\"},{\"Id\":6525,\"Name\":\"F&S Elektronik
+        Systeme GmbH\"},{\"Id\":5030,\"Name\":\"Fabco-Air Inc.\"},{\"Id\":4301,\"Name\":\"Fabru
+        GmbH\"},{\"Id\":3712,\"Name\":\"FaceKey\"},{\"Id\":1934,\"Name\":\"Fair-Rite
+        Products Corp.\"},{\"Id\":600039,\"Name\":\"Fairchild Semiconductor\"},{\"Id\":261,\"Name\":\"Fairchild/ON
+        Semiconductor\"},{\"Id\":5328,\"Name\":\"Fairview Microwave\"},{\"Id\":6722,\"Name\":\"Falcomm\"},{\"Id\":2350,\"Name\":\"Falconer
+        Electronics, Inc.\"},{\"Id\":600842,\"Name\":\"FallTech\"},{\"Id\":4605,\"Name\":\"Famatel
+        USA\"},{\"Id\":1914,\"Name\":\"Fanstel Corp.\"},{\"Id\":600251,\"Name\":\"Fantom
+        Drives\"},{\"Id\":602540,\"Name\":\"FANVIL\"},{\"Id\":602083,\"Name\":\"Farecla\"},{\"Id\":600845,\"Name\":\"Fasco\"},{\"Id\":2494,\"Name\":\"Fascomp
+        Electronic Hardware\"},{\"Id\":601785,\"Name\":\"Fastener Specialty\"},{\"Id\":602274,\"Name\":\"FasTest
+        Inc.\"},{\"Id\":5700,\"Name\":\"fastSiC\"},{\"Id\":2724,\"Name\":\"FATH Inc\"},{\"Id\":5293,\"Name\":\"Faulhaber\"},{\"Id\":6008,\"Name\":\"faytech\"},{\"Id\":827,\"Name\":\"FCI
+        Deutschland GmbH\"},{\"Id\":602537,\"Name\":\"FCM Products, INC\"},{\"Id\":935,\"Name\":\"FDK
+        America, Inc.\"},{\"Id\":2466,\"Name\":\"Fechometal USA\"},{\"Id\":1706,\"Name\":\"Fedco
+        Batteries\"},{\"Id\":6659,\"Name\":\"Federal Signal\"},{\"Id\":629,\"Name\":\"FEIG
+        Electronic\"},{\"Id\":600848,\"Name\":\"Fellowes\"},{\"Id\":3958,\"Name\":\"FEMA
+        Electronics\"},{\"Id\":6603,\"Name\":\"FERMIONIC DESIGN INC\"},{\"Id\":5885,\"Name\":\"Ferrite
+        International\"},{\"Id\":5778,\"Name\":\"Ferrotec\"},{\"Id\":1779,\"Name\":\"Ferroxcube\"},{\"Id\":2171,\"Name\":\"Festo
+        Corporation\"},{\"Id\":4544,\"Name\":\"Feztek\"},{\"Id\":6454,\"Name\":\"FIBAsource\"},{\"Id\":2641,\"Name\":\"Fiber
+        Instrument Sales\"},{\"Id\":4507,\"Name\":\"FiberFin\"},{\"Id\":2444,\"Name\":\"FiberSource,
+        Inc\"},{\"Id\":2319,\"Name\":\"FIBOX Enclosures\"},{\"Id\":4833,\"Name\":\"Fibox
+        Enclosures\"},{\"Id\":5348,\"Name\":\"Fibox GmbH\"},{\"Id\":600850,\"Name\":\"Fibre-Metal\"},{\"Id\":2066,\"Name\":\"Finder
+        Relays, Inc.\"},{\"Id\":4829,\"Name\":\"Finecables\"},{\"Id\":2304,\"Name\":\"Fingerprint
+        Cards AB\"},{\"Id\":600854,\"Name\":\"Finish Thompson Inc.\"},{\"Id\":602045,\"Name\":\"Firecomms\"},{\"Id\":5965,\"Name\":\"FireXNull\"},{\"Id\":6640,\"Name\":\"Firmness\"},{\"Id\":600856,\"Name\":\"First
+        Aid Only\"},{\"Id\":4062,\"Name\":\"FIRST CABLE LINE INC.\"},{\"Id\":5496,\"Name\":\"Fischer
+        Elektronik\"},{\"Id\":600193,\"Name\":\"FISNAR\"},{\"Id\":5428,\"Name\":\"FITCO
+        nv\"},{\"Id\":510,\"Name\":\"Flambeau Inc.\"},{\"Id\":600859,\"Name\":\"Flash
+        Furniture\"},{\"Id\":2166,\"Name\":\"Flex Power Modules\"},{\"Id\":6620,\"Name\":\"Flex
+        Seal Products\"},{\"Id\":601826,\"Name\":\"Flexa\"},{\"Id\":601965,\"Name\":\"Flexcon
+        Test Connectors\"},{\"Id\":5439,\"Name\":\"FLEXEMATIC\"},{\"Id\":600467,\"Name\":\"FlexiForce\"},{\"Id\":658,\"Name\":\"Flexipanel\"},{\"Id\":3052,\"Name\":\"Flexxon
+        Pte Ltd\"},{\"Id\":600862,\"Name\":\"Flexzilla\"},{\"Id\":2832,\"Name\":\"Flip
+        Electronics\"},{\"Id\":1669,\"Name\":\"FLIR Extech\"},{\"Id\":4331,\"Name\":\"FLIR
+        Integrated Imaging Solutions, Inc.\"},{\"Id\":1577,\"Name\":\"FLIR Lepton\"},{\"Id\":602379,\"Name\":\"FLO-DRI\"},{\"Id\":6497,\"Name\":\"FLO-FAST\"},{\"Id\":600866,\"Name\":\"Florida
+        Pneumatic\"},{\"Id\":600867,\"Name\":\"Flotec\"},{\"Id\":6095,\"Name\":\"Flowline
+        Inc\"},{\"Id\":2339,\"Name\":\"Floyd Bell Inc\"},{\"Id\":600868,\"Name\":\"Fluidmaster\"},{\"Id\":614,\"Name\":\"Fluke
+        Electronics\"},{\"Id\":1986,\"Name\":\"Fluke Networks\"},{\"Id\":3638,\"Name\":\"Flusso\"},{\"Id\":6554,\"Name\":\"FluxTeq,
+        LLC\"},{\"Id\":602151,\"Name\":\"FNIRSI\"},{\"Id\":2632,\"Name\":\"Focus LCDs\"},{\"Id\":5331,\"Name\":\"Forlinx
+        Embedded\"},{\"Id\":600871,\"Name\":\"Formax\"},{\"Id\":1785,\"Name\":\"Formerica
+        Optoelectronics Inc.\"},{\"Id\":3584,\"Name\":\"Formosa Microsemi Co., Ltd.\"},{\"Id\":6762,\"Name\":\"FormRep\"},{\"Id\":6075,\"Name\":\"FORTEC
+        Integrated\"},{\"Id\":5896,\"Name\":\"FORTEC Power GmbH\"},{\"Id\":600874,\"Name\":\"Fostoria\"},{\"Id\":600875,\"Name\":\"Fowler\"},{\"Id\":631,\"Name\":\"Fox
+        Electronics\"},{\"Id\":1685,\"Name\":\"Foxconn OE Technologies Singapore Pte.
+        LTD\"},{\"Id\":2124,\"Name\":\"Fraenkische USA, LP\"},{\"Id\":5785,\"Name\":\"Franjobaim\"},{\"Id\":647,\"Name\":\"Free2Move\"},{\"Id\":600055,\"Name\":\"Freescale
+        Semiconductor\"},{\"Id\":375,\"Name\":\"Freescale Semiconductor - NXP\"},{\"Id\":2108,\"Name\":\"FreeWave
+        Technologies\"},{\"Id\":1219,\"Name\":\"Fremont Micro Devices Ltd\"},{\"Id\":3498,\"Name\":\"FRESH
+        DIGIT\"},{\"Id\":3929,\"Name\":\"Fresnel Factory Inc.\"},{\"Id\":600877,\"Name\":\"Friedrich\"},{\"Id\":600878,\"Name\":\"Frigidaire\"},{\"Id\":2819,\"Name\":\"Frontier
+        Electronics\"},{\"Id\":600880,\"Name\":\"Frost\"},{\"Id\":2967,\"Name\":\"FSP
+        Technology Inc.\"},{\"Id\":768,\"Name\":\"FTDI, Future Technology Devices
+        International Ltd\"},{\"Id\":6483,\"Name\":\"FTR\"},{\"Id\":3003,\"Name\":\"FTS\"},{\"Id\":5945,\"Name\":\"Fujicon\"},{\"Id\":600434,\"Name\":\"Fujitsu\"},{\"Id\":4065,\"Name\":\"Fulham\"},{\"Id\":602491,\"Name\":\"Functional
+        Devices\"},{\"Id\":600882,\"Name\":\"Funnel King\"},{\"Id\":600353,\"Name\":\"Fusion
+        DAQ\"},{\"Id\":600508,\"Name\":\"Futaba Corporation\"},{\"Id\":5710,\"Name\":\"Future
+        Design Controls\"},{\"Id\":622,\"Name\":\"Future Designs Inc.\"},{\"Id\":602390,\"Name\":\"Gabor\"},{\"Id\":2551,\"Name\":\"Gaia
+        Converter\"},{\"Id\":600007,\"Name\":\"Galvantech\"},{\"Id\":2807,\"Name\":\"Gamma
+        Electronics\"},{\"Id\":4025,\"Name\":\"GaNPower\"},{\"Id\":3182,\"Name\":\"GAPTEC
+        Electronic\"},{\"Id\":602304,\"Name\":\"Garant\"},{\"Id\":600884,\"Name\":\"Gardner
+        Bender\"},{\"Id\":1997,\"Name\":\"Gardtec Incorporated\"},{\"Id\":1094,\"Name\":\"Garmin
+        Canada Inc.\"},{\"Id\":2091,\"Name\":\"Gas Sensing Solutions Ltd\"},{\"Id\":601995,\"Name\":\"GAST
+        MFG CORP\"},{\"Id\":2518,\"Name\":\"Gateworks Corporation\"},{\"Id\":183,\"Name\":\"GC
+        Electronics\"},{\"Id\":6600,\"Name\":\"GCM Corporation Ltd.\"},{\"Id\":2072,\"Name\":\"GCT\"},{\"Id\":4014,\"Name\":\"GE
+        Aerospace\"},{\"Id\":4166,\"Name\":\"Gearbox Labs\"},{\"Id\":600326,\"Name\":\"Gearmo\"},{\"Id\":2465,\"Name\":\"Geckodrive,
+        Inc.\"},{\"Id\":2128,\"Name\":\"Gedore Tools, Inc.\"},{\"Id\":3196,\"Name\":\"Gelid
+        Solutions LLC\"},{\"Id\":600212,\"Name\":\"GEMAC\"},{\"Id\":602391,\"Name\":\"Genaray\"},{\"Id\":3310,\"Name\":\"Genasun\"},{\"Id\":600887,\"Name\":\"Generac\"},{\"Id\":3391,\"Name\":\"General
+        Graphene Corporation\"},{\"Id\":600085,\"Name\":\"General Semiconductor\"},{\"Id\":600888,\"Name\":\"General
+        Tools\"},{\"Id\":600890,\"Name\":\"General Wire\"},{\"Id\":600891,\"Name\":\"Generic
+        Parts Service\"},{\"Id\":6289,\"Name\":\"GENESI ELETTRONICA\"},{\"Id\":600892,\"Name\":\"Genesis\"},{\"Id\":2096,\"Name\":\"Genicom
+        Co., Ltd.\"},{\"Id\":600008,\"Name\":\"Gennum\"},{\"Id\":600893,\"Name\":\"Genpak\"},{\"Id\":6274,\"Name\":\"Gentherm\"},{\"Id\":600344,\"Name\":\"Georg
+        Martin GmbH\"},{\"Id\":2961,\"Name\":\"GES High Voltage\"},{\"Id\":5081,\"Name\":\"GETT.AMERICA\"},{\"Id\":2482,\"Name\":\"Geyer
+        Electronic America, Inc.\"},{\"Id\":4983,\"Name\":\"Geyer Electronic America,
+        Inc.\"},{\"Id\":600897,\"Name\":\"Ghent\"},{\"Id\":1711,\"Name\":\"GHI Electronics,
+        LLC\"},{\"Id\":4699,\"Name\":\"Gi Far technology Co., Ltd\"},{\"Id\":5758,\"Name\":\"Giantec
+        Semiconductor\"},{\"Id\":602330,\"Name\":\"Giantec Semiconductor, Inc.\"},{\"Id\":602099,\"Name\":\"GIFAR\"},{\"Id\":1970,\"Name\":\"Gigadevice
+        Electronics Singapore PTE.LTD.\"},{\"Id\":600439,\"Name\":\"Giovenzana\"},{\"Id\":2055,\"Name\":\"Glass
+        Acoustic Innovations Co. Ltd.\"},{\"Id\":600899,\"Name\":\"Gleason Reel\"},{\"Id\":1448,\"Name\":\"Glenair\"},{\"Id\":2500,\"Name\":\"GLF
+        Integrated Power\"},{\"Id\":600903,\"Name\":\"Global Industrial\"},{\"Id\":1769,\"Name\":\"Global
+        Specialties\"},{\"Id\":600904,\"Name\":\"Global Water\"},{\"Id\":2588,\"Name\":\"Globalscale\"},{\"Id\":3390,\"Name\":\"GlobalTech
+        Display\"},{\"Id\":1939,\"Name\":\"GlobTek, Inc.\"},{\"Id\":602313,\"Name\":\"Gloveworks\"},{\"Id\":600194,\"Name\":\"Glue
+        Dots\"},{\"Id\":602535,\"Name\":\"GLW GmbH\"},{\"Id\":3663,\"Name\":\"GMW
+        Associates\"},{\"Id\":600905,\"Name\":\"GNR Technologies\"},{\"Id\":6124,\"Name\":\"GNS
+        Electronics GmbH\"},{\"Id\":600906,\"Name\":\"Go Green Power\"},{\"Id\":601883,\"Name\":\"Goebel\"},{\"Id\":4091,\"Name\":\"Goertek
+        Microelectronics Inc.\"},{\"Id\":3141,\"Name\":\"Goford Semiconductor\"},{\"Id\":600909,\"Name\":\"GoGreen
+        Power\"},{\"Id\":6233,\"Name\":\"Gold Fame Technology Limited\"},{\"Id\":602310,\"Name\":\"GoldenPower\"},{\"Id\":600911,\"Name\":\"Good
+        L\"},{\"Id\":4786,\"Name\":\"Good-Ark Semiconductor\"},{\"Id\":6557,\"Name\":\"GOODWORK\"},{\"Id\":600912,\"Name\":\"Goodwrappers\"},{\"Id\":6279,\"Name\":\"GOSSEN
+        METRAWATT\"},{\"Id\":3306,\"Name\":\"GotRad LLC\"},{\"Id\":2639,\"Name\":\"Gowanda
+        Electronics\"},{\"Id\":3948,\"Name\":\"GP BATTERIES (Americas) Inc.\"},{\"Id\":3814,\"Name\":\"GPD
+        Optoelectronics Corp.\"},{\"Id\":600462,\"Name\":\"GRANDMAX\"},{\"Id\":602106,\"Name\":\"Grandstream\"},{\"Id\":136,\"Name\":\"Grayhill
+        Inc.\"},{\"Id\":4226,\"Name\":\"Green Ignite Inc\"},{\"Id\":4217,\"Name\":\"Greenconn\"},{\"Id\":131,\"Name\":\"Greenlee
+        Communications\"},{\"Id\":5755,\"Name\":\"greenteg AG\"},{\"Id\":3472,\"Name\":\"GREMCO
+        GmbH\"},{\"Id\":3254,\"Name\":\"Grepow Inc.\"},{\"Id\":4970,\"Name\":\"Gridwiz
+        Inc\"},{\"Id\":6515,\"Name\":\"GRINN\"},{\"Id\":5074,\"Name\":\"GroundStudio\"},{\"Id\":2077,\"Name\":\"GroupGets
+        LLC\"},{\"Id\":4871,\"Name\":\"Gruber Industries\"},{\"Id\":2912,\"Name\":\"GS
+        Yuasa Energy Solutions\"},{\"Id\":2364,\"Name\":\"GSI Technology Inc.\"},{\"Id\":6415,\"Name\":\"Guangdong
+        Inmark Electronics Co., Ltd.\"},{\"Id\":6065,\"Name\":\"Guangdong Kaifull
+        Electronics Technology Co., Ltd.\"},{\"Id\":600920,\"Name\":\"Guardair Corporation\"},{\"Id\":600922,\"Name\":\"Guardian
+        Equipment\"},{\"Id\":600923,\"Name\":\"Guardian Fall Protection\"},{\"Id\":6671,\"Name\":\"Gwentech
+        LLC\"},{\"Id\":2843,\"Name\":\"H.B. Fuller Company\"},{\"Id\":600926,\"Name\":\"H.D.
+        Hudson\"},{\"Id\":1036,\"Name\":\"H&D Wireless AB\"},{\"Id\":4701,\"Name\":\"H&H
+        Industrial Products, Inc.\"},{\"Id\":6140,\"Name\":\"h4 lab\"},{\"Id\":4825,\"Name\":\"Hacksmith
+        Tools\"},{\"Id\":3513,\"Name\":\"Hagiwara Solutions US\"},{\"Id\":5843,\"Name\":\"HALO
+        Electronics, Inc.\"},{\"Id\":600928,\"Name\":\"Halsey Taylor\"},{\"Id\":4048,\"Name\":\"Ham
+        Radio Workbench Podcast\"},{\"Id\":600930,\"Name\":\"Hamilton\"},{\"Id\":600933,\"Name\":\"Hammerhead\"},{\"Id\":164,\"Name\":\"Hammond
+        Manufacturing\"},{\"Id\":5208,\"Name\":\"Hantronix Inc\"},{\"Id\":602192,\"Name\":\"HAPTICORE\"},{\"Id\":600195,\"Name\":\"HARDMAN\"},{\"Id\":4590,\"Name\":\"Harimatec
+        Inc.\"},{\"Id\":3226,\"Name\":\"Harmony Electronics Corp / H.ELE.\"},{\"Id\":602365,\"Name\":\"HarnessFlex\"},{\"Id\":5147,\"Name\":\"HARP\"},{\"Id\":600937,\"Name\":\"Harper\"},{\"Id\":600938,\"Name\":\"Harpster
+        of Philipsburg\"},{\"Id\":600939,\"Name\":\"Harrington\"},{\"Id\":600026,\"Name\":\"Harris
+        Corporation\"},{\"Id\":1195,\"Name\":\"HARTING\"},{\"Id\":3766,\"Name\":\"Hartland
+        Controls/Littelfuse\"},{\"Id\":3147,\"Name\":\"Harvatek Corporation\"},{\"Id\":952,\"Name\":\"Harwin
+        Inc.\"},{\"Id\":2595,\"Name\":\"Hasco Relays\"},{\"Id\":4718,\"Name\":\"Hatch
+        Lighting\"},{\"Id\":5558,\"Name\":\"HAUBER Elektronik\"},{\"Id\":600943,\"Name\":\"Haws\"},{\"Id\":3056,\"Name\":\"Hayata\"},{\"Id\":4987,\"Name\":\"HCB
+        Battery Co.,Ltd\"},{\"Id\":1987,\"Name\":\"HDP Power\"},{\"Id\":6183,\"Name\":\"Heat
+        Shrink Direct\"},{\"Id\":1503,\"Name\":\"Heatron Inc.\"},{\"Id\":600949,\"Name\":\"Heatstar\"},{\"Id\":6660,\"Name\":\"Hebotec
+        GmbH\"},{\"Id\":4538,\"Name\":\"Hefei Jingweite Electronics Co., Ltd.\"},{\"Id\":611,\"Name\":\"Helicomm
+        Inc.\"},{\"Id\":1900,\"Name\":\"Helium Systems, Inc.\"},{\"Id\":3802,\"Name\":\"Helix
+        Linear\"},{\"Id\":2117,\"Name\":\"Helix Semiconductors\"},{\"Id\":1436,\"Name\":\"HellermannTyton\"},{\"Id\":4862,\"Name\":\"Helukabel
+        USA\"},{\"Id\":6119,\"Name\":\"hematec\"},{\"Id\":3986,\"Name\":\"HenLv Power\"},{\"Id\":3820,\"Name\":\"Henrich
+        Electronics\"},{\"Id\":1953,\"Name\":\"Henrich Electronics Corporation\"},{\"Id\":600494,\"Name\":\"Herz\"},{\"Id\":601962,\"Name\":\"Hewlett
+        Packard Enterprise\"},{\"Id\":3720,\"Name\":\"Heyco Products Corporation\"},{\"Id\":602342,\"Name\":\"HHIP\"},{\"Id\":602374,\"Name\":\"Hiblow\"},{\"Id\":600954,\"Name\":\"High
+        Country Plastics\"},{\"Id\":6147,\"Name\":\"High Sec Labs, Inc.\"},{\"Id\":2948,\"Name\":\"High-Tech
+        Conversions\"},{\"Id\":4020,\"Name\":\"Highpower Security Products LLC\"},{\"Id\":600956,\"Name\":\"Highside
+        Chemicals Inc.\"},{\"Id\":600957,\"Name\":\"Hiland\"},{\"Id\":3367,\"Name\":\"Himax\"},{\"Id\":602243,\"Name\":\"Hirelco\"},{\"Id\":26,\"Name\":\"Hirose
+        Electric Co Ltd\"},{\"Id\":1797,\"Name\":\"Hirschmann\"},{\"Id\":600958,\"Name\":\"Hirsh
+        Industries\"},{\"Id\":3848,\"Name\":\"Hirst Magnetic Instruments Ltd\"},{\"Id\":600086,\"Name\":\"Hitachi\"},{\"Id\":2589,\"Name\":\"Hitec
+        Commercial Solutions\"},{\"Id\":601996,\"Name\":\"HIWIN\"},{\"Id\":6043,\"Name\":\"HJSIP\"},{\"Id\":3305,\"Name\":\"HKC\"},{\"Id\":1976,\"Name\":\"HMS
+        Networks\"},{\"Id\":5559,\"Name\":\"HNu Photonics\"},{\"Id\":305,\"Name\":\"Hoei
+        America Inc.\"},{\"Id\":602382,\"Name\":\"Hoff-Trex\xAE\"},{\"Id\":600960,\"Name\":\"Hoffman\"},{\"Id\":1441,\"Name\":\"Hoffman
+        Enclosures, Inc.\"},{\"Id\":5308,\"Name\":\"Hoffmann Group\"},{\"Id\":602308,\"Name\":\"Holex\"},{\"Id\":600961,\"Name\":\"Holland\"},{\"Id\":173,\"Name\":\"Holmate
+        Technology Corp. (Holtek)\"},{\"Id\":600962,\"Name\":\"Holo-Krome\"},{\"Id\":1887,\"Name\":\"Hologram,
+        Inc.\"},{\"Id\":1245,\"Name\":\"Holt Integrated Circuits Inc.\"},{\"Id\":2873,\"Name\":\"Holy
+        Stone Enterprise Co., Ltd.\"},{\"Id\":600963,\"Name\":\"Homak\"},{\"Id\":6001,\"Name\":\"Home
+        Run Tech\"},{\"Id\":3608,\"Name\":\"HOMEVISION TECHNOLOGY INC\"},{\"Id\":602129,\"Name\":\"Honda
+        Connector\"},{\"Id\":601570,\"Name\":\"Honeywell\"},{\"Id\":342,\"Name\":\"Honeywell
+        Aerospace\"},{\"Id\":600968,\"Name\":\"Honeywell Safety\"},{\"Id\":1409,\"Name\":\"Honeywell
+        Sensing and Control EMEA\"},{\"Id\":480,\"Name\":\"Honeywell Sensing and Productivity
+        Solutions\"},{\"Id\":1566,\"Name\":\"Honeywell Sensing and Productivity Solutions
+        T&M\"},{\"Id\":600969,\"Name\":\"Hoover\"},{\"Id\":6792,\"Name\":\"Horton
+        Design Labs\"},{\"Id\":3186,\"Name\":\"Hosonic Electronic Co., Ltd\"},{\"Id\":600971,\"Name\":\"Hospeco\"},{\"Id\":600967,\"Name\":\"Howard
+        Leight by Honeywell\"},{\"Id\":602354,\"Name\":\"Howmet\"},{\"Id\":2842,\"Name\":\"HPC
+        Optics\"},{\"Id\":602339,\"Name\":\"HTP\"},{\"Id\":6550,\"Name\":\"HTsemi\"},{\"Id\":600974,\"Name\":\"Hubbell
+        - Gleason\"},{\"Id\":3628,\"Name\":\"Huber+Suhner, Inc.\"},{\"Id\":6440,\"Name\":\"Huixin\"},{\"Id\":602161,\"Name\":\"Huizhou
+        N Acoustics Co., Ltd\"},{\"Id\":602548,\"Name\":\"HumiSeal\"},{\"Id\":602422,\"Name\":\"Hummel
+        AG\"},{\"Id\":2244,\"Name\":\"HVM Technology, Inc.\"},{\"Id\":600481,\"Name\":\"Hvtools\"},{\"Id\":600984,\"Name\":\"Hygrade\"},{\"Id\":5378,\"Name\":\"I-PEX\"},{\"Id\":4348,\"Name\":\"I-SYST\"},{\"Id\":111,\"Name\":\"I.O.
+        Interconnect\"},{\"Id\":6068,\"Name\":\"IAM Electronic\"},{\"Id\":854,\"Name\":\"IAR
+        Systems Software Inc.\"},{\"Id\":2228,\"Name\":\"iBASE Technology\"},{\"Id\":600021,\"Name\":\"IBM\"},{\"Id\":5515,\"Name\":\"IBOCO\"},{\"Id\":5370,\"Name\":\"iCana\"},{\"Id\":5871,\"Name\":\"ICE
+        Components, Inc.\"},{\"Id\":601693,\"Name\":\"Iceberg Enterprises\"},{\"Id\":5133,\"Name\":\"IceMOS
+        Technology\"},{\"Id\":3833,\"Name\":\"ICOMTECH, INC.\"},{\"Id\":4529,\"Name\":\"iCONN
+        Systems LLC\"},{\"Id\":2744,\"Name\":\"ICOP Technology\"},{\"Id\":602077,\"Name\":\"Icotronix\"},{\"Id\":2488,\"Name\":\"ICP
+        DAS USA INC\"},{\"Id\":602259,\"Name\":\"ICSI\"},{\"Id\":5354,\"Name\":\"ICY
+        DOCK USA\"},{\"Id\":2882,\"Name\":\"Ideal Power Ltd.\"},{\"Id\":6500,\"Name\":\"iDEAL
+        Semiconductor\"},{\"Id\":600990,\"Name\":\"Ideal Warehouse\"},{\"Id\":2014,\"Name\":\"Ideal-tek
+        S.A.\"},{\"Id\":1885,\"Name\":\"IDEC\"},{\"Id\":602432,\"Name\":\"IDP\"},{\"Id\":1725,\"Name\":\"IDT,
+        Integrated Device Technology Inc\"},{\"Id\":602483,\"Name\":\"iDTRONIC\"},{\"Id\":2560,\"Name\":\"iEi
+        Technology\"},{\"Id\":2434,\"Name\":\"iFixit\"},{\"Id\":2330,\"Name\":\"ifm
+        efector, inc.\"},{\"Id\":600991,\"Name\":\"Igloo\"},{\"Id\":2115,\"Name\":\"Ignion\"},{\"Id\":4849,\"Name\":\"Igus\"},{\"Id\":4241,\"Name\":\"IKALOGIC\"},{\"Id\":1082,\"Name\":\"Illumra\"},{\"Id\":2780,\"Name\":\"ILSI\"},{\"Id\":5449,\"Name\":\"Image
+        Quality Labs, Inc.\"},{\"Id\":4009,\"Name\":\"Images SI, Inc.\"},{\"Id\":5865,\"Name\":\"IMAGO
+        Technologies\"},{\"Id\":602523,\"Name\":\"IMO\"},{\"Id\":600993,\"Name\":\"Impact
+        Products\"},{\"Id\":6614,\"Name\":\"INACKS\"},{\"Id\":600994,\"Name\":\"Incom
+        Manufacturing\"},{\"Id\":4415,\"Name\":\"indie Semiconductor\"},{\"Id\":6204,\"Name\":\"Indium
+        Corporation of America\"},{\"Id\":107,\"Name\":\"Industrial Fiber Optics\"},{\"Id\":3690,\"Name\":\"Industrial
+        Safety Controls, Inc.\"},{\"Id\":600995,\"Name\":\"Industrial Seating\"},{\"Id\":2198,\"Name\":\"Industrial
+        Shields\"},{\"Id\":4150,\"Name\":\"Industrial Video & Control\"},{\"Id\":2371,\"Name\":\"IndustrialeMart\"},{\"Id\":3539,\"Name\":\"IndustrialSupplies.com\"},{\"Id\":4052,\"Name\":\"INEED
+        MOTOR\"},{\"Id\":448,\"Name\":\"Infineon Technologies\"},{\"Id\":21,\"Name\":\"Infineon
+        Technologies Americas Corp.\"},{\"Id\":3375,\"Name\":\"INFINITY FIBER\"},{\"Id\":4429,\"Name\":\"Infraeo
+        Inc.\"},{\"Id\":600998,\"Name\":\"Ingersoll Rand\"},{\"Id\":5915,\"Name\":\"Inission
+        Power\"},{\"Id\":1693,\"Name\":\"Initial State Technologies, Inc.\"},{\"Id\":5790,\"Name\":\"Innergie\"},{\"Id\":6627,\"Name\":\"InnoComm
+        Mobile Technology Corp.\"},{\"Id\":4265,\"Name\":\"Innodisk USA Corporation\"},{\"Id\":602536,\"Name\":\"Innolux\"},{\"Id\":4960,\"Name\":\"INNOSCOPES\"},{\"Id\":2191,\"Name\":\"InnoSenT
+        GmbH\"},{\"Id\":2952,\"Name\":\"Innovative Sensor Technology, USA Division\"},{\"Id\":2812,\"Name\":\"Innovisionsemi\"},{\"Id\":5786,\"Name\":\"InnoWave\"},{\"Id\":1830,\"Name\":\"Inolux\"},{\"Id\":3526,\"Name\":\"INPAQ
+        Technology Co., Ltd\"},{\"Id\":1008,\"Name\":\"Inphi Corporation\"},{\"Id\":2897,\"Name\":\"Inpixon
+        GmbH\"},{\"Id\":3890,\"Name\":\"InPlay Inc\"},{\"Id\":4312,\"Name\":\"InPower
+        LLC\"},{\"Id\":1902,\"Name\":\"iNRCORE, LLC\"},{\"Id\":5857,\"Name\":\"inrevium\"},{\"Id\":1786,\"Name\":\"Insight
+        SIP\"},{\"Id\":1982,\"Name\":\"Insignis Technology Corporation\"},{\"Id\":4119,\"Name\":\"INSIZE\"},{\"Id\":601001,\"Name\":\"InSize\"},{\"Id\":5077,\"Name\":\"Inspired
+        Energy\"},{\"Id\":1647,\"Name\":\"Inspired LED, LLC\"},{\"Id\":601002,\"Name\":\"Instapak
+        Quick\"},{\"Id\":602362,\"Name\":\"Insulated Tools Ltd\"},{\"Id\":2321,\"Name\":\"Integra
+        Enclosures\"},{\"Id\":2251,\"Name\":\"Integra Technologies Inc.\"},{\"Id\":2625,\"Name\":\"Integrated
+        Power Designs\"},{\"Id\":600301,\"Name\":\"Integrity Cleanroom\"},{\"Id\":363,\"Name\":\"Intel\"},{\"Id\":3536,\"Name\":\"Intel
+        Silicon Photonics\"},{\"Id\":4682,\"Name\":\"Inteliheat North America\"},{\"Id\":6421,\"Name\":\"Intelletto
+        Technologies Inc.\"},{\"Id\":5107,\"Name\":\"Intelligent Memory Ltd.\"},{\"Id\":5472,\"Name\":\"Intellinet
+        Network Solutions\"},{\"Id\":1079,\"Name\":\"Intematix Corporation\"},{\"Id\":601003,\"Name\":\"Inteplast
+        Group\"},{\"Id\":4966,\"Name\":\"InterFET\"},{\"Id\":601004,\"Name\":\"Interion
+        By Global Industrial\"},{\"Id\":1027,\"Name\":\"Interlink Electronics\"},{\"Id\":2377,\"Name\":\"International
+        Components Corp.\"},{\"Id\":600047,\"Name\":\"International Rectifier\"},{\"Id\":3448,\"Name\":\"International
+        Test Instruments Corporation\"},{\"Id\":2710,\"Name\":\"Interpower\"},{\"Id\":600010,\"Name\":\"Intersil\"},{\"Id\":600358,\"Name\":\"Intervox\"},{\"Id\":4669,\"Name\":\"Intrepid
+        Control Systems\"},{\"Id\":5034,\"Name\":\"Intuicom\"},{\"Id\":2559,\"Name\":\"Intwine
+        Connect,LLC\"},{\"Id\":4084,\"Name\":\"Inventchip\"},{\"Id\":1475,\"Name\":\"Inventek
+        Systems\"},{\"Id\":166,\"Name\":\"Inventus Power\"},{\"Id\":1937,\"Name\":\"IO
+        Audio Technologies\"},{\"Id\":3430,\"Name\":\"IOT-BOTS.COM\"},{\"Id\":4189,\"Name\":\"IOT747\"},{\"Id\":2087,\"Name\":\"IoTize\"},{\"Id\":3278,\"Name\":\"Iowa
+        Scaled Engineering\"},{\"Id\":1210,\"Name\":\"IPDiA\"},{\"Id\":1923,\"Name\":\"IQD
+        Frequency Products\"},{\"Id\":2248,\"Name\":\"IRISO USA Inc.\"},{\"Id\":602412,\"Name\":\"IronTread
+        Mats\"},{\"Id\":4629,\"Name\":\"Ironwood Electronics\"},{\"Id\":653,\"Name\":\"IRTouch
+        Systems\"},{\"Id\":4644,\"Name\":\"Irtronix, Inc.\"},{\"Id\":601012,\"Name\":\"IRWIN
+        Tools\"},{\"Id\":6409,\"Name\":\"IS Fusion Ltd\"},{\"Id\":4423,\"Name\":\"Isabellenhuette
+        USA\"},{\"Id\":602166,\"Name\":\"iSafe\"},{\"Id\":600341,\"Name\":\"ISC Engineering\"},{\"Id\":5750,\"Name\":\"Isentek
+        Inc\"},{\"Id\":2685,\"Name\":\"ISL Products International\"},{\"Id\":58,\"Name\":\"Isocom
+        Components 2004 LTD\"},{\"Id\":706,\"Name\":\"ISSI, Integrated Silicon Solution
+        Inc\"},{\"Id\":602482,\"Name\":\"ITACOIL\"},{\"Id\":600284,\"Name\":\"Italtronic\"},{\"Id\":4563,\"Name\":\"ITECH
+        ELECTRONIC CO.,LTD.\"},{\"Id\":3602,\"Name\":\"Iteco\"},{\"Id\":3013,\"Name\":\"ITG
+        Electronics, Inc.\"},{\"Id\":6560,\"Name\":\"ITG SEMI GROUP PTE. LTD.\"},{\"Id\":600487,\"Name\":\"iTrixx\"},{\"Id\":1003,\"Name\":\"ITT
+        Cannon, LLC\"},{\"Id\":1408,\"Name\":\"ITT VEAM\"},{\"Id\":601013,\"Name\":\"ITW\"},{\"Id\":4049,\"Name\":\"ITW
+        LINX\"},{\"Id\":600198,\"Name\":\"ITW POLYMERS ADHESIVES\"},{\"Id\":3945,\"Name\":\"IVC
+        Displays, Inc.\"},{\"Id\":4882,\"Name\":\"iView\"},{\"Id\":5454,\"Name\":\"iWave
+        Global\"},{\"Id\":238,\"Name\":\"IXYS\"},{\"Id\":212,\"Name\":\"IXYS Integrated
+        Circuits Division\"},{\"Id\":602489,\"Name\":\"J-tech Inc.\"},{\"Id\":601015,\"Name\":\"J.C
+        Parry & Sons Co. Inc\"},{\"Id\":2419,\"Name\":\"J.W. Winco\"},{\"Id\":601014,\"Name\":\"J&D
+        Manufacturing\"},{\"Id\":2793,\"Name\":\"j5create\"},{\"Id\":2646,\"Name\":\"Jabil
+        Inc.\"},{\"Id\":601016,\"Name\":\"Jackson\"},{\"Id\":2291,\"Name\":\"Jacob
+        GmbH\"},{\"Id\":670,\"Name\":\"JAE Electronics\"},{\"Id\":4285,\"Name\":\"JAM\"},{\"Id\":602402,\"Name\":\"Jameco
+        BenchPro\"},{\"Id\":602400,\"Name\":\"Jameco ReliaPro\"},{\"Id\":602401,\"Name\":\"Jameco
+        ValuePro\"},{\"Id\":2219,\"Name\":\"Jameson LLC\"},{\"Id\":3075,\"Name\":\"Janesville
+        Tool & Mfg. Inc\"},{\"Id\":2360,\"Name\":\"Janus Remote Communications\"},{\"Id\":602441,\"Name\":\"Japan
+        Display Inc.\"},{\"Id\":334,\"Name\":\"Jaro Components Inc.\"},{\"Id\":1908,\"Name\":\"Jauch
+        Quartz\"},{\"Id\":2761,\"Name\":\"JBC TOOLS USA INC\"},{\"Id\":2405,\"Name\":\"JBL
+        Products, Inc.\"},{\"Id\":4034,\"Name\":\"JC Antenna\"},{\"Id\":6282,\"Name\":\"JEFA
+        Tech\"},{\"Id\":602385,\"Name\":\"Jeju Semiconductor Corp\"},{\"Id\":601020,\"Name\":\"Jendyk\"},{\"Id\":2045,\"Name\":\"Jensen
+        Global Inc.\"},{\"Id\":4779,\"Name\":\"JESCO Lighting Group\"},{\"Id\":601021,\"Name\":\"JET\"},{\"Id\":180,\"Name\":\"Jewell
+        Instruments LLC\"},{\"Id\":5101,\"Name\":\"JIE YI ELECTRONICS LIMITED\"},{\"Id\":6305,\"Name\":\"JITE\"},{\"Id\":289,\"Name\":\"JKL
+        Components Corp.\"},{\"Id\":601025,\"Name\":\"JL Industries / Activar\"},{\"Id\":601026,\"Name\":\"JLF
+        Pro\"},{\"Id\":6239,\"Name\":\"JM Concept\"},{\"Id\":709,\"Name\":\"Johanson
+        Dielectrics Inc.\"},{\"Id\":712,\"Name\":\"Johanson Technology Inc.\"},{\"Id\":601028,\"Name\":\"John
+        Boos\"},{\"Id\":601029,\"Name\":\"John Dow Industries\"},{\"Id\":601030,\"Name\":\"Johnson
+        Level & Tool\"},{\"Id\":2790,\"Name\":\"Johnson Motor\"},{\"Id\":601992,\"Name\":\"Jokari\"},{\"Id\":40,\"Name\":\"Jonard
+        Tools\"},{\"Id\":5929,\"Name\":\"JonDeTech Sensors AB\"},{\"Id\":3753,\"Name\":\"Jones
+        Tech\"},{\"Id\":6316,\"Name\":\"Joral LLC\"},{\"Id\":2393,\"Name\":\"Jorjin
+        Technologies Inc.\"},{\"Id\":3295,\"Name\":\"Joulescope\xAE\"},{\"Id\":5448,\"Name\":\"Joymax
+        Electronics\"},{\"Id\":3937,\"Name\":\"JRH Electronics\"},{\"Id\":455,\"Name\":\"JST
+        Sales America Inc.\"},{\"Id\":78,\"Name\":\"Judco Manufacturing Inc.\"},{\"Id\":6227,\"Name\":\"JUKEN
+        SWISS TECHNOLOGY\"},{\"Id\":2880,\"Name\":\"JULABO\"},{\"Id\":5241,\"Name\":\"JUMO
+        Process Control, Inc.\"},{\"Id\":601031,\"Name\":\"Justrite\"},{\"Id\":600345,\"Name\":\"JW
+        Winco/Otto Ganter\"},{\"Id\":602371,\"Name\":\"JYH Eng Technology Co\"},{\"Id\":601041,\"Name\":\"K-Flex
+        USA\"},{\"Id\":601062,\"Name\":\"K-Tool International\"},{\"Id\":5229,\"Name\":\"Kable
+        Kontrol\"},{\"Id\":600259,\"Name\":\"Kacon\"},{\"Id\":602242,\"Name\":\"Kaga
+        FEI\"},{\"Id\":602425,\"Name\":\"KAGA FEI AMERICA, INC.\"},{\"Id\":5912,\"Name\":\"KaiFeng
+        Electronics\"},{\"Id\":5031,\"Name\":\"Kairos82nd\"},{\"Id\":2315,\"Name\":\"Kamaya
+        Inc.\"},{\"Id\":601033,\"Name\":\"Kanebridge\"},{\"Id\":2862,\"Name\":\"Kang
+        Yang International\"},{\"Id\":2220,\"Name\":\"Kano Laboratories\"},{\"Id\":5180,\"Name\":\"Karakamlar
+        Aerospace\"},{\"Id\":6405,\"Name\":\"Kart-a-Bag\"},{\"Id\":6208,\"Name\":\"KDS
+        (DAISHINKU CORP)\"},{\"Id\":601036,\"Name\":\"Kee Safety\"},{\"Id\":602264,\"Name\":\"Keegwa\"},{\"Id\":6256,\"Name\":\"KEL
+        USA\"},{\"Id\":3092,\"Name\":\"Keller Pressure, Inc.\"},{\"Id\":399,\"Name\":\"KEMET\"},{\"Id\":4657,\"Name\":\"Kenco
+        Label & Tag\"},{\"Id\":2934,\"Name\":\"Kendall Howard\"},{\"Id\":601037,\"Name\":\"Keneco\"},{\"Id\":601038,\"Name\":\"Kennedy\"},{\"Id\":1767,\"Name\":\"Kennedy
+        Labs, a division of Hub Incorporated\"},{\"Id\":5492,\"Name\":\"Kentzy International
+        Inc\"},{\"Id\":601039,\"Name\":\"Kenwood\"},{\"Id\":2759,\"Name\":\"Kepco
+        and Kepco Power\"},{\"Id\":117,\"Name\":\"Kester Solder\"},{\"Id\":36,\"Name\":\"Keystone
+        Electronics\"},{\"Id\":6509,\"Name\":\"Keywave Technology Limited\"},{\"Id\":4275,\"Name\":\"KF
+        Control\"},{\"Id\":2064,\"Name\":\"Khadas\"},{\"Id\":1621,\"Name\":\"Khatod
+        North America LLC\"},{\"Id\":601043,\"Name\":\"Kidde\"},{\"Id\":226,\"Name\":\"Kilo
+        International\"},{\"Id\":602423,\"Name\":\"Kimball Electronics\"},{\"Id\":2763,\"Name\":\"Kinetic
+        Technologies\"},{\"Id\":3616,\"Name\":\"King Electric\"},{\"Id\":754,\"Name\":\"Kingbright\"},{\"Id\":601046,\"Name\":\"Kingdom\"},{\"Id\":3910,\"Name\":\"Kingfisher
+        International\"},{\"Id\":5297,\"Name\":\"Kingston Technology\"},{\"Id\":5625,\"Name\":\"Kingston
+        Technology\"},{\"Id\":6318,\"Name\":\"Kingston Technology\"},{\"Id\":5210,\"Name\":\"Kingway
+        Electronics USA\"},{\"Id\":1191,\"Name\":\"Kionix Inc.\"},{\"Id\":1853,\"Name\":\"Kioxia
+        America, Inc.\"},{\"Id\":1927,\"Name\":\"Kitronik Ltd.\"},{\"Id\":1742,\"Name\":\"Klein
+        Tools, Inc.\"},{\"Id\":600327,\"Name\":\"Knick\"},{\"Id\":2834,\"Name\":\"Knick
+        Interface\"},{\"Id\":601052,\"Name\":\"Knipex\"},{\"Id\":2172,\"Name\":\"Knipex
+        Tools LP\"},{\"Id\":602495,\"Name\":\"knitter-inductive\"},{\"Id\":3746,\"Name\":\"Knitter-Switch\"},{\"Id\":423,\"Name\":\"Knowles\"},{\"Id\":1761,\"Name\":\"Knowles
+        Dielectric Labs\"},{\"Id\":4919,\"Name\":\"Knowles Integrated Microwave\"},{\"Id\":1956,\"Name\":\"Knowles
+        Johanson Manufacturing\"},{\"Id\":1763,\"Name\":\"Knowles Novacap\"},{\"Id\":1608,\"Name\":\"Knowles
+        Syfer\"},{\"Id\":1674,\"Name\":\"Knowles Voltronics\"},{\"Id\":601053,\"Name\":\"Knuffi
+        By Ideal Warehouse\"},{\"Id\":2019,\"Name\":\"KOA Speer Electronics, Inc.\"},{\"Id\":601055,\"Name\":\"Koch\"},{\"Id\":5055,\"Name\":\"KOINO\"},{\"Id\":4789,\"Name\":\"Konnect
+        RF\"},{\"Id\":6238,\"Name\":\"Kopin\"},{\"Id\":602392,\"Name\":\"Kopul\"},{\"Id\":5506,\"Name\":\"KORATECH\"},{\"Id\":5583,\"Name\":\"KPS\"},{\"Id\":2930,\"Name\":\"Krohn-Hite
+        Corporation\"},{\"Id\":601058,\"Name\":\"Krowne\"},{\"Id\":601061,\"Name\":\"Krylon\"},{\"Id\":229,\"Name\":\"KSM
+        Electronics Inc.\"},{\"Id\":2308,\"Name\":\"Kuebler\"},{\"Id\":2122,\"Name\":\"KUKA
+        Robotics Corporation\"},{\"Id\":2178,\"Name\":\"Kunbus GmbH\"},{\"Id\":5152,\"Name\":\"Kurtz
+        Ersa\"},{\"Id\":5906,\"Name\":\"KVASER\"},{\"Id\":601065,\"Name\":\"KwiKool\"},{\"Id\":2092,\"Name\":\"Kycon,
+        Inc.\"},{\"Id\":478,\"Name\":\"KYOCERA AVX\"},{\"Id\":73,\"Name\":\"Kyocera
+        International, Inc.\"},{\"Id\":4334,\"Name\":\"Kyocera SLD Laser\"},{\"Id\":601884,\"Name\":\"Kyodo
+        Yushi\"},{\"Id\":602128,\"Name\":\"Kyoto Semiconductor\"},{\"Id\":5073,\"Name\":\"L-com\"},{\"Id\":601067,\"Name\":\"L.S.
+        Starrett\"},{\"Id\":4697,\"Name\":\"LABELMATE USA\"},{\"Id\":5425,\"Name\":\"Labfacility
+        Ltd\"},{\"Id\":2173,\"Name\":\"Labjack Corporation\"},{\"Id\":4291,\"Name\":\"Labsland\"},{\"Id\":4209,\"Name\":\"LadyBug
+        Technologies LLC\"},{\"Id\":926,\"Name\":\"Laird Technologies - Thermal Materials\"},{\"Id\":903,\"Name\":\"Laird
+        Technologies EMI\"},{\"Id\":240,\"Name\":\"Laird-Signal Integrity Products\"},{\"Id\":6680,\"Name\":\"Lanberg\"},{\"Id\":6584,\"Name\":\"LANSITEC\"},{\"Id\":600011,\"Name\":\"Lantiq\"},{\"Id\":6354,\"Name\":\"Lantronix
+        Canada ULC\"},{\"Id\":1829,\"Name\":\"Lantronix, Inc.\"},{\"Id\":2181,\"Name\":\"LAPP\"},{\"Id\":2136,\"Name\":\"Lascar
+        Electronics\"},{\"Id\":6109,\"Name\":\"Laser Components USA\"},{\"Id\":2018,\"Name\":\"Laser
+        Technology, Inc.\"},{\"Id\":6577,\"Name\":\"LASER TREE\"},{\"Id\":6176,\"Name\":\"LaserPecker\"},{\"Id\":4611,\"Name\":\"Lasertack
+        GmbH\"},{\"Id\":601073,\"Name\":\"Lasko\"},{\"Id\":220,\"Name\":\"Lattice
+        Semiconductor Corporation\"},{\"Id\":601076,\"Name\":\"Lavi Industries\"},{\"Id\":4190,\"Name\":\"LEADER
+        SOLAR CABLE AND CONNECTOR\"},{\"Id\":1798,\"Name\":\"Leader Tech Inc.\"},{\"Id\":602444,\"Name\":\"Lectronify\"},{\"Id\":2712,\"Name\":\"LED
+        Lighting Inc\"},{\"Id\":5931,\"Name\":\"Led2Work Inc\"},{\"Id\":788,\"Name\":\"LEDdynamics
+        Inc.\"},{\"Id\":2024,\"Name\":\"Ledex Dormeyer Saia, a Division of Johnson
+        Electric\"},{\"Id\":711,\"Name\":\"Ledil\"},{\"Id\":601694,\"Name\":\"Legacy\"},{\"Id\":600455,\"Name\":\"Legent\"},{\"Id\":602332,\"Name\":\"Legrand
+        DPC\"},{\"Id\":6334,\"Name\":\"LEI Indias\"},{\"Id\":601080,\"Name\":\"Leica\"},{\"Id\":398,\"Name\":\"LEM
+        USA Inc.\"},{\"Id\":1124,\"Name\":\"LEMO\"},{\"Id\":601082,\"Name\":\"Lenox\"},{\"Id\":6382,\"Name\":\"Leo
+        Bodnar Electronics\"},{\"Id\":6468,\"Name\":\"Leoco Corporation\"},{\"Id\":2289,\"Name\":\"Leopard
+        Imaging Inc.\"},{\"Id\":2540,\"Name\":\"Leuze\"},{\"Id\":600022,\"Name\":\"Level
+        Sense\"},{\"Id\":601085,\"Name\":\"LewisBins\"},{\"Id\":5110,\"Name\":\"Lexar
+        Enterprise\"},{\"Id\":602469,\"Name\":\"LGE Diodes\"},{\"Id\":602424,\"Name\":\"Liberty
+        Brass\"},{\"Id\":601086,\"Name\":\"Libman Commercial\"},{\"Id\":2610,\"Name\":\"LICAP
+        Technologies, Inc.\"},{\"Id\":6167,\"Name\":\"LiConn, Inc.\"},{\"Id\":601088,\"Name\":\"Lifetime\"},{\"Id\":601089,\"Name\":\"Lift
+        Safety\"},{\"Id\":601090,\"Name\":\"Lift-All\"},{\"Id\":601091,\"Name\":\"Liftex\"},{\"Id\":5728,\"Name\":\"Light
+        in Motion LLC\"},{\"Id\":600288,\"Name\":\"Light-Avenue\"},{\"Id\":2868,\"Name\":\"Lighthorse
+        Technologies, Inc\"},{\"Id\":521,\"Name\":\"Lighting Science Group Corporation\"},{\"Id\":3901,\"Name\":\"LightWare
+        LiDAR Inc.\"},{\"Id\":2416,\"Name\":\"Lilliput Electronics (USA) Inc.\"},{\"Id\":1434,\"Name\":\"Lime
+        Microsystems Ltd\"},{\"Id\":3856,\"Name\":\"LIMITLESS SHIELDING LIMITED\"},{\"Id\":2090,\"Name\":\"Lin
+        Engineering\"},{\"Id\":3653,\"Name\":\"Lincoln Technology Solutions\"},{\"Id\":601093,\"Name\":\"Lind
+        Equipment\"},{\"Id\":6513,\"Name\":\"Lindstrom\"},{\"Id\":602403,\"Name\":\"Lindy
+        International\"},{\"Id\":602170,\"Name\":\"Line Seiki Co., Ltd\"},{\"Id\":4004,\"Name\":\"Linear
+        Integrated Systems, Inc.\"},{\"Id\":1616,\"Name\":\"Link Labs Inc.\"},{\"Id\":6435,\"Name\":\"Link4
+        Corporation\"},{\"Id\":5149,\"Name\":\"Linkplex\"},{\"Id\":3826,\"Name\":\"Linortek\"},{\"Id\":6420,\"Name\":\"Linovision\"},{\"Id\":4223,\"Name\":\"Linrose
+        Electronics, Inc.\"},{\"Id\":6448,\"Name\":\"Lipowsky\"},{\"Id\":160,\"Name\":\"Lite-On
+        Inc.\"},{\"Id\":6349,\"Name\":\"Liteband\"},{\"Id\":5946,\"Name\":\"LITEON
+        Power\"},{\"Id\":601098,\"Name\":\"Lithonia Lighting\"},{\"Id\":3963,\"Name\":\"Littelfuse
+        Aerospace\"},{\"Id\":18,\"Name\":\"Littelfuse Inc.\"},{\"Id\":5346,\"Name\":\"Littelfuse/Commercial
+        Vehicle Products\"},{\"Id\":5666,\"Name\":\"Littelfuse/Menbers\"},{\"Id\":5327,\"Name\":\"Littelfuse/Western
+        Automation\"},{\"Id\":601099,\"Name\":\"Little Giant\"},{\"Id\":1115,\"Name\":\"LM
+        Technologies\"},{\"Id\":57,\"Name\":\"LMB Heeger Inc.\"},{\"Id\":4276,\"Name\":\"Load
+        Controls\"},{\"Id\":2263,\"Name\":\"Loadstar Sensors\"},{\"Id\":1000,\"Name\":\"LOCTITE\"},{\"Id\":3645,\"Name\":\"Lodestone
+        Pacific\"},{\"Id\":5802,\"Name\":\"Logical Systems Corp.\"},{\"Id\":309,\"Name\":\"Logical
+        Systems Inc.\"},{\"Id\":3004,\"Name\":\"LOGICO\"},{\"Id\":2978,\"Name\":\"LogiSwitch\"},{\"Id\":4996,\"Name\":\"LogTag\"},{\"Id\":5155,\"Name\":\"Lotus
+        Microsystems\"},{\"Id\":600051,\"Name\":\"Lovato Electric\"},{\"Id\":601103,\"Name\":\"LPD
+        Trade\"},{\"Id\":3765,\"Name\":\"LPD TRADE INC\"},{\"Id\":2620,\"Name\":\"LS
+        Electric\"},{\"Id\":2808,\"Name\":\"LSI/CSI\"},{\"Id\":3993,\"Name\":\"LTF
+        technology LLC\"},{\"Id\":6599,\"Name\":\"LTHD Corporation\"},{\"Id\":600232,\"Name\":\"Lucent\"},{\"Id\":6669,\"Name\":\"Luchrome\"},{\"Id\":6576,\"Name\":\"Lucki
+        Electronics\"},{\"Id\":3528,\"Name\":\"Luckylight\"},{\"Id\":1942,\"Name\":\"LulzBot\"},{\"Id\":6130,\"Name\":\"Lumas
+        AM Polymers\"},{\"Id\":1794,\"Name\":\"Lumberg Automation\"},{\"Id\":5405,\"Name\":\"Lumberg
+        Inc\"},{\"Id\":3724,\"Name\":\"Lumenite Control Technology, Inc.\"},{\"Id\":6582,\"Name\":\"LumenRadio\"},{\"Id\":67,\"Name\":\"Lumex
+        Opto/Components Inc.\"},{\"Id\":1416,\"Name\":\"Lumileds\"},{\"Id\":4491,\"Name\":\"Lumimax
+        Optoelectronic Technology\"},{\"Id\":600069,\"Name\":\"Luminary Micro\"},{\"Id\":726,\"Name\":\"Luminary
+        Micro Division of Texas Instruments\"},{\"Id\":1214,\"Name\":\"Luminus Devices
+        Inc.\"},{\"Id\":2521,\"Name\":\"Lumissil Microsystems\"},{\"Id\":601108,\"Name\":\"Luxor\"},{\"Id\":2061,\"Name\":\"Luxtech,
+        LLC\"},{\"Id\":4940,\"Name\":\"LX Microscopes by UNITRON\"},{\"Id\":5376,\"Name\":\"Lynn
+        Products, Inc.\"},{\"Id\":2384,\"Name\":\"M+A Matting\"},{\"Id\":602493,\"Name\":\"M2B
+        Switches\"},{\"Id\":2221,\"Name\":\"M5Stack Technology Co., Ltd.\"},{\"Id\":5035,\"Name\":\"Maanshan
+        New Conda Magnetic Industrial Co.,Ltd.\"},{\"Id\":5888,\"Name\":\"Mabuchi
+        Motor\"},{\"Id\":600324,\"Name\":\"MACH SYSTEMS\"},{\"Id\":2953,\"Name\":\"Machinechat\"},{\"Id\":1465,\"Name\":\"MACOM
+        Technology Solutions\"},{\"Id\":2561,\"Name\":\"Macromatic Industrial Controls\"},{\"Id\":1092,\"Name\":\"Macronix\"},{\"Id\":3283,\"Name\":\"MadgeTech\"},{\"Id\":1518,\"Name\":\"Mag-LED
+        Solutions\"},{\"Id\":5151,\"Name\":\"Magic Power\"},{\"Id\":6432,\"Name\":\"Magics
+        Technologies\"},{\"Id\":601114,\"Name\":\"Magliner\"},{\"Id\":601115,\"Name\":\"Maglite\"},{\"Id\":601116,\"Name\":\"Magna
+        Visual\"},{\"Id\":2205,\"Name\":\"Magna-Power Electronics\"},{\"Id\":735,\"Name\":\"Magnasphere
+        Corp\"},{\"Id\":2545,\"Name\":\"Magnelab, Inc.\"},{\"Id\":3777,\"Name\":\"MagneLink,
+        inc.\"},{\"Id\":601117,\"Name\":\"Magnet Source\"},{\"Id\":3080,\"Name\":\"Magnet-Schultz
+        of America\"},{\"Id\":2875,\"Name\":\"Magnetic Shield Corporation\"},{\"Id\":4616,\"Name\":\"Magnetics,
+        a division of Spang & Co.\"},{\"Id\":3165,\"Name\":\"Magnitude Lighting\"},{\"Id\":2611,\"Name\":\"Major
+        League Electronics\"},{\"Id\":1890,\"Name\":\"Makeblock Co., LTD.\"},{\"Id\":1910,\"Name\":\"Maker
+        Emporium Ltd\"},{\"Id\":6589,\"Name\":\"Maker Shed\"},{\"Id\":5087,\"Name\":\"MakerChamber\"},{\"Id\":4686,\"Name\":\"Makermotor\"},{\"Id\":3404,\"Name\":\"MAKESafe
+        Tools\"},{\"Id\":601119,\"Name\":\"Makita\"},{\"Id\":4573,\"Name\":\"Malico
+        Inc.\"},{\"Id\":458,\"Name\":\"Mallory Sonalert Products Inc.\"},{\"Id\":3350,\"Name\":\"Man
+        & Machine Inc.\"},{\"Id\":6398,\"Name\":\"Manhattan Products\"},{\"Id\":601121,\"Name\":\"MAPA
+        Professional\"},{\"Id\":2212,\"Name\":\"Maple Systems Inc\"},{\"Id\":601122,\"Name\":\"Marathon
+        Industries\"},{\"Id\":2779,\"Name\":\"Mark-10\"},{\"Id\":1125,\"Name\":\"Marktech
+        Optoelectronics\"},{\"Id\":601126,\"Name\":\"Marley Engineered Products\"},{\"Id\":2617,\"Name\":\"Marlin
+        Technologies\"},{\"Id\":1681,\"Name\":\"Marlow Industries, Inc.\"},{\"Id\":601679,\"Name\":\"Marsh\"},{\"Id\":5189,\"Name\":\"Marshall
+        DC Lighting\"},{\"Id\":5268,\"Name\":\"Marutsuelec\"},{\"Id\":1796,\"Name\":\"Marutsuelec
+        Co., Ltd.\"},{\"Id\":2208,\"Name\":\"Marvell Semiconductor, Inc.\"},{\"Id\":4676,\"Name\":\"Marway
+        Power Solutions\"},{\"Id\":2333,\"Name\":\"Masach Tech Ltd.\"},{\"Id\":133,\"Name\":\"Master
+        Appliance Co\"},{\"Id\":6196,\"Name\":\"Master Electronics\"},{\"Id\":601132,\"Name\":\"Master
+        Lock\"},{\"Id\":601133,\"Name\":\"Master Magnetics\"},{\"Id\":600622,\"Name\":\"MasterVision\"},{\"Id\":2626,\"Name\":\"Maswell
+        Communication Tech.\"},{\"Id\":2225,\"Name\":\"Matrix Industries, Inc.\"},{\"Id\":635,\"Name\":\"Matrix
+        Orbital\"},{\"Id\":4321,\"Name\":\"MATRIX TECHNOLOGY INC.\"},{\"Id\":6529,\"Name\":\"Matrixsens\"},{\"Id\":600503,\"Name\":\"Matsuo
+        Electric\"},{\"Id\":4032,\"Name\":\"Matsuo Electric Co., LTD\"},{\"Id\":2738,\"Name\":\"Maudlin
+        Products\"},{\"Id\":601137,\"Name\":\"Mauritzon\"},{\"Id\":5383,\"Name\":\"Maury
+        Microwave\"},{\"Id\":5262,\"Name\":\"Max Echo\"},{\"Id\":3687,\"Name\":\"MAX
+        USA CORP.\"},{\"Id\":1863,\"Name\":\"MaxBotix Inc.\"},{\"Id\":5992,\"Name\":\"Maxell\"},{\"Id\":600210,\"Name\":\"Maxell
+        Batteries\"},{\"Id\":1016,\"Name\":\"MaxLinear, Inc.\"},{\"Id\":602520,\"Name\":\"MaxPowerCell\"},{\"Id\":3127,\"Name\":\"Maxsa
+        Innovations\"},{\"Id\":5420,\"Name\":\"Maxtena Inc\"},{\"Id\":589,\"Name\":\"Maxwell
+        Technologies\"},{\"Id\":5748,\"Name\":\"Mayser\"},{\"Id\":353,\"Name\":\"MCC
+        (Micro Commercial Components)\"},{\"Id\":4613,\"Name\":\"McGill Microwave
+        Systems\"},{\"Id\":1751,\"Name\":\"McGraw-Hill Education\"},{\"Id\":601141,\"Name\":\"MCR
+        Safety\"},{\"Id\":600425,\"Name\":\"MDD\"},{\"Id\":3811,\"Name\":\"MDE Semiconductor
+        Inc\"},{\"Id\":600423,\"Name\":\"MDT\"},{\"Id\":1866,\"Name\":\"MEAN WELL
+        USA Inc.\"},{\"Id\":882,\"Name\":\"MEC Switches\"},{\"Id\":3424,\"Name\":\"MECA
+        Electronics\"},{\"Id\":2473,\"Name\":\"Mechanical Products\"},{\"Id\":1995,\"Name\":\"Mechatronics
+        Bearing Group\"},{\"Id\":1570,\"Name\":\"Mechatronics Fan Group\"},{\"Id\":5507,\"Name\":\"Mecmesin\"},{\"Id\":4375,\"Name\":\"MED\"},{\"Id\":601145,\"Name\":\"Medi-First\"},{\"Id\":5767,\"Name\":\"MediaTek\"},{\"Id\":5769,\"Name\":\"MediaTek\"},{\"Id\":5586,\"Name\":\"Meerstetter\"},{\"Id\":2065,\"Name\":\"MegaChips
+        Corporation\"},{\"Id\":1654,\"Name\":\"MegaChips Technology America Corporation\"},{\"Id\":6553,\"Name\":\"MegaPhase\"},{\"Id\":5920,\"Name\":\"Meisei
+        Tools\"},{\"Id\":413,\"Name\":\"Melexis Technologies NV\"},{\"Id\":601148,\"Name\":\"Meltblown
+        Technologies\"},{\"Id\":4224,\"Name\":\"Meltric\"},{\"Id\":601149,\"Name\":\"Memphis
+        Glove\"},{\"Id\":5455,\"Name\":\"MEMS Vision\"},{\"Id\":1267,\"Name\":\"Memsic
+        Inc.\"},{\"Id\":602345,\"Name\":\"Menbers\"},{\"Id\":154,\"Name\":\"MENDA\"},{\"Id\":600100,\"Name\":\"Menics\"},{\"Id\":5903,\"Name\":\"Menlo
+        Microsystems, Inc\"},{\"Id\":4155,\"Name\":\"Mensor\"},{\"Id\":2659,\"Name\":\"Mentech
+        Technology USA Inc.\"},{\"Id\":5672,\"Name\":\"Mercury Electronics Ind. Co.
+        Ltd\"},{\"Id\":2977,\"Name\":\"Mercury Systems, Inc.\"},{\"Id\":602081,\"Name\":\"Merit\"},{\"Id\":601151,\"Name\":\"Merit
+        Brass\"},{\"Id\":5409,\"Name\":\"Merit Cables\"},{\"Id\":4840,\"Name\":\"Merit
+        Sensor\"},{\"Id\":2997,\"Name\":\"Meritek\"},{\"Id\":2378,\"Name\":\"Mersen
+        USA Newburyport-MA L.L.C.\"},{\"Id\":601153,\"Name\":\"Mesa Safe\"},{\"Id\":6472,\"Name\":\"Meshed
+        Technology, Inc.\"},{\"Id\":758,\"Name\":\"MeshNetics\"},{\"Id\":6058,\"Name\":\"Meta
+        Online\"},{\"Id\":6467,\"Name\":\"Metalworking Tool Industry LLC\"},{\"Id\":5358,\"Name\":\"Metcal\"},{\"Id\":5841,\"Name\":\"metraTec\"},{\"Id\":601155,\"Name\":\"Metro\"},{\"Id\":601156,\"Name\":\"MetroVac\"},{\"Id\":1849,\"Name\":\"METZ
+        CONNECT USA Inc.\"},{\"Id\":601158,\"Name\":\"MFG Tray\"},{\"Id\":473,\"Name\":\"MG
+        Chemicals\"},{\"Id\":6234,\"Name\":\"MG Co., Ltd.\"},{\"Id\":601159,\"Name\":\"MG
+        Electronics\"},{\"Id\":4672,\"Name\":\"MH Connectors\"},{\"Id\":5934,\"Name\":\"Miba
+        Resistors\"},{\"Id\":576,\"Name\":\"Micrel Inc.\"},{\"Id\":1072,\"Name\":\"Micrium
+        Inc.\"},{\"Id\":2768,\"Name\":\"Micro Connectors, Inc.\"},{\"Id\":2195,\"Name\":\"Micro
+        Crystal AG\"},{\"Id\":601793,\"Name\":\"Micro Linear Corp\"},{\"Id\":3729,\"Name\":\"Micro
+        Sensor\"},{\"Id\":6713,\"Name\":\"Micro Sensor GmbH\"},{\"Id\":6377,\"Name\":\"Micro-Hybrid
+        Electronics, Inc\"},{\"Id\":1033,\"Name\":\"Micro-Measurements (Division of
+        Vishay Precision Group)\"},{\"Id\":5505,\"Name\":\"Micro-Mode\"},{\"Id\":602352,\"Name\":\"Micro:bit\"},{\"Id\":970,\"Name\":\"Micro/sys
+        Inc.\"},{\"Id\":2805,\"Name\":\"MicroCare Corporation\"},{\"Id\":150,\"Name\":\"Microchip
+        Technology\"},{\"Id\":6634,\"Name\":\"Microgate Technology\"},{\"Id\":602358,\"Name\":\"Microlab\"},{\"Id\":557,\"Name\":\"Micron
+        Technology Inc.\"},{\"Id\":3114,\"Name\":\"Micronel USA\"},{\"Id\":2984,\"Name\":\"Micropower
+        Battery Company\"},{\"Id\":5276,\"Name\":\"MicroPower Direct\"},{\"Id\":5943,\"Name\":\"MicroPower
+        Direct\"},{\"Id\":278,\"Name\":\"Microsemi Corporation\"},{\"Id\":6189,\"Name\":\"MicroStrain
+        by HBK\"},{\"Id\":602492,\"Name\":\"MICROTEST\"},{\"Id\":5056,\"Name\":\"Microwave
+        Town\"},{\"Id\":3086,\"Name\":\"Midas Displays\"},{\"Id\":997,\"Name\":\"Mide
+        Technology Corporation\"},{\"Id\":601712,\"Name\":\"Midori Precisions by Nidec
+        Components\"},{\"Id\":4433,\"Name\":\"Midwest Machine Tool Supply\"},{\"Id\":3163,\"Name\":\"Midwest
+        Motion Products\"},{\"Id\":6203,\"Name\":\"Migatron\"},{\"Id\":3275,\"Name\":\"mightyZAP\"},{\"Id\":1471,\"Name\":\"MikroElektronika\"},{\"Id\":54,\"Name\":\"Mill-Max
+        Manufacturing Corp.\"},{\"Id\":601163,\"Name\":\"Miller\"},{\"Id\":6081,\"Name\":\"Millimeter
+        Wave Technologies\"},{\"Id\":5705,\"Name\":\"Milliohm Electronics\"},{\"Id\":602349,\"Name\":\"Milnec\"},{\"Id\":3939,\"Name\":\"Milont
+        Technology Co., Ltd\"},{\"Id\":3942,\"Name\":\"Milspecwest, LLC\"},{\"Id\":601164,\"Name\":\"Milton\"},{\"Id\":601683,\"Name\":\"Milwaukee\"},{\"Id\":6086,\"Name\":\"MINEW\"},{\"Id\":6024,\"Name\":\"MinewSemi\"},{\"Id\":3157,\"Name\":\"Mini-Circuits\"},{\"Id\":5794,\"Name\":\"MIPOT\"},{\"Id\":2475,\"Name\":\"Mirrorcle
+        Technologies\"},{\"Id\":602370,\"Name\":\"MiS Technologies\"},{\"Id\":2806,\"Name\":\"MISCO\"},{\"Id\":600277,\"Name\":\"Mitsubishi
+        Electric Europe B.V.\"},{\"Id\":2259,\"Name\":\"Mitsubishi Materials U.S.A.
+        Corporation\"},{\"Id\":2508,\"Name\":\"Mitsumi\"},{\"Id\":600311,\"Name\":\"Mitutoyo\"},{\"Id\":6212,\"Name\":\"MiTwell\"},{\"Id\":601167,\"Name\":\"Mityvac\"},{\"Id\":4904,\"Name\":\"Mixtile
+        Limited\"},{\"Id\":6499,\"Name\":\"MKC GmbH\"},{\"Id\":601169,\"Name\":\"MLS
+        Sales\"},{\"Id\":3610,\"Name\":\"MM Newman Corporation\"},{\"Id\":1096,\"Name\":\"MMB
+        Networks\"},{\"Id\":2775,\"Name\":\"MMD\"},{\"Id\":600088,\"Name\":\"MMI\"},{\"Id\":3893,\"Name\":\"Mobile
+        Mark Antenna Solutions\"},{\"Id\":3428,\"Name\":\"Moddable\"},{\"Id\":5,\"Name\":\"Modular
+        Cable Assemblies (VA)\"},{\"Id\":2556,\"Name\":\"Moffatt Products\"},{\"Id\":5533,\"Name\":\"Moflash
+        Signalling Ltd\"},{\"Id\":601172,\"Name\":\"Moldex\"},{\"Id\":23,\"Name\":\"Molex\"},{\"Id\":4134,\"Name\":\"Molex\"},{\"Id\":1720,\"Name\":\"Molex
+        - Oplink Communications, LLC\"},{\"Id\":1454,\"Name\":\"Molex - Temp Flex\"},{\"Id\":600245,\"Name\":\"Momentive
+        Performance Materials\"},{\"Id\":601173,\"Name\":\"Monk Industries\"},{\"Id\":1859,\"Name\":\"Monnit
+        Corporation\"},{\"Id\":601175,\"Name\":\"Monoflo International\"},{\"Id\":1589,\"Name\":\"Monolithic
+        Power Systems Inc.\"},{\"Id\":6746,\"Name\":\"Monoprice\"},{\"Id\":3333,\"Name\":\"Monsoon
+        Solutions Inc.\"},{\"Id\":4763,\"Name\":\"Montech (Shanghai) Co., Ltd.\"},{\"Id\":601176,\"Name\":\"Moody
+        Tools\"},{\"Id\":601177,\"Name\":\"Moon American\"},{\"Id\":2725,\"Name\":\"Mornsun
+        America, LLC\"},{\"Id\":6335,\"Name\":\"Morse Micro\"},{\"Id\":2331,\"Name\":\"MoSys,
+        Inc.\"},{\"Id\":600066,\"Name\":\"Motorola\"},{\"Id\":3453,\"Name\":\"Moujen\"},{\"Id\":3673,\"Name\":\"Move-X\"},{\"Id\":600362,\"Name\":\"Moxa\"},{\"Id\":61,\"Name\":\"MPD
+        (Memory Protection Devices)\"},{\"Id\":602113,\"Name\":\"MPD Digital\"},{\"Id\":3739,\"Name\":\"Mr.
+        Chain\"},{\"Id\":601183,\"Name\":\"Mr. Heater\"},{\"Id\":6703,\"Name\":\"MSA
+        Magnetics\"},{\"Id\":601184,\"Name\":\"MSA Safety\"},{\"Id\":6493,\"Name\":\"MSF
+        Data Services, Inc.\"},{\"Id\":602453,\"Name\":\"MSR\"},{\"Id\":601187,\"Name\":\"MTM
+        Hydro\"},{\"Id\":3655,\"Name\":\"MtronPTI\"},{\"Id\":314,\"Name\":\"Mueller
+        Electric Co\"},{\"Id\":3982,\"Name\":\"Multi Products Company, Inc.\"},{\"Id\":591,\"Name\":\"Multi-Tech
+        Systems Inc.\"},{\"Id\":3542,\"Name\":\"MULTIDIMENSION\"},{\"Id\":601189,\"Name\":\"Multifan\"},{\"Id\":3585,\"Name\":\"Multilane\"},{\"Id\":600282,\"Name\":\"MuMETAL\xAE\"},{\"Id\":490,\"Name\":\"Murata
+        Electronics\"},{\"Id\":811,\"Name\":\"Murata Power Solutions Inc.\"},{\"Id\":5088,\"Name\":\"Murrelektronik,
+        Inc\"},{\"Id\":3504,\"Name\":\"Murrplastik Systems\"},{\"Id\":2160,\"Name\":\"Murrplastik
+        Systems, Inc.\"},{\"Id\":6586,\"Name\":\"MVE\"},{\"Id\":5600,\"Name\":\"My
+        Cable Mart\"},{\"Id\":2119,\"Name\":\"MyDevices, Inc.\"},{\"Id\":4820,\"Name\":\"mydpi\"},{\"Id\":3309,\"Name\":\"MYIR
+        Tech Limited\"},{\"Id\":4086,\"Name\":\"NAC HOLDINGS LIMITED\"},{\"Id\":600460,\"Name\":\"Nader\"},{\"Id\":6262,\"Name\":\"Nain
+        Tech\"},{\"Id\":258,\"Name\":\"Nakagawa Manufacturing\"},{\"Id\":600461,\"Name\":\"Namco/SPT\"},{\"Id\":5283,\"Name\":\"Nanjing
+        Juzhen International Trading Co.,Ltd\"},{\"Id\":2247,\"Name\":\"Nanmac\"},{\"Id\":2520,\"Name\":\"nano3Dprint\"},{\"Id\":6184,\"Name\":\"NanoFlowX
+        Inc.\"},{\"Id\":602172,\"Name\":\"Nanoport Technology Inc.\"},{\"Id\":5538,\"Name\":\"Nanopower\"},{\"Id\":4057,\"Name\":\"Nanosecond\"},{\"Id\":6031,\"Name\":\"NanoSen\"},{\"Id\":5423,\"Name\":\"Nanova
+        Environmental Inc.\"},{\"Id\":602335,\"Name\":\"NARVA\"},{\"Id\":601196,\"Name\":\"Nashville
+        Wire Products\"},{\"Id\":2273,\"Name\":\"National Control Devices\"},{\"Id\":601197,\"Name\":\"National
+        Marker Company\"},{\"Id\":14,\"Name\":\"National Semiconductor\"},{\"Id\":5517,\"Name\":\"NavePoint\"},{\"Id\":1913,\"Name\":\"Navitas
+        Semiconductor, Inc.\"},{\"Id\":5196,\"Name\":\"NB Corporation Of America\"},{\"Id\":5662,\"Name\":\"NBK
+        America, LLC\"},{\"Id\":644,\"Name\":\"NDK (NIHON DEMPA KOGYO CO., LTD)\"},{\"Id\":730,\"Name\":\"Nearson
+        Inc.\"},{\"Id\":600049,\"Name\":\"NEC Corporation\"},{\"Id\":600297,\"Name\":\"Nemco\"},{\"Id\":5187,\"Name\":\"NeoCortec\"},{\"Id\":1816,\"Name\":\"Neonode
+        Inc.\"},{\"Id\":5804,\"Name\":\"Neousys Technology America Inc.\"},{\"Id\":600488,\"Name\":\"Netbell\"},{\"Id\":528,\"Name\":\"NetBurner
+        Inc.\"},{\"Id\":2655,\"Name\":\"Netlist Inc.\"},{\"Id\":2392,\"Name\":\"NetPower\"},{\"Id\":5446,\"Name\":\"Netsol\"},{\"Id\":6113,\"Name\":\"Neurochrome\"},{\"Id\":600148,\"Name\":\"Neutrik\"},{\"Id\":6473,\"Name\":\"Neutrik
+        Americas, Inc.\"},{\"Id\":4256,\"Name\":\"New Age Enclosures\"},{\"Id\":3118,\"Name\":\"New
+        Boundary Technologies\"},{\"Id\":1672,\"Name\":\"New Energy\"},{\"Id\":600504,\"Name\":\"New
+        Scale Technologies\"},{\"Id\":4640,\"Name\":\"New Scale Technologies, Inc.\"},{\"Id\":3263,\"Name\":\"NEW
+        TRY\"},{\"Id\":6261,\"Name\":\"Neware\"},{\"Id\":470,\"Name\":\"Newava Technology
+        Inc.\"},{\"Id\":601206,\"Name\":\"Newcastle Systems\"},{\"Id\":757,\"Name\":\"Newhaven
+        Display Intl\"},{\"Id\":2637,\"Name\":\"Newland\"},{\"Id\":4186,\"Name\":\"Newnex\"},{\"Id\":6512,\"Name\":\"Newsight
+        Imaging\"},{\"Id\":6772,\"Name\":\"Newsonic Technologies\"},{\"Id\":601207,\"Name\":\"Newstripe\"},{\"Id\":602473,\"Name\":\"NexAIoT
+        CO., LTD.\"},{\"Id\":4230,\"Name\":\"NexCOBOT CO., LTD.\"},{\"Id\":5554,\"Name\":\"NEXCOM\"},{\"Id\":601208,\"Name\":\"Nexel\"},{\"Id\":1727,\"Name\":\"Nexperia
+        USA Inc.\"},{\"Id\":601969,\"Name\":\"Nextech Lighting\"},{\"Id\":4583,\"Name\":\"NexTek\"},{\"Id\":2550,\"Name\":\"Nextera
+        Video\"},{\"Id\":3372,\"Name\":\"NextGen Components\"},{\"Id\":4979,\"Name\":\"NextGen
+        Components Group\"},{\"Id\":1999,\"Name\":\"Nextivity\"},{\"Id\":3679,\"Name\":\"Nextron\"},{\"Id\":602126,\"Name\":\"Nextys\"},{\"Id\":602521,\"Name\":\"NHD\"},{\"Id\":2770,\"Name\":\"NI\"},{\"Id\":601926,\"Name\":\"NIC
+        Components\"},{\"Id\":4835,\"Name\":\"NIC Components Corp\"},{\"Id\":493,\"Name\":\"Nichicon\"},{\"Id\":2645,\"Name\":\"Nicomatic\"},{\"Id\":4247,\"Name\":\"Nicslab\"},{\"Id\":563,\"Name\":\"Nidec
+        Components\"},{\"Id\":601210,\"Name\":\"NightStick\"},{\"Id\":601211,\"Name\":\"Nilfisk\"},{\"Id\":602173,\"Name\":\"Nimbus9\"},{\"Id\":6761,\"Name\":\"Nine
+        Fives\"},{\"Id\":5652,\"Name\":\"Nipron Co., Ltd.\"},{\"Id\":2129,\"Name\":\"Nisshinbo
+        Micro Devices Inc.\"},{\"Id\":3249,\"Name\":\"NK Technologies\"},{\"Id\":360,\"Name\":\"NKK
+        Switches\"},{\"Id\":12,\"Name\":\"NMB Technologies Corporation\"},{\"Id\":601213,\"Name\":\"Noco\"},{\"Id\":6464,\"Name\":\"Nodka
+        Automation Technology\"},{\"Id\":3087,\"Name\":\"Nominal Controls\"},{\"Id\":5140,\"Name\":\"NoMIS
+        Power\"},{\"Id\":3593,\"Name\":\"Noratel\"},{\"Id\":37,\"Name\":\"NorComp
+        Inc.\"},{\"Id\":601215,\"Name\":\"Nord-Lock\"},{\"Id\":1490,\"Name\":\"Nordic
+        Semiconductor ASA\"},{\"Id\":3830,\"Name\":\"Noren Thermal Solutions\"},{\"Id\":286,\"Name\":\"Noritake
+        U.S.A., Inc.\"},{\"Id\":602380,\"Name\":\"Norseman\"},{\"Id\":601217,\"Name\":\"North
+        Safety\"},{\"Id\":4596,\"Name\":\"North Slope Chillers\"},{\"Id\":3514,\"Name\":\"North
+        Star Sensors LLC\"},{\"Id\":3406,\"Name\":\"Northern Mechatronics Inc.\"},{\"Id\":6022,\"Name\":\"Northern
+        Technologies\"},{\"Id\":602514,\"Name\":\"Northmon Safety\"},{\"Id\":6070,\"Name\":\"Northstar
+        Photonics\"},{\"Id\":6718,\"Name\":\"Northwest Power Inc.\"},{\"Id\":601218,\"Name\":\"Norton\"},{\"Id\":602084,\"Name\":\"Norton
+        Winter\"},{\"Id\":4681,\"Name\":\"NOSHOK, Inc.\"},{\"Id\":600367,\"Name\":\"NOsparc\xAE\"},{\"Id\":601222,\"Name\":\"Novatek\"},{\"Id\":6695,\"Name\":\"NovaTekLab
+        LLC\"},{\"Id\":5380,\"Name\":\"NOVOSENSE\"},{\"Id\":3588,\"Name\":\"Novus
+        Automation\"},{\"Id\":602373,\"Name\":\"NovuSem\"},{\"Id\":5343,\"Name\":\"NPPower
+        International Inc.\"},{\"Id\":5957,\"Name\":\"NS Telecomm (A Business Unit
+        of NOVEC Solutions)\"},{\"Id\":6384,\"Name\":\"Nsing Technologies Pte Ltd\"},{\"Id\":4736,\"Name\":\"NTS
+        Direct\"},{\"Id\":4745,\"Name\":\"Numato Lab\"},{\"Id\":600046,\"Name\":\"Numonyx\"},{\"Id\":5299,\"Name\":\"NuPhotonics\"},{\"Id\":600035,\"Name\":\"Nupla\"},{\"Id\":816,\"Name\":\"Nuvoton
+        Technology Corporation\"},{\"Id\":3069,\"Name\":\"NuWaves RF Solutions\"},{\"Id\":390,\"Name\":\"NVE
+        Corp/Isolation Products\"},{\"Id\":391,\"Name\":\"NVE Corp/Sensor Products\"},{\"Id\":602314,\"Name\":\"NVIDIA\"},{\"Id\":4040,\"Name\":\"NVT
+        Phybridge\"},{\"Id\":954,\"Name\":\"NXP Semiconductors\"},{\"Id\":568,\"Name\":\"NXP
+        USA Inc.\"},{\"Id\":601229,\"Name\":\"O-Cedar Commercial\"},{\"Id\":1844,\"Name\":\"O.C.
+        White Co.\"},{\"Id\":602275,\"Name\":\"O'Keefe Controls Co.\"},{\"Id\":1653,\"Name\":\"O'Reilly
+        Media\"},{\"Id\":5687,\"Name\":\"Oasis Scientific Inc.\"},{\"Id\":601227,\"Name\":\"OccuNomix\"},{\"Id\":5391,\"Name\":\"OCS\"},{\"Id\":1676,\"Name\":\"Octavo
+        Systems LLC\"},{\"Id\":1907,\"Name\":\"ODU\"},{\"Id\":601235,\"Name\":\"Ohaus\"},{\"Id\":6340,\"Name\":\"Ohio
+        Semitronics, Inc.\"},{\"Id\":273,\"Name\":\"Ohmite\"},{\"Id\":601236,\"Name\":\"Oil
+        Safe\"},{\"Id\":2261,\"Name\":\"OKdo\"},{\"Id\":389,\"Name\":\"OKI/Metcal\"},{\"Id\":6350,\"Name\":\"Okika
+        Devices\"},{\"Id\":4631,\"Name\":\"OLC Inc.\"},{\"Id\":3949,\"Name\":\"Ole
+        Wolff Electronics Inc\"},{\"Id\":601237,\"Name\":\"Olfa\"},{\"Id\":1188,\"Name\":\"Olimex
+        LTD\"},{\"Id\":5776,\"Name\":\"OM System\"},{\"Id\":5880,\"Name\":\"Omega\"},{\"Id\":2262,\"Name\":\"Omnetics\"},{\"Id\":5532,\"Name\":\"Omnielektronik\"},{\"Id\":555,\"Name\":\"OmniOn
+        Power\u2122\"},{\"Id\":2887,\"Name\":\"OmniPreSense\"},{\"Id\":6214,\"Name\":\"Omnitek
+        Cable Inc.\"},{\"Id\":884,\"Name\":\"OmniVision Technologies Inc\"},{\"Id\":236,\"Name\":\"Omron
+        Automation and Safety\"},{\"Id\":52,\"Name\":\"On Shore Technology Inc.\"},{\"Id\":3860,\"Name\":\"OncQue
+        Corporation\"},{\"Id\":3043,\"Name\":\"OneSimCard\"},{\"Id\":2070,\"Name\":\"Onion
+        Corporation\"},{\"Id\":6310,\"Name\":\"ONKRON\"},{\"Id\":488,\"Name\":\"onsemi\"},{\"Id\":341,\"Name\":\"Onset
+        Computer Corp\"},{\"Id\":3734,\"Name\":\"Opal Kelly\"},{\"Id\":601662,\"Name\":\"Ophit\"},{\"Id\":3976,\"Name\":\"Opsero\"},{\"Id\":4977,\"Name\":\"Opsero\"},{\"Id\":2241,\"Name\":\"OptConnect
+        Management, LLC\"},{\"Id\":601875,\"Name\":\"Optex FA\"},{\"Id\":3950,\"Name\":\"Optical
+        Zonu Corporation\"},{\"Id\":2298,\"Name\":\"OptiFuse\"},{\"Id\":601242,\"Name\":\"Optima\"},{\"Id\":601243,\"Name\":\"Optimum
+        Tech.\"},{\"Id\":1468,\"Name\":\"Option NV\"},{\"Id\":4899,\"Name\":\"Optix
+        America\"},{\"Id\":5528,\"Name\":\"Opto 22\"},{\"Id\":958,\"Name\":\"Opto
+        Diode Corp\"},{\"Id\":5817,\"Name\":\"OPTO PLUS LED CORP.\"},{\"Id\":6049,\"Name\":\"OPTOI\"},{\"Id\":5629,\"Name\":\"ORBBEC\"},{\"Id\":2347,\"Name\":\"Orbel
+        Corporation\"},{\"Id\":601244,\"Name\":\"Orbis\"},{\"Id\":601245,\"Name\":\"Orbit\"},{\"Id\":601246,\"Name\":\"Oreck\"},{\"Id\":3444,\"Name\":\"Orient
+        Display\"},{\"Id\":6623,\"Name\":\"Oriental Motor\"},{\"Id\":602315,\"Name\":\"ORIENTAL
+        TECHNOLOGY\"},{\"Id\":600499,\"Name\":\"ORing Networking\"},{\"Id\":1053,\"Name\":\"Orion
+        Fans\"},{\"Id\":2777,\"Name\":\"Oscilent\"},{\"Id\":2552,\"Name\":\"Oscium\"},{\"Id\":602529,\"Name\":\"OSI
+        Batteries\"},{\"Id\":2640,\"Name\":\"OSI Optoelectronics, Inc.\"},{\"Id\":6482,\"Name\":\"Ositech
+        Communications Inc\"},{\"Id\":602277,\"Name\":\"Oslo Switch\"},{\"Id\":602467,\"Name\":\"OTTO
+        Controls\"},{\"Id\":5615,\"Name\":\"Ouneva\"},{\"Id\":2553,\"Name\":\"Oupiin\"},{\"Id\":4985,\"Name\":\"Oupiin\"},{\"Id\":3026,\"Name\":\"Overview
+        Ltd\"},{\"Id\":2250,\"Name\":\"Owon Technology Lilliput Electronics (USA)
+        Inc\"},{\"Id\":3684,\"Name\":\"Oyen Digital\"},{\"Id\":601251,\"Name\":\"OZ
+        Lifting Products\"},{\"Id\":6390,\"Name\":\"OZG Systems Engineering, LLC\"},{\"Id\":4457,\"Name\":\"P-DUKE
+        Technology\"},{\"Id\":3818,\"Name\":\"P-tec\"},{\"Id\":4081,\"Name\":\"P1
+        Technologies\"},{\"Id\":3648,\"Name\":\"P1dB Inc\"},{\"Id\":601252,\"Name\":\"Pac
+        Strapping\"},{\"Id\":601253,\"Name\":\"Pac-Kit\"},{\"Id\":5284,\"Name\":\"PACE
+        Worldwide\"},{\"Id\":3318,\"Name\":\"Pacific Goal\"},{\"Id\":3947,\"Name\":\"Pacific
+        Microchip\"},{\"Id\":5659,\"Name\":\"Pacific Transformer\"},{\"Id\":4923,\"Name\":\"PacTec\"},{\"Id\":601946,\"Name\":\"Pactech
+        FlexLite\u2122\"},{\"Id\":601254,\"Name\":\"Pactiv\"},{\"Id\":3215,\"Name\":\"Paktron\"},{\"Id\":601255,\"Name\":\"Palmer
+        Fixture\"},{\"Id\":601256,\"Name\":\"Palmgren\"},{\"Id\":2802,\"Name\":\"PalmSens
+        BV\"},{\"Id\":6465,\"Name\":\"PAM Electronix\"},{\"Id\":600464,\"Name\":\"Panasonic\"},{\"Id\":276,\"Name\":\"Panasonic
+        - ATG\"},{\"Id\":9,\"Name\":\"Panasonic Electronic Components - Semiconductor
+        Products\"},{\"Id\":11,\"Name\":\"Panasonic Energy\"},{\"Id\":10,\"Name\":\"Panasonic
+        Industry\"},{\"Id\":74,\"Name\":\"Panavise\"},{\"Id\":298,\"Name\":\"Panduit
+        Corp\"},{\"Id\":3757,\"Name\":\"Panjit International Inc.\"},{\"Id\":601258,\"Name\":\"Paper
+        Mate\"},{\"Id\":5366,\"Name\":\"PARA LIGHT\"},{\"Id\":149,\"Name\":\"Parallax
+        Inc.\"},{\"Id\":1944,\"Name\":\"Parker Chomerics\"},{\"Id\":215,\"Name\":\"Parlex
+        USA LLC\"},{\"Id\":1878,\"Name\":\"Particle Industries, Inc.\"},{\"Id\":5029,\"Name\":\"Particles
+        Plus\"},{\"Id\":4363,\"Name\":\"Passive Plus\"},{\"Id\":3985,\"Name\":\"Pasternack\"},{\"Id\":4891,\"Name\":\"PATCHBOX\"},{\"Id\":195,\"Name\":\"Patco
+        Electronics\"},{\"Id\":91,\"Name\":\"Patco Services Inc\"},{\"Id\":5893,\"Name\":\"Patlite
+        U.S.A.\"},{\"Id\":6304,\"Name\":\"Patriot Memory\"},{\"Id\":601261,\"Name\":\"Patterson
+        Fan\"},{\"Id\":601790,\"Name\":\"Patton Electronics\"},{\"Id\":601262,\"Name\":\"Paulson\"},{\"Id\":600197,\"Name\":\"Pawa\"},{\"Id\":3110,\"Name\":\"PCA
+        Electronics, Inc.\"},{\"Id\":3208,\"Name\":\"PCE Instruments\"},{\"Id\":5994,\"Name\":\"PCN\"},{\"Id\":2013,\"Name\":\"Peak
+        Electronic Design Limited\"},{\"Id\":600214,\"Name\":\"PEAK-SYSTEM\"},{\"Id\":601264,\"Name\":\"Peco\"},{\"Id\":1699,\"Name\":\"Peerless
+        by Tymphany\"},{\"Id\":2403,\"Name\":\"PEI-Genesis\"},{\"Id\":601265,\"Name\":\"Pelican\"},{\"Id\":3611,\"Name\":\"Pelonis
+        Technologies\"},{\"Id\":601266,\"Name\":\"Pelouze\"},{\"Id\":601964,\"Name\":\"Peltec
+        Timers and Controls\"},{\"Id\":3962,\"Name\":\"Penchem Technologies Sdn Bhd\"},{\"Id\":5099,\"Name\":\"Penta
+        Laboratories\"},{\"Id\":3250,\"Name\":\"Peplink\"},{\"Id\":2046,\"Name\":\"Pepperl+Fuchs,
+        Inc.\"},{\"Id\":601270,\"Name\":\"Perfect Aire\"},{\"Id\":601271,\"Name\":\"Perfect
+        Products\"},{\"Id\":601272,\"Name\":\"Performance Metals\"},{\"Id\":5356,\"Name\":\"Performance
+        Motion Devices, Inc.\"},{\"Id\":242,\"Name\":\"Pericom\"},{\"Id\":4512,\"Name\":\"Perinet\"},{\"Id\":5577,\"Name\":\"Perle
+        Systems\"},{\"Id\":600500,\"Name\":\"Perle Systems\"},{\"Id\":600200,\"Name\":\"Permabond\"},{\"Id\":6401,\"Name\":\"PermAlert\"},{\"Id\":4959,\"Name\":\"PermaSafe\"},{\"Id\":1452,\"Name\":\"Pervasive
+        Displays\"},{\"Id\":2081,\"Name\":\"Pflitsch\"},{\"Id\":2568,\"Name\":\"Phase
+        Dock Inc.\"},{\"Id\":3358,\"Name\":\"Phase II\"},{\"Id\":5482,\"Name\":\"PHD
+        Energy\"},{\"Id\":993,\"Name\":\"Phihong USA\"},{\"Id\":600090,\"Name\":\"Philips\"},{\"Id\":601279,\"Name\":\"Philips
+        Advance\"},{\"Id\":6704,\"Name\":\"Phillips Components, Inc.\"},{\"Id\":2222,\"Name\":\"Phoenix
+        America\"},{\"Id\":277,\"Name\":\"Phoenix Contact\"},{\"Id\":6100,\"Name\":\"Phoenix
+        Mecano\"},{\"Id\":4235,\"Name\":\"Phoenix Sensors\"},{\"Id\":2694,\"Name\":\"Photo
+        Solutions, Inc\"},{\"Id\":6369,\"Name\":\"PhotonFi\"},{\"Id\":4711,\"Name\":\"Photonwares
+        Co.\"},{\"Id\":601280,\"Name\":\"PhysiciansCare\"},{\"Id\":6407,\"Name\":\"PHYTEC\"},{\"Id\":2919,\"Name\":\"PHYTEC
+        America\"},{\"Id\":911,\"Name\":\"Phyton Inc.\"},{\"Id\":2633,\"Name\":\"Phytools\"},{\"Id\":1989,\"Name\":\"Pi-Top\"},{\"Id\":2010,\"Name\":\"PIC
+        GmbH\"},{\"Id\":2634,\"Name\":\"Picker Components\"},{\"Id\":4902,\"Name\":\"PicoBricks\"},{\"Id\":4939,\"Name\":\"PicoLAS
+        GmbH\"},{\"Id\":4790,\"Name\":\"Piera Systems\"},{\"Id\":1778,\"Name\":\"Pimoroni
+        Ltd\"},{\"Id\":5848,\"Name\":\"Pinetek Networks\"},{\"Id\":601283,\"Name\":\"PIP\"},{\"Id\":3030,\"Name\":\"Piton
+        Engineering\"},{\"Id\":2375,\"Name\":\"PKCELL\"},{\"Id\":600305,\"Name\":\"Planet\"},{\"Id\":601284,\"Name\":\"Plano
+        Molding\"},{\"Id\":600201,\"Name\":\"PLAS-PAK INDUSTRIES\"},{\"Id\":601285,\"Name\":\"Plastica
+        Panaro\"},{\"Id\":601286,\"Name\":\"Plasticade Products\"},{\"Id\":601287,\"Name\":\"Plastics-R-Unique\"},{\"Id\":4896,\"Name\":\"Platt
+        Cases\"},{\"Id\":3405,\"Name\":\"Playing With Fusion, Inc\"},{\"Id\":2657,\"Name\":\"Plazmo
+        Industries\"},{\"Id\":4289,\"Name\":\"Pletronics, Inc\"},{\"Id\":5698,\"Name\":\"Plusivo\"},{\"Id\":602216,\"Name\":\"PMA\"},{\"Id\":600091,\"Name\":\"PMC-Sierra\"},{\"Id\":3969,\"Name\":\"Pocket
+        VNA\"},{\"Id\":2784,\"Name\":\"Point Labs\"},{\"Id\":2235,\"Name\":\"Pokit
+        Innovations\"},{\"Id\":6755,\"Name\":\"poLight\"},{\"Id\":2183,\"Name\":\"Pololu\"},{\"Id\":602445,\"Name\":\"Polsen\"},{\"Id\":5732,\"Name\":\"Polymatech\"},{\"Id\":2372,\"Name\":\"Polymer
+        Optics Ltd.\"},{\"Id\":6672,\"Name\":\"PolyPhaser\"},{\"Id\":600330,\"Name\":\"Polytron\"},{\"Id\":501,\"Name\":\"Pomona
+        Electronics\"},{\"Id\":601292,\"Name\":\"Poopy Pouch\"},{\"Id\":601293,\"Name\":\"Portacool\"},{\"Id\":403,\"Name\":\"Portescap\"},{\"Id\":3567,\"Name\":\"Posifa
+        Technologies\"},{\"Id\":4638,\"Name\":\"POSITAL\"},{\"Id\":600081,\"Name\":\"Positronic\"},{\"Id\":2668,\"Name\":\"Power
+        Dynamics, Inc.\"},{\"Id\":596,\"Name\":\"Power Integrations\"},{\"Id\":3164,\"Name\":\"Power
+        Sonic Corporation\"},{\"Id\":600059,\"Name\":\"Power Trends\"},{\"Id\":600454,\"Name\":\"Power
+        XP\xAE\"},{\"Id\":601297,\"Name\":\"Powerblanket\"},{\"Id\":2858,\"Name\":\"Powerbox\"},{\"Id\":3426,\"Name\":\"Powerbx
+        Inc.\"},{\"Id\":1964,\"Name\":\"Powercast Corporation\"},{\"Id\":835,\"Name\":\"Powerex
+        Inc.\"},{\"Id\":1996,\"Name\":\"PowerFilm Inc.\"},{\"Id\":4078,\"Name\":\"Powerland
+        Technology, Inc.\"},{\"Id\":3298,\"Name\":\"PowerRESPONDER\"},{\"Id\":2986,\"Name\":\"Powersight\"},{\"Id\":600089,\"Name\":\"Powersonic\"},{\"Id\":2642,\"Name\":\"Powertip
+        Technology Inc.\"},{\"Id\":4131,\"Name\":\"Powertronics\"},{\"Id\":3167,\"Name\":\"Powerwarehouse\"},{\"Id\":601299,\"Name\":\"Powr-Flite\"},{\"Id\":4216,\"Name\":\"Practical
+        Instrument Electronics\"},{\"Id\":601300,\"Name\":\"Prairie View\"},{\"Id\":602244,\"Name\":\"PRC
+        Tech LLC\"},{\"Id\":193,\"Name\":\"PRD Plastics\"},{\"Id\":5065,\"Name\":\"PreAct\"},{\"Id\":1212,\"Name\":\"Preci-Dip\"},{\"Id\":1230,\"Name\":\"Precision
+        Design Associates, Inc\"},{\"Id\":98,\"Name\":\"Precision Electronics Corporation\"},{\"Id\":5837,\"Name\":\"Precision
+        Engineering, A TSS Company\"},{\"Id\":2532,\"Name\":\"Precision PCBS\"},{\"Id\":2531,\"Name\":\"Precision
+        PCBS Quick Turn\"},{\"Id\":1777,\"Name\":\"Precision Technology Inc.\"},{\"Id\":5982,\"Name\":\"Preen
+        (AC Power Corp.)\"},{\"Id\":4760,\"Name\":\"Prem Magnetics, Inc.\"},{\"Id\":2884,\"Name\":\"Premier
+        Magnetics\"},{\"Id\":6489,\"Name\":\"PremierPhotonics\"},{\"Id\":600364,\"Name\":\"Premium
+        Batteries\"},{\"Id\":4185,\"Name\":\"Premium PSU\"},{\"Id\":600294,\"Name\":\"Premium
+        Quality Supply\"},{\"Id\":3012,\"Name\":\"Premo S.L.\"},{\"Id\":602544,\"Name\":\"President\"},{\"Id\":601304,\"Name\":\"Pressure
+        Joe\"},{\"Id\":6412,\"Name\":\"Prime Power, Inc.\"},{\"Id\":5956,\"Name\":\"PRIMO
+        COMPANY LIMITED\"},{\"Id\":601310,\"Name\":\"Pro Tect\"},{\"Id\":602350,\"Name\":\"Pro-face\"},{\"Id\":601314,\"Name\":\"Pro-Lift\"},{\"Id\":6393,\"Name\":\"Pro-Tech
+        Mats Industries, Inc.\"},{\"Id\":600263,\"Name\":\"Pro'sKit\"},{\"Id\":3850,\"Name\":\"Probes
+        Unlimited, Inc.\"},{\"Id\":600541,\"Name\":\"Procell\"},{\"Id\":3583,\"Name\":\"ProComSol,
+        Ltd.\"},{\"Id\":6496,\"Name\":\"Prodaconn\"},{\"Id\":3657,\"Name\":\"Prodigy
+        Technovations\"},{\"Id\":3005,\"Name\":\"Productech\"},{\"Id\":3205,\"Name\":\"Professional
+        Cable\"},{\"Id\":5440,\"Name\":\"Prosperity Dielectrics Co. Ltd\"},{\"Id\":2505,\"Name\":\"Prostat\"},{\"Id\":602340,\"Name\":\"Prosurge\"},{\"Id\":601317,\"Name\":\"Protecta\"},{\"Id\":602461,\"Name\":\"Protective
+        Closures\"},{\"Id\":2718,\"Name\":\"Protek Devices\"},{\"Id\":2293,\"Name\":\"Protektive
+        Pak\"},{\"Id\":6004,\"Name\":\"Protempis\"},{\"Id\":601318,\"Name\":\"Protex
+        Safe\"},{\"Id\":601319,\"Name\":\"Proto\"},{\"Id\":602399,\"Name\":\"Prowave\"},{\"Id\":601320,\"Name\":\"Proxxon\"},{\"Id\":42,\"Name\":\"Prysmian
+        Group\"},{\"Id\":1046,\"Name\":\"pSemi\"},{\"Id\":2847,\"Name\":\"Psiber Data
+        Systems, Inc.\"},{\"Id\":3505,\"Name\":\"PT Speed\"},{\"Id\":5294,\"Name\":\"PTR
+        Hartmann\"},{\"Id\":4272,\"Name\":\"PTSolns\"},{\"Id\":668,\"Name\":\"PUI
+        Audio, Inc.\"},{\"Id\":601322,\"Name\":\"Pullman-Holt\"},{\"Id\":1736,\"Name\":\"PULS,
+        LP\"},{\"Id\":182,\"Name\":\"Pulsar\"},{\"Id\":6385,\"Name\":\"PULSE Egston\"},{\"Id\":553,\"Name\":\"Pulse
+        Electronics\"},{\"Id\":4527,\"Name\":\"Pulsiv Limited\"},{\"Id\":601323,\"Name\":\"Purdy\"},{\"Id\":602107,\"Name\":\"Purex\"},{\"Id\":600507,\"Name\":\"PURO\xB2XYGEN\"},{\"Id\":601325,\"Name\":\"Purolator\"},{\"Id\":1871,\"Name\":\"Pycom
+        Ltd.\"},{\"Id\":601326,\"Name\":\"Pyramex Safety\"},{\"Id\":5525,\"Name\":\"Q-TECH
+        CORPORATION\"},{\"Id\":675,\"Name\":\"Qimonda\"},{\"Id\":600506,\"Name\":\"QNAP\"},{\"Id\":1916,\"Name\":\"Qoitech
+        AB\"},{\"Id\":2312,\"Name\":\"Qorvo\"},{\"Id\":5424,\"Name\":\"QSI\"},{\"Id\":6129,\"Name\":\"QSI
+        Laser\"},{\"Id\":3001,\"Name\":\"QST\"},{\"Id\":4981,\"Name\":\"QST\"},{\"Id\":1516,\"Name\":\"QT
+        Brightek (QTB)\"},{\"Id\":1619,\"Name\":\"Quadcept Inc.\"},{\"Id\":660,\"Name\":\"Qualcomm\"},{\"Id\":1752,\"Name\":\"Qualcomm
+        (RF front-end (RFFE) filters)\"},{\"Id\":3793,\"Name\":\"QualGear\"},{\"Id\":600013,\"Name\":\"Quality
+        Semiconductor\"},{\"Id\":189,\"Name\":\"Qualtek\"},{\"Id\":4054,\"Name\":\"Quantic
+        Evans\"},{\"Id\":4705,\"Name\":\"Quantic UTC\"},{\"Id\":5322,\"Name\":\"Quantum
+        Devices\"},{\"Id\":601331,\"Name\":\"Quantum Storage Systems\"},{\"Id\":100,\"Name\":\"Quarton
+        Inc.\"},{\"Id\":590,\"Name\":\"Quatech-Division of B&B Electronics\"},{\"Id\":602526,\"Name\":\"Queclink\"},{\"Id\":2958,\"Name\":\"Quectel\"},{\"Id\":3970,\"Name\":\"Quelighting
+        Corp\"},{\"Id\":601915,\"Name\":\"Quell\"},{\"Id\":2215,\"Name\":\"Quest Manufacturing
+        Co.\"},{\"Id\":5403,\"Name\":\"Quest Semi\"},{\"Id\":2229,\"Name\":\"Quest
+        Technology International Inc.\"},{\"Id\":601334,\"Name\":\"Queueway\"},{\"Id\":686,\"Name\":\"Quickfilter
+        Technologies LLC\"},{\"Id\":3857,\"Name\":\"QuickLogic\"},{\"Id\":3883,\"Name\":\"QVS\"},{\"Id\":601917,\"Name\":\"QWIKPRODUCTS\"},{\"Id\":3307,\"Name\":\"R-K
+        Electronics, Inc.\"},{\"Id\":3329,\"Name\":\"R&R Lotion\"},{\"Id\":469,\"Name\":\"Radial
+        Magnets, Inc.\"},{\"Id\":2201,\"Name\":\"Radiall USA, Inc.\"},{\"Id\":3341,\"Name\":\"Radian\"},{\"Id\":5596,\"Name\":\"Radical
+        Robotics\"},{\"Id\":2027,\"Name\":\"Radio Bridge Inc.\"},{\"Id\":601659,\"Name\":\"Radio
+        Design Labs\"},{\"Id\":3206,\"Name\":\"RadioControlli\"},{\"Id\":1783,\"Name\":\"Radiocrafts
+        AS\"},{\"Id\":1772,\"Name\":\"RAF Electronic Hardware\"},{\"Id\":6459,\"Name\":\"Rafael
+        Micro\"},{\"Id\":1715,\"Name\":\"RAFI\"},{\"Id\":4735,\"Name\":\"RAKwireless
+        Technology Limited\"},{\"Id\":2151,\"Name\":\"Raltron Electronics\"},{\"Id\":1140,\"Name\":\"Ramtron\"},{\"Id\":865,\"Name\":\"RAMXEED\"},{\"Id\":3788,\"Name\":\"Ranatec\"},{\"Id\":3658,\"Name\":\"RangeAnt\"},{\"Id\":6789,\"Name\":\"Rapid
+        Analysis\"},{\"Id\":601347,\"Name\":\"Rapidair\"},{\"Id\":1690,\"Name\":\"Raspberry
+        Pi\"},{\"Id\":602530,\"Name\":\"Raya\"},{\"Id\":601349,\"Name\":\"Raychem\"},{\"Id\":601351,\"Name\":\"Rayovac\"},{\"Id\":3271,\"Name\":\"Raytac\"},{\"Id\":3098,\"Name\":\"Raztec
+        Sensors\"},{\"Id\":600023,\"Name\":\"RCA\"},{\"Id\":4855,\"Name\":\"RCD Components\"},{\"Id\":601353,\"Name\":\"Rd
+        Plastics Company Inc\"},{\"Id\":2326,\"Name\":\"RDI, Inc.\"},{\"Id\":4990,\"Name\":\"Re
+        Mixers, Inc.\"},{\"Id\":5980,\"Name\":\"Real Digital\"},{\"Id\":2311,\"Name\":\"RealSense\"},{\"Id\":600354,\"Name\":\"Realtek\"},{\"Id\":602549,\"Name\":\"Rechner\"},{\"Id\":6044,\"Name\":\"Recodeal\"},{\"Id\":945,\"Name\":\"Recom
+        Power\"},{\"Id\":2516,\"Name\":\"Rectron USA\"},{\"Id\":68,\"Name\":\"Red
+        Lion Controls\"},{\"Id\":3133,\"Name\":\"Red Pitaya d.d.\"},{\"Id\":4938,\"Name\":\"RedWave
+        Labs\"},{\"Id\":2867,\"Name\":\"REED Instruments\"},{\"Id\":5397,\"Name\":\"Reed
+        Semiconductor Corp.\"},{\"Id\":3730,\"Name\":\"Reed Switch Developments Corp.\"},{\"Id\":601355,\"Name\":\"ReelCraft\"},{\"Id\":3264,\"Name\":\"REES,
+        Inc\"},{\"Id\":601357,\"Name\":\"RefrigiWear\"},{\"Id\":4915,\"Name\":\"Reliance
+        North America\"},{\"Id\":600346,\"Name\":\"Reliance Precision Limited\"},{\"Id\":602485,\"Name\":\"RELPOL
+        S.A.\"},{\"Id\":601360,\"Name\":\"Remco Plastics\"},{\"Id\":2328,\"Name\":\"Remington
+        Industries\"},{\"Id\":2627,\"Name\":\"Renata Batteries\"},{\"Id\":5594,\"Name\":\"Renco
+        Electronics, Inc.\"},{\"Id\":1833,\"Name\":\"Renesas\"},{\"Id\":1564,\"Name\":\"Renesas
+        Design Germany GmbH\"},{\"Id\":3632,\"Name\":\"Renesas Design US Inc.\"},{\"Id\":972,\"Name\":\"Renesas
+        Electronics America/NEC\"},{\"Id\":1833,\"Name\":\"Renesas Electronics Corporation\"},{\"Id\":20,\"Name\":\"Renesas
+        Electronics Corporation\"},{\"Id\":1695,\"Name\":\"Renesas Electronics Operations
+        Services Limited\"},{\"Id\":3100,\"Name\":\"Rennsteig Tools, Inc.\"},{\"Id\":4612,\"Name\":\"Repco
+        Inc.\"},{\"Id\":601967,\"Name\":\"ResinTech\"},{\"Id\":601921,\"Name\":\"RETYZ\"},{\"Id\":6078,\"Name\":\"REV
+        Robotics\"},{\"Id\":2030,\"Name\":\"ReVibe Energy AB\"},{\"Id\":1998,\"Name\":\"RevX
+        Systems Corp.\"},{\"Id\":5487,\"Name\":\"REYAX\"},{\"Id\":2737,\"Name\":\"RF
+        Industries\"},{\"Id\":5480,\"Name\":\"RF Industries\"},{\"Id\":357,\"Name\":\"RF
+        Solutions\"},{\"Id\":2012,\"Name\":\"RFbeam Microwave GmbH\"},{\"Id\":3451,\"Name\":\"RFE/Fuzetec\"},{\"Id\":5592,\"Name\":\"RFID
+        Inc\"},{\"Id\":689,\"Name\":\"RFMD\"},{\"Id\":2410,\"Name\":\"RFMi\"},{\"Id\":6195,\"Name\":\"RFOptic
+        Inc\"},{\"Id\":4203,\"Name\":\"RFX Limited\"},{\"Id\":601362,\"Name\":\"Rhino
+        Mats\"},{\"Id\":3897,\"Name\":\"Rice Lake Weighing Systems\"},{\"Id\":601750,\"Name\":\"Rich
+        Bay\"},{\"Id\":602430,\"Name\":\"Richey\"},{\"Id\":1028,\"Name\":\"Richtek
+        USA Inc.\"},{\"Id\":601924,\"Name\":\"Ricoh\"},{\"Id\":5763,\"Name\":\"Ridgeback
+        Lighting LLC\"},{\"Id\":601363,\"Name\":\"RIDGID\"},{\"Id\":696,\"Name\":\"Riedon
+        products by Bourns\"},{\"Id\":2131,\"Name\":\"Rieker Inc.\"},{\"Id\":2211,\"Name\":\"Rigol
+        Technologies\"},{\"Id\":4758,\"Name\":\"Rincon Power\"},{\"Id\":3598,\"Name\":\"Rip-Tie\"},{\"Id\":5568,\"Name\":\"Rise
+        K12\"},{\"Id\":6306,\"Name\":\"RiseLink Technologies Inc.\"},{\"Id\":5385,\"Name\":\"Rittal\"},{\"Id\":601365,\"Name\":\"River
+        City\"},{\"Id\":3625,\"Name\":\"RIVER ELETEC CORPORATION\"},{\"Id\":5436,\"Name\":\"Riverdi\"},{\"Id\":5606,\"Name\":\"RLS\"},{\"Id\":601786,\"Name\":\"RMS\"},{\"Id\":2700,\"Name\":\"ROBOTIS\"},{\"Id\":602524,\"Name\":\"Robustel\"},{\"Id\":2156,\"Name\":\"Rochester
+        Electronics, LLC\"},{\"Id\":5744,\"Name\":\"ROHM Semiconductor\"},{\"Id\":846,\"Name\":\"Rohm
+        Semiconductor\"},{\"Id\":307,\"Name\":\"Roman-Jones Inc.\"},{\"Id\":601373,\"Name\":\"Roppe\"},{\"Id\":3798,\"Name\":\"Roscid
+        Technologies\"},{\"Id\":3827,\"Name\":\"Rose Electronics\"},{\"Id\":902,\"Name\":\"Rose
+        Enclosures\"},{\"Id\":1758,\"Name\":\"Rose+Krieger\"},{\"Id\":1868,\"Name\":\"Rosenberger\"},{\"Id\":6003,\"Name\":\"Roth
+        Elektronik\"},{\"Id\":601374,\"Name\":\"Rotom\"},{\"Id\":4019,\"Name\":\"Roving
+        Blue, Inc.\"},{\"Id\":6608,\"Name\":\"ROWAVES\"},{\"Id\":770,\"Name\":\"RPM
+        Systems Corp\"},{\"Id\":601687,\"Name\":\"Rubbermaid\"},{\"Id\":601688,\"Name\":\"Rubbermaid
+        Commercial\"},{\"Id\":601378,\"Name\":\"Rubberset\"},{\"Id\":3230,\"Name\":\"Rubis\"},{\"Id\":600180,\"Name\":\"Rubis
+        Tech\"},{\"Id\":1189,\"Name\":\"Rubycon\"},{\"Id\":602381,\"Name\":\"Ruffneck\"},{\"Id\":2524,\"Name\":\"Ruffy
+        Controls Inc.\"},{\"Id\":602393,\"Name\":\"Ruggard\"},{\"Id\":3188,\"Name\":\"Ruland
+        Manufacturing\"},{\"Id\":3565,\"Name\":\"Runic Technology\"},{\"Id\":1770,\"Name\":\"RushUp\"},{\"Id\":2760,\"Name\":\"Russtech
+        Engineering\"},{\"Id\":601380,\"Name\":\"Rust-Oleum\"},{\"Id\":6403,\"Name\":\"S-LOK
+        NA\"},{\"Id\":3352,\"Name\":\"S.I. Tech, Inc.\"},{\"Id\":2337,\"Name\":\"SAB
+        North America\"},{\"Id\":3693,\"Name\":\"SAF\"},{\"Id\":601381,\"Name\":\"Safco\"},{\"Id\":602518,\"Name\":\"Safcord\"},{\"Id\":601384,\"Name\":\"Safety
+        Security Products\"},{\"Id\":600356,\"Name\":\"Saft\"},{\"Id\":3876,\"Name\":\"SAG\"},{\"Id\":6059,\"Name\":\"SAGAMI
+        ELEC\"},{\"Id\":831,\"Name\":\"Sagrad Inc.\"},{\"Id\":4093,\"Name\":\"Sahara
+        Case LLC\"},{\"Id\":5093,\"Name\":\"Sahasra Electronic Solutions Limited\"},{\"Id\":3457,\"Name\":\"Saiko
+        Systems Ltd.\"},{\"Id\":602496,\"Name\":\"Saint-Gobain\"},{\"Id\":6648,\"Name\":\"Saleae\"},{\"Id\":2223,\"Name\":\"Same
+        Sky (Formerly CUI Devices)\"},{\"Id\":1276,\"Name\":\"Samsung Electro-Mechanics\"},{\"Id\":1510,\"Name\":\"Samsung
+        Semiconductor, Inc.\"},{\"Id\":612,\"Name\":\"Samtec Inc.\"},{\"Id\":602190,\"Name\":\"Samwha
+        Capacitor Group\"},{\"Id\":601391,\"Name\":\"San Jamar\"},{\"Id\":5017,\"Name\":\"SAN-TRON\"},{\"Id\":602464,\"Name\":\"Sanan
+        Power Semiconductor\"},{\"Id\":585,\"Name\":\"SanDisk\"},{\"Id\":601791,\"Name\":\"SaniType\"},{\"Id\":1261,\"Name\":\"Sanken
+        Electric USA Inc.\"},{\"Id\":602519,\"Name\":\"Sankosha\"},{\"Id\":2981,\"Name\":\"Sanoxy\"},{\"Id\":4076,\"Name\":\"SanRex
+        Corporation\"},{\"Id\":3749,\"Name\":\"Santek\"},{\"Id\":600078,\"Name\":\"SANUPS\"},{\"Id\":602276,\"Name\":\"Sanwa\"},{\"Id\":600057,\"Name\":\"Sanyo\"},{\"Id\":1688,\"Name\":\"Sanyo
+        Denki America Inc.\"},{\"Id\":2300,\"Name\":\"Sanyo Denki SanMotion Products\"},{\"Id\":6072,\"Name\":\"Sanyu
+        Switch\"},{\"Id\":3591,\"Name\":\"Sarnikon\"},{\"Id\":6665,\"Name\":\"SATIR
+        Europe\"},{\"Id\":5746,\"Name\":\"Sauro Electronic Connectors\"},{\"Id\":6331,\"Name\":\"Saykal
+        Electronics\"},{\"Id\":4520,\"Name\":\"SB Components Ltd\"},{\"Id\":4666,\"Name\":\"SBG
+        Systems\"},{\"Id\":600209,\"Name\":\"Scame\"},{\"Id\":5516,\"Name\":\"Schaltbau\"},{\"Id\":6197,\"Name\":\"Schlegel
+        USA\"},{\"Id\":4643,\"Name\":\"Schmalz Inc\"},{\"Id\":3132,\"Name\":\"SchmalzTech,
+        LLC\"},{\"Id\":1988,\"Name\":\"Schmartboard, Inc.\"},{\"Id\":600347,\"Name\":\"Schmidt
+        Kupplung\"},{\"Id\":4008,\"Name\":\"Schneider Electric\"},{\"Id\":257,\"Name\":\"Schott
+        Corporation\"},{\"Id\":1439,\"Name\":\"Schroff\"},{\"Id\":2202,\"Name\":\"SCHUNK
+        Intec Inc.\"},{\"Id\":486,\"Name\":\"SCHURTER Inc.\"},{\"Id\":2618,\"Name\":\"ScioSense\"},{\"Id\":6177,\"Name\":\"Scops.ai\"},{\"Id\":600229,\"Name\":\"Scotch-Weld\"},{\"Id\":601403,\"Name\":\"Scotwood\"},{\"Id\":1569,\"Name\":\"SCS\"},{\"Id\":5814,\"Name\":\"SCT\"},{\"Id\":601405,\"Name\":\"SCT\"},{\"Id\":6371,\"Name\":\"SDR
+        Family\"},{\"Id\":6333,\"Name\":\"SDS HIGH VOLTAGE\"},{\"Id\":601410,\"Name\":\"Se-Kure
+        Controls, Inc.\"},{\"Id\":602347,\"Name\":\"Seal Shield\"},{\"Id\":4094,\"Name\":\"Sealcon\"},{\"Id\":3445,\"Name\":\"Sealing
+        Devices, Inc\"},{\"Id\":5890,\"Name\":\"SEALSQ\"},{\"Id\":5219,\"Name\":\"Seaward\"},{\"Id\":1485,\"Name\":\"Seco\"},{\"Id\":601409,\"Name\":\"See
+        All\"},{\"Id\":2674,\"Name\":\"Seeed\"},{\"Id\":2675,\"Name\":\"Seeed Quick
+        Turn\"},{\"Id\":1597,\"Name\":\"Seeed Technology Co., Ltd\"},{\"Id\":2126,\"Name\":\"Seek
+        Thermal\"},{\"Id\":600348,\"Name\":\"Seekonk Precision Tools\"},{\"Id\":899,\"Name\":\"Segger
+        Microcontroller Systems\"},{\"Id\":728,\"Name\":\"Seiko Instruments\"},{\"Id\":602465,\"Name\":\"Seiko
+        NPC\"},{\"Id\":602440,\"Name\":\"Seiko Sports USA\"},{\"Id\":4231,\"Name\":\"Selco
+        Products\"},{\"Id\":4106,\"Name\":\"Selec Controls USA Inc.\"},{\"Id\":601411,\"Name\":\"Sellars\"},{\"Id\":2673,\"Name\":\"Seltech\"},{\"Id\":2351,\"Name\":\"Semiconductor
+        Circuits, Inc.\"},{\"Id\":1560,\"Name\":\"SemiQ\"},{\"Id\":4316,\"Name\":\"Semitec
+        USA Corp\"},{\"Id\":6394,\"Name\":\"Semitech Semi\"},{\"Id\":600,\"Name\":\"Semtech
+        Corporation\"},{\"Id\":602286,\"Name\":\"Seneca\"},{\"Id\":602279,\"Name\":\"Senis
+        AG\"},{\"Id\":2078,\"Name\":\"Senix Corporation\"},{\"Id\":6466,\"Name\":\"Senovol\"},{\"Id\":2752,\"Name\":\"Sensaphone\"},{\"Id\":2506,\"Name\":\"Sensata
+        - BEI Kimco\"},{\"Id\":5115,\"Name\":\"Sensata - Gigavac Industrial\"},{\"Id\":1862,\"Name\":\"Sensata
+        Technologies\"},{\"Id\":1861,\"Name\":\"Sensata Technologies, Inc.\"},{\"Id\":725,\"Name\":\"Sensata
+        Technologies, Inc.\"},{\"Id\":723,\"Name\":\"Sensata-Airpax\"},{\"Id\":6207,\"Name\":\"Sensata-BEI
+        Encoders\"},{\"Id\":1724,\"Name\":\"Sensata-BEI Sensors\"},{\"Id\":172,\"Name\":\"Sensata-Crydom\"},{\"Id\":2149,\"Name\":\"Sensata-DeltaTech\"},{\"Id\":3596,\"Name\":\"Sensata-Gigavac
+        Clean Energy\"},{\"Id\":4112,\"Name\":\"SensComp, Inc.\"},{\"Id\":2194,\"Name\":\"Senseair\"},{\"Id\":6399,\"Name\":\"SenseFuture\"},{\"Id\":5248,\"Name\":\"Sensepeek\"},{\"Id\":602069,\"Name\":\"Sensepeek\"},{\"Id\":1649,\"Name\":\"Sensirion
+        AG\"},{\"Id\":5845,\"Name\":\"Sensitec\"},{\"Id\":5899,\"Name\":\"Sensitivus\"},{\"Id\":6170,\"Name\":\"Sensocon\"},{\"Id\":602513,\"Name\":\"Sensolute\"},{\"Id\":5209,\"Name\":\"SensoPart\"},{\"Id\":4754,\"Name\":\"SENSORADE
+        SA\"},{\"Id\":6431,\"Name\":\"Sensore Electronic GmbH\"},{\"Id\":3137,\"Name\":\"Senther
+        Technology\"},{\"Id\":602405,\"Name\":\"Sentran\"},{\"Id\":601413,\"Name\":\"SentrySafe\"},{\"Id\":897,\"Name\":\"Seoul
+        Semiconductor Inc.\"},{\"Id\":2771,\"Name\":\"Septentrio Inc.\"},{\"Id\":2972,\"Name\":\"Sequans
+        Communications\"},{\"Id\":5141,\"Name\":\"SEQUENT MICROSYSTEMS\"},{\"Id\":600221,\"Name\":\"SerialGear\"},{\"Id\":4250,\"Name\":\"Seron
+        Electronics\"},{\"Id\":128,\"Name\":\"Serpac\"},{\"Id\":601887,\"Name\":\"Sesamee\"},{\"Id\":2112,\"Name\":\"SETi/Seoul
+        Viosys\"},{\"Id\":4367,\"Name\":\"SETsafe | SETfuse\"},{\"Id\":3228,\"Name\":\"Sevskiy
+        GmbH\"},{\"Id\":601416,\"Name\":\"Seymour\"},{\"Id\":6745,\"Name\":\"Seyunda\"},{\"Id\":4819,\"Name\":\"Sfera
+        Labs\"},{\"Id\":2427,\"Name\":\"SG Wireless\"},{\"Id\":6442,\"Name\":\"Sglux
+        GmbH\"},{\"Id\":4154,\"Name\":\"Shallco\"},{\"Id\":601880,\"Name\":\"Shanghai
+        Linsky Electrical Co Ltd\"},{\"Id\":425,\"Name\":\"Sharp Microelectronics\"},{\"Id\":1855,\"Name\":\"SHARP/Socle
+        Technology\"},{\"Id\":601419,\"Name\":\"Sharpie\"},{\"Id\":601420,\"Name\":\"Shax\"},{\"Id\":4916,\"Name\":\"Shaxon\"},{\"Id\":2498,\"Name\":\"Sheetak\"},{\"Id\":6033,\"Name\":\"Shelly
+        USA\"},{\"Id\":601422,\"Name\":\"ShelterLogic\"},{\"Id\":4251,\"Name\":\"Shenzhen
+        ADTEK Technology Co., Ltd\"},{\"Id\":4721,\"Name\":\"Shenzhen Feasycom Co.,
+        LTD\"},{\"Id\":5212,\"Name\":\"Shenzhen Lakeview Electronics Co., Ltd\"},{\"Id\":5789,\"Name\":\"Shenzhen
+        Ruilongyuan Electronics Co.Ltd\"},{\"Id\":5852,\"Name\":\"Shenzhen SCTF Electronics\"},{\"Id\":6652,\"Name\":\"Shenzhen
+        SHOUHAN Technology Co., Ltd\"},{\"Id\":5399,\"Name\":\"Shenzhen Slkormicro
+        Semicon Co., Ltd.\"},{\"Id\":3442,\"Name\":\"Shenzhen Sunlord Electronics
+        Co., Ltd.\"},{\"Id\":600473,\"Name\":\"Shepherd\"},{\"Id\":5313,\"Name\":\"Shibaura
+        Electronics\"},{\"Id\":6445,\"Name\":\"Shireen Inc.\"},{\"Id\":3153,\"Name\":\"Shiu
+        Li Technology Co., Ltd.\"},{\"Id\":2137,\"Name\":\"Shoreline IoT Inc.\"},{\"Id\":601426,\"Name\":\"Shuresafe\"},{\"Id\":601427,\"Name\":\"Shurtape\"},{\"Id\":601428,\"Name\":\"Siam\"},{\"Id\":2257,\"Name\":\"Siargo
+        Ltd\"},{\"Id\":3435,\"Name\":\"Siborg Systems Inc.\"},{\"Id\":1882,\"Name\":\"SICK,
+        Inc.\"},{\"Id\":3473,\"Name\":\"Siemens\"},{\"Id\":3907,\"Name\":\"Sierra
+        Electronics\"},{\"Id\":1645,\"Name\":\"Sierra Wireless\"},{\"Id\":1719,\"Name\":\"Sierra
+        Wireless AirLink\"},{\"Id\":1788,\"Name\":\"Sierra Wireless by Talon\"},{\"Id\":2543,\"Name\":\"Sifam
+        Tinsley Instrumentation Inc\"},{\"Id\":6294,\"Name\":\"Sigatek\"},{\"Id\":1895,\"Name\":\"Sigfox\"},{\"Id\":2204,\"Name\":\"Siglent
+        Technologies NA, Inc.\"},{\"Id\":5422,\"Name\":\"Sigma Batteries\"},{\"Id\":703,\"Name\":\"Sigma
+        Designs Inc.\"},{\"Id\":600234,\"Name\":\"Sigmatel\"},{\"Id\":5466,\"Name\":\"Signal
+        Microwave\"},{\"Id\":595,\"Name\":\"Signal Transformer\"},{\"Id\":6342,\"Name\":\"Signatrol
+        Limited\"},{\"Id\":3171,\"Name\":\"SIKA USA Inc.\"},{\"Id\":5825,\"Name\":\"Sikama
+        International\"},{\"Id\":6250,\"Name\":\"Silanna Semiconductor\"},{\"Id\":602494,\"Name\":\"Silergy\"},{\"Id\":602512,\"Name\":\"Silex
+        Technology\"},{\"Id\":600063,\"Name\":\"Silicon Blue\"},{\"Id\":3744,\"Name\":\"Silicon
+        Craft Technology Public Company Limited\"},{\"Id\":4655,\"Name\":\"Silicon
+        Designs\"},{\"Id\":3909,\"Name\":\"Silicon Designs, Inc.\"},{\"Id\":336,\"Name\":\"Silicon
+        Labs\"},{\"Id\":1984,\"Name\":\"Silicon Motion, Inc.\"},{\"Id\":3499,\"Name\":\"Silicon
+        Sensing Systems Limited\"},{\"Id\":4356,\"Name\":\"Silicon Witchery\"},{\"Id\":600092,\"Name\":\"Siliconix\"},{\"Id\":5511,\"Name\":\"Silion
+        Tech\"},{\"Id\":4302,\"Name\":\"Silver Fox\"},{\"Id\":3617,\"Name\":\"Silver
+        Fox Limited\"},{\"Id\":5061,\"Name\":\"Silvertel\"},{\"Id\":2799,\"Name\":\"Simco-Ion\"},{\"Id\":3781,\"Name\":\"SIMCom
+        Wireless Solutions Limited\"},{\"Id\":602421,\"Name\":\"Simic\"},{\"Id\":5355,\"Name\":\"SIMONDS\"},{\"Id\":5590,\"Name\":\"Simple
+        Signman\"},{\"Id\":3258,\"Name\":\"SimpleChips\"},{\"Id\":4677,\"Name\":\"Simplex
+        Motion AB\"},{\"Id\":601878,\"Name\":\"Simply45\"},{\"Id\":602268,\"Name\":\"SimplyAV\"},{\"Id\":601961,\"Name\":\"SimplyTEST\"},{\"Id\":4037,\"Name\":\"Simpson
+        Electric\"},{\"Id\":600074,\"Name\":\"Simtek\"},{\"Id\":2960,\"Name\":\"SINBON\"},{\"Id\":4449,\"Name\":\"SINE
+        CONTROL TECHNOLOGY INC\"},{\"Id\":275,\"Name\":\"Singatron Enterprises Co
+        Ltd\"},{\"Id\":600016,\"Name\":\"Sipex\"},{\"Id\":1679,\"Name\":\"Siretta
+        Ltd\"},{\"Id\":2430,\"Name\":\"SIRIO Antenne\"},{\"Id\":6236,\"Name\":\"Sistemi\"},{\"Id\":1473,\"Name\":\"SiTime\"},{\"Id\":2597,\"Name\":\"SiTime
+        Corporation\"},{\"Id\":6410,\"Name\":\"Sivers Semiconductor\"},{\"Id\":3994,\"Name\":\"Siward\"},{\"Id\":2428,\"Name\":\"Sixfab\"},{\"Id\":2969,\"Name\":\"Skeleton
+        Technologies GmbH\"},{\"Id\":2120,\"Name\":\"SkyHigh Memory Limited\"},{\"Id\":5464,\"Name\":\"SkyMirr\"},{\"Id\":863,\"Name\":\"Skyworks
+        Solutions Inc.\"},{\"Id\":271,\"Name\":\"SL POWER / Advanced Energy\"},{\"Id\":601437,\"Name\":\"Slice\"},{\"Id\":4913,\"Name\":\"Slice
+        Engineering\"},{\"Id\":601438,\"Name\":\"Slip Plate\"},{\"Id\":601844,\"Name\":\"Sloan
+        Valve\"},{\"Id\":6246,\"Name\":\"SLOKY USA\"},{\"Id\":2908,\"Name\":\"Smart
+        Sensor Devices\"},{\"Id\":4797,\"Name\":\"Smarts Electronic & Technology\"},{\"Id\":1655,\"Name\":\"SMC
+        Diode Solutions\"},{\"Id\":638,\"Name\":\"SMSC\"},{\"Id\":3927,\"Name\":\"SMW\"},{\"Id\":6206,\"Name\":\"Snapguard
+        Solutions\"},{\"Id\":4955,\"Name\":\"Snaptron\"},{\"Id\":600331,\"Name\":\"SnowFire\"},{\"Id\":433,\"Name\":\"Soberton
+        Inc.\"},{\"Id\":602056,\"Name\":\"Socomec\"},{\"Id\":6116,\"Name\":\"Softlog
+        Systems\"},{\"Id\":2106,\"Name\":\"SolaHD\"},{\"Id\":601445,\"Name\":\"Solaira\"},{\"Id\":3413,\"Name\":\"Solar
+        Lighting International\"},{\"Id\":5032,\"Name\":\"Soldered Electronics\"},{\"Id\":3010,\"Name\":\"Solidlite\"},{\"Id\":1668,\"Name\":\"SolidRun
+        LTD\"},{\"Id\":4422,\"Name\":\"SOLO Motor Controllers\"},{\"Id\":5527,\"Name\":\"SOMMER
+        CABLE\"},{\"Id\":601757,\"Name\":\"Song Chuan\"},{\"Id\":4378,\"Name\":\"Songtian
+        Electronic Technology (HK) Limited\"},{\"Id\":4412,\"Name\":\"Soracom\"},{\"Id\":6050,\"Name\":\"Sosen
+        USA, Inc\"},{\"Id\":4947,\"Name\":\"SOSHIN ELECTRIC CO., LTD.\"},{\"Id\":5781,\"Name\":\"Soundskrit,
+        Inc.\"},{\"Id\":666,\"Name\":\"Souriau-Sunbank by Eaton\"},{\"Id\":601885,\"Name\":\"Southco
+        Inc.\"},{\"Id\":2564,\"Name\":\"Southwire\"},{\"Id\":601945,\"Name\":\"SOYO\"},{\"Id\":602093,\"Name\":\"SP
+        Air\"},{\"Id\":1274,\"Name\":\"Spansion\"},{\"Id\":3918,\"Name\":\"SPARK Microsystems
+        International Inc.\"},{\"Id\":1568,\"Name\":\"SparkFun Electronics\"},{\"Id\":602262,\"Name\":\"Spartan
+        Climate\"},{\"Id\":4149,\"Name\":\"Spartan Power\"},{\"Id\":601449,\"Name\":\"Speakman\"},{\"Id\":1684,\"Name\":\"SPEC
+        Sensors (a division of Interlink Electronics)\"},{\"Id\":601450,\"Name\":\"Specialized
+        Safety Products\"},{\"Id\":6657,\"Name\":\"Specialty Nameplate & Manufacturing
+        Inc\"},{\"Id\":602462,\"Name\":\"Speco Technologies\"},{\"Id\":905,\"Name\":\"Spectra
+        Symbol\"},{\"Id\":4885,\"Name\":\"Sper Scientific\"},{\"Id\":602246,\"Name\":\"SPI
+        Connects\"},{\"Id\":2297,\"Name\":\"SpotSee\"},{\"Id\":105,\"Name\":\"Sprague-Goodman\"},{\"Id\":601460,\"Name\":\"Sprayon\"},{\"Id\":4908,\"Name\":\"Springer
+        Controls\"},{\"Id\":601461,\"Name\":\"SPT Security\"},{\"Id\":6019,\"Name\":\"Spyraflo,
+        Inc.\"},{\"Id\":602449,\"Name\":\"SR Electronics\"},{\"Id\":6134,\"Name\":\"SR
+        HIGHTECH\"},{\"Id\":2260,\"Name\":\"SRA Soldering Products\"},{\"Id\":602486,\"Name\":\"SRT
+        Microceramique\"},{\"Id\":3239,\"Name\":\"Sruite Electronic Technology (US)\"},{\"Id\":5382,\"Name\":\"SSC
+        Controls Company\"},{\"Id\":602193,\"Name\":\"SSEMCO\"},{\"Id\":601462,\"Name\":\"SSI
+        Schaefer\"},{\"Id\":1921,\"Name\":\"SST Sensing Ltd.\"},{\"Id\":602241,\"Name\":\"SST
+        Silicon Storage Technology, Inc\"},{\"Id\":5813,\"Name\":\"ST Engineering
+        Urban Solutions\"},{\"Id\":861,\"Name\":\"ST-Ericsson Inc\"},{\"Id\":738,\"Name\":\"Stackpole
+        Electronics Inc\"},{\"Id\":452,\"Name\":\"Staco Energy Products Company\"},{\"Id\":602375,\"Name\":\"STAF
+        Corporation\"},{\"Id\":2555,\"Name\":\"Stage Ninja\"},{\"Id\":5285,\"Name\":\"Stahlin\"},{\"Id\":602263,\"Name\":\"Stahlin\"},{\"Id\":602363,\"Name\":\"Stancor
+        Electronics LLC\"},{\"Id\":374,\"Name\":\"Standex-Meder Electronics\"},{\"Id\":601466,\"Name\":\"Stanley\"},{\"Id\":404,\"Name\":\"Stanley
+        Electric Co\"},{\"Id\":601467,\"Name\":\"Star Tool Supply\"},{\"Id\":601468,\"Name\":\"Starrett\"},{\"Id\":2296,\"Name\":\"START
+        International\"},{\"Id\":5214,\"Name\":\"StarTech.com\"},{\"Id\":3764,\"Name\":\"Static
+        Clean\"},{\"Id\":601469,\"Name\":\"Static Solutions\"},{\"Id\":2900,\"Name\":\"StaticStop\"},{\"Id\":3244,\"Name\":\"Status
+        Instruments Ltd\"},{\"Id\":2477,\"Name\":\"Staubli Electrical Connectors\"},{\"Id\":601473,\"Name\":\"Steinel\"},{\"Id\":96,\"Name\":\"Steinel
+        America\"},{\"Id\":602341,\"Name\":\"Stelvio\"},{\"Id\":601787,\"Name\":\"Step'n
+        Components\"},{\"Id\":601474,\"Name\":\"Sterilite\"},{\"Id\":5460,\"Name\":\"Stetron\"},{\"Id\":380,\"Name\":\"Stewart
+        Connector\"},{\"Id\":2883,\"Name\":\"STI Vibration Monitoring\"},{\"Id\":2857,\"Name\":\"STI-CO
+        Industries\"},{\"Id\":4394,\"Name\":\"STIRRI\"},{\"Id\":3308,\"Name\":\"STL\"},{\"Id\":497,\"Name\":\"STMicroelectronics\"},{\"Id\":192,\"Name\":\"Storm
+        Interface\"},{\"Id\":5623,\"Name\":\"Strategic Tools & Equipment Company\"},{\"Id\":6510,\"Name\":\"Studica
+        Inc.\"},{\"Id\":35,\"Name\":\"Sullins Connector Solutions\"},{\"Id\":600202,\"Name\":\"SULZER\"},{\"Id\":308,\"Name\":\"Sumida
+        America Components Inc.\"},{\"Id\":527,\"Name\":\"Sumida America Inc.\"},{\"Id\":2786,\"Name\":\"Sumitomo
+        Electric Interconnect Products, Inc.\"},{\"Id\":2527,\"Name\":\"Summit Interconnect
+        Quick Turn (Made in USA)\"},{\"Id\":2528,\"Name\":\"Summit Interconnect Standard
+        (Made in USA)\"},{\"Id\":3943,\"Name\":\"Sump Alarm Inc.\"},{\"Id\":601482,\"Name\":\"Suncast\"},{\"Id\":601484,\"Name\":\"Sunex
+        Tools\"},{\"Id\":4411,\"Name\":\"SunFounder\"},{\"Id\":4262,\"Name\":\"Sungale\"},{\"Id\":1497,\"Name\":\"SunLED\"},{\"Id\":259,\"Name\":\"Sunon
+        Fans\"},{\"Id\":4365,\"Name\":\"Sunpark\"},{\"Id\":601486,\"Name\":\"SunStar\"},{\"Id\":3816,\"Name\":\"Sunstone
+        Welders\"},{\"Id\":2388,\"Name\":\"Suntsu Electronics, Inc\"},{\"Id\":5173,\"Name\":\"Suntsu
+        Electronics, Inc\"},{\"Id\":6639,\"Name\":\"Sunway Communication\"},{\"Id\":601487,\"Name\":\"Supco\"},{\"Id\":4775,\"Name\":\"SuperApex,
+        LLC\"},{\"Id\":2232,\"Name\":\"Superior Sensor Technology, Inc.\"},{\"Id\":601489,\"Name\":\"Superior
+        Surgical\"},{\"Id\":4324,\"Name\":\"SUPERIOR TECH\"},{\"Id\":601490,\"Name\":\"SuperLube\"},{\"Id\":5025,\"Name\":\"Superworld
+        Electronics (S) Pte. Ltd.\"},{\"Id\":4921,\"Name\":\"Superxon\"},{\"Id\":4661,\"Name\":\"Supirit
+        Inc.\"},{\"Id\":602522,\"Name\":\"Supmea\"},{\"Id\":5761,\"Name\":\"Supreme
+        Edgelight Devices\"},{\"Id\":600256,\"Name\":\"Sure-Seal Connections\"},{\"Id\":601901,\"Name\":\"SUREBONDER\"},{\"Id\":2923,\"Name\":\"SureHold\"},{\"Id\":2616,\"Name\":\"SURGE\"},{\"Id\":4403,\"Name\":\"Surge\"},{\"Id\":602111,\"Name\":\"Suscon\"},{\"Id\":4147,\"Name\":\"SUSI
+        Adapters\"},{\"Id\":408,\"Name\":\"Susumu\"},{\"Id\":4309,\"Name\":\"Suzhou
+        Hangjing Elec&Tech Co.,Ltd\"},{\"Id\":3649,\"Name\":\"Suzhou Maswell Communication
+        Technology Co. Ltd\"},{\"Id\":1055,\"Name\":\"SVTronics Inc.\"},{\"Id\":232,\"Name\":\"Swanstrom
+        Tools USA\"},{\"Id\":4028,\"Name\":\"Swift Bridge Technologies\"},{\"Id\":1052,\"Name\":\"Swissbit\"},{\"Id\":2299,\"Name\":\"Switch
+        Components\"},{\"Id\":137,\"Name\":\"Switchcraft Inc.\"},{\"Id\":746,\"Name\":\"Synapse
+        Wireless\"},{\"Id\":6291,\"Name\":\"Synaptics\"},{\"Id\":6803,\"Name\":\"Synaptics\xAE
+        Coralboard\u2122\"},{\"Id\":6346,\"Name\":\"Syncopated\"},{\"Id\":2054,\"Name\":\"Syndesy
+        Technologies, Inc.\"},{\"Id\":5582,\"Name\":\"Synergy Logic\"},{\"Id\":6017,\"Name\":\"Syntiant\"},{\"Id\":3944,\"Name\":\"Syntiant
+        Corp.\"},{\"Id\":3260,\"Name\":\"Synzen\"},{\"Id\":5122,\"Name\":\"Synzen\"},{\"Id\":600215,\"Name\":\"SYS
+        TEC electronic\"},{\"Id\":1962,\"Name\":\"System-On-Chip (SOC) Technologies
+        Inc.\"},{\"Id\":3573,\"Name\":\"SystemBase\"},{\"Id\":5372,\"Name\":\"Syston\"},{\"Id\":1168,\"Name\":\"t-Global
+        Technology\"},{\"Id\":6538,\"Name\":\"t-WIN Technology Service Inc.\"},{\"Id\":6076,\"Name\":\"T&M
+        International Inc.\"},{\"Id\":601498,\"Name\":\"T&S Brass\"},{\"Id\":439,\"Name\":\"Tadiran
+        Batteries\"},{\"Id\":5536,\"Name\":\"TAEJIN\"},{\"Id\":1048,\"Name\":\"Tag-Connect
+        LLC\"},{\"Id\":2713,\"Name\":\"TagoreTech\"},{\"Id\":4816,\"Name\":\"TAI-TECH
+        Advanced Electronics Co., Ltd.\"},{\"Id\":1880,\"Name\":\"Taica North America
+        Corporation\"},{\"Id\":1664,\"Name\":\"Taitien\"},{\"Id\":1801,\"Name\":\"Taiwan
+        Semiconductor Corporation\"},{\"Id\":587,\"Name\":\"Taiyo Yuden\"},{\"Id\":4575,\"Name\":\"Takex
+        America Inc.\"},{\"Id\":1295,\"Name\":\"Talema Group LLC\"},{\"Id\":132,\"Name\":\"Tamura\"},{\"Id\":602454,\"Name\":\"TandD\"},{\"Id\":3403,\"Name\":\"Tane
+        Alarm Products\"},{\"Id\":6368,\"Name\":\"Taoglas - Public Safety\"},{\"Id\":931,\"Name\":\"Taoglas
+        Limited\"},{\"Id\":2877,\"Name\":\"Taoglas USA\"},{\"Id\":3900,\"Name\":\"TAPCO\"},{\"Id\":601499,\"Name\":\"Tapco,
+        Traffic & Parking Control Co, Inc\"},{\"Id\":2636,\"Name\":\"TapeCase\"},{\"Id\":1487,\"Name\":\"Tark
+        Thermal Solutions\"},{\"Id\":4702,\"Name\":\"Tasco, Inc.\"},{\"Id\":4499,\"Name\":\"TAW
+        ELECTRONICS, INC\"},{\"Id\":4260,\"Name\":\"TBI Motion\"},{\"Id\":6002,\"Name\":\"TCLAD
+        INC\"},{\"Id\":445,\"Name\":\"TDK\"},{\"Id\":1428,\"Name\":\"TDK InvenSense\"},{\"Id\":285,\"Name\":\"TDK-Lambda\"},{\"Id\":246,\"Name\":\"TDK-Micronas
+        GmbH\"},{\"Id\":2585,\"Name\":\"TE - Kissling\"},{\"Id\":994,\"Name\":\"TE
+        Connectivity\"},{\"Id\":844,\"Name\":\"TE Connectivity Aerospace, Defense
+        and Marine\"},{\"Id\":450,\"Name\":\"TE Connectivity ALCOSWITCH Switches\"},{\"Id\":17,\"Name\":\"TE
+        Connectivity AMP Connectors\"},{\"Id\":2132,\"Name\":\"TE Connectivity Application
+        Tooling\"},{\"Id\":174,\"Name\":\"TE Connectivity Corcom Filters\"},{\"Id\":1508,\"Name\":\"TE
+        Connectivity Deutsch Connectors\"},{\"Id\":2109,\"Name\":\"TE Connectivity
+        ENTRELEC\"},{\"Id\":2684,\"Name\":\"TE Connectivity Erni\"},{\"Id\":343,\"Name\":\"TE
+        Connectivity Linx\"},{\"Id\":223,\"Name\":\"TE Connectivity Measurement Specialties\"},{\"Id\":1712,\"Name\":\"TE
+        Connectivity Passive Product\"},{\"Id\":41,\"Name\":\"TE Connectivity Potter
+        & Brumfield Relays\"},{\"Id\":484,\"Name\":\"TE Connectivity Raychem Cable
+        Protection\"},{\"Id\":817,\"Name\":\"TE Connectivity Schaffner\"},{\"Id\":6021,\"Name\":\"TE
+        Connectivity/Overstock\"},{\"Id\":2094,\"Name\":\"TE Energy & Utilities\"},{\"Id\":2452,\"Name\":\"TE
+        Intercontec\"},{\"Id\":4535,\"Name\":\"TE Kemtron\"},{\"Id\":601886,\"Name\":\"Tec
+        Niq\"},{\"Id\":2085,\"Name\":\"Tecate Group\"},{\"Id\":4075,\"Name\":\"Tecdia
+        Inc.\"},{\"Id\":5417,\"Name\":\"Tech Etch\"},{\"Id\":6610,\"Name\":\"Tech
+        Rim Standards\"},{\"Id\":1030,\"Name\":\"Techflex\"},{\"Id\":2956,\"Name\":\"TechLogix
+        Networx\"},{\"Id\":6411,\"Name\":\"TechnaGuard\"},{\"Id\":1405,\"Name\":\"TechNexion\"},{\"Id\":601940,\"Name\":\"Technical
+        Pro\"},{\"Id\":5233,\"Name\":\"Techship\"},{\"Id\":1873,\"Name\":\"Techspray\"},{\"Id\":266,\"Name\":\"TechTools\"},{\"Id\":602185,\"Name\":\"Tecnikabel\"},{\"Id\":2703,\"Name\":\"Tecnomatic
+        Corp.\"},{\"Id\":6488,\"Name\":\"TecSense GmbH\"},{\"Id\":2664,\"Name\":\"TEGAM
+        / Advanced Energy\"},{\"Id\":600451,\"Name\":\"Tek-Bar\"},{\"Id\":600450,\"Name\":\"Tek-Flux\"},{\"Id\":600452,\"Name\":\"Tek-Sub\"},{\"Id\":3694,\"Name\":\"Tek-Trol\"},{\"Id\":600453,\"Name\":\"Tek-Wave\"},{\"Id\":600317,\"Name\":\"TekBox
+        Digital Solutions Pte\"},{\"Id\":4694,\"Name\":\"Tekima North America, Inc.\"},{\"Id\":6185,\"Name\":\"Teknikio\"},{\"Id\":3718,\"Name\":\"Tekscan\"},{\"Id\":2287,\"Name\":\"TEKTELIC
+        Communications Inc.\"},{\"Id\":3823,\"Name\":\"Tel-Tru Manufacturing Company\"},{\"Id\":6507,\"Name\":\"Telco
+        Source Connect\"},{\"Id\":3483,\"Name\":\"TELE Controls Inc\"},{\"Id\":602408,\"Name\":\"Tele
+        Haase\"},{\"Id\":4271,\"Name\":\"Telebyte\"},{\"Id\":2067,\"Name\":\"Teledyne
+        FLIR Commercial Systems\"},{\"Id\":1133,\"Name\":\"Teledyne LeCroy\"},{\"Id\":2269,\"Name\":\"Telegartner
+        Inc\"},{\"Id\":5452,\"Name\":\"Telemecanique Sensors\"},{\"Id\":600219,\"Name\":\"Televac\"},{\"Id\":5935,\"Name\":\"TeleWire
+        Tech\"},{\"Id\":6611,\"Name\":\"Telink Semiconductor\"},{\"Id\":943,\"Name\":\"Telit
+        Cinterion\"},{\"Id\":6537,\"Name\":\"Telit IoT Solutions\"},{\"Id\":3493,\"Name\":\"Tell-i\"},{\"Id\":4703,\"Name\":\"Teltonika\"},{\"Id\":601506,\"Name\":\"Tempco\"},{\"Id\":2177,\"Name\":\"Tempo
+        Communications\"},{\"Id\":4144,\"Name\":\"Tempo Semiconductor, Inc.\"},{\"Id\":2865,\"Name\":\"Temprel\"},{\"Id\":601509,\"Name\":\"Tensator\"},{\"Id\":839,\"Name\":\"Tensility\"},{\"Id\":6322,\"Name\":\"Tepro-Vamistor\"},{\"Id\":2504,\"Name\":\"Tera
+        Grand Corporation\"},{\"Id\":6037,\"Name\":\"Tera Sensor\"},{\"Id\":3074,\"Name\":\"Terabee
+        SAS\"},{\"Id\":771,\"Name\":\"Terasic Inc.\"},{\"Id\":6791,\"Name\":\"Terrestream\"},{\"Id\":602457,\"Name\":\"tesa\"},{\"Id\":4547,\"Name\":\"TESSERA
+        TECHNOLOGY\"},{\"Id\":3268,\"Name\":\"Tesuto\"},{\"Id\":1912,\"Name\":\"TEWA
+        Sensors LLC\"},{\"Id\":296,\"Name\":\"Texas Instruments\"},{\"Id\":4880,\"Name\":\"TEXAS
+        MICROFIBER\"},{\"Id\":2584,\"Name\":\"Texmate\"},{\"Id\":3256,\"Name\":\"TextSpeak\"},{\"Id\":2743,\"Name\":\"TG3
+        Electronics\"},{\"Id\":600025,\"Name\":\"TGS\"},{\"Id\":1845,\"Name\":\"Thales
+        Visionix - a Division of Thales Defense & Security, Inc.\"},{\"Id\":5350,\"Name\":\"The
+        Antenna Company\"},{\"Id\":2515,\"Name\":\"The Fredericks Company\"},{\"Id\":3134,\"Name\":\"The
+        Imaging Source\"},{\"Id\":601511,\"Name\":\"The Packaging Wholesalers\"},{\"Id\":6503,\"Name\":\"Thermal
+        Grizzly\"},{\"Id\":4978,\"Name\":\"Thermaltronics\"},{\"Id\":5565,\"Name\":\"Thermaltronics\"},{\"Id\":2966,\"Name\":\"Thermco
+        Products, Inc\"},{\"Id\":2855,\"Name\":\"Thermo Heating Elements\"},{\"Id\":3193,\"Name\":\"Thermoelectric
+        Conversion Systems Ltd\"},{\"Id\":4561,\"Name\":\"ThermoKonnect\"},{\"Id\":6198,\"Name\":\"ThermoTek,
+        Inc.\"},{\"Id\":4463,\"Name\":\"Thin Film Technology Corp.\"},{\"Id\":3175,\"Name\":\"THine
+        Solutions, Inc.\"},{\"Id\":1523,\"Name\":\"ThingMagic, a JADAK brand\"},{\"Id\":4894,\"Name\":\"Thinking
+        Electronic\"},{\"Id\":5018,\"Name\":\"Thinking Electronics\"},{\"Id\":602068,\"Name\":\"Thinking
+        Electronics Industrial Co.\"},{\"Id\":1894,\"Name\":\"Thinxtra Solutions Limited\"},{\"Id\":1121,\"Name\":\"Thomas
+        Research Products\"},{\"Id\":4184,\"Name\":\"Thornton Plastics\"},{\"Id\":3812,\"Name\":\"Thought3D\"},{\"Id\":6451,\"Name\":\"ThreeHigh\"},{\"Id\":602463,\"Name\":\"Thunder
+        Components Ltd.\"},{\"Id\":6014,\"Name\":\"Thundercomm\"},{\"Id\":600465,\"Name\":\"Tianqiu\"},{\"Id\":4650,\"Name\":\"TimePilot
+        Corporation\"},{\"Id\":600502,\"Name\":\"Timtel Thermal\"},{\"Id\":601519,\"Name\":\"Tingley\"},{\"Id\":1832,\"Name\":\"TinyCircuits\"},{\"Id\":5975,\"Name\":\"TinyPilot\"},{\"Id\":6347,\"Name\":\"tinyVision.ai\"},{\"Id\":601521,\"Name\":\"Titan\"},{\"Id\":3151,\"Name\":\"TITAN
+        Haptics\"},{\"Id\":601523,\"Name\":\"Tjernlund\"},{\"Id\":4542,\"Name\":\"TK
+        USA\"},{\"Id\":6527,\"Name\":\"TKD\"},{\"Id\":602478,\"Name\":\"ToCad\"},{\"Id\":5914,\"Name\":\"Tocos
+        America\"},{\"Id\":5716,\"Name\":\"ToFFuture Technology\"},{\"Id\":4177,\"Name\":\"Tohnichi\"},{\"Id\":4173,\"Name\":\"TOHO
+        ELECTRONICS INC.\"},{\"Id\":15,\"Name\":\"Toko America Inc.\"},{\"Id\":3887,\"Name\":\"TokyLabs\"},{\"Id\":6280,\"Name\":\"TOOLTRONICS
+        INC\"},{\"Id\":4626,\"Name\":\"Top Shelf Acoustics, LLC\"},{\"Id\":601525,\"Name\":\"Top
+        Tape & Label\"},{\"Id\":602490,\"Name\":\"Topflite Components\"},{\"Id\":602470,\"Name\":\"Toppan
+        Inc.\"},{\"Id\":893,\"Name\":\"Torex Semiconductor Ltd\"},{\"Id\":601860,\"Name\":\"TOSHIBA\"},{\"Id\":600241,\"Name\":\"Toshiba
+        Lifestyle Products\"},{\"Id\":264,\"Name\":\"Toshiba Semiconductor and Storage\"},{\"Id\":601823,\"Name\":\"TOSOT\"},{\"Id\":1238,\"Name\":\"Touchstone
+        Semiconductor\"},{\"Id\":6446,\"Name\":\"TouchTronix Robotics\"},{\"Id\":3008,\"Name\":\"Toward
+        Technologies, Inc.\"},{\"Id\":6178,\"Name\":\"TOYOKO KAGAKU\"},{\"Id\":601697,\"Name\":\"TPI\"},{\"Id\":290,\"Name\":\"TPI
+        (Test Products Int)\"},{\"Id\":1176,\"Name\":\"TPK America LLC\"},{\"Id\":1951,\"Name\":\"Traco
+        Power\"},{\"Id\":2264,\"Name\":\"Trafag Sensors and Controls\"},{\"Id\":602515,\"Name\":\"Traffic
+        Kontrol\"},{\"Id\":4335,\"Name\":\"Traktronix\"},{\"Id\":440,\"Name\":\"Transcell
+        Technology Inc.\"},{\"Id\":5117,\"Name\":\"Transducers Direct\"},{\"Id\":3641,\"Name\":\"Transforming
+        Technologies\"},{\"Id\":2492,\"Name\":\"Transko Electronics, Inc.\"},{\"Id\":5619,\"Name\":\"TransSiP\"},{\"Id\":6673,\"Name\":\"Transtector\"},{\"Id\":600298,\"Name\":\"TREBLAB\"},{\"Id\":6736,\"Name\":\"Trendnet\"},{\"Id\":1686,\"Name\":\"Trenz
+        Electronic GmbH\"},{\"Id\":601534,\"Name\":\"Tri-Arc\"},{\"Id\":601535,\"Name\":\"Tri-Flow\"},{\"Id\":2103,\"Name\":\"Tri-Mag,
+        LLC\"},{\"Id\":601788,\"Name\":\"Tri-Star Electronics\"},{\"Id\":2254,\"Name\":\"Tri-Star
+        Industries, Inc.\"},{\"Id\":5974,\"Name\":\"Tri-Tronics Co. Inc.\"},{\"Id\":237,\"Name\":\"Triad
+        Magnetics\"},{\"Id\":2574,\"Name\":\"Triad Semiconductor, Inc.\"},{\"Id\":601533,\"Name\":\"Triangle
+        Engineering\"},{\"Id\":601966,\"Name\":\"Trimax Circuit Protectors\"},{\"Id\":600076,\"Name\":\"Triplett\"},{\"Id\":2329,\"Name\":\"Triplett
+        Test Equipment and Tools\"},{\"Id\":4958,\"Name\":\"Triplett Test Equipment
+        and Tools\"},{\"Id\":601537,\"Name\":\"TrippNT\"},{\"Id\":600237,\"Name\":\"Triscend\"},{\"Id\":6301,\"Name\":\"Tronex\"},{\"Id\":1775,\"Name\":\"Tronics\"},{\"Id\":601540,\"Name\":\"True
+        Temper\"},{\"Id\":5737,\"Name\":\"Trumeter\"},{\"Id\":4400,\"Name\":\"Trustcap\"},{\"Id\":6615,\"Name\":\"Trusted
+        Semiconductor Solutions\"},{\"Id\":602108,\"Name\":\"TSI (Transystem Inc)\"},{\"Id\":4606,\"Name\":\"TST\"},{\"Id\":987,\"Name\":\"TT
+        Electronics/BI\"},{\"Id\":1575,\"Name\":\"TT Electronics/BI Magnetics\"},{\"Id\":989,\"Name\":\"TT
+        Electronics/IRC\"},{\"Id\":365,\"Name\":\"TT Electronics/Optek Technology\"},{\"Id\":3989,\"Name\":\"TT
+        Electronics/Power Partners Inc.\"},{\"Id\":4994,\"Name\":\"TT Electronics/Roxspur
+        Measurement & Control Ltd\"},{\"Id\":985,\"Name\":\"TT Electronics/Welwyn\"},{\"Id\":602475,\"Name\":\"TTAF\"},{\"Id\":4244,\"Name\":\"TTM
+        Technologies Trading (Asia) Company Limited\"},{\"Id\":1173,\"Name\":\"TTM
+        Technologies, Inc.\"},{\"Id\":2271,\"Name\":\"TurboFlex Heaters\"},{\"Id\":600447,\"Name\":\"Turmode\"},{\"Id\":601794,\"Name\":\"Turonic\"},{\"Id\":410,\"Name\":\"Tusonix
+        a Subsidiary of CTS Electronic Components\"},{\"Id\":438,\"Name\":\"Twin Industries\"},{\"Id\":6155,\"Name\":\"TWS
+        Technology\"},{\"Id\":887,\"Name\":\"TXC CORPORATION\"},{\"Id\":4912,\"Name\":\"TYCLON\"},{\"Id\":2303,\"Name\":\"Tycon
+        Systems Inc.\"},{\"Id\":600480,\"Name\":\"TygerClaw\"},{\"Id\":600446,\"Name\":\"TygerWire\"},{\"Id\":672,\"Name\":\"u-blox\"},{\"Id\":6367,\"Name\":\"U-Mark,
+        Inc.\"},{\"Id\":3007,\"Name\":\"U-Reach Data Solutions, Inc\"},{\"Id\":601547,\"Name\":\"U.S.
+        Wire\"},{\"Id\":601548,\"Name\":\"U.S. Wire & Cable\"},{\"Id\":602187,\"Name\":\"UAG
+        (Urban Armor Gear)\"},{\"Id\":4219,\"Name\":\"UbiBot\"},{\"Id\":5717,\"Name\":\"UBIROS
+        INC.\"},{\"Id\":4517,\"Name\":\"UDINFO\"},{\"Id\":6475,\"Name\":\"UE ELECTRONIC\"},{\"Id\":3603,\"Name\":\"UEi
+        Test Instruments\"},{\"Id\":4361,\"Name\":\"uHave Control\"},{\"Id\":4359,\"Name\":\"UJU\"},{\"Id\":5921,\"Name\":\"UKB
+        Electronics Ltd\"},{\"Id\":2607,\"Name\":\"Ulti-Mate Connector Inc.\"},{\"Id\":1595,\"Name\":\"Ultra
+        Librarian\"},{\"Id\":602439,\"Name\":\"ULTRAK\"},{\"Id\":600357,\"Name\":\"Ultralast\"},{\"Id\":600422,\"Name\":\"Ultralife\"},{\"Id\":601554,\"Name\":\"UltraTech\"},{\"Id\":2309,\"Name\":\"ULTRAVOLT
+        / Advanced Energy\"},{\"Id\":4518,\"Name\":\"UMW\"},{\"Id\":5181,\"Name\":\"UNC
+        Group, LLC\"},{\"Id\":3917,\"Name\":\"UNEO Inc.\"},{\"Id\":601555,\"Name\":\"Unger\"},{\"Id\":5138,\"Name\":\"Uni-Trend
+        Technology US Inc\"},{\"Id\":5301,\"Name\":\"Unicore Communications, Inc.\"},{\"Id\":2047,\"Name\":\"Unictron
+        Technologies Corporation\"},{\"Id\":5986,\"Name\":\"Unified-E\"},{\"Id\":6032,\"Name\":\"UNIFIVE
+        GLOBAL LIMITED\"},{\"Id\":3351,\"Name\":\"Union Semiconductor International
+        Limited\"},{\"Id\":601556,\"Name\":\"Union Tools\"},{\"Id\":6199,\"Name\":\"Unisonic
+        Technologies Co., Ltd.\"},{\"Id\":602112,\"Name\":\"Unispectral\"},{\"Id\":602270,\"Name\":\"Unist\"},{\"Id\":601558,\"Name\":\"United
+        Solutions\"},{\"Id\":4441,\"Name\":\"Unitense\"},{\"Id\":600018,\"Name\":\"Unitrode\"},{\"Id\":602333,\"Name\":\"Universal
+        Battery\"},{\"Id\":3647,\"Name\":\"UNIVERSAL-SOLDER Electronics Ltd\"},{\"Id\":2830,\"Name\":\"Unrise
+        USA\"},{\"Id\":5075,\"Name\":\"Upside Down Labs\"},{\"Id\":601664,\"Name\":\"UPUN\"},{\"Id\":601563,\"Name\":\"Urrea\"},{\"Id\":4035,\"Name\":\"US
+        Digital\"},{\"Id\":3544,\"Name\":\"US Electronics Inc.\"},{\"Id\":601564,\"Name\":\"US
+        Motors\"},{\"Id\":601566,\"Name\":\"US Roto Molding\"},{\"Id\":38,\"Name\":\"US-Lasers
+        Inc.\"},{\"Id\":602269,\"Name\":\"USA Industrials\"},{\"Id\":600296,\"Name\":\"USBCables\"},{\"Id\":600220,\"Name\":\"USBGear\"},{\"Id\":6121,\"Name\":\"USDI\"},{\"Id\":2000,\"Name\":\"USound
+        GmbH\"},{\"Id\":600163,\"Name\":\"USR IOT\"},{\"Id\":600478,\"Name\":\"Uticor\"},{\"Id\":3785,\"Name\":\"Uticor
+        Technologies\"},{\"Id\":5869,\"Name\":\"UTL, G-POWER\"},{\"Id\":4141,\"Name\":\"UVCense\"},{\"Id\":600966,\"Name\":\"Uvex
+        By Honeywell\"},{\"Id\":4922,\"Name\":\"Uvitron International\"},{\"Id\":602438,\"Name\":\"Uvton\"},{\"Id\":2258,\"Name\":\"VACUUMSCHMELZE\"},{\"Id\":602394,\"Name\":\"Vaiyer\"},{\"Id\":6363,\"Name\":\"Vanguard
+        Electronics\"},{\"Id\":600019,\"Name\":\"Vantis\"},{\"Id\":2835,\"Name\":\"VaOpto\"},{\"Id\":601572,\"Name\":\"Vapamore\"},{\"Id\":5564,\"Name\":\"Varcode\"},{\"Id\":5555,\"Name\":\"Variohm\"},{\"Id\":153,\"Name\":\"Varitronix\"},{\"Id\":4684,\"Name\":\"VARTA\"},{\"Id\":6186,\"Name\":\"VC
+        America Electronics\"},{\"Id\":4243,\"Name\":\"VDO360\"},{\"Id\":3922,\"Name\":\"VEC
+        Supply\"},{\"Id\":3512,\"Name\":\"Vector Climate\"},{\"Id\":44,\"Name\":\"Vector
+        Electronics\"},{\"Id\":2399,\"Name\":\"Vektrex\"},{\"Id\":2702,\"Name\":\"Velab
+        Co.\"},{\"Id\":600178,\"Name\":\"Velleman\"},{\"Id\":602531,\"Name\":\"Vello\"},{\"Id\":4089,\"Name\":\"Velocity
+        IoT\"},{\"Id\":2679,\"Name\":\"Venkel\"},{\"Id\":601574,\"Name\":\"Ventamatic\"},{\"Id\":1780,\"Name\":\"Verivolt
+        LLC\"},{\"Id\":4808,\"Name\":\"Verotronic Technologies Pte Ltd.\"},{\"Id\":1241,\"Name\":\"VersaLogic
+        Corporation\"},{\"Id\":1737,\"Name\":\"VersaSense\"},{\"Id\":2022,\"Name\":\"Vesper
+        Technologies Inc.\"},{\"Id\":4663,\"Name\":\"Vessel Tools\"},{\"Id\":600901,\"Name\":\"Vestil\"},{\"Id\":6549,\"Name\":\"ViALUX\"},{\"Id\":1102,\"Name\":\"Vicor
+        Corporation\"},{\"Id\":601898,\"Name\":\"Victron Energy\"},{\"Id\":602121,\"Name\":\"Video
+        Mount Products\"},{\"Id\":6710,\"Name\":\"Vidoair Pneumatics\"},{\"Id\":5292,\"Name\":\"VIETES\"},{\"Id\":6768,\"Name\":\"Vigatec\"},{\"Id\":5471,\"Name\":\"VigilLink\"},{\"Id\":5578,\"Name\":\"Vigortronix\"},{\"Id\":6152,\"Name\":\"VIITOR
+        SEMICONDUCTOR CO., LTD\"},{\"Id\":2577,\"Name\":\"Viking Tech\"},{\"Id\":1803,\"Name\":\"Viking
+        Technology\"},{\"Id\":4041,\"Name\":\"VINATech Co LTD\"},{\"Id\":6038,\"Name\":\"VIRIBRIGHT\xAE\"},{\"Id\":1550,\"Name\":\"Virtium
+        LLC\"},{\"Id\":2441,\"Name\":\"Virtual Industries, Inc\"},{\"Id\":2056,\"Name\":\"Visaton
+        GmbH & Co. KG\"},{\"Id\":749,\"Name\":\"Vishay\"},{\"Id\":570,\"Name\":\"Vishay
+        Ametherm\"},{\"Id\":4353,\"Name\":\"Vishay Barry\"},{\"Id\":56,\"Name\":\"Vishay
+        Beyschlag/Draloric/BC Components\"},{\"Id\":1896,\"Name\":\"Vishay Cera-Mite\"},{\"Id\":541,\"Name\":\"Vishay
+        Dale\"},{\"Id\":764,\"Name\":\"Vishay Dale Thin Film\"},{\"Id\":909,\"Name\":\"Vishay
+        Electro-Films\"},{\"Id\":112,\"Name\":\"Vishay General Semiconductor - Diodes
+        Division\"},{\"Id\":274,\"Name\":\"Vishay Huntington Electric Inc.\"},{\"Id\":3581,\"Name\":\"Vishay
+        Polytech\"},{\"Id\":2870,\"Name\":\"Vishay Roederstein\"},{\"Id\":751,\"Name\":\"Vishay
+        Semiconductor Opto Division\"},{\"Id\":716,\"Name\":\"Vishay Sfernice\"},{\"Id\":742,\"Name\":\"Vishay
+        Siliconix\"},{\"Id\":693,\"Name\":\"Vishay Spectrol\"},{\"Id\":718,\"Name\":\"Vishay
+        Sprague\"},{\"Id\":3579,\"Name\":\"Vishay Techno\"},{\"Id\":720,\"Name\":\"Vishay
+        Vitramon\"},{\"Id\":6054,\"Name\":\"VisIC\"},{\"Id\":2286,\"Name\":\"Vision
+        Engineering Inc.\"},{\"Id\":6096,\"Name\":\"Vision LUXO\"},{\"Id\":601581,\"Name\":\"Vision
+        Metalizers\"},{\"Id\":28,\"Name\":\"Visual Communications Company - VCC\"},{\"Id\":4447,\"Name\":\"Vitrek\"},{\"Id\":3964,\"Name\":\"Vitrohm\"},{\"Id\":602398,\"Name\":\"Vividia\"},{\"Id\":5938,\"Name\":\"Vizmonet\"},{\"Id\":62,\"Name\":\"Volgen
+        + Furuno\"},{\"Id\":2600,\"Name\":\"Voltaic Systems\"},{\"Id\":5987,\"Name\":\"Voltaplex\"},{\"Id\":6709,\"Name\":\"VoltarisTech
+        Inc.\"},{\"Id\":601585,\"Name\":\"Vornado\"},{\"Id\":2050,\"Name\":\"Vox Power
+        Ltd.\"},{\"Id\":804,\"Name\":\"VPG Foil Resistors\"},{\"Id\":6376,\"Name\":\"VPT
+        Power\"},{\"Id\":1670,\"Name\":\"Vybronics Inc\"},{\"Id\":3934,\"Name\":\"Vzense\"},{\"Id\":5891,\"Name\":\"Wachendorff
+        Automation GmbH & Co. KG\"},{\"Id\":2946,\"Name\":\"WAGO Corporation\"},{\"Id\":600246,\"Name\":\"Wahl
+        Heat Spy\xAE\"},{\"Id\":600247,\"Name\":\"Wahl Temp-Plate\xAE\"},{\"Id\":6090,\"Name\":\"WAIN
+        Electrical\"},{\"Id\":345,\"Name\":\"Wakefield Thermal Solutions\"},{\"Id\":6270,\"Name\":\"Waldom\"},{\"Id\":1292,\"Name\":\"Walsin
+        Technology Corporation\"},{\"Id\":6159,\"Name\":\"Walta\"},{\"Id\":4233,\"Name\":\"Wamco,
+        Inc\"},{\"Id\":6571,\"Name\":\"WanTcom Inc.\"},{\"Id\":601590,\"Name\":\"Watershed
+        Innovation\"},{\"Id\":602446,\"Name\":\"Watson\"},{\"Id\":2100,\"Name\":\"Watterott
+        Electronic GmbH\"},{\"Id\":6638,\"Name\":\"Wavelength Electronics\"},{\"Id\":3140,\"Name\":\"WAVEPIA.,Co.Ltd\"},{\"Id\":4455,\"Name\":\"Waytronic\"},{\"Id\":601594,\"Name\":\"WD-40\"},{\"Id\":2432,\"Name\":\"WDC\"},{\"Id\":601595,\"Name\":\"Wearwell\"},{\"Id\":2266,\"Name\":\"WEC\"},{\"Id\":3072,\"Name\":\"WECO
+        Electrical Connectors Inc.\"},{\"Id\":5831,\"Name\":\"WEE\"},{\"Id\":1740,\"Name\":\"WeEn
+        Semiconductors\"},{\"Id\":281,\"Name\":\"Weidm\xFCller\"},{\"Id\":5040,\"Name\":\"Weipu
+        Connector\"},{\"Id\":601598,\"Name\":\"Weiss Instruments\"},{\"Id\":5627,\"Name\":\"Wera
+        Tools NA Inc.\"},{\"Id\":5849,\"Name\":\"Werbel Microwave LLC\"},{\"Id\":2582,\"Name\":\"WERMA
+        USA Inc.\"},{\"Id\":601600,\"Name\":\"Wesco\"},{\"Id\":601601,\"Name\":\"West
+        Chester\"},{\"Id\":5685,\"Name\":\"West Coast Magnetics\"},{\"Id\":601602,\"Name\":\"Westcott\"},{\"Id\":4743,\"Name\":\"Westermo
+        Data Communications\"},{\"Id\":601603,\"Name\":\"Western Case\"},{\"Id\":6224,\"Name\":\"Western
+        Electric\"},{\"Id\":601604,\"Name\":\"Western Plastics\"},{\"Id\":601605,\"Name\":\"Weston\"},{\"Id\":3904,\"Name\":\"WetKeys
+        Washable Keyboards\"},{\"Id\":601771,\"Name\":\"Whadda\"},{\"Id\":601608,\"Name\":\"Whynter\"},{\"Id\":5977,\"Name\":\"Wieland-Werke
+        AG\"},{\"Id\":431,\"Name\":\"Wiha\"},{\"Id\":601609,\"Name\":\"Wildeck\"},{\"Id\":602543,\"Name\":\"Wilder
+        Technologies\"},{\"Id\":601613,\"Name\":\"Wilton\"},{\"Id\":1928,\"Name\":\"WIMA\"},{\"Id\":256,\"Name\":\"Winbond
+        Electronics\"},{\"Id\":991,\"Name\":\"Winchester Interconnect\"},{\"Id\":601617,\"Name\":\"Winholt\"},{\"Id\":5764,\"Name\":\"Winmate
+        Communications US, Inc.\"},{\"Id\":4863,\"Name\":\"Winstar Display\"},{\"Id\":385,\"Name\":\"Wintec
+        Industries\"},{\"Id\":601619,\"Name\":\"Wiremold\"},{\"Id\":600322,\"Name\":\"WirthCo\"},{\"Id\":4296,\"Name\":\"Wise-Integration\"},{\"Id\":601772,\"Name\":\"Wisher\"},{\"Id\":3546,\"Name\":\"WITHWAVE
+        CO LTD\"},{\"Id\":601625,\"Name\":\"Witt Industries\"},{\"Id\":1278,\"Name\":\"WIZnet\"},{\"Id\":600097,\"Name\":\"Woertz\"},{\"Id\":6141,\"Name\":\"W\xF6hrle\"},{\"Id\":600048,\"Name\":\"Wolfson\"},{\"Id\":1697,\"Name\":\"Wolfspeed,
+        Inc.\"},{\"Id\":3392,\"Name\":\"worktables.com\"},{\"Id\":601634,\"Name\":\"WorldWide
+        Electric Corporation\"},{\"Id\":6782,\"Name\":\"WRWP LLC.\"},{\"Id\":732,\"Name\":\"W\xFCrth
+        Elektronik\"},{\"Id\":2203,\"Name\":\"Xaptum, Inc.\"},{\"Id\":4454,\"Name\":\"Xavitech\"},{\"Id\":602395,\"Name\":\"Xcellon\"},{\"Id\":415,\"Name\":\"Xeltek
+        Inc.\"},{\"Id\":3378,\"Name\":\"Xenarc Technologies\"},{\"Id\":600421,\"Name\":\"Xeno\"},{\"Id\":2840,\"Name\":\"XFMRS\"},{\"Id\":600437,\"Name\":\"XiangJiang\"},{\"Id\":373,\"Name\":\"Xicor-Division
+        of Intersil\"},{\"Id\":602117,\"Name\":\"Xilinx\"},{\"Id\":5962,\"Name\":\"XINGLIGHT\"},{\"Id\":6543,\"Name\":\"Xinnuo
+        Electronics\"},{\"Id\":880,\"Name\":\"XMOS\"},{\"Id\":1470,\"Name\":\"XP Power\"},{\"Id\":1551,\"Name\":\"Xsens
+        a Movella brand\"},{\"Id\":4061,\"Name\":\"XSSY Optoelectronics Co.,Ltd.\"},{\"Id\":4503,\"Name\":\"XTALTQ\"},{\"Id\":4964,\"Name\":\"XTool\"},{\"Id\":602517,\"Name\":\"XyphroLabs\"},{\"Id\":601775,\"Name\":\"Xytronic\"},{\"Id\":2418,\"Name\":\"Y.C.
+        Cable (East)\"},{\"Id\":13,\"Name\":\"YAGEO\"},{\"Id\":311,\"Name\":\"Yageo
+        America\"},{\"Id\":1759,\"Name\":\"Yageo Nexensos\"},{\"Id\":5048,\"Name\":\"YAGEO
+        XSEMI\"},{\"Id\":601637,\"Name\":\"Yamaha\"},{\"Id\":2408,\"Name\":\"Yamaichi
+        Electronics\"},{\"Id\":4934,\"Name\":\"Yamar\"},{\"Id\":602307,\"Name\":\"Yealink\"},{\"Id\":6514,\"Name\":\"Yeh
+        Lin International Ltd.\"},{\"Id\":602116,\"Name\":\"Yenyo Technology\"},{\"Id\":3155,\"Name\":\"YIC\"},{\"Id\":3933,\"Name\":\"YINGJIAO\"},{\"Id\":5011,\"Name\":\"Ymin\"},{\"Id\":600491,\"Name\":\"Ynvisible\"},{\"Id\":2464,\"Name\":\"Yokowo\"},{\"Id\":5488,\"Name\":\"Yokowo
+        Manufacturing of America, LLC.\"},{\"Id\":5859,\"Name\":\"Yongyu Optoelectronics\"},{\"Id\":601640,\"Name\":\"Yost
+        Vises\"},{\"Id\":601641,\"Name\":\"Youngstown Glove\"},{\"Id\":2373,\"Name\":\"YS
+        TECH USA\"},{\"Id\":4458,\"Name\":\"YS Tech USA\"},{\"Id\":600329,\"Name\":\"Yuan
+        Dean\"},{\"Id\":6738,\"Name\":\"Yudian Automation\"},{\"Id\":6682,\"Name\":\"YWF
+        Electronics\"},{\"Id\":5721,\"Name\":\"YXC\"},{\"Id\":5102,\"Name\":\"Z-Communications,
+        Inc.\"},{\"Id\":3033,\"Name\":\"Z+F USA Inc\"},{\"Id\":4088,\"Name\":\"Zaber
+        Technologies\"},{\"Id\":6268,\"Name\":\"Zago Manufacturing Co\"},{\"Id\":600293,\"Name\":\"Zanardo\"},{\"Id\":600020,\"Name\":\"Zarlink\"},{\"Id\":4609,\"Name\":\"ZCables\"},{\"Id\":6337,\"Name\":\"ZEASSET\"},{\"Id\":6142,\"Name\":\"Zemfyre\"},{\"Id\":601805,\"Name\":\"Zenipower\"},{\"Id\":4755,\"Name\":\"ZenithTek
+        Inc.\"},{\"Id\":601645,\"Name\":\"Zep\"},{\"Id\":1554,\"Name\":\"Zero ASIC
+        Corporation\"},{\"Id\":602102,\"Name\":\"Zeroplus\"},{\"Id\":6450,\"Name\":\"Zetier\"},{\"Id\":3388,\"Name\":\"Zettler
+        Magnetics\"},{\"Id\":2059,\"Name\":\"ZEUS Battery Products\"},{\"Id\":85,\"Name\":\"ZF
+        Electronics\"},{\"Id\":602095,\"Name\":\"Zhi Feng Wei Technology\"},{\"Id\":6419,\"Name\":\"Zierick
+        Manufacturing\"},{\"Id\":6061,\"Name\":\"Ziitek Technology\"},{\"Id\":269,\"Name\":\"Zilog\"},{\"Id\":601923,\"Name\":\"ZINGZ\"},{\"Id\":6522,\"Name\":\"Zippertubing\"},{\"Id\":602302,\"Name\":\"ZipTape\"},{\"Id\":5870,\"Name\":\"ZLEDLighting\"},{\"Id\":3119,\"Name\":\"ZofzPCB\"},{\"Id\":601900,\"Name\":\"Zoller
+        & Fr\xF6hlich GmbH\"},{\"Id\":602455,\"Name\":\"Zowie Technology Corporation\"},{\"Id\":6566,\"Name\":\"Zurich
+        Instruments AG\"},{\"Id\":601650,\"Name\":\"Zurn\"},{\"Id\":6321,\"Name\":\"ZXONIC
+        TECHNOLOGY INC.\"}]}"
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '988'
+    status:
+      code: 200
+      message: OK
+version: 1

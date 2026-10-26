@@ -1,0 +1,90 @@
+name: Release
+
+# Push a tag like v2.0.0 (or v2.0.0rc1 for a pre-release) on master to publish to PyPI.
+# Publishing uses PyPI Trusted Publishing, so no API token is stored in the repository.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      testpypi:
+        description: Publish the current commit to TestPyPI (dry run)
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Release notes from CHANGELOG.md
+        if: github.event_name == 'push'
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          version="${TAG#v}"
+          base=$(echo "$version" | sed -E 's/(a|b|rc)[0-9]+$//')
+          heading=$(grep -E "^## \[$base\]" CHANGELOG.md || true)
+          if [ -z "$heading" ]; then
+            echo "::error::CHANGELOG.md has no '## [$base]' section"; exit 1
+          fi
+          if [ "$version" = "$base" ] && echo "$heading" | grep -qi unreleased; then
+            echo "::error::Date the '## [$base]' section in CHANGELOG.md before a final release"; exit 1
+          fi
+          awk -v h="$heading" '$0 == h {f=1; next} f && /^## \[/ {exit} f' CHANGELOG.md > dist-notes.md
+          cat dist-notes.md
+      - uses: astral-sh/setup-uv@v10.3.2  # no moving major tags; Dependabot bumps this
+      - run: uv build
+      - run: uvx twine check --strict dist/*
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist/
+      - if: github.event_name == 'push'
+        uses: actions/upload-artifact@v7
+        with:
+          name: notes
+          path: dist-notes.md
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'push' && 'pypi' || 'testpypi' }}
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: ${{ github.event_name == 'push' && 'https://upload.pypi.org/legacy/' || 'https://test.pypi.org/legacy/' }}
+
+  github-release:
+    if: github.event_name == 'push'
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+      - uses: actions/download-artifact@v8
+        with:
+          name: notes
+      # The CHANGELOG section (with its breaking changes) comes first, then GitHub's PR list.
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          flags=(--notes-file dist-notes.md --generate-notes --verify-tag)
+          case "${TAG#v}" in *rc*|*a*|*b*) flags+=(--prerelease);; esac
+          gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --title "$TAG" "${flags[@]}"

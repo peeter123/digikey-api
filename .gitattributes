@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.jar binary
+tests/cassettes/** -diff linguist-generated
+digikey/v4/** linguist-generated
+openapi/specs/** linguist-generated

@@ -1,0 +1,16 @@
+name: Feature request
+description: Support another DigiKey API or endpoint
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Most of this library is generated from DigiKey's OpenAPI specs. Adding a DigiKey API is usually a
+        small PR: one entry in `openapi/generate.py` plus wrapper methods, see CONTRIBUTING.md.
+  - type: textarea
+    id: what
+    attributes:
+      label: What do you need?
+      description: Link the DigiKey developer portal page of the API or endpoint.
+    validations:
+      required: true
