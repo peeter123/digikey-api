@@ -17,7 +17,7 @@ jobs:
     environment: live
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.3.2  # no moving major tags; Dependabot bumps this
       - run: uv sync --locked --group test
       - run: uv run pytest -m live -v -rs
         env:
