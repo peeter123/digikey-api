@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from typing import Any
 
 import pytest
@@ -20,6 +21,16 @@ from digikey import DigikeyClient
 
 REDACTED = "REDACTED"
 KEEP_RESPONSE_HEADERS = {"content-type", "x-ratelimit-limit", "x-ratelimit-remaining"}
+
+
+def pytest_collection_modifyitems(items: list[pytest.Item]) -> None:
+    # vcrpy 9 needs Python 3.11+; vcrpy 8 fakes urllib3 headers with a type the generated
+    # clients reject. Unit tests still run the generated stack on 3.10.
+    if sys.version_info < (3, 11):
+        skip = pytest.mark.skip(reason="replay tests need vcrpy 9 (Python 3.11+)")
+        for item in items:
+            if "replay" in item.path.parts:
+                item.add_marker(skip)
 
 
 def scrub_request(request: Any) -> Any:
