@@ -1,0 +1,45 @@
+name: Spec drift
+
+# Weekly: download the latest DigiKey OpenAPI specs and regenerate. When anything changed a PR
+# is opened, so new endpoints and fields arrive without anyone watching the developer portal.
+on:
+  schedule:
+    - cron: "41 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: actions/cache@v6
+        with:
+          path: .cache
+          key: openapi-generator-${{ hashFiles('openapi/generate.py') }}
+      - run: python3 openapi/generate.py --fetch
+      - id: pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: automation/spec-drift
+          commit-message: Regenerate clients from updated DigiKey specs
+          title: DigiKey OpenAPI specs changed
+          labels: spec-drift
+          body: |
+            The weekly spec check found changes in DigiKey's published OpenAPI specs and regenerated `digikey/v4`.
+
+            Review the spec diff for breaking changes (removed or renamed fields/endpoints) before merging, then
+            add a CHANGELOG entry. New endpoints are not exposed on `DigikeyClient` until a wrapper method is added.
+      # PRs created with the workflow token do not trigger CI on their own; a dispatch does.
+      - if: steps.pr.outputs.pull-request-operation == 'created' || steps.pr.outputs.pull-request-operation == 'updated'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref automation/spec-drift

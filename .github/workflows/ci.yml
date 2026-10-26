@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10
+      - run: uv sync --locked --group dev
+      - run: uv run ruff check --output-format=github .
+      - run: uv run ruff format --check .
+      - run: uv run mypy
+
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10
+        with:
+          python-version: ${{ matrix.python }}
+      - run: uv sync --locked --group test
+      # Unit tests plus replay of the recorded cassettes; no network, no secrets.
+      - run: uv run pytest --cov --record-mode=none
+
+  generated:
+    name: generated code is up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: actions/cache@v6
+        with:
+          path: .cache
+          key: openapi-generator-${{ hashFiles('openapi/generate.py') }}
+      - run: python3 openapi/generate.py
+      - name: Compare with committed code
+        run: |
+          if [ -n "$(git status --porcelain -- digikey/v4)" ]; then
+            git status --short -- digikey/v4
+            echo "::error::digikey/v4 does not match openapi/specs. Never edit it by hand; run 'python openapi/generate.py' and commit the result."
+            exit 1
+          fi
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0  # version comes from git tags
+      - uses: astral-sh/setup-uv@v10
+      - run: uv build
+      - run: uvx twine check --strict dist/*
+      - name: Install the wheel in a clean environment
+        run: |
+          uv venv /tmp/clean --python 3.10
+          uv pip install --python /tmp/clean dist/*.whl
+          /tmp/clean/bin/python -c "import digikey; digikey.DigikeyClient('id', 'secret'); print(digikey.__version__)"
+          /tmp/clean/bin/python - <<'EOF'
+          import importlib.metadata, pathlib, sys
+          import digikey
+          unwanted = {"certauth", "pyopenssl"} & {d.metadata["Name"].lower() for d in importlib.metadata.distributions()}
+          distutils = [p for p in pathlib.Path(digikey.__file__).parent.rglob("*.py") if "distutils" in p.read_text()]
+          sys.exit(f"unwanted: {unwanted} {distutils}" if unwanted or distutils else 0)
+          EOF
