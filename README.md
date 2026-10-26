@@ -174,8 +174,13 @@ schema (for example `KeywordRequest(keywords=..., limit=...)` instead of
 | Browser login always required | `client_credentials` is the default; set `DIGIKEY_AUTH_FLOW=authorization_code` for the 1.x behaviour |
 | `DIGIKEY_STORAGE_PATH` had to exist | Created when needed, defaults to the user cache directory |
 | `digikey.v3.*` | `digikey.v4.productsearch`, `digikey.v4.orderstatus` |
+| OrderStatus with your login | With `client_credentials` also pass `account_id=` (or set `DIGIKEY_ACCOUNT_ID`) |
+| `digikey.oauth.oauth2.TokenHandler` | `ClientCredentialsAuth`, `AuthorizationCodeAuth` |
+| Python 3.6+ | Python 3.10+ |
 
-Existing `token_storage.json` files from 1.x keep working with the 3-legged flows.
+Existing production `token_storage.json` files from 1.x keep working with the 3-legged flows. Sandbox
+tokens now live in `token_storage_sandbox.json`, so sandbox users log in once again. The complete list
+of breaking changes is in the [CHANGELOG](CHANGELOG.md#200---unreleased).
 
 # Contributing
 
